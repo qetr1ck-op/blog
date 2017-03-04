@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang on My New Hugo Site</title>
-    <link>http://qetr1ck-op.github.io/blog/categories/golang/index.xml</link>
+    <link>https://qetr1ck-op.github.io/blog/categories/golang/index.xml</link>
     <description>Recent content in Golang on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="http://qetr1ck-op.github.io/blog/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://qetr1ck-op.github.io/blog/categories/golang/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>(Hu)go Template Primer</title>
-      <link>http://qetr1ck-op.github.io/blog/post/goisforlovers/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/goisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://qetr1ck-op.github.io/blog/post/goisforlovers/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/goisforlovers/</guid>
       <description>
 
 &lt;p&gt;Hugo uses the excellent &lt;a href=&#34;http://golang.org/&amp;gt;&#34;&gt;go&lt;/a&gt; &lt;a href=&#34;http://golang.org/pkg/html/template/&amp;gt;&#34;&gt;html/template&lt;/a&gt; library for
@@ -356,10 +356,10 @@ so, such as in this example:&lt;/p&gt;
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>http://qetr1ck-op.github.io/blog/post/hugoisforlovers/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/hugoisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://qetr1ck-op.github.io/blog/post/hugoisforlovers/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/hugoisforlovers/</guid>
       <description>
 
 &lt;h2 id=&#34;step-1-install-hugo&#34;&gt;Step 1. Install Hugo&lt;/h2&gt;
