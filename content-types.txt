@@ -1,7 +1,22 @@
++++
+title = ""
+date = "yyyy-mm-dd"
 categories = [
     "Javascript",
+    "NodeJS", 
     "OOP",
     "Architecture",
     "Patterns",
-    "ES2015+"
+    "ES2015+",
+    "DOM API",
+    "CSS",
+    "AngularJS",
+    "Git",
+    "Web API",
+    "HTTP",
+    "Performance",
+    "Books",
+    "Katas",
+    "RegExp"
 ]
++++

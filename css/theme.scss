@@ -2,6 +2,7 @@
 @import "./custom-bootstrap";
 @import "./mixins";
 @import "./paginator";
+@import "./custom-post";
 
 html {
   height: 100%;
@@ -47,7 +48,7 @@ a {
   padding-left: 0px;
   nav {
     @media (min-width: $screen-md-min) {
-      @extend .no-padding-left-and-right;
+      // @extend .no-padding-left-and-right;
       position: fixed;
       height: 100%;
       overflow-y: auto;

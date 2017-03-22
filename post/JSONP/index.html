@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+    <base href="../../">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Orest Prystayko">
+
+<meta name="description" content="">
+
+<title>JSONP</title>
+<meta name="generator" content="Hugo 0.19" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://qetr1ck-op.github.io/blog/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link"><a href="./">Root</a></h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/pattern-craft/">PatternCraft</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/RESTful-Web-Services-with-Node-js-and-Express/">RESTful Web Services with Node.js and Express</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/Reset-Checkout-and-Revert/">Git reset, checkout and revert</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/Node-js-design-pattern-book-review/">Book: &#39;Node.js design pattern&#39;</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/Preflighted-HTTP-OPTIONS-requests/">Preflighted HTTP OPTIONS requests</a></li>
+            
+        </ul>
+    </div>
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="./categories/angularjs">angularjs</a></li>
+            
+            <li><a href="./categories/architecture">architecture</a></li>
+            
+            <li><a href="./categories/books">books</a></li>
+            
+            <li><a href="./categories/css">css</a></li>
+            
+            <li><a href="./categories/dom-api">dom-api</a></li>
+            
+            <li><a href="./categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="./categories/git">git</a></li>
+            
+            <li><a href="./categories/http">http</a></li>
+            
+            <li><a href="./categories/javascript">javascript</a></li>
+            
+            <li><a href="./categories/katas">katas</a></li>
+            
+            <li><a href="./categories/nodejs">nodejs</a></li>
+            
+            <li><a href="./categories/oop">oop</a></li>
+            
+            <li><a href="./categories/patterns">patterns</a></li>
+            
+            <li><a href="./categories/performance">performance</a></li>
+            
+            <li><a href="./categories/react">react</a></li>
+            
+            <li><a href="./categories/regexp">regexp</a></li>
+            
+            <li><a href="./categories/web-api">web-api</a></li>
+            
+        </ul>
+    </div>
+    
+
+    <div id="about" class="open">
+        <h3 data-open="about">About</h3>
+        <ul>
+            <li><a href="./about/">Author</a></li>
+        </ul>
+    </div>
+    <div>
+        <gcse:search></gcse:search>
+    </div>
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>JSONP</h1>
+<h4>Published 2014-10-29</h4>
+ 
+
+
+<article>
+    <div id="toc">
+        
+    </div>
+    <p>JSONP is really simple trick to overcome XMLHttpRequest same origin domain policy - you can&rsquo;t send AJAX (XMLHttpRequest) request (not a simple) to different domain.</p>
+
+<p></p>
+
+<p>So instead of using <code>XMLHttpRequest</code> we have to use <code>script</code> HTML tag to get data from another domain. And yes, it&rsquo;s sound weird. Example:</p>
+
+<pre><code class="language-js">(function() {
+	var script = document.createElement('script');
+	script.type = 'text/javascript'
+	script.src = 'http://www.someWebApiServer.com/some-data?callback=my_callback';
+	document.getElementsByTagName('head')[0].appendChild(elem)
+})()
+</code></pre>
+
+<p>Notice the <code>my_callback</code> function over here? So when when server receives request and finds callback parameter - instead of returning plain <code>JSON</code> object :</p>
+
+<pre><code class="language-js">{foo: bar}
+</code></pre>
+
+<p>It will return callback:</p>
+
+<pre><code class="language-js">my_callback({foo: bar}) // 'Response from another domain: with {foo: bar}
+
+//it's already implemented
+function my_callback(resp) {
+	console.log('Response from another domain: ' + resp);
+}
+</code></pre>
+
+<p>The profit is that we get automatic callback <code>my_callback</code> that will be triggered once we get the data.</p>
+
+<p>So <code>JSONP</code> is callback and script tags.</p>
+
+<p>Basic JavaScript example (simple Twitter feed using JSONP):</p>
+
+<pre><code class="language-js">&lt;div id = 'twitterFeed'&gt;&lt;/div&gt;
+&lt;script&gt;
+function myCallback(dataWeGotViaJsonp){
+    var text = '';
+    var len = dataWeGotViaJsonp.length;
+    for(var i=0;i&lt;len;i++){
+        twitterEntry = dataWeGotViaJsonp[i];
+        text += ' + twitterEntry['text']';
+    }
+    document.getElementById('twitterFeed').innerHTML = text;
+}
+</code></pre>
+</article>
+
+ 
+
+</div>
+</div>
+<script src="https://qetr1ck-op.github.io/blog/js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>

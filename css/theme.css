@@ -1070,7 +1070,6 @@ a {
     color: #1a645f;
     text-decoration: underline; }
   a:focus {
-    outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
 
@@ -2089,7 +2088,7 @@ table th[class*="col-"] {
   .hidden-print {
     display: none !important; } }
 
-.no-padding-left-and-right, body > .container-fluid, .menu nav {
+.no-padding-left-and-right, body > .container-fluid {
   padding-left: 0px;
   padding-right: 0px; }
 
@@ -2120,6 +2119,11 @@ ul.pagination {
       text-decoration: underline; }
     ul.pagination li.disabled a {
       color: #839496; }
+
+.content blockquote {
+  padding: 0 1em;
+  border-left: 0.25em solid #839496;
+  font-size: 1.1em; }
 
 html {
   height: 100%; }

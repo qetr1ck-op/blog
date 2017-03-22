@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Regexp on My New Hugo Site</title>
+    <link>https://qetr1ck-op.github.io/blog/categories/regexp/index.xml</link>
+    <description>Recent content in Regexp on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <atom:link href="https://qetr1ck-op.github.io/blog/categories/regexp/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Kata: Filter through name/email</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Kata-Array-RegExp-Filter-through-name-email/</link>
+      <pubDate>Mon, 15 Feb 2016 22:34:45 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Kata-Array-RegExp-Filter-through-name-email/</guid>
+      <description>&lt;p&gt;He has troubles with users ending or starting in a &lt;code&gt;.&lt;/code&gt;, and his user-array is a flat array of user-email-pairs, like so:&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[ &amp;quot;foo&amp;quot;, &amp;quot;foo@bar.com&amp;quot;, &amp;quot;bar&amp;quot;, &amp;quot;bar@foo.com&amp;quot;, &amp;quot;.foo&amp;quot;, &amp;quot;food@bar.com&amp;quot; ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;He is only interested in e-mailing the users and ask them to sign up again, so no need to keep the user-name, only e-mail addresses for the user-names that start or end with a &lt;code&gt;.&lt;/code&gt; should be returned. For the above array, the correct return-array would be &lt;code&gt;[ &amp;quot;food@bar.com&amp;quot; ]&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Test:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;describe( &amp;quot;Testing a list&amp;quot;, function(){
+  it( &amp;quot;Basic list&amp;quot;, function(){
+    var a = [ &amp;quot;foo&amp;quot;, &amp;quot;foo@foo.com&amp;quot;, &amp;quot;bar.&amp;quot;, &amp;quot;bar@bar.com&amp;quot; ],
+    b = [ &amp;quot;bar@bar.com&amp;quot; ];    
+    Test.assertSimilar( searchNames( a ), b,
+      &amp;quot;not correct &amp;quot; + Test.inspect(a) + &amp;quot; given&amp;quot; );
+  } );
+} );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Result:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const searchNames = logins =&amp;gt; {
+  return logins.filter(
+        ( login, i, ary) =&amp;gt; i % 2 === 1 &amp;amp;&amp;amp; ary[i - 1].match(/^\.|\.$/);
+    )
+};
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

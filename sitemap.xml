@@ -2,18 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://qetr1ck-op.github.io/blog/post/creating-a-new-theme/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://qetr1ck-op.github.io/blog/post/migrate-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://qetr1ck-op.github.io/blog/post/pattern-craft/</loc>
     <lastmod>2017-03-05T01:35:33+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/RESTful-Web-Services-with-Node-js-and-Express/</loc>
+    <lastmod>2016-12-18T12:01:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Reset-Checkout-and-Revert/</loc>
+    <lastmod>2016-11-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Node-js-design-pattern-book-review/</loc>
+    <lastmod>2016-10-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Preflighted-HTTP-OPTIONS-requests/</loc>
+    <lastmod>2016-09-18T21:02:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/NG6-starter-for-new-Angular-projects/</loc>
+    <lastmod>2016-09-18T19:03:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Start-new-project-on-Angular-1-5/</loc>
+    <lastmod>2016-09-18T18:42:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Lifecycle-hooks-in-AngularJS-1-5/</loc>
+    <lastmod>2016-09-04T10:48:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Moving-from-ngModel-parsers-ng-if-to-ngModel-validators-ngMessages/</loc>
+    <lastmod>2016-09-03T22:24:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Front-End-Interview-Questions/</loc>
+    <lastmod>2016-08-14T11:39:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Kangax-ES6-quiz-expained/</loc>
+    <lastmod>2016-07-26T23:01:02+00:00</lastmod>
   </url>
   
   <url>
@@ -22,23 +62,153 @@
   </url>
   
   <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/</loc>
+    <lastmod>2016-02-19T00:05:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Kata-Array-RegExp-Filter-through-name-email/</loc>
+    <lastmod>2016-02-15T22:34:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Misconceptions-About-Inheritance-in-JavaScript/</loc>
+    <lastmod>2016-02-14T22:54:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Kata-Functions-Function-cache/</loc>
+    <lastmod>2016-02-14T21:17:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Kata-Fundamentals-Arrays-All-None-Any/</loc>
+    <lastmod>2016-02-10T20:58:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Understanding-Components-approach-and-Thinking-in-React/</loc>
+    <lastmod>2016-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Practical-design-patterns-in-JavaScript/</loc>
+    <lastmod>2016-02-03T12:43:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/The-Difference-Between-Throttling-and-Debouncing/</loc>
+    <lastmod>2016-01-11T13:14:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Kata-Arrays-Are-they-square/</loc>
+    <lastmod>2016-01-09T23:54:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/units-of-measurement-px-em-rem-and-other/</loc>
+    <lastmod>2015-11-11T20:17:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/top-10-mistakes-when-you-develop-on-angularjs/</loc>
+    <lastmod>2015-09-23T18:40:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Huston-do-we-have-a-problem-with-promises/</loc>
+    <lastmod>2015-02-02T20:13:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Organizing-an-application-using-AMD-with-require-js/</loc>
+    <lastmod>2014-12-20T12:39:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/JSONP/</loc>
+    <lastmod>2014-10-29T21:44:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/OOP-in-prototype-style/</loc>
+    <lastmod>2014-09-15T22:40:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Medium-Style-Page-Transition/</loc>
+    <lastmod>2014-09-01T22:50:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Maybe-you-don-t-need-jQuery/</loc>
+    <lastmod>2014-08-10T18:08:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Performance-JavaScript-loops/</loc>
+    <lastmod>2014-08-06T20:38:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Reading-files-in-JavaScript-with-File-API/</loc>
+    <lastmod>2014-08-02T15:39:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/NodeList-vs-Array-in-Javascript/</loc>
+    <lastmod>2014-07-30T22:39:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Operator-typeof-Class-instanceof-Duck-Typing-and-Polymorphism/</loc>
+    <lastmod>2014-07-29T22:01:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Performance-Javascript-adding-text-to-a-node/</loc>
+    <lastmod>2014-07-25T23:10:14+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://qetr1ck-op.github.io/blog/about/about/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://qetr1ck-op.github.io/blog/post/goisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://qetr1ck-op.github.io/blog/post/Original-effects-with-CSS3-transition/</loc>
+    <lastmod>2014-04-01T14:48:05+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://qetr1ck-op.github.io/blog/post/hugoisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://qetr1ck-op.github.io/blog/post/web-services-WSDL-SOAP-envelope-with-JavaScript/</loc>
+    <lastmod>2014-02-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/what-is-event-bubbling-and-capturing/</loc>
+    <lastmod>2014-02-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Prevent-CSS-Caching/</loc>
+    <lastmod>2014-01-02T19:50:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/Kata-String-Reverse-words/</loc>
   </url>
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/about/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/angularjs/</loc>
+    <lastmod>2016-09-18T19:03:17+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -49,19 +219,25 @@
   </url>
   
   <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/books/</loc>
+    <lastmod>2016-10-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://qetr1ck-op.github.io/blog/tags/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://qetr1ck-op.github.io/blog/categories/css/</loc>
+    <lastmod>2016-08-14T11:39:13+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://qetr1ck-op.github.io/blog/categories/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://qetr1ck-op.github.io/blog/categories/dom-api/</loc>
+    <lastmod>2016-08-14T11:39:13+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -72,26 +248,14 @@
   </url>
   
   <url>
-    <loc>https://qetr1ck-op.github.io/blog/tags/go/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://qetr1ck-op.github.io/blog/categories/git/</loc>
+    <lastmod>2016-11-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://qetr1ck-op.github.io/blog/tags/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://qetr1ck-op.github.io/blog/categories/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://qetr1ck-op.github.io/blog/tags/hugo/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://qetr1ck-op.github.io/blog/categories/http/</loc>
+    <lastmod>2016-09-18T21:02:27+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -102,8 +266,20 @@
   </url>
   
   <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/katas/</loc>
+    <lastmod>2016-02-19T00:05:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://qetr1ck-op.github.io/blog/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <lastmod>2017-03-05T01:35:33+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/nodejs/</loc>
+    <lastmod>2016-12-18T12:01:04+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -120,25 +296,32 @@
   </url>
   
   <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/performance/</loc>
+    <lastmod>2016-10-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://qetr1ck-op.github.io/blog/post/</loc>
     <lastmod>2017-03-05T01:35:33+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://qetr1ck-op.github.io/blog/tags/</loc>
+    <loc>https://qetr1ck-op.github.io/blog/categories/react/</loc>
+    <lastmod>2016-02-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://qetr1ck-op.github.io/blog/tags/templates/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://qetr1ck-op.github.io/blog/categories/regexp/</loc>
+    <lastmod>2016-02-15T22:34:45+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://qetr1ck-op.github.io/blog/tags/themes/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://qetr1ck-op.github.io/blog/categories/web-api/</loc>
+    <lastmod>2016-08-14T11:39:13+00:00</lastmod>
     <priority>0</priority>
   </url>
   

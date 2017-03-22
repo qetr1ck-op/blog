@@ -1,0 +1,24 @@
+@import "./variables";
+
+// .content {
+//   p {
+//     // TODO
+//     code {
+//       background: #f9f9f9;
+//       border-bottom: solid 2px #e9e9e9;
+//       border-radius: 3px;
+//       font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+//       font-size: 0.9375rem;
+//       font-style: normal;
+//       padding: 0.1em 0.5em;
+//     }
+//   }
+// }
+
+.content {
+  blockquote {
+      padding: 0 1em;
+      border-left: 0.25em solid $text-color;
+      font-size: 1.1em;
+  }
+}
