@@ -149,11 +149,9 @@
       <pubDate>Thu, 04 Feb 2016 17:20:14 +0000</pubDate>
       
       <guid>https://qetr1ck-op.github.io/blog/post/First-look-at-React-js/</guid>
-      <description>
+      <description>&lt;p&gt;Building a dead simple application with following component structure:&lt;/p&gt;
 
-&lt;p&gt;Building a dead simple application with following component structure:&lt;/p&gt;
-
-&lt;!--toc--&gt;
+&lt;p&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;- CommentBox
   - CommentList
@@ -833,8 +831,7 @@ ReactDOM.render(
 
 &lt;p&gt;Save my day:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://facebook.github.io/react/docs/tutorial.html&#34;&gt;Off site&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;a href=&#34;https://facebook.github.io/react/docs/tutorial.html&#34;&gt;Off site&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
