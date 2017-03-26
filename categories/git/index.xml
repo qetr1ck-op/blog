@@ -2279,5 +2279,341 @@ It works by comparing the target value to the midpoint of the array; if they are
 &lt;/ul&gt;</description>
     </item>
     
+    <item>
+      <title>git pull VS git pull --rebase</title>
+      <link>https://qetr1ck-op.github.io/blog/post/git-pull-versus-git-pull-rebase/</link>
+      <pubDate>Wed, 26 Nov 2014 23:46:41 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/git-pull-versus-git-pull-rebase/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;short-answer&#34;&gt;Short answer&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;git pull&lt;/code&gt; = &lt;code&gt;git fetch&lt;/code&gt; + &lt;code&gt;git merge&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;git pull --rebase&lt;/code&gt; = &lt;code&gt;git fetch&lt;/code&gt; + &lt;code&gt;git rebase&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For more detail info how &lt;code&gt;git pull&lt;/code&gt; and &lt;code&gt;git rabase&lt;/code&gt; differs continue reading.&lt;/p&gt;
+
+&lt;h1 id=&#34;long-answer-git-merge-and-git-rebase&#34;&gt;Long answer: &amp;ldquo;git merge&amp;rdquo; and &amp;ldquo;git rebase&amp;rdquo;&lt;/h1&gt;
+
+&lt;p&gt;Suppose originally there were a 3 commits, &lt;code&gt;A&lt;/code&gt;, &lt;code&gt;B&lt;/code&gt;, &lt;code&gt;C&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.stack.imgur.com/lJRq7.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then developer Dan create commit &lt;code&gt;D&lt;/code&gt;, and developer Ed created commit &lt;code&gt;E&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.stack.imgur.com/pK7Zb.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Obviously, this conflict should be resolve somehow. For this are 2 ways:&lt;/p&gt;
+
+&lt;h2 id=&#34;git-merge&#34;&gt;&lt;code&gt;git merge&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.stack.imgur.com/9Ul5w.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Both commits &lt;code&gt;D&lt;/code&gt; and &lt;code&gt;E&lt;/code&gt; are still here, but git create merge commit &lt;code&gt;M&lt;/code&gt; that inherits changes from both &lt;code&gt;D&lt;/code&gt; and &lt;code&gt;E&lt;/code&gt;. However, this create &lt;code&gt;diamond&lt;/code&gt; shape, which many people find confusing.&lt;/p&gt;
+
+&lt;h2 id=&#34;git-rebase&#34;&gt;&lt;code&gt;git rebase&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.stack.imgur.com/TvXuJ.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Git create commit &lt;code&gt;R&lt;/code&gt; which is identical to merge commit &lt;code&gt;M&lt;/code&gt;. But, we get rid of commit &lt;code&gt;E&lt;/code&gt;, like it have never existed (shown by dots). Because of this, &lt;code&gt;E&lt;/code&gt; should be local to developer Ed and should have never pushed to any repository.&lt;/p&gt;
+
+&lt;p&gt;Advantage of &lt;code&gt;rebase&lt;/code&gt; is that it&amp;rsquo;s avoided, and history stays nice straight line - most developers love that!&lt;/p&gt;
+
+&lt;p&gt;Make my day:
+*   &lt;a href=&#34;https://www.atlassian.com/git/tutorials/merging-vs-rebasing&#34;&gt;Detailed article&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>git pull vs git fetch</title>
+      <link>https://qetr1ck-op.github.io/blog/post/git-pull-vs-git-fetch/</link>
+      <pubDate>Mon, 24 Nov 2014 23:46:41 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/git-pull-vs-git-fetch/</guid>
+      <description>&lt;p&gt;What is the differences between &amp;ldquo;git pull&amp;rdquo; and &amp;ldquo;git fetch&amp;rdquo;?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;When you use &lt;code&gt;git pull&lt;/code&gt;, Git tries to automaticaly do your work with for you. Git will do &lt;code&gt;git merge&lt;/code&gt; any new pulled commits into to the branch you are currently working in. &lt;code&gt;git pull&lt;/code&gt; is what you should to do to bring a local-branch up-to-date with its remote version, while also updating your other remote-tracking branches.&lt;/p&gt;
+
+&lt;p&gt;When you use &lt;code&gt;git fetch&lt;/code&gt;, Git gather any commits from the target branch that do not exist in your current branch and stores them in your local repository. However, it does not merge them with your current branch.&lt;/p&gt;
+
+&lt;p&gt;You can do &lt;code&gt;git fetch&lt;/code&gt; in any time to update your remote-tracking branches under &lt;code&gt;refs/remote/s/heads&lt;/code&gt;. This operation never changes any of your own local branches under &lt;code&gt;refs/heads&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Got 15 minutes and want to learn Git?</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Got-15-minutes-and-want-to-learn-Git/</link>
+      <pubDate>Sat, 19 Jul 2014 09:56:12 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Got-15-minutes-and-want-to-learn-Git/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;initialize-a-git&#34;&gt;Initialize a Git&lt;/h1&gt;
+
+&lt;p&gt;Git allows groups of people to work on the same documents (often code) at the same time, and without stepping on each other&amp;rsquo;s toes. It&amp;rsquo;s a distributed version control system.&lt;/p&gt;
+
+&lt;p&gt;Our terminal prompt below is currently in directory we decided to name &amp;ldquo;octobox&amp;rdquo;. To initialize a Git repository here, type the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git init
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;checking-the-status&#34;&gt;Checking the Status&lt;/h1&gt;
+
+&lt;p&gt;Good job! As Git just told us, our &amp;ldquo;octobox&amp;rdquo; directory now has an empty repository in /.git/. The repository is a hidden directory where Git operates.
+Next up, let&amp;rsquo;s type the git status command to see what the current state of our project is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git status
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Tip:
+It&amp;rsquo;s healthy to run &lt;code&gt;git status&lt;/code&gt; often. Sometimes things change and you don&amp;rsquo;t notice it.&lt;/p&gt;
+
+&lt;h1 id=&#34;adding-changes&#34;&gt;Adding Changes&lt;/h1&gt;
+
+&lt;p&gt;Good, it looks like our Git repository is working properly. Notice how Git says octocat.txt is &amp;ldquo;untracked&amp;rdquo;? That means Git sees that octocat.txt is a new file.&lt;/p&gt;
+
+&lt;p&gt;To tell Git to start tracking changes made to octocat.txt, we first need to add it to the staging area by using git add.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git add octocat.txt
+git add *.txt
+git add --all
+git add docs/*.txt
+git add docs/
+git add .
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;staged:&lt;/dt&gt;
+  &lt;dd&gt;Files are ready to be committed.&lt;/dd&gt;
+  &lt;dt&gt;unstaged:&lt;/dt&gt;
+  &lt;dd&gt;Files with changes that have not been prepared to be commited.&lt;/dd&gt;
+  &lt;dt&gt;untracked:&lt;/dt&gt;
+  &lt;dd&gt;Files aren&#39;t tracked by Git yet. This usually indicates a newly created file.&lt;/dd&gt;
+  &lt;dt&gt;deleted:&lt;/dt&gt;
+  &lt;dd&gt;File has been deleted and is waiting to be removed from Git.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h1 id=&#34;checking-for-changes&#34;&gt;Checking for Changes&lt;/h1&gt;
+
+&lt;p&gt;Good job! Git is now tracking our octocat.txt file. Let&amp;rsquo;s run git status again to see where we stand:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git status
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can use &lt;code&gt;git reset filename&lt;/code&gt; to remove a file or files from the staging area.&lt;/p&gt;
+
+&lt;h1 id=&#34;committing&#34;&gt;Committing&lt;/h1&gt;
+
+&lt;p&gt;Notice how Git says changes to be committed? The files listed here are in the Staging Area, and they are not in our repository yet. We could add or remove files from the stage before we store them in the repository.&lt;/p&gt;
+
+&lt;p&gt;To store our staged changes we run the &lt;code&gt;commit&lt;/code&gt; command with a message describing what we&amp;rsquo;ve changed. Let&amp;rsquo;s do that now by typing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git commit -m &amp;quot;Add new file&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Staging Area:
+A place where we can group files together before we &lt;code&gt;commit&lt;/code&gt; them to Git.&lt;/p&gt;
+
+&lt;p&gt;Commit
+A &lt;code&gt;commit&lt;/code&gt; is a snapshot of our repository. This way if we ever need to look back at the changes we&amp;rsquo;ve made (or if someone else does), we will see a nice timeline of all changes.&lt;/p&gt;
+
+&lt;h1 id=&#34;history&#34;&gt;History&lt;/h1&gt;
+
+&lt;p&gt;So we&amp;rsquo;ve made a few commits. Now let&amp;rsquo;s browse them to see what we changed.&lt;/p&gt;
+
+&lt;p&gt;Fortunately for us, there&amp;rsquo;s &lt;code&gt;git log&lt;/code&gt;. Think of Git&amp;rsquo;s log as a journal that remembers all the changes we&amp;rsquo;ve committed so far, in the order we committed them. Try running it now:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git log
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Use &lt;code&gt;git log --summary&lt;/code&gt; to see more information for each commit.&lt;/p&gt;
+
+&lt;h1 id=&#34;remote-repositories&#34;&gt;Remote Repositories&lt;/h1&gt;
+
+&lt;p&gt;To push our local repo to the GitHub server we&amp;rsquo;ll need to add a remote repository.&lt;/p&gt;
+
+&lt;p&gt;This command takes a remote name and a repository URL, which in your case is &lt;a href=&#34;https://github.com/try-git/try_git.git&#34;&gt;https://github.com/try-git/try_git.git&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git remote add origin url
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Git doesn&amp;rsquo;t care what you name your remotes, but it&amp;rsquo;s typical to name your main one &lt;code&gt;origin&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;pushing-remotely&#34;&gt;Pushing Remotely&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;push command&lt;/code&gt; tells Git where to put our commits when we&amp;rsquo;re ready, and boy we&amp;rsquo;re ready. So let&amp;rsquo;s push our local changes to our origin repo (on GitHub).&lt;/p&gt;
+
+&lt;p&gt;The name of our remote is origin and the default local branch name is &lt;code&gt;master&lt;/code&gt;. The -u tells Git to remember the parameters, so that next time we can simply run git push and Git will know what to do. Go ahead and push it!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;pulling-remotely&#34;&gt;Pulling Remotely&lt;/h1&gt;
+
+&lt;p&gt;Let&amp;rsquo;s pretend some time has passed. We&amp;rsquo;ve invited other people to our github project who have pulled your changes, made their own commits, and pushed them.&lt;/p&gt;
+
+&lt;p&gt;We can check for changes on our GitHub repository and pull down any new changes by running:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git pull origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;differences&#34;&gt;Differences&lt;/h1&gt;
+
+&lt;p&gt;Uh oh, looks like there has been some additions and changes to the octocat family. Let&amp;rsquo;s take a look at what is different from our last commit by using the &lt;code&gt;git diff&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;p&gt;In this case we want the diff of our most recent commit, which we can refer to using the HEAD pointer.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git diff HEAD
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The HEAD is a pointer that holds your position within all your different commits. By default HEAD points to your most recent commit.&lt;/p&gt;
+
+&lt;h1 id=&#34;staged-differences&#34;&gt;Staged Differences&lt;/h1&gt;
+
+&lt;p&gt;Another great use for diff is looking at changes within files that have already been staged. Remember, staged files are files we have told git that are ready to be committed.&lt;/p&gt;
+
+&lt;p&gt;Good, now go ahead and run git diff with the &amp;ndash;staged option to see the changes you just staged. You should see that octodog.txt was created.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git diff --staged
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Using &amp;lsquo;git diff&amp;rsquo; gives you a good overview of changes you have made and lets you add files or directories one at a time and commit them separately.&lt;/p&gt;
+
+&lt;h1 id=&#34;resetting-the-stage&#34;&gt;Resetting the Stage&lt;/h1&gt;
+
+&lt;p&gt;So now that octodog is part of the family, octocat is all depressed. Since we love octocat more than octodog, we&amp;rsquo;ll turn his frown around by removing octodog.txt.&lt;/p&gt;
+
+&lt;p&gt;You can unstage files by using the git reset command. Go ahead and remove octofamily/octodog.txt.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git reset octofamily/octodog.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;undo&#34;&gt;Undo&lt;/h1&gt;
+
+&lt;p&gt;Files can be changed back to how they were at the last commit by using the command: &lt;code&gt;git checkout -- &amp;lt;target&amp;gt;&lt;/code&gt;. Go ahead and get rid of all the changes since the last commit for octocat.txt&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git checkout -- octocat.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So you may be wondering, why do I have to use this &amp;lsquo;&amp;ndash;&amp;rsquo; thing?  This way if you happen to have a branch named octocat.txt, it will still revert the file, instead of switching to the branch of the same name.&lt;/p&gt;
+
+&lt;h1 id=&#34;branching-out&#34;&gt;Branching Out&lt;/h1&gt;
+
+&lt;p&gt;When developers are working on a feature or bug they&amp;rsquo;ll often create a copy (aka. branch) of their code they can make separate commits to. Then when they&amp;rsquo;re done they can merge this branch back into their main master branch.&lt;/p&gt;
+
+&lt;p&gt;We want to remove all these pesky octocats, so let&amp;rsquo;s create a branch called clean_up, where we&amp;rsquo;ll do all the work:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git branch clean_up
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;switching-branches&#34;&gt;Switching Branches&lt;/h1&gt;
+
+&lt;p&gt;Great! Now if you type git branch you&amp;rsquo;ll see two local branches: a main branch named master and your new branch named clean_up.&lt;/p&gt;
+
+&lt;p&gt;You can switch branches using the &lt;code&gt;git checkout &amp;lt;branch&amp;gt;&lt;/code&gt;command. Try it now to switch to the clean_up branch:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git checkout clean_up
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Branches are what naturally happens when you want to work on multiple features at the same time. You wouldn&amp;rsquo;t want to end up with a master branch which has Feature A half done and Feature B half done.&lt;/p&gt;
+
+&lt;h1 id=&#34;removing-all-the-things&#34;&gt;Removing All The Things&lt;/h1&gt;
+
+&lt;p&gt;Ok, so you&amp;rsquo;re in the clean_up branch. You can finally remove all those pesky octocats by using the git rm command which will not only remove the actual files from disk, but will also stage the removal of the files for us:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git rm &#39;*.txt&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will recursively remove all folders and files from the given directory:&lt;/p&gt;
+
+&lt;h1 id=&#34;commiting-branch-changes&#34;&gt;Commiting Branch Changes&lt;/h1&gt;
+
+&lt;p&gt;Now that you&amp;rsquo;ve removed all the cats you&amp;rsquo;ll need to commit your changes.&lt;/p&gt;
+
+&lt;p&gt;Feel free to run git status to check the changes you&amp;rsquo;re about to commit.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git commit -m &#39;Remove all cats&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;switching-back-to-master&#34;&gt;Switching Back to master&lt;/h1&gt;
+
+&lt;p&gt;Great, you&amp;rsquo;re almost finished with the cat&amp;hellip; er the bug fix, you just need to switch back to the master branch so you can copy (or merge) your changes from the clean_up branch back into the master branch.&lt;/p&gt;
+
+&lt;p&gt;Go ahead and checkout the master branch:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git checkout master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;preparing-to-merge&#34;&gt;Preparing to Merge&lt;/h1&gt;
+
+&lt;p&gt;Alrighty, the moment has come when you have to merge your changes from the clean_up branch into the master branch. Take a deep breath, it&amp;rsquo;s not that scary.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;re already on the master branch, so we just need to tell Git to merge the clean_up branch into it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git merge clean_up
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Merge Conflicts can occur when changes are made to a file at the same time. A lot of people get really scared when a conflict happens, but fear not! They aren&amp;rsquo;t that scary, you just need to decide which code to keep &lt;a href=&#34;http://git-scm.com/docs/git-merge#_how_conflicts_are_presented&#34;&gt;how conflicts are presented&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;keeping-things-clean&#34;&gt;Keeping Things Clean&lt;/h1&gt;
+
+&lt;p&gt;Congratulations! You just accomplished your first successful bugfix and merge. All that&amp;rsquo;s left to do is clean up after yourself. Since you&amp;rsquo;re done with the clean_up branch you don&amp;rsquo;t need it anymore.&lt;/p&gt;
+
+&lt;p&gt;You can use &lt;code&gt;git branch -d branch name&lt;/code&gt; to delete a branch. Go ahead and delete the clean_up branch now:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git branch -d clean_up
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What if you have been working on a feature branch and you decide you really don&amp;rsquo;t want this feature anymore? You might decide to delete the branch since you&amp;rsquo;re scrapping the idea. You&amp;rsquo;ll notice that &lt;code&gt;git branch -d bad_feature&lt;/code&gt; doesn&amp;rsquo;t work. This is because -d won&amp;rsquo;t let you delete something that hasn&amp;rsquo;t been merged.
+You can either add the &lt;code&gt;--force (-f)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;the-final-push&#34;&gt;The Final Push&lt;/h1&gt;
+
+&lt;p&gt;Here we are, at the last step. I&amp;rsquo;m proud that you&amp;rsquo;ve made it this far, and it&amp;rsquo;s been great learning Git with you. All that&amp;rsquo;s left for you to do now is to push everything you&amp;rsquo;ve been working on to your remote repository, and you&amp;rsquo;re done!&lt;/p&gt;
+
+&lt;p&gt;Save My Day:
+*   &lt;a href=&#34;https://www.codeschool.com&#34;&gt;Try Git&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git and GitHub, Git versus Subversion</title>
+      <link>https://qetr1ck-op.github.io/blog/post/git-vs-github/</link>
+      <pubDate>Sat, 29 Mar 2014 17:24:17 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/git-vs-github/</guid>
+      <description>&lt;p&gt;How GitHub is connected to Git and basic difference Git and Svn.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;git-and-gihub&#34;&gt;Git and GiHub&lt;/h1&gt;
+
+&lt;p&gt;So &lt;code&gt;Git&lt;/code&gt; and &lt;code&gt;GitHub&lt;/code&gt; are parts of one complex system, which complement each other:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Git is the name of &lt;code&gt;VCS&lt;/code&gt; (version control system) wrote by &lt;a href=&#34;http://en.wikipedia.org/wiki/Linus_Torvalds&#34; title=&#34;Linus Torvalds&#34;&gt;Linus Torvalds&lt;/a&gt;. There are always series of &lt;code&gt;commits&lt;/code&gt;(snapshots). You see a path of this snapshots, in which order they were created. You create &lt;code&gt;branch&lt;/code&gt; for new features and use snapshot for &lt;code&gt;revert&lt;/code&gt; changes.&lt;/li&gt;
+&lt;li&gt;GitHub is website on which you can publish your Git repositories and collaborate with other people.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;the-difference&#34;&gt;The difference&lt;/h1&gt;
+
+&lt;p&gt;Git is not better than Subversion. But is also not worst. It&amp;rsquo;s different:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The key difference is that &lt;code&gt;Git&lt;/code&gt; is a &lt;code&gt;decentralized&lt;/code&gt;. With &lt;code&gt;Git&lt;/code&gt; you can do practically anything off-line, cause everyone has their own repository. For example: I have a server at home and a Laptop on the road. SVN simply doesn&amp;rsquo;t work well here. With SVN, I can&amp;rsquo;t have local source control if I&amp;rsquo;m not connected to the repository (Yes, I know about SVK or about ways to copy the repo). With Git, that&amp;rsquo;s the default mode anyway. With command &lt;code&gt;git commit&lt;/code&gt; you commit locally, whereas &lt;code&gt;git push origin master&lt;/code&gt; - you push the master branch to the remote branch named &lt;code&gt;origin&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Making &lt;code&gt;branches&lt;/code&gt; and &lt;code&gt;merging&lt;/code&gt; between branches is &lt;code&gt;Git&lt;/code&gt; way. Everybody who likes your changes can pull them into their project, including the official maintainers. It&amp;rsquo;s trivial to &lt;code&gt;fork&lt;/code&gt; a project, modify it, and still keep merging in the bug-fixes from the &lt;code&gt;HEAD&lt;/code&gt; branch.&lt;/li&gt;
+&lt;li&gt;Git is perfectly suited for Open Source projects: just fork it, commit your changes to your own Fork, and then ask the original project maintainer to pull your changes.&lt;/li&gt;
+&lt;li&gt;On the other hand Git adds &lt;code&gt;complexity&lt;/code&gt;. Two modes of creating repositories, checkout vs. clone, commit vs. push&amp;hellip; You have to know which commands work locally and which work with &amp;ldquo;the server&amp;rdquo;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Make my day:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/11816424/understanding-the-basics-of-git-and-github&#34; title=&#34;stackoverflow&#34;&gt;understanding-the-basics-of-git-and-github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/871/why-is-git-better-than-subversion&#34;&gt;Discussion on StackOverflow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
   </channel>
 </rss>

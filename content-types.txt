@@ -11,12 +11,14 @@ categories = [
     "DOM API",
     "CSS",
     "AngularJS",
+    "React",
     "Git",
     "Web API",
     "HTTP",
     "Performance",
     "Books",
     "Katas",
-    "RegExp"
+    "RegExp",
+    "CLI"
 ]
 +++

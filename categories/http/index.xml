@@ -2200,5 +2200,29 @@ It works by comparing the target value to the midpoint of the array; if they are
 &lt;/ul&gt;</description>
     </item>
     
+    <item>
+      <title>Difference of HTTP and HTTPS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Difference-of-HTTP-and-HTTPS/</link>
+      <pubDate>Sat, 31 May 2014 06:00:36 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Difference-of-HTTP-and-HTTPS/</guid>
+      <description>&lt;p&gt;Hyper Text Transfer Protocol Secure (HTTPS) is a &lt;code&gt;secure version&lt;/code&gt; of the Hyper Text Transfer Protocol (HTTP). HTTPS allows secure e-commerce transactions, such as on-line banking.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;When a user connects to a website via HTTPS, the website encrypts the session with a Digital Certificate called as a &lt;code&gt;Secure Sockets Layer&lt;/code&gt; (SSL), sometimes called Transport Layer Security (TLS) to send the information back.&lt;/p&gt;
+
+&lt;p&gt;Secure Sockets Layer uses a cryptographic system that encrypts data with two keys.&lt;/p&gt;
+
+&lt;p&gt;Web browsers show a padlock icon to indicate that the website is secure, as it also displays &lt;code&gt;https://&lt;/code&gt; in the address bar. When a SSL Digital Certificate is installed on a web site, users can see a padlock icon at the bottom area of the navigator. When an Extended Validation Certificates is installed on a web site, users with the latest versions of browser will see the green address bar at the URL area of the navigator.&lt;/p&gt;
+
+&lt;h2 id=&#34;why-is-a-ssl-certificate-required&#34;&gt;Why Is A SSL Certificate Required?&lt;/h2&gt;
+
+&lt;p&gt;With booming Internet trends and fraud, most will not submit their private details on the web unless they know that the information they provide is securely transmitted and not accessible for anyone to view.&lt;/p&gt;
+
+&lt;p&gt;Save my day:
+*   &lt;a href=&#34;http://www.instantssl.com/ssl-certificate-products/https.html&#34; title=&#34;HTTP and HTTPS&#34;&gt;HTTP and HTTPS&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

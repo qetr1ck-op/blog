@@ -2096,5 +2096,28 @@ console.log(&#39;loading...&#39;);
 &lt;/ul&gt;</description>
     </item>
     
+    <item>
+      <title>Development with Webpack</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Development-with-Webpack/</link>
+      <pubDate>Sun, 07 Feb 2016 12:11:41 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Development-with-Webpack/</guid>
+      <description>&lt;p&gt;Webpack simplifies web development by solving a fundamental problem: bundling. It takes in various assets, such as JavaScript, CSS, and HTML, and then transforms these assets into a format that’s convenient to consume through a browser. Doing this well takes away a significant amount of pain from web development.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s not the easiest tool to learn due to its configuration-driven approach, but it&amp;rsquo;s incredibly powerful. The purpose of this guide is to help you get started with webpack and then to go beyond the basics.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;List of well known links to become an expert with Webpack v.~2.&lt;/p&gt;
+
+&lt;h1 id=&#34;survivejs&#34;&gt;SurviveJS&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://survivejs.com/webpack/introduction/&#34;&gt;A solid book&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;official-guides&#34;&gt;Official guides&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://webpack.js.org/guides/&#34;&gt;Guides&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

@@ -2672,6 +2672,239 @@ console.log(&#39;loading...&#39;);
     </item>
     
     <item>
+      <title>Gulp screencast overview</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Gulp-screencast-overview/</link>
+      <pubDate>Wed, 28 Sep 2016 20:43:36 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Gulp-screencast-overview/</guid>
+      <description>&lt;p&gt;Depth table of contents of one of the most popular screencast about utility for managing tasks.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;what-is-gulp-compare-with-webpack&#34;&gt;What is Gulp? Compare with Webpack.&lt;/h1&gt;
+
+&lt;p&gt;What is Gulp?&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Gulp as a &amp;ldquo;streaming build system&amp;rdquo;, and moreover, it&amp;rsquo;s a utility for declaring tasks &lt;a href=&#34;https://youtu.be/uPk6lQoTThE?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=10&#34;&gt;0:10&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Example &lt;code&gt;gruntfile.js&lt;/code&gt;&lt;a href=&#34;https://youtu.be/uPk6lQoTThE?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=53&#34;&gt;0:53&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Comparing with Grunt. &lt;a href=&#34;https://youtu.be/uPk6lQoTThE?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=170&#34;&gt;2:50&lt;/a&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;gruntfile.js&lt;/code&gt; vs &lt;code&gt;gruntfile.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;More compact config&lt;/li&gt;
+&lt;li&gt;Virtual File System - Vinyl FS. No temp folders&lt;/li&gt;
+&lt;li&gt;Power of streams, streams parallelism&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;Comparing with Webpack &lt;a href=&#34;https://youtu.be/uPk6lQoTThE?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=600&#34;&gt;10:10&lt;/a&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Deps: CommonJS, AMD, ES2015&lt;/li&gt;
+&lt;li&gt;Dynamic loading&lt;/li&gt;
+&lt;li&gt;CommonsChungPlugin&lt;/li&gt;
+&lt;li&gt;APIs&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;Webpack + Gulp = 💕 &lt;a href=&#34;https://youtu.be/uPk6lQoTThE?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=825&#34;&gt;16:45&lt;/a&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Tasks: Gulp&lt;/li&gt;
+&lt;li&gt;JS Build: Webpack&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;install-and-task-running&#34;&gt;Install and task running&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Installing strategies: local vs global &lt;a href=&#34;https://youtu.be/xptUdO3GuG8?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=22&#34;&gt;0:22&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Installing v4 &lt;code&gt;npm i -D gulpjs/gulp.git#4.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;First task &lt;a href=&#34;https://youtu.be/xptUdO3GuG8?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=229&#34;&gt;3:49&lt;/a&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Callback for finish async operation&lt;/li&gt;
+&lt;li&gt;Task name as function name&lt;/li&gt;
+&lt;li&gt;Separate tasks with namespace &lt;code&gt;deploy:production&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Strategies for finish async operations&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gulp.series&lt;/code&gt; and &lt;code&gt;gulp.parallel&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://demisx.github.io/gulp4/2015/01/15/install-gulp4.html&#34;&gt;Have to install v4 before it&amp;rsquo;s officially released&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/02-basics&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;streams-vinyl-fs&#34;&gt;Streams Vinyl-FS&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Example streams with coping files &lt;a href=&#34;https://youtu.be/NBdKplKl_3Q?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=45&#34;&gt;0:45&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gulp.src&lt;/code&gt; and &lt;code&gt;gulp.dest&lt;/code&gt; output as readable/writable streams of instance Vinyl-FS &lt;a href=&#34;https://youtu.be/NBdKplKl_3Q?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=65&#34;&gt;1:05&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Log working files &lt;code&gt;.on(&#39;data&#39;, (file) =&amp;gt; file)&lt;/code&gt; &lt;a href=&#34;https://youtu.be/NBdKplKl_3Q?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=118&#34;&gt;1:48&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;File getter properties &lt;a href=&#34;https://youtu.be/NBdKplKl_3Q?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=190&#34;&gt;3:10&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Control &lt;code&gt;gulp.dest&lt;/code&gt; output &lt;a href=&#34;https://youtu.be/NBdKplKl_3Q?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=285&#34;&gt;4:45&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Module &lt;code&gt;minimatch&lt;/code&gt; and popular pattens &lt;a href=&#34;https://youtu.be/NBdKplKl_3Q?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=418&#34;&gt;6:48&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Performance issue with globs &lt;a href=&#34;https://youtu.be/NBdKplKl_3Q?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=553&#34;&gt;9:13&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Summary &lt;a href=&#34;https://youtu.be/NBdKplKl_3Q?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=710&#34;&gt;11:50&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/03-vinyl&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;basic-build-for-styles&#34;&gt;Basic build for styles&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;App structure &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=26&#34;&gt;0:25&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Declaring task for stylus &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=73&#34;&gt;1:13&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Change destination directory &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=344&#34;&gt;5.40&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Concat files &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=430&#34;&gt;7:10&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Log info with &lt;code&gt;gulp-debug&lt;/code&gt; &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=470&#34;&gt;7:50&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Create &lt;code&gt;main.styl&lt;/code&gt; &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=631&#34;&gt;10:31&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Add source maps &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=690&#34;&gt;11:30&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Generate source maps only in dev mode &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=904&#34;&gt;15:05&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Using &lt;code&gt;gulp-if&lt;/code&gt; &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=1025&#34;&gt;17:05&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Create &lt;code&gt;clean&lt;/code&gt; task with &lt;code&gt;del&lt;/code&gt; &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=1145&#34;&gt;19:05&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Create &lt;code&gt;copy&lt;/code&gt; task with &lt;code&gt;gulp.parallel&lt;/code&gt; &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=1229&#34;&gt;20:24&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Result in browser with &lt;code&gt;node-static&lt;/code&gt; &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=1315&#34;&gt;21:55&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Summary &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=1397&#34;&gt;23:18&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/04-styles-3&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;incremental-build-watch&#34;&gt;Incremental build, watch&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create &lt;code&gt;gulp.watch&lt;/code&gt; for styles &lt;a href=&#34;https://youtu.be/jocvHauHcA4?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=30&#34;&gt;0:30&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;What does &amp;ldquo;incremental build&amp;rdquo; actually mean? Caching &lt;a href=&#34;https://youtu.be/jocvHauHcA4?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=115&#34;&gt;1:55&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Create &lt;code&gt;gulp.watch&lt;/code&gt; for assets with caching with &lt;code&gt;{ since: gulp.lastRun(&#39;taskName&#39;) }&lt;/code&gt; &lt;a href=&#34;https://youtu.be/jocvHauHcA4?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=235&#34;&gt;3:55&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Module &lt;code&gt;chokidar&lt;/code&gt; and deleting files with watch &lt;a href=&#34;https://youtu.be/jocvHauHcA4?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=410&#34;&gt;6:49&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Decoupling watch-es into separate task &lt;a href=&#34;https://youtu.be/jocvHauHcA4?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=512&#34;&gt;8:32&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Summary &lt;a href=&#34;https://youtu.be/jocvHauHcA4?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=573&#34;&gt;9:32&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/05-watch&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;incremental-and-performance&#34;&gt;Incremental and performance&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Filter new files for first task run with &lt;code&gt;gulp-newer&lt;/code&gt; &lt;a href=&#34;https://youtu.be/uYZPNrT-e-8?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=35&#34;&gt;0:36&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Problem with &lt;code&gt;gulp-remember&lt;/code&gt; on example with &lt;code&gt;gulp-autoprefixer&lt;/code&gt; &lt;a href=&#34;https://youtu.be/uYZPNrT-e-8?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=237&#34;&gt;3:57&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Problem with returning deleted files from IDE, using &lt;code&gt;gulp-cached&lt;/code&gt; as alternative of &lt;code&gt;since&lt;/code&gt; &lt;a href=&#34;https://youtu.be/uYZPNrT-e-8?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=609&#34;&gt;10:10&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Summary &lt;a href=&#34;https://youtu.be/uYZPNrT-e-8?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=920&#34;&gt;15:20&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/06-watch-perf-remember-cached&#34;&gt;Code examples 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/06-watch-perf-newer&#34;&gt;Code examples 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;browser-auto-reloading-browser-sync&#34;&gt;Browser auto-reloading, browser-sync&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;We don&amp;rsquo;t want to every time hit &lt;code&gt;F5&lt;/code&gt;! Flow overview &lt;a href=&#34;https://youtu.be/oiMJNIG-yvg?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=14&#34;&gt;0:14&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Create &lt;code&gt;sync&lt;/code&gt; task with &lt;code&gt;browser-sync&lt;/code&gt; &lt;a href=&#34;https://youtu.be/oiMJNIG-yvg?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=104&#34;&gt;1:34&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/07-browsersync&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;error-handling&#34;&gt;Error handling&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Make an error &lt;a href=&#34;https://youtu.be/otkXzef2wQY?t=20&#34;&gt;0:20&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Was error couched? &lt;a href=&#34;https://youtu.be/otkXzef2wQY?t=85&#34;&gt;1:25&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Notification for an error with &lt;code&gt;gulp-notify&lt;/code&gt; &lt;a href=&#34;https://youtu.be/otkXzef2wQY?t=171&#34;&gt;2:51&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Catch all errors on task with &lt;code&gt;gulp-plumber&lt;/code&gt; &lt;a href=&#34;https://youtu.be/otkXzef2wQY?t=390&#34;&gt;6:30&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solution with &lt;code&gt;multipipe&lt;/code&gt; &lt;a href=&#34;https://youtu.be/otkXzef2wQY?t=590&#34;&gt;9:50&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/08-errors-combiner&#34;&gt;Code examples 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/08-errors-plumber&#34;&gt;Code examples 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;creating-plugins-with-through2&#34;&gt;Creating plugins with &amp;ldquo;through2&amp;rdquo;&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;What we need to start &lt;a href=&#34;https://youtu.be/Ijg9I1CY7Ok?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=29&#34;&gt;0:29&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A real example &lt;a href=&#34;https://youtu.be/Ijg9I1CY7Ok?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=221&#34;&gt;3:41&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/09-plugins-through2&#34;&gt;Code examples 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/09-plugins-through2-2&#34;&gt;Code examples 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;more-complex-stream-with-eslint-gulp-if-stream-combiner2&#34;&gt;More complex stream with &amp;ldquo;eslint&amp;rdquo;, &amp;ldquo;gulp-if&amp;rdquo;, &amp;ldquo;stream-combiner2&amp;rdquo;&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Example with &lt;code&gt;pre-commit&lt;/code&gt; &lt;a href=&#34;https://youtu.be/pjdrg6n5puU?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=115&#34;&gt;1:55&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Optimize repeatable checks &lt;a href=&#34;https://youtu.be/pjdrg6n5puU?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=248&#34;&gt;4:08&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Performance summary &lt;a href=&#34;https://youtu.be/pjdrg6n5puU?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=890&#34;&gt;14:50&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/blob/master/10-plugins-lint/gulpfile.js&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;how-we-know-node-js-streams&#34;&gt;How we know Node.JS streams?&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;A small test &lt;a href=&#34;https://youtu.be/5aJB4vJlHBs?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=20&#34;&gt;0:20&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Why it isn&amp;rsquo;t work? &lt;a href=&#34;https://youtu.be/5aJB4vJlHBs?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=65&#34;&gt;1:05&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fix the &amp;ldquo;pause&amp;rdquo; problem &lt;a href=&#34;https://youtu.be/5aJB4vJlHBs?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=280&#34;&gt;4:00&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/11-plugins-streams&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;structure-of-gulpfile-js&#34;&gt;Structure of &amp;ldquo;gulpfile.js&amp;rdquo;&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;We have problems, don&amp;rsquo;t we? &lt;a href=&#34;https://youtu.be/Qc6go3cNuRk?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=20&#34;&gt;0:20&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A solution is task decomposition &lt;a href=&#34;https://youtu.be/Qc6go3cNuRk?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=110&#34;&gt;1:50&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Adding &lt;code&gt;gulp-load-plugins&lt;/code&gt; &lt;a href=&#34;https://youtu.be/Qc6go3cNuRk?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=305&#34;&gt;5:05&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Result after refactoring &lt;a href=&#34;https://youtu.be/Qc6go3cNuRk?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=410&#34;&gt;6:50&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/12-organize-final&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;a-real-example-styles-assets-sprites-production&#34;&gt;A real example: styles, assets, sprites, production&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Goal and app structure &lt;a href=&#34;https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=15&#34;&gt;0:15&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Improving build of styles and assets &lt;a href=&#34;https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=115&#34;&gt;1:55&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A typical problem with preprocessors with &lt;code&gt;src&lt;/code&gt; and fixing with &lt;code&gt;resolver&lt;/code&gt; &lt;a href=&#34;https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=242&#34;&gt;4:03&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Working with sprites using &lt;code&gt;gulp-svg-sprites&lt;/code&gt; &lt;a href=&#34;https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=380&#34;&gt;6:20&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Add production mode: minify with &lt;code&gt;gulp-cssnano&lt;/code&gt;, resource hash with &lt;code&gt;gulp-rev&lt;/code&gt; and &lt;code&gt;gulp-rev-replace&lt;/code&gt;  &lt;a href=&#34;https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=914&#34;&gt;15:13&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Do we need to use long-term hashing for images?  &lt;a href=&#34;https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=1337&#34;&gt;22:17&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Summary &lt;a href=&#34;https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=1536&#34;&gt;25:35&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/12-organize-final&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;integration-with-webpack&#34;&gt;Integration with Webpack&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Summary &lt;a href=&#34;https://youtu.be/ohWOWqskHWU?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=1636&#34;&gt;27:16&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/14-webpack-stream&#34;&gt;Code examples 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/14-webpack-final-direct&#34;&gt;Code examples 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>NG6 starter for new Angular projects</title>
       <link>https://qetr1ck-op.github.io/blog/post/NG6-starter-for-new-Angular-projects/</link>
       <pubDate>Sun, 18 Sep 2016 19:03:17 +0000</pubDate>
@@ -5092,6 +5325,254 @@ It works by comparing the target value to the midpoint of the array; if they are
     </item>
     
     <item>
+      <title>Exploring AngularJS 1.5 .component() method</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Exploring-AngularJS-1-5-component-method/</link>
+      <pubDate>Fri, 22 Jul 2016 22:20:03 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Exploring-AngularJS-1-5-component-method/</guid>
+      <description>&lt;p&gt;AngularJS 1.5 introduce &lt;code&gt;.component()&lt;/code&gt; helper method which is much simpler than the &lt;code&gt;.directive()&lt;/code&gt; definitions and advocates best practices and common default behavior.&lt;/p&gt;
+
+&lt;p&gt;Using &lt;code&gt;.component()&lt;/code&gt; will allow to write in Angular 2 style as well, which will turn transition to Angular 2 much easier.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s compare the difference in syntax and the possibility of new abstraction.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;from-directrive-to-component&#34;&gt;From &amp;ldquo;directrive()&amp;rdquo; to &amp;ldquo;component()&amp;rdquo;&lt;/h1&gt;
+
+&lt;p&gt;The syntax change is simple:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// before
+module.directive(name, fn);
+
+// after
+module.component(name, options);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I&amp;rsquo;ve rebuild a simple &lt;code&gt;counter&lt;/code&gt; directive which which we&amp;rsquo;ll refactor to &lt;code&gt;component()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;module
+  .directive(&#39;counter&#39;, function counter() {
+    return {
+      scope: {},
+      bindToController: {
+        count: &#39;=&#39;
+      },
+      contorllerAs: &#39;$ctlr&#39;,
+      controller: function() {
+        this.increment = () =&amp;gt; this.count++;
+        this.decrement = () =&amp;gt; this.count--;
+      },
+      template: `
+        &amp;lt;div&amp;gt;
+          &amp;lt;input type=&amp;quot;number&amp;quot; ng-model=&amp;quot;$ctlr.count&amp;quot;&amp;gt;
+          &amp;lt;button ng-click=&amp;quot;$ctrl.increment()&amp;quot;&amp;gt;+&amp;lt;/button&amp;gt;
+          &amp;lt;button ng-click=&amp;quot;$ctrl.decrement()&amp;quot;&amp;gt;-&amp;lt;/button&amp;gt;
+        &amp;lt;/div&amp;gt;
+      `
+    }
+  })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;function-to-object&#34;&gt;Function to Object&lt;/h1&gt;
+
+&lt;p&gt;Let&amp;rsquo;s start from the top and refactor the function argument to object:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// before
+module
+  .directive(&#39;counter&#39;, function counter() {
+    return {
+
+    }
+  })
+
+// after
+module
+  .component(&#39;counter&#39;, {
+
+  })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nice and simple.&lt;/p&gt;
+
+&lt;h1 id=&#34;scope-and-bindtocontroller-become-bindings&#34;&gt;&amp;ldquo;scope&amp;rdquo; and &amp;ldquo;bindToController&amp;rdquo; become &amp;ldquo;bindings&amp;rdquo;&lt;/h1&gt;
+
+&lt;p&gt;In &lt;code&gt;directive()&lt;/code&gt; the &lt;code&gt;scope&lt;/code&gt; property allows us to define whether we want to isolate the &lt;code&gt;$scope&lt;/code&gt; or inherit it. So repeating every time just create an extra boilerplate. With &lt;a href=&#34;https://docs.angularjs.org/api/ng/service/$compile&#34;&gt;bindToController&lt;/a&gt; we can explicitly define binding directly to instance of controller via &lt;code&gt;this&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;With &lt;code&gt;bindings&lt;/code&gt; we can remove this boilerplate and simple define what we want to pass down to the component.&lt;/p&gt;
+
+&lt;p&gt;And &lt;code&gt;component()&lt;/code&gt; will always have an isolated scope.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// before
+module
+  .directive(&#39;counter&#39;, function counter() {
+    return {
+      scope: {
+        count: &#39;=&#39;
+      },
+      bindToController: true
+    }
+  })
+
+// after
+module
+  .component(&#39;counter&#39;, {
+    binding: {
+      count: &#39;=&#39;
+    }
+  })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;controller-and-contorlleras-changes&#34;&gt;Controller and &amp;ldquo;contorllerAs&amp;rdquo; changes&lt;/h1&gt;
+
+&lt;p&gt;Nothing has changed in the way we declare &lt;code&gt;controller&lt;/code&gt;, however it&amp;rsquo;s now smarter and has a default &lt;code&gt;contorllerAs&lt;/code&gt; value of &lt;code&gt;$ctrl&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Under the hood it looks like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// inside angular.js
+controllerAs: identifierForController(options.controller) || options.controllerAs || &#39;$ctrl&#39;
+
+//...
+
+var CNTRL_REG = /^(\S+)(\s+as\s+(\w+))?$/;
+function identifierForController(controller, ident) {
+  if (ident &amp;amp;&amp;amp; isString(ident)) return ident;
+  if (isString(controller)) {
+    var match = CNTRL_REG.exec(controller);
+    if (match) return match[3];
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This allows us to do the following inside &lt;code&gt;.component()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;{
+  ...
+  controller: &#39;FooController as foo&#39;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Based on the information we refactor our &lt;code&gt;Directive&lt;/code&gt; to &lt;code&gt;Component&lt;/code&gt; by dropping controllerAs property:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// before
+.directive(&#39;counter&#39;, function counter() {
+  return {
+    scope: {
+      count: &#39;=&#39;
+    },
+    bindToController: true,
+    controller: function () {
+      this.increment = () =&amp;gt; this.count++;
+      this.decrement = () =&amp;gt; this.count--;
+    },
+    controllerAs: &#39;counter&#39;
+  };
+});
+
+// after
+.component(&#39;counter&#39;, {
+  bindings: {
+    count: &#39;=&#39;
+  },
+  controller: function () {
+    this.increment = () =&amp;gt; this.count++;
+    this.decrement = () =&amp;gt; this.count--;
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Things now are becoming much simpler and funny.&lt;/p&gt;
+
+&lt;h1 id=&#34;template&#34;&gt;Template&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;template&lt;/code&gt; property can be defined as a function property with injected &lt;code&gt;$elem&lt;/code&gt; and &lt;code&gt;$attrs&lt;/code&gt; values:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;{
+  ...
+  template: function ($element, $attrs) {
+    // access to $element and $attrs
+    return `
+      &amp;lt;div&amp;gt;
+        &amp;lt;input type=&amp;quot;text&amp;quot; ng-model=&amp;quot;$ctrl.count&amp;quot;&amp;gt;
+        &amp;lt;button type=&amp;quot;button&amp;quot; ng-click=&amp;quot;$ctrl.decrement();&amp;quot;&amp;gt;-&amp;lt;/button&amp;gt;
+        &amp;lt;button type=&amp;quot;button&amp;quot; ng-click=&amp;quot;$ctrl.increment();&amp;quot;&amp;gt;+&amp;lt;/button&amp;gt;
+      &amp;lt;/div&amp;gt;
+    `
+  }
+  ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;inheriting-behavior-with-require&#34;&gt;Inheriting behavior with &amp;ldquo;require&amp;rdquo;&lt;/h1&gt;
+
+&lt;p&gt;Inherited Directive or Component methods will be bound to &lt;code&gt;this.parent&lt;/code&gt; property in the Controller:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;{
+  ...
+  require: {
+    parent: &#39;^^parentComponet&#39;
+  },
+  controller: function() {
+    // use this object to access to required Object
+    this.parent.foo();
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;one-way-binding&#34;&gt;One-way binding&lt;/h1&gt;
+
+&lt;p&gt;A new syntax expression for isolate scope values:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;{
+  ...
+  bindings: {
+    oneWay: &#39;&amp;lt;&#39;,
+    twoWay: &#39;=&#39;
+  },
+  ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;But still remember that object are passed by reference, and Angular doesn&amp;rsquo;t make a clone of the object when it passed via &lt;code&gt;one-way binding&lt;/code&gt;, it actually sets the same value, which means that objects have still &lt;code&gt;two-way binding&lt;/code&gt; somehow.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;upgrading-to-angular-2&#34;&gt;Upgrading to Angular 2&lt;/h1&gt;
+
+&lt;p&gt;Writing in this style using &lt;code&gt;.component()&lt;/code&gt; allows you easily transit to Angular 2, it&amp;rsquo;d look something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;import { Component } from &#39;@angular/core&#39;
+
+@Component({
+  selector: &#39;counter&#39;,
+  template: `
+    &amp;lt;div&amp;gt;
+      &amp;lt;input type=&amp;quot;number&amp;quot; [(ng-model)]=&amp;quot;count&amp;quot;&amp;gt;
+      &amp;lt;button (click)=&amp;quot;increment()&amp;quot;&amp;gt;+&amp;lt;/button&amp;gt;
+      &amp;lt;button (click)=&amp;quot;decrement()&amp;quot;&amp;gt;-&amp;lt;/button&amp;gt;
+    &amp;lt;/div&amp;gt;
+  `,
+})
+
+export default class CounterComponent {
+  constructor() {}
+  increment() {
+    this.count++;
+  }
+  decrement() {
+    this.count++;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Save my day:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://toddmotto.com/exploring-the-angular-1-5-component-method/&#34;&gt;toddmotto&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>5 principles that will make a more SOLID Javascript Engineer</title>
       <link>https://qetr1ck-op.github.io/blog/post/5-principles-that-will-make-a-more-SOLID-Javascript-Engineer/</link>
       <pubDate>Mon, 11 Jul 2016 00:00:00 +0000</pubDate>
@@ -5337,6 +5818,29 @@ function awesomeFooListener(dispatcher) {
 &lt;li&gt;&lt;a href=&#34;http://aspiringcraftsman.com/2011/12/08/solid-javascript-single-responsibility-principle/&#34;&gt;Aspiring Craftsman&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://code.tutsplus.com/series/the-solid-principles--cms-634&#34;&gt;code.tutsplus&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Development with Webpack</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Development-with-Webpack/</link>
+      <pubDate>Sun, 07 Feb 2016 12:11:41 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Development-with-Webpack/</guid>
+      <description>&lt;p&gt;Webpack simplifies web development by solving a fundamental problem: bundling. It takes in various assets, such as JavaScript, CSS, and HTML, and then transforms these assets into a format that’s convenient to consume through a browser. Doing this well takes away a significant amount of pain from web development.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s not the easiest tool to learn due to its configuration-driven approach, but it&amp;rsquo;s incredibly powerful. The purpose of this guide is to help you get started with webpack and then to go beyond the basics.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;List of well known links to become an expert with Webpack v.~2.&lt;/p&gt;
+
+&lt;h1 id=&#34;survivejs&#34;&gt;SurviveJS&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://survivejs.com/webpack/introduction/&#34;&gt;A solid book&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;official-guides&#34;&gt;Official guides&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://webpack.js.org/guides/&#34;&gt;Guides&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -6995,490 +7499,6 @@ getUserByName(&#39;nolan&#39;)
 
 &lt;p&gt;Save my day:
     *   &lt;a href=&#34;http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html&#34;&gt;We have a problem with promises&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Organizing an application using AMD with require.js</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Organizing-an-application-using-AMD-with-require-js/</link>
-      <pubDate>Sat, 20 Dec 2014 12:39:53 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Organizing-an-application-using-AMD-with-require-js/</guid>
-      <description>&lt;p&gt;RequireJS is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;what-is-amd&#34;&gt;What is AMD?&lt;/h1&gt;
-
-&lt;p&gt;Asynchronous Module Definitions designed to load modular code asynchronously in the browser and server. It is actually a fork of the &lt;a href=&#34;http://requirejs.org/docs/commonjs.html&#34;&gt;Common.js&lt;/a&gt; specification. Many script loaders have built their implementations around AMD, seeing it as the future of modular JavaScript development.&lt;/p&gt;
-
-&lt;h1 id=&#34;example-file-structure&#34;&gt;Example File Structure&lt;/h1&gt;
-
-&lt;p&gt;There are many different ways to lay out your files and I believe it is actually dependent on the size and type of the project. In the example below views and templates are mirrored in file structure.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;├── imgs
-├── css
-│   └── style.css
-├── templates
-│   ├── projects
-│   │   ├── list.html
-│   │   └── edit.html
-│   └── users
-│       ├── list.html
-│       └── edit.html
-├── js
-│   ├── libs
-│   │   ├── jquery
-│   │   │   ├── jquery.min.js
-│   │   ├── backbone
-│   │   │   ├── backbone.min.js
-│   │   └── underscore
-│   │   │   ├── underscore.min.js
-│   ├── models
-│   │   ├── users.js
-│   │   └── projects.js
-│   ├── collections
-│   │   ├── users.js
-│   │   └── projects.js
-│   ├── views
-│   │   ├── projects
-│   │   │   ├── list.js
-│   │   │   └── edit.js
-│   │   └── users
-│   │       ├── list.js
-│   │       └── edit.js
-│   ├── router.js
-│   ├── app.js
-│   ├── main.js  // Bootstrap
-│   ├── order.js //Require.js plugin
-│   └── text.js  //Require.js plugin
-└── index.html
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;bootstrapping-your-application&#34;&gt;Bootstrapping your application&lt;/h1&gt;
-
-&lt;p&gt;Using &lt;a href=&#34;http://requirejs.org/docs/start.html&#34;&gt;Require.js&lt;/a&gt; we define a single entry point on our index page. We should setup any useful containers that might be used by our Backbone views.&lt;/p&gt;
-
-&lt;p&gt;Note: The data-main attribute on our single script tag tells Require.js to load the script located at &amp;ldquo;js/main.js&amp;rdquo;. It automatically appends the &amp;ldquo;.js&amp;rdquo;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;!doctype html&amp;gt;
-&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
-&amp;lt;head&amp;gt;
-    &amp;lt;title&amp;gt;Jackie Chan&amp;lt;/title&amp;gt;
-    &amp;lt;!-- Load the script &amp;quot;js/main.js&amp;quot; as our entry point --&amp;gt;
-    &amp;lt;script data-main=&amp;quot;js/main&amp;quot; src=&amp;quot;js/libs/require/require.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-
-&amp;lt;div id=&amp;quot;container&amp;quot;&amp;gt;
-  &amp;lt;div id=&amp;quot;menu&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-  &amp;lt;div id=&amp;quot;content&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You should most always end up with quite a light weight index file. You can serve this off your server and then the rest of your site off a CDN ensuring that everything that can be cached, will be.&lt;/p&gt;
-
-&lt;h1 id=&#34;what-does-the-require-js-look-like&#34;&gt;What does the require.js look like?&lt;/h1&gt;
-
-&lt;p&gt;Our bootstrap file will be responsible for configuring Require.js and loading initially important dependencies.&lt;/p&gt;
-
-&lt;p&gt;In the example below we configure Require.js to create a shortcut alias to commonly used scripts such as jQuery, Underscore and Backbone.&lt;/p&gt;
-
-&lt;p&gt;Note: Modules are loaded relatively to the boot strap and always append with &lt;code&gt;.js&lt;/code&gt;. So the module &lt;code&gt;app&lt;/code&gt; will load &lt;code&gt;app.js&lt;/code&gt; which is in the same directory as the bootstrap.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// Filename: main.js
-
-// Require.js allows us to configure shortcut alias
-// There usage will become more apparent further along in the tutorial.
-require.config({
-  paths: {
-    jquery: &#39;libs/jquery/jquery&#39;,
-    underscore: &#39;libs/underscore/underscore&#39;,
-    backbone: &#39;libs/backbone/backbone&#39;
-  }
-
-});
-
-require([
-
-  // Load our app module and pass it to our definition function
-  &#39;app&#39;,
-], function(App){
-  // The &amp;quot;app&amp;quot; dependency is passed in as &amp;quot;App&amp;quot;
-  App.initialize();
-});
-&lt;/code&gt;&lt;/pre&gt;</description>
-    </item>
-    
-    <item>
-      <title>OOP in prototype style</title>
-      <link>https://qetr1ck-op.github.io/blog/post/OOP-in-prototype-style/</link>
-      <pubDate>Mon, 15 Sep 2014 22:40:38 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/OOP-in-prototype-style/</guid>
-      <description>&lt;p&gt;The main point is that one object can be &lt;code&gt;prototype&lt;/code&gt; of another object. That means if property isn&amp;rsquo;t found in the object - than it takes from &lt;code&gt;prototype&lt;/code&gt; object. In JavaScript this implementation is at the language level.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;inheritance-through-link-proto&#34;&gt;Inheritance through link &lt;code&gt;__proto__&lt;/code&gt;&lt;/h1&gt;
-
-&lt;p&gt;Inheritance in JavaScript is realized via special property &lt;code&gt;__proto__&lt;/code&gt; (In specs EcmaScript the name is &lt;code&gt;[[Prototype]]&lt;/code&gt;). In ES5 the property was available in Chrome / Firefox and Safari, but in other browser was hidden. ES6 includes &lt;code&gt;__proto__&lt;/code&gt; property as standard. In this article, for more efficient way I&amp;rsquo;ll use &lt;code&gt;__proto__&lt;/code&gt; property, but for legacy you should use &lt;code&gt;Object.getPrototypeOf()&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;If the object, for instance &lt;code&gt;rabbit&lt;/code&gt;, has a special link &lt;code&gt;__proto__&lt;/code&gt; to another object &lt;code&gt;animal&lt;/code&gt;, that mean, that all property which are searched in the &lt;code&gt;rabbit&lt;/code&gt;, will be also searched in the &lt;code&gt;animal&lt;/code&gt; object.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var animal = { eats: true },
-    rabbit = { jumps: true };
-
-rabbit.__proto__ = animal;
-
-console.log(rabbit.eats) //true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We can write any object in &lt;code&gt;prototype&lt;/code&gt; object:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var rabbit = {foo: &#39;bar&#39;};
-
-rabbit.__proto__ = window;
-
-console.log(rabbit.location) // call location object through window object
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So, object pointed by &lt;code&gt;__proto__&lt;/code&gt; it is his &lt;code&gt;prototype&lt;/code&gt;. In another words &lt;code&gt;prototype&lt;/code&gt; it&amp;rsquo;s &amp;ldquo;Backup Storage of Properties and Methods&amp;rdquo;, which automatically used in the search.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;images/posts/OOP-in-prototype-style/img1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;method-hasownproperty&#34;&gt;Method &lt;code&gt;hasOwnProperty&lt;/code&gt;&lt;/h1&gt;
-
-&lt;p&gt;Simple loop &lt;code&gt;for...in&lt;/code&gt; or loop through iterable objects (Array, Mas, Set, arguments object) can&amp;rsquo;t distinguish between the own properties and properties of his &lt;code&gt;prototype&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var animal = {
-  eats: true
-};
-
-var rabbit = {
-  jumps: true,
-  __proto__: animal
-};
-
-for (var key in rabbit) {
-  alert( key + &amp;quot; = &amp;quot; + rabbit[key] ); // &amp;quot;eats&amp;quot;; &amp;quot;jumps&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;For iterate only through own properties with &lt;code&gt;obj.hasOwnProperty(prop)&lt;/code&gt;:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/f69804da0f8a16a29f79.js&#34;&gt;&lt;/script&gt;
-
-&lt;h1 id=&#34;prototype-chain&#34;&gt;Prototype Chain&lt;/h1&gt;
-
-&lt;p&gt;In object &lt;code&gt;__proto__&lt;/code&gt; can be another &lt;code&gt;__proto__&lt;/code&gt; object and so on. For example, the inheritance chain of three object donkey -&amp;gt; winnie -&amp;gt; owl:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/d57b779a057e164bf1d2.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;img src=&#34;images/posts/OOP-in-prototype-style/img2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;methods-to-work-with-proto&#34;&gt;Methods to work with &lt;code&gt;__proto__&lt;/code&gt;&lt;/h1&gt;
-
-&lt;p&gt;By historical reason we have methods to get/set &lt;code&gt;__proto__&lt;/code&gt; property:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/54c9dbea765318e4a2c2.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;code&gt;Object.create(proto, descriptors)&lt;/code&gt; creates new bempty object with &lt;code&gt;__proto__&lt;/code&gt; object:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/970d7c61bf7452fd8b5e.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;This method only allows create new empty object. He can&amp;rsquo;t change &lt;code&gt;prototype&lt;/code&gt; of an existing object.&lt;/p&gt;
-
-&lt;p&gt;Create an empty collection, without prototype chain with &lt;code&gt;Object.create(null)&lt;/code&gt;:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/99be3a7345429941c2eb.js&#34;&gt;&lt;/script&gt;
-
-&lt;h1 id=&#34;exercise-with-proto&#34;&gt;Exercise with &lt;code&gt;__proto__&lt;/code&gt;&lt;/h1&gt;
-
-&lt;p&gt;1.1
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/d20e3a520e4dc06a5f63.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;1.2
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/32ce09bfa0ca65d5346d.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../../img3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;f-prototype&#34;&gt;F.prototype&lt;/h1&gt;
-
-&lt;p&gt;Property &lt;code&gt;prototype&lt;/code&gt; can point on any object but it has sense, when it&amp;rsquo;s assigned to function-constructor.&lt;/p&gt;
-
-&lt;p&gt;When project is creating via &lt;code&gt;new&lt;/code&gt;, in his &lt;code&gt;__proto__&lt;/code&gt; object writes link from &lt;code&gt;prototype&lt;/code&gt; of function-constructor.&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/c4ac921c558015b4a481.js&#34;&gt;&lt;/script&gt;
-
-&lt;h1 id=&#34;exercises-with-prototype-and-new&#34;&gt;Exercises with prototype and new&lt;/h1&gt;
-
-&lt;p&gt;1.1&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/079e4c21baa262ca5f44.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;1.2&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/340acc108182399dbd38.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;1.3&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/275f8d2485c73f3a365a.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;1.4&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/9b042fd1294bb8529477.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;1.5&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/36a799bfd94038ea3a88.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;2.1&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/aadce099bb5b8ddf7a02.js&#34;&gt;&lt;/script&gt;
-
-&lt;!--  --&gt;
-
-&lt;h1 id=&#34;classes-where-methods-come-from-empty&#34;&gt;&amp;ldquo;Classes&amp;rdquo;. Where methods come from empty {}&lt;/h1&gt;
-
-&lt;p&gt;Lets begin with creating empty object end call method &lt;code&gt;toString&lt;/code&gt;:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/d0902bca8a134b7c101f.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;It&amp;rsquo;s obviously, that &lt;code&gt;{ }&lt;/code&gt; is empty. But then who generates method &lt;code&gt;toString()&lt;/code&gt;? Off-course this makes method &lt;code&gt;toString()&lt;/code&gt; which is built-in &lt;code&gt;Object.prototype&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;In details it works like this:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Creating object literal &lt;code&gt;obj = { }&lt;/code&gt; means shorthand form for &lt;code&gt;obj = new Object()&lt;/code&gt;, were &lt;code&gt;Object&lt;/code&gt; is built-in function-constructor for objects&lt;/li&gt;
-&lt;li&gt;While &lt;code&gt;new Object&lt;/code&gt; invokes, new object has receives &lt;code&gt;obj.__proto__ = Object.prototype&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;obj.toString === Object.prototype.toString&lt;/code&gt; method will be taken from prototype object.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&#34;images/posts/OOP-in-prototype-style/img4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;build-in-classes&#34;&gt;Build-in &amp;ldquo;Classes&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;The same methods use in arrays &lt;code&gt;Array&lt;/code&gt;, functions &lt;code&gt;Function&lt;/code&gt; and other objects. Build-in methods are in &lt;code&gt;Array.prototype&lt;/code&gt;, &lt;code&gt;Function.prototype&lt;/code&gt;, etc.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;images/posts/OOP-in-prototype-style/img5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Thats why everywhere JS developers like to say that &amp;ldquo;All objects inherit from &lt;code&gt;Object&lt;/code&gt;&amp;rdquo;. But it&amp;rsquo;s a quite incorrect. All objects inherit from &lt;code&gt;Object.prototype&lt;/code&gt; via &lt;code&gt;__proto__&lt;/code&gt; link.&lt;/p&gt;
-
-&lt;p&gt;In some cases, method can overrides. For example, &amp;ldquo;class&amp;rdquo; &lt;code&gt;Array&lt;/code&gt; has it&amp;rsquo;s own &lt;code&gt;toString&lt;/code&gt;, which is in &lt;code&gt;Array.prototype.toString&lt;/code&gt;:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/823a2dfdf760938c91fd.js&#34;&gt;&lt;/script&gt;
-
-&lt;h1 id=&#34;exercises-with-overriding-prototype&#34;&gt;Exercises with overriding prototype&lt;/h1&gt;
-
-&lt;p&gt;1.1&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/df77c34e3efec24039e6.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;1.2&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/188c0afa47da9b036b73.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;1.3&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/e733ebd38e35616ed565.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;1.4&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/a292315fd0ddd6477827.js&#34;&gt;&lt;/script&gt;
-
-&lt;h1 id=&#34;declares-own-classes&#34;&gt;Declares own &amp;ldquo;Classes&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;For create &amp;ldquo;Class&amp;rdquo; you need:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Declare function-constructor&lt;/li&gt;
-&lt;li&gt;Write all required methods and properties in &lt;code&gt;prototype&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/fde34608e4532f82d166.js&#34;&gt;&lt;/script&gt;
-
-&lt;h1 id=&#34;property-constructor&#34;&gt;Property &lt;code&gt;constructor&lt;/code&gt;&lt;/h1&gt;
-
-&lt;p&gt;Property &lt;code&gt;constructor&lt;/code&gt; is in every function, even if it isn&amp;rsquo;t declare. So concept is next, the property &lt;code&gt;constructor&lt;/code&gt; should have link to function, which creates the object:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/02ee2ee811e78b50274c.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;But when you overriding the &lt;code&gt;prototype&lt;/code&gt;, property &lt;code&gt;constructor&lt;/code&gt; disappears:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/c43b5a7d1ec3afd701af.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;So how it works: animal -&amp;gt; Animal.prototype (new Object) -&amp;gt; Object.prototype&lt;/p&gt;
-
-&lt;h1 id=&#34;prototype-oop&#34;&gt;Prototype OOP&lt;/h1&gt;
-
-&lt;p&gt;Classes it isn&amp;rsquo;t only function-constructor with &lt;code&gt;prototype&lt;/code&gt;, it&amp;rsquo;s also additional opportunities for OOP development.&lt;/p&gt;
-
-&lt;p&gt;For example two &amp;ldquo;Classes&amp;rdquo; and realization of &amp;ldquo;Class inheritance&amp;rdquo;:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/4aed9017910b8e0d2c39.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;SaveMyDay:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;on &lt;a href=&#34;https://learn.javascript.ru/prototypes&#34;&lt;/a&gt; learn.javascript.ru&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Operator typeof, [[Class]], instanceof,  Duck Typing and Polymorphism</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Operator-typeof-Class-instanceof-Duck-Typing-and-Polymorphism/</link>
-      <pubDate>Tue, 29 Jul 2014 22:01:59 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Operator-typeof-Class-instanceof-Duck-Typing-and-Polymorphism/</guid>
-      <description>
-
-&lt;p&gt;Funny to hear when developer says that JS does not have types =) Let&amp;rsquo;s see how to distinguish them right.&lt;/p&gt;
-
-&lt;!--more --&gt;
-
-&lt;h1 id=&#34;operator-typeof&#34;&gt;Operator typeof&lt;/h1&gt;
-
-&lt;p&gt;Operator &lt;code&gt;typeof&lt;/code&gt; return type of argument. He has two syntax: &lt;code&gt;typeof x&lt;/code&gt; and &lt;code&gt;typeof(x)&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;typeof undefined // &amp;quot;undefined&amp;quot; 
-
-typeof 0    // &amp;quot;number&amp;quot; 
-
-typeof true // &amp;quot;boolean&amp;quot; 
-
-typeof &amp;quot;foo&amp;quot; // &amp;quot;string&amp;quot; 
-
-typeof {} // &amp;quot;object&amp;quot; 
-typeof [] // &amp;quot;object&amp;quot; 
-typeof new Date // &amp;quot;object&amp;quot; 
-
-typeof null  // &amp;quot;object&amp;quot; 
-typeof function(){} // &amp;quot;function&amp;quot; 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;typeof&lt;/code&gt; operator works great with primitive types, except null, as well as functions. But ordinary objects, arrays, and date for &lt;code&gt;typeof&lt;/code&gt; all look the same, they are of type &amp;lsquo;object&amp;rsquo;.&lt;/p&gt;
-
-&lt;p&gt;That&amp;rsquo;s why we can&amp;rsquo;t distinguish them using &lt;code&gt;typeof&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;class-for-objects&#34;&gt;[[Class]] for objects&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var date = new Date,
-    arr = [1,2];
-
-console.log({}.toString.call(date)); // [object Date]
-console.log({}.toString.call(arr)); // [object Array]
-
-console.log(getType(date)); // Date
-console.log(getType(arr)); // Array
-console.log(getType({})); // Object
-console.log(getType(&#39;str&#39;)); // String
-console.log(getType(11)); // Number
-
-function getType(instance) {
-  return {}.toString.call(instance).slice(8,-1);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We use this method because the internal implementation of the Object &lt;code&gt;toString&lt;/code&gt; returns the standard &lt;code&gt;[[Class]]&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;This method can give the type only for embedded objects. For user constructors always &lt;code&gt;[[Class]] = &amp;quot;Object&amp;quot;&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function Animal(name) { 
-  this.name = name;
-}
-var animal = new Animal(&amp;quot;Rabbit&amp;quot;);
-
-console.log(getType(animal)); // Object
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;duck-typing&#34;&gt;Duck Typing&lt;/h1&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;«If it looks like a duck, swims like a duck and quacks like a duck, then it probably is a duck (who cares what it really is)»&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Meaning duck typing - to verify the &lt;code&gt;methods&lt;/code&gt; and &lt;code&gt;properties&lt;/code&gt;, regardless of the type of object.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// check if array has method split
-var x = [1,2,3];
-
-if (x.splice) {
-  alert(&#39;Array&#39;);
-}
-
-// check if date has method getTime
-var z = new Date();
-
-if (z.getTime) {
-  alert(&#39;Date!&#39;);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To check who created the object or his prototype, is the operator:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;//check custom objects
-function Animal(name) { 
-  this.name = name;
-}
-var animal = new Animal(&amp;quot;Bee&amp;quot;);
-
-console.log( animal instanceof Animal ); // true
-console.log( Object.getPrototypeOf(animal) == Animal.prorotype ); // true
-console.log( animal.contstructor.prototype == Animal.prorotype ); // true
-
-//also works for inner objects
-var d = new Date(); 
-console.log( d instanceof Date ); // true
-console.log( Object.getPrototypeOf(d) == Date.prorotype ); // true
-console.log( d.contstructor.prototype == Date.prorotype ); // true
-
-function f() { }
-console.log( f instanceof Function ); // true
-console.log( Object.getPrototypeOf(f) == Function.prorotype ); // true
-console.log( f.contstructor.prototype == Function.prorotype ); // true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;polymorphism&#34;&gt;Polymorphism&lt;/h1&gt;
-
-&lt;p&gt;&lt;code&gt;Polymorphic&lt;/code&gt; functions, ie, those which are differently treated arguments(polymorphically operate), depending on their type. For example, the output may have a different format numbers and dates.&lt;/p&gt;
-
-&lt;p&gt;In example we use type checking to create a &lt;code&gt;polymorphic&lt;/code&gt; function &lt;code&gt;sayHi&lt;/code&gt;. It will work in three modes:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;No arguments: outputs &lt;code&gt;&amp;quot;Hello&amp;quot;&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;With an argument, which is not an array: displays &lt;code&gt;&amp;quot;Hello&amp;quot; + string argument&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;With an argument, which is an array - &lt;code&gt;&amp;quot;Hello&amp;quot; + arr[i]&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function sayHi(who) {
-  if (!arguments.length) {
-    console.log(&#39;Hello&#39;);
-    return;
-  }
-
-  if ( Array.isArray(who) ) {
-    for(var i=0; i&amp;lt;who.length; i++) sayHi(who[i]);
-    return;
-  }
-
-  console.log(&#39;Hello, &#39; + who);
-}
-
-sayHi(); // Hello
-sayHi(&amp;quot;Bob&amp;quot;); // Hello, Bob
-
-sayHi( [&amp;quot;Bob&amp;quot;, [&amp;quot;Sam&amp;quot;, &amp;quot;Din&amp;quot;] ] ); // Hello Bob..Sam..Din
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;SaveMyDay:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;on &lt;a href=&#34;http://learn.javascript.ru/type-detection&#34;&gt;learn.javascript.ru&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
     </item>
     
   </channel>

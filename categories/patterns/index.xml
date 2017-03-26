@@ -6782,5 +6782,171 @@ sayHi( [&amp;quot;Bob&amp;quot;, [&amp;quot;Sam&amp;quot;, &amp;quot;Din&amp;quo
 </description>
     </item>
     
+    <item>
+      <title>Function Invocation Patterns in JavaScript</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Function-Invocation-Patterns-Scope-of-this-and-Function-Object-Literal-in-JavaScript/</link>
+      <pubDate>Thu, 29 May 2014 05:47:57 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Function-Invocation-Patterns-Scope-of-this-and-Function-Object-Literal-in-JavaScript/</guid>
+      <description>&lt;p&gt;Describe different approaches to define and call functions&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Function object are created with function literals:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// Create function declaration
+// in it that adds two numbers
+
+function add(a, b) {
+    return a + b;
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Function literal has four parts.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The first part is the &lt;code&gt;reserved word function&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The optional second part is the &lt;code&gt;function’s name&lt;/code&gt;. The function can use its name to call itself recursively. The name can also be used by debuggers and development tools to identify the function. If a function is not given a name it is said to be anonymous.&lt;/li&gt;
+&lt;li&gt;The third part is the set of &lt;code&gt;parameters&lt;/code&gt; of the function, wrapped in parentheses. Within the parentheses is a set of zero or more parameter names, separated by commas. These names will be defined as variables in the function. Unlike ordinary variables, instead of being initialized to undefined, they will be initialized to the arguments supplied when the function is invoked.&lt;/li&gt;
+&lt;li&gt;The fourth part is a set of &lt;code&gt;statements&lt;/code&gt; wrapped in curly braces. These statements are the body of the function. They are executed when the function is invoked.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In addition to the declared parameters, every
+function receives two additional parameters: &lt;code&gt;this&lt;/code&gt; and &lt;code&gt;arguments&lt;/code&gt;. The this parameter is very important in object oriented programming, and its value is determined by
+the invocation pattern.&lt;/p&gt;
+
+&lt;h1 id=&#34;there-are-four-patterns-of-invocation-in-javascript&#34;&gt;There are four patterns of invocation in JavaScript:&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;method invocation pattern&lt;/li&gt;
+&lt;li&gt;function invocation pattern&lt;/li&gt;
+&lt;li&gt;constructor invocation pattern&lt;/li&gt;
+&lt;li&gt;apply, binding invocation pattern&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The patterns differ how &lt;code&gt;this&lt;/code&gt; will initialize.&lt;/p&gt;
+
+&lt;h1 id=&#34;method-invocation-pattern&#34;&gt;Method invocation pattern&lt;/h1&gt;
+
+&lt;p&gt;When a function is stored as a property of an object, we call it a &lt;code&gt;method&lt;/code&gt;. When a method is invoked, &lt;code&gt;this&lt;/code&gt; is bound to that object. If an invocation expression contains a refinement (that is, a . dot expression or[subscript] expression), it is
+invoked as a method:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var myObject = {
+    value: 0,
+    increment: function (inc) {
+        this.value += typeof inc === &#39;number&#39; ? inc : 1;
+    }
+};
+myObject.increment( );
+console.log(myObject.value); // 1
+myObject.increment(2);
+console.log(myObject.value); // 3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The binding of this to the object happens at invocation
+time. This very late binding makes functions that use this highly reusable. Methods
+that get their object context from this are called &lt;code&gt;public methods&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;function-invocation-pattern&#34;&gt;Function invocation pattern&lt;/h1&gt;
+
+&lt;p&gt;When a function is invoked with this pattern, &lt;code&gt;this is bound to the global object or&lt;/code&gt;undefined`.
+This was a mistake in the design of the language. Had the language been designed correctly, when the inner function is invoked, this would still be bound to the this variable of the outer function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function outer() {
+    console.log(&#39;outer context &#39; + this);
+    function inner() {
+        console.log(&#39;inner context &#39; + this);
+    }
+    inner();
+}
+
+outer();
+//outer context[object Window]
+//inner context[object Window]
+
+function func() { 
+  &amp;quot;use strict&amp;quot;;
+  console.log(this); 
+}
+
+func();// undefined (expect IE&amp;lt;10)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A consequence of this error is that a method cannot use an inner function to help it do its work because the inner function does not share the method access to the object as its this is bound to the wrong value. Fortunately, there is an easy workaround. If the method defines a variable and assigns it the value of this, the inner function will have access to this through that variable. By convention, the name of that variable is &lt;code&gt;that&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;constructor-invocation-pattern&#34;&gt;Constructor invocation pattern&lt;/h1&gt;
+
+&lt;p&gt;JavaScript is a prototype inheritance language. That means that objects can inherit properties directly from other objects.&lt;/p&gt;
+
+&lt;p&gt;Constructor can be any function, which is called with directive &lt;code&gt;new&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function Animal(name) {
+  this.name = name;
+  this.canWalk = true;
+  //public method
+  this.sayHi = function() {
+    console.log(this.name + &#39;, says Hi!&#39;);
+  }
+}
+
+var animal = new Animal(&#39;bambi&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;How it works:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Automatically is creating new, empty object&lt;/li&gt;
+&lt;li&gt;Special keyword &lt;code&gt;this&lt;/code&gt; gets a reference to ^- object&lt;/li&gt;
+&lt;li&gt;Function is invoking. Usually, it modifies this, adds methods and properties&lt;/li&gt;
+&lt;li&gt;Return this, if return object, than will be return object rather than this&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;the-apply-call-invocation-pattern&#34;&gt;The Apply/Call Invocation Pattern&lt;/h1&gt;
+
+&lt;p&gt;The apply method lets us choose the value of &lt;code&gt;this&lt;/code&gt;. The apply method takes two parameters. The first is the value that should be bound to this. The second is an array of
+parameters.&lt;/p&gt;
+
+&lt;p&gt;Call &lt;code&gt;func.apply(context, [a, b ...])&lt;/code&gt; or &lt;code&gt;func.call(context, (a, b ...))&lt;/code&gt; - the same as a normal call &lt;code&gt;func(a, b ...)&lt;/code&gt;, but with an another &lt;code&gt;context&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var user = { 
+  firstName: &amp;quot;Bobby&amp;quot;,
+  surname: &amp;quot;Singler&amp;quot;
+};
+
+function getName(a, b) { 
+  console.log( this[a] + &#39; &#39; + this[b] );
+}
+
+getName.apply(user, [&#39;firstName&#39;, &#39;surname&#39;])  // &amp;quot;Bobby Singler&amp;quot;, this - our context
+
+getName(&#39;firstName&#39;, &#39;surname&#39;)  // undefined undefined, this, will be window
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Invoke apply/call with &lt;code&gt;null&lt;/code&gt; or &lt;code&gt;undefined&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function f() {
+  console.log(this);
+}
+
+//if call with null or undefined, this = window 
+f.call(null); // window
+
+function f() {
+  &amp;quot;use strict&amp;quot;
+  console.log(this);
+}
+
+//in strict mode, this = null 
+f.call(null); // null
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Save My Day:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://learn.javascript.ru/this&#34; title=&#34;learn.javascript.ru&#34;&gt;learn.javascript.ru&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742&#34;&gt;Crockfords JavaScript: The Good Parts&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
   </channel>
 </rss>

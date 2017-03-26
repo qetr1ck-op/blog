@@ -2672,6 +2672,239 @@ console.log(&#39;loading...&#39;);
     </item>
     
     <item>
+      <title>Gulp screencast overview</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Gulp-screencast-overview/</link>
+      <pubDate>Wed, 28 Sep 2016 20:43:36 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Gulp-screencast-overview/</guid>
+      <description>&lt;p&gt;Depth table of contents of one of the most popular screencast about utility for managing tasks.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;what-is-gulp-compare-with-webpack&#34;&gt;What is Gulp? Compare with Webpack.&lt;/h1&gt;
+
+&lt;p&gt;What is Gulp?&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Gulp as a &amp;ldquo;streaming build system&amp;rdquo;, and moreover, it&amp;rsquo;s a utility for declaring tasks &lt;a href=&#34;https://youtu.be/uPk6lQoTThE?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=10&#34;&gt;0:10&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Example &lt;code&gt;gruntfile.js&lt;/code&gt;&lt;a href=&#34;https://youtu.be/uPk6lQoTThE?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=53&#34;&gt;0:53&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Comparing with Grunt. &lt;a href=&#34;https://youtu.be/uPk6lQoTThE?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=170&#34;&gt;2:50&lt;/a&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;gruntfile.js&lt;/code&gt; vs &lt;code&gt;gruntfile.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;More compact config&lt;/li&gt;
+&lt;li&gt;Virtual File System - Vinyl FS. No temp folders&lt;/li&gt;
+&lt;li&gt;Power of streams, streams parallelism&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;Comparing with Webpack &lt;a href=&#34;https://youtu.be/uPk6lQoTThE?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=600&#34;&gt;10:10&lt;/a&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Deps: CommonJS, AMD, ES2015&lt;/li&gt;
+&lt;li&gt;Dynamic loading&lt;/li&gt;
+&lt;li&gt;CommonsChungPlugin&lt;/li&gt;
+&lt;li&gt;APIs&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;Webpack + Gulp = 💕 &lt;a href=&#34;https://youtu.be/uPk6lQoTThE?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=825&#34;&gt;16:45&lt;/a&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Tasks: Gulp&lt;/li&gt;
+&lt;li&gt;JS Build: Webpack&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;install-and-task-running&#34;&gt;Install and task running&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Installing strategies: local vs global &lt;a href=&#34;https://youtu.be/xptUdO3GuG8?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=22&#34;&gt;0:22&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Installing v4 &lt;code&gt;npm i -D gulpjs/gulp.git#4.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;First task &lt;a href=&#34;https://youtu.be/xptUdO3GuG8?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=229&#34;&gt;3:49&lt;/a&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Callback for finish async operation&lt;/li&gt;
+&lt;li&gt;Task name as function name&lt;/li&gt;
+&lt;li&gt;Separate tasks with namespace &lt;code&gt;deploy:production&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Strategies for finish async operations&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gulp.series&lt;/code&gt; and &lt;code&gt;gulp.parallel&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://demisx.github.io/gulp4/2015/01/15/install-gulp4.html&#34;&gt;Have to install v4 before it&amp;rsquo;s officially released&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/02-basics&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;streams-vinyl-fs&#34;&gt;Streams Vinyl-FS&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Example streams with coping files &lt;a href=&#34;https://youtu.be/NBdKplKl_3Q?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=45&#34;&gt;0:45&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gulp.src&lt;/code&gt; and &lt;code&gt;gulp.dest&lt;/code&gt; output as readable/writable streams of instance Vinyl-FS &lt;a href=&#34;https://youtu.be/NBdKplKl_3Q?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=65&#34;&gt;1:05&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Log working files &lt;code&gt;.on(&#39;data&#39;, (file) =&amp;gt; file)&lt;/code&gt; &lt;a href=&#34;https://youtu.be/NBdKplKl_3Q?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=118&#34;&gt;1:48&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;File getter properties &lt;a href=&#34;https://youtu.be/NBdKplKl_3Q?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=190&#34;&gt;3:10&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Control &lt;code&gt;gulp.dest&lt;/code&gt; output &lt;a href=&#34;https://youtu.be/NBdKplKl_3Q?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=285&#34;&gt;4:45&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Module &lt;code&gt;minimatch&lt;/code&gt; and popular pattens &lt;a href=&#34;https://youtu.be/NBdKplKl_3Q?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=418&#34;&gt;6:48&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Performance issue with globs &lt;a href=&#34;https://youtu.be/NBdKplKl_3Q?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=553&#34;&gt;9:13&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Summary &lt;a href=&#34;https://youtu.be/NBdKplKl_3Q?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=710&#34;&gt;11:50&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/03-vinyl&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;basic-build-for-styles&#34;&gt;Basic build for styles&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;App structure &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=26&#34;&gt;0:25&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Declaring task for stylus &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=73&#34;&gt;1:13&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Change destination directory &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=344&#34;&gt;5.40&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Concat files &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=430&#34;&gt;7:10&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Log info with &lt;code&gt;gulp-debug&lt;/code&gt; &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=470&#34;&gt;7:50&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Create &lt;code&gt;main.styl&lt;/code&gt; &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=631&#34;&gt;10:31&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Add source maps &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=690&#34;&gt;11:30&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Generate source maps only in dev mode &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=904&#34;&gt;15:05&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Using &lt;code&gt;gulp-if&lt;/code&gt; &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=1025&#34;&gt;17:05&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Create &lt;code&gt;clean&lt;/code&gt; task with &lt;code&gt;del&lt;/code&gt; &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=1145&#34;&gt;19:05&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Create &lt;code&gt;copy&lt;/code&gt; task with &lt;code&gt;gulp.parallel&lt;/code&gt; &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=1229&#34;&gt;20:24&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Result in browser with &lt;code&gt;node-static&lt;/code&gt; &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=1315&#34;&gt;21:55&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Summary &lt;a href=&#34;https://youtu.be/_BFWG82mMkw?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=1397&#34;&gt;23:18&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/04-styles-3&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;incremental-build-watch&#34;&gt;Incremental build, watch&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create &lt;code&gt;gulp.watch&lt;/code&gt; for styles &lt;a href=&#34;https://youtu.be/jocvHauHcA4?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=30&#34;&gt;0:30&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;What does &amp;ldquo;incremental build&amp;rdquo; actually mean? Caching &lt;a href=&#34;https://youtu.be/jocvHauHcA4?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=115&#34;&gt;1:55&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Create &lt;code&gt;gulp.watch&lt;/code&gt; for assets with caching with &lt;code&gt;{ since: gulp.lastRun(&#39;taskName&#39;) }&lt;/code&gt; &lt;a href=&#34;https://youtu.be/jocvHauHcA4?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=235&#34;&gt;3:55&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Module &lt;code&gt;chokidar&lt;/code&gt; and deleting files with watch &lt;a href=&#34;https://youtu.be/jocvHauHcA4?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=410&#34;&gt;6:49&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Decoupling watch-es into separate task &lt;a href=&#34;https://youtu.be/jocvHauHcA4?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=512&#34;&gt;8:32&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Summary &lt;a href=&#34;https://youtu.be/jocvHauHcA4?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=573&#34;&gt;9:32&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/05-watch&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;incremental-and-performance&#34;&gt;Incremental and performance&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Filter new files for first task run with &lt;code&gt;gulp-newer&lt;/code&gt; &lt;a href=&#34;https://youtu.be/uYZPNrT-e-8?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=35&#34;&gt;0:36&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Problem with &lt;code&gt;gulp-remember&lt;/code&gt; on example with &lt;code&gt;gulp-autoprefixer&lt;/code&gt; &lt;a href=&#34;https://youtu.be/uYZPNrT-e-8?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=237&#34;&gt;3:57&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Problem with returning deleted files from IDE, using &lt;code&gt;gulp-cached&lt;/code&gt; as alternative of &lt;code&gt;since&lt;/code&gt; &lt;a href=&#34;https://youtu.be/uYZPNrT-e-8?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=609&#34;&gt;10:10&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Summary &lt;a href=&#34;https://youtu.be/uYZPNrT-e-8?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=920&#34;&gt;15:20&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/06-watch-perf-remember-cached&#34;&gt;Code examples 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/06-watch-perf-newer&#34;&gt;Code examples 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;browser-auto-reloading-browser-sync&#34;&gt;Browser auto-reloading, browser-sync&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;We don&amp;rsquo;t want to every time hit &lt;code&gt;F5&lt;/code&gt;! Flow overview &lt;a href=&#34;https://youtu.be/oiMJNIG-yvg?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=14&#34;&gt;0:14&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Create &lt;code&gt;sync&lt;/code&gt; task with &lt;code&gt;browser-sync&lt;/code&gt; &lt;a href=&#34;https://youtu.be/oiMJNIG-yvg?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=104&#34;&gt;1:34&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/07-browsersync&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;error-handling&#34;&gt;Error handling&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Make an error &lt;a href=&#34;https://youtu.be/otkXzef2wQY?t=20&#34;&gt;0:20&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Was error couched? &lt;a href=&#34;https://youtu.be/otkXzef2wQY?t=85&#34;&gt;1:25&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Notification for an error with &lt;code&gt;gulp-notify&lt;/code&gt; &lt;a href=&#34;https://youtu.be/otkXzef2wQY?t=171&#34;&gt;2:51&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Catch all errors on task with &lt;code&gt;gulp-plumber&lt;/code&gt; &lt;a href=&#34;https://youtu.be/otkXzef2wQY?t=390&#34;&gt;6:30&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solution with &lt;code&gt;multipipe&lt;/code&gt; &lt;a href=&#34;https://youtu.be/otkXzef2wQY?t=590&#34;&gt;9:50&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/08-errors-combiner&#34;&gt;Code examples 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/08-errors-plumber&#34;&gt;Code examples 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;creating-plugins-with-through2&#34;&gt;Creating plugins with &amp;ldquo;through2&amp;rdquo;&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;What we need to start &lt;a href=&#34;https://youtu.be/Ijg9I1CY7Ok?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=29&#34;&gt;0:29&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A real example &lt;a href=&#34;https://youtu.be/Ijg9I1CY7Ok?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=221&#34;&gt;3:41&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/09-plugins-through2&#34;&gt;Code examples 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/09-plugins-through2-2&#34;&gt;Code examples 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;more-complex-stream-with-eslint-gulp-if-stream-combiner2&#34;&gt;More complex stream with &amp;ldquo;eslint&amp;rdquo;, &amp;ldquo;gulp-if&amp;rdquo;, &amp;ldquo;stream-combiner2&amp;rdquo;&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Example with &lt;code&gt;pre-commit&lt;/code&gt; &lt;a href=&#34;https://youtu.be/pjdrg6n5puU?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=115&#34;&gt;1:55&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Optimize repeatable checks &lt;a href=&#34;https://youtu.be/pjdrg6n5puU?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=248&#34;&gt;4:08&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Performance summary &lt;a href=&#34;https://youtu.be/pjdrg6n5puU?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=890&#34;&gt;14:50&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/blob/master/10-plugins-lint/gulpfile.js&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;how-we-know-node-js-streams&#34;&gt;How we know Node.JS streams?&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;A small test &lt;a href=&#34;https://youtu.be/5aJB4vJlHBs?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=20&#34;&gt;0:20&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Why it isn&amp;rsquo;t work? &lt;a href=&#34;https://youtu.be/5aJB4vJlHBs?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=65&#34;&gt;1:05&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fix the &amp;ldquo;pause&amp;rdquo; problem &lt;a href=&#34;https://youtu.be/5aJB4vJlHBs?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=280&#34;&gt;4:00&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/11-plugins-streams&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;structure-of-gulpfile-js&#34;&gt;Structure of &amp;ldquo;gulpfile.js&amp;rdquo;&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;We have problems, don&amp;rsquo;t we? &lt;a href=&#34;https://youtu.be/Qc6go3cNuRk?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=20&#34;&gt;0:20&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A solution is task decomposition &lt;a href=&#34;https://youtu.be/Qc6go3cNuRk?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=110&#34;&gt;1:50&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Adding &lt;code&gt;gulp-load-plugins&lt;/code&gt; &lt;a href=&#34;https://youtu.be/Qc6go3cNuRk?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=305&#34;&gt;5:05&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Result after refactoring &lt;a href=&#34;https://youtu.be/Qc6go3cNuRk?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=410&#34;&gt;6:50&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/12-organize-final&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;a-real-example-styles-assets-sprites-production&#34;&gt;A real example: styles, assets, sprites, production&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Goal and app structure &lt;a href=&#34;https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=15&#34;&gt;0:15&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Improving build of styles and assets &lt;a href=&#34;https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=115&#34;&gt;1:55&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A typical problem with preprocessors with &lt;code&gt;src&lt;/code&gt; and fixing with &lt;code&gt;resolver&lt;/code&gt; &lt;a href=&#34;https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=242&#34;&gt;4:03&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Working with sprites using &lt;code&gt;gulp-svg-sprites&lt;/code&gt; &lt;a href=&#34;https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=380&#34;&gt;6:20&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Add production mode: minify with &lt;code&gt;gulp-cssnano&lt;/code&gt;, resource hash with &lt;code&gt;gulp-rev&lt;/code&gt; and &lt;code&gt;gulp-rev-replace&lt;/code&gt;  &lt;a href=&#34;https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=914&#34;&gt;15:13&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Do we need to use long-term hashing for images?  &lt;a href=&#34;https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=1337&#34;&gt;22:17&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Summary &lt;a href=&#34;https://youtu.be/VqYAitDKbpo?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=1536&#34;&gt;25:35&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/12-organize-final&#34;&gt;Code examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;integration-with-webpack&#34;&gt;Integration with Webpack&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Summary &lt;a href=&#34;https://youtu.be/ohWOWqskHWU?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ&amp;amp;t=1636&#34;&gt;27:16&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/14-webpack-stream&#34;&gt;Code examples 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/14-webpack-final-direct&#34;&gt;Code examples 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>NG6 starter for new Angular projects</title>
       <link>https://qetr1ck-op.github.io/blog/post/NG6-starter-for-new-Angular-projects/</link>
       <pubDate>Sun, 18 Sep 2016 19:03:17 +0000</pubDate>
@@ -5536,6 +5769,254 @@ And later it stays unchangeable, even if explicitly bound or called with differe
     </item>
     
     <item>
+      <title>Exploring AngularJS 1.5 .component() method</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Exploring-AngularJS-1-5-component-method/</link>
+      <pubDate>Fri, 22 Jul 2016 22:20:03 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Exploring-AngularJS-1-5-component-method/</guid>
+      <description>&lt;p&gt;AngularJS 1.5 introduce &lt;code&gt;.component()&lt;/code&gt; helper method which is much simpler than the &lt;code&gt;.directive()&lt;/code&gt; definitions and advocates best practices and common default behavior.&lt;/p&gt;
+
+&lt;p&gt;Using &lt;code&gt;.component()&lt;/code&gt; will allow to write in Angular 2 style as well, which will turn transition to Angular 2 much easier.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s compare the difference in syntax and the possibility of new abstraction.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;from-directrive-to-component&#34;&gt;From &amp;ldquo;directrive()&amp;rdquo; to &amp;ldquo;component()&amp;rdquo;&lt;/h1&gt;
+
+&lt;p&gt;The syntax change is simple:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// before
+module.directive(name, fn);
+
+// after
+module.component(name, options);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I&amp;rsquo;ve rebuild a simple &lt;code&gt;counter&lt;/code&gt; directive which which we&amp;rsquo;ll refactor to &lt;code&gt;component()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;module
+  .directive(&#39;counter&#39;, function counter() {
+    return {
+      scope: {},
+      bindToController: {
+        count: &#39;=&#39;
+      },
+      contorllerAs: &#39;$ctlr&#39;,
+      controller: function() {
+        this.increment = () =&amp;gt; this.count++;
+        this.decrement = () =&amp;gt; this.count--;
+      },
+      template: `
+        &amp;lt;div&amp;gt;
+          &amp;lt;input type=&amp;quot;number&amp;quot; ng-model=&amp;quot;$ctlr.count&amp;quot;&amp;gt;
+          &amp;lt;button ng-click=&amp;quot;$ctrl.increment()&amp;quot;&amp;gt;+&amp;lt;/button&amp;gt;
+          &amp;lt;button ng-click=&amp;quot;$ctrl.decrement()&amp;quot;&amp;gt;-&amp;lt;/button&amp;gt;
+        &amp;lt;/div&amp;gt;
+      `
+    }
+  })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;function-to-object&#34;&gt;Function to Object&lt;/h1&gt;
+
+&lt;p&gt;Let&amp;rsquo;s start from the top and refactor the function argument to object:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// before
+module
+  .directive(&#39;counter&#39;, function counter() {
+    return {
+
+    }
+  })
+
+// after
+module
+  .component(&#39;counter&#39;, {
+
+  })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nice and simple.&lt;/p&gt;
+
+&lt;h1 id=&#34;scope-and-bindtocontroller-become-bindings&#34;&gt;&amp;ldquo;scope&amp;rdquo; and &amp;ldquo;bindToController&amp;rdquo; become &amp;ldquo;bindings&amp;rdquo;&lt;/h1&gt;
+
+&lt;p&gt;In &lt;code&gt;directive()&lt;/code&gt; the &lt;code&gt;scope&lt;/code&gt; property allows us to define whether we want to isolate the &lt;code&gt;$scope&lt;/code&gt; or inherit it. So repeating every time just create an extra boilerplate. With &lt;a href=&#34;https://docs.angularjs.org/api/ng/service/$compile&#34;&gt;bindToController&lt;/a&gt; we can explicitly define binding directly to instance of controller via &lt;code&gt;this&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;With &lt;code&gt;bindings&lt;/code&gt; we can remove this boilerplate and simple define what we want to pass down to the component.&lt;/p&gt;
+
+&lt;p&gt;And &lt;code&gt;component()&lt;/code&gt; will always have an isolated scope.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// before
+module
+  .directive(&#39;counter&#39;, function counter() {
+    return {
+      scope: {
+        count: &#39;=&#39;
+      },
+      bindToController: true
+    }
+  })
+
+// after
+module
+  .component(&#39;counter&#39;, {
+    binding: {
+      count: &#39;=&#39;
+    }
+  })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;controller-and-contorlleras-changes&#34;&gt;Controller and &amp;ldquo;contorllerAs&amp;rdquo; changes&lt;/h1&gt;
+
+&lt;p&gt;Nothing has changed in the way we declare &lt;code&gt;controller&lt;/code&gt;, however it&amp;rsquo;s now smarter and has a default &lt;code&gt;contorllerAs&lt;/code&gt; value of &lt;code&gt;$ctrl&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Under the hood it looks like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// inside angular.js
+controllerAs: identifierForController(options.controller) || options.controllerAs || &#39;$ctrl&#39;
+
+//...
+
+var CNTRL_REG = /^(\S+)(\s+as\s+(\w+))?$/;
+function identifierForController(controller, ident) {
+  if (ident &amp;amp;&amp;amp; isString(ident)) return ident;
+  if (isString(controller)) {
+    var match = CNTRL_REG.exec(controller);
+    if (match) return match[3];
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This allows us to do the following inside &lt;code&gt;.component()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;{
+  ...
+  controller: &#39;FooController as foo&#39;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Based on the information we refactor our &lt;code&gt;Directive&lt;/code&gt; to &lt;code&gt;Component&lt;/code&gt; by dropping controllerAs property:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// before
+.directive(&#39;counter&#39;, function counter() {
+  return {
+    scope: {
+      count: &#39;=&#39;
+    },
+    bindToController: true,
+    controller: function () {
+      this.increment = () =&amp;gt; this.count++;
+      this.decrement = () =&amp;gt; this.count--;
+    },
+    controllerAs: &#39;counter&#39;
+  };
+});
+
+// after
+.component(&#39;counter&#39;, {
+  bindings: {
+    count: &#39;=&#39;
+  },
+  controller: function () {
+    this.increment = () =&amp;gt; this.count++;
+    this.decrement = () =&amp;gt; this.count--;
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Things now are becoming much simpler and funny.&lt;/p&gt;
+
+&lt;h1 id=&#34;template&#34;&gt;Template&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;template&lt;/code&gt; property can be defined as a function property with injected &lt;code&gt;$elem&lt;/code&gt; and &lt;code&gt;$attrs&lt;/code&gt; values:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;{
+  ...
+  template: function ($element, $attrs) {
+    // access to $element and $attrs
+    return `
+      &amp;lt;div&amp;gt;
+        &amp;lt;input type=&amp;quot;text&amp;quot; ng-model=&amp;quot;$ctrl.count&amp;quot;&amp;gt;
+        &amp;lt;button type=&amp;quot;button&amp;quot; ng-click=&amp;quot;$ctrl.decrement();&amp;quot;&amp;gt;-&amp;lt;/button&amp;gt;
+        &amp;lt;button type=&amp;quot;button&amp;quot; ng-click=&amp;quot;$ctrl.increment();&amp;quot;&amp;gt;+&amp;lt;/button&amp;gt;
+      &amp;lt;/div&amp;gt;
+    `
+  }
+  ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;inheriting-behavior-with-require&#34;&gt;Inheriting behavior with &amp;ldquo;require&amp;rdquo;&lt;/h1&gt;
+
+&lt;p&gt;Inherited Directive or Component methods will be bound to &lt;code&gt;this.parent&lt;/code&gt; property in the Controller:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;{
+  ...
+  require: {
+    parent: &#39;^^parentComponet&#39;
+  },
+  controller: function() {
+    // use this object to access to required Object
+    this.parent.foo();
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;one-way-binding&#34;&gt;One-way binding&lt;/h1&gt;
+
+&lt;p&gt;A new syntax expression for isolate scope values:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;{
+  ...
+  bindings: {
+    oneWay: &#39;&amp;lt;&#39;,
+    twoWay: &#39;=&#39;
+  },
+  ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;But still remember that object are passed by reference, and Angular doesn&amp;rsquo;t make a clone of the object when it passed via &lt;code&gt;one-way binding&lt;/code&gt;, it actually sets the same value, which means that objects have still &lt;code&gt;two-way binding&lt;/code&gt; somehow.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;upgrading-to-angular-2&#34;&gt;Upgrading to Angular 2&lt;/h1&gt;
+
+&lt;p&gt;Writing in this style using &lt;code&gt;.component()&lt;/code&gt; allows you easily transit to Angular 2, it&amp;rsquo;d look something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;import { Component } from &#39;@angular/core&#39;
+
+@Component({
+  selector: &#39;counter&#39;,
+  template: `
+    &amp;lt;div&amp;gt;
+      &amp;lt;input type=&amp;quot;number&amp;quot; [(ng-model)]=&amp;quot;count&amp;quot;&amp;gt;
+      &amp;lt;button (click)=&amp;quot;increment()&amp;quot;&amp;gt;+&amp;lt;/button&amp;gt;
+      &amp;lt;button (click)=&amp;quot;decrement()&amp;quot;&amp;gt;-&amp;lt;/button&amp;gt;
+    &amp;lt;/div&amp;gt;
+  `,
+})
+
+export default class CounterComponent {
+  constructor() {}
+  increment() {
+    this.count++;
+  }
+  decrement() {
+    this.count++;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Save my day:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://toddmotto.com/exploring-the-angular-1-5-component-method/&#34;&gt;toddmotto&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>5 principles that will make a more SOLID Javascript Engineer</title>
       <link>https://qetr1ck-op.github.io/blog/post/5-principles-that-will-make-a-more-SOLID-Javascript-Engineer/</link>
       <pubDate>Mon, 11 Jul 2016 00:00:00 +0000</pubDate>
@@ -5780,6 +6261,167 @@ function awesomeFooListener(dispatcher) {
 &lt;li&gt;&lt;a href=&#34;http://thefullstack.xyz/solid-javascript/&#34;&gt;The Full Stack&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://aspiringcraftsman.com/2011/12/08/solid-javascript-single-responsibility-principle/&#34;&gt;Aspiring Craftsman&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://code.tutsplus.com/series/the-solid-principles--cms-634&#34;&gt;code.tutsplus&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to copy object in Javascript</title>
+      <link>https://qetr1ck-op.github.io/blog/post/How-to-copy-object-in-Javascript/</link>
+      <pubDate>Fri, 08 Jul 2016 21:55:05 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/How-to-copy-object-in-Javascript/</guid>
+      <description>&lt;p&gt;There are many ways to copy object in Javascript but most of the time such operation doesn&amp;rsquo;t do what we expected.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Are all properties copied by reference?&lt;/li&gt;
+&lt;li&gt;Are sub-properties merged or replaced?&lt;/li&gt;
+&lt;li&gt;Are accessor, like getter and setters, preserved?&lt;/li&gt;
+&lt;li&gt;And what about Sumbols and other non-enumerable properties?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;shallow-vs-deep-copy&#34;&gt;Shallow VS Deep copy&lt;/h1&gt;
+
+&lt;p&gt;When we copied reference nor a value, we are doing &lt;strong&gt;shallow&lt;/strong&gt; copy.&lt;/p&gt;
+
+&lt;p&gt;Whenever we do an operation like &lt;code&gt;a.prop = b.prop&lt;/code&gt; we are performing a shallow copy, meaning that modifying the object property &lt;code&gt;a.prop&lt;/code&gt; it will reflect changes in &lt;code&gt;b.prop&lt;/code&gt; too.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const a = { 
+    obj: {
+        test: &#39;Foo&#39;
+    }
+};
+
+const b = {};
+b.obj = a.obj;
+
+//if we modify it
+b.obj.test = &#39;Bar&#39;;
+
+//it will be reflected in a 
+a.obj.test;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In order to perform &lt;strong&gt;deep&lt;/strong&gt; copy of &lt;code&gt;a.prop&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const a = { 
+    obj: {
+        test: &#39;Foo&#39;
+    }
+};
+
+const b = {};
+b.obj = {};
+
+//not reflected in a
+b.obj.test = &#39;Bar&#39;;
+a.obj.test;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;object-assign-target-sourcen&#34;&gt;Object.assign(target, [, sourceN])&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;Object.assign&lt;/code&gt; performs a &lt;strong&gt;shallow&lt;/strong&gt; copy it merges enumerable properties with priority right to left:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const a = {
+    obj: {
+        foo: true
+    },
+    bar: 2
+};
+const b = {
+    obj: {
+        foz: true
+    },
+    baz: 3
+};
+//shallow merge
+const c = Object.assign({}, a, b);
+
+//which &#39;obj&#39; property was copied?
+//the priority is right to left
+c.obj === b.obj; //true
+c.obj === a.obj; //false
+
+c.bar; // 2
+c.baz; // 3
+
+//change will reflect by reference
+c.obj.foz = false;
+b.obj.foz; // false
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;object-assign-side-effects&#34;&gt;Object.assign side effects&lt;/h1&gt;
+
+&lt;p&gt;There are at least two main subtle problems most developers are not aware of:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;all accessors, those properties with &lt;code&gt;getter&lt;/code&gt; or &lt;code&gt;setter&lt;/code&gt;, will be copied as a simple data, invoking the getter
+during the copy&lt;/li&gt;
+&lt;li&gt;all &lt;code&gt;Symbol&lt;/code&gt; keys will be copied too, making &lt;code&gt;Symbol&lt;/code&gt; less private or protected than we thing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const uid = Symbol(&#39;uid&#39;);
+const special = {
+    get next() {
+        return ++this.counter;
+    },
+    counter: 0
+};
+special[uid] = Math.random;
+
+//what could be possible wrong here?!
+const notSpecial = Object.assign({}, special);
+
+// if &#39;next&#39; is declared (and copied) before &#39;counter&#39;
+notSpecial.counter; // 1
+notSpecial.next; // 1 in any case
+
+notSpecial[uid] === special[uid]; // same as special[uid]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;If you want a advice -  use &lt;code&gt;Object.assign&lt;/code&gt; for simple shallow copy or merge with data that you are sure
+doesn&amp;rsquo;t contain accessors.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;use-one-of-the-simple-npm-package-or-lodash-underscore-rambda&#34;&gt;Use one of the simple npm package or lodash/underscore/rambda&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.npmjs.com/package/clone&#34;&gt;clone&lt;/a&gt; is one a popular package for &lt;strong&gt;deep&lt;/strong&gt; copying:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const clone = require(&#39;clone&#39;);
+ 
+let a, b;
+ 
+a = { foo: { bar: &#39;baz&#39; } };  // initial value of a 
+ 
+b = clone(a);                 // clone a -&amp;gt; b 
+a.foo.bar = &#39;foo&#39;;            // changes not modify &#39;b&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Achieve the same result with &lt;a href=&#34;https://lodash.com/docs#cloneDeep&#34;&gt;_.deepCopy&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const objects = [{ &#39;a&#39;: 1 }, { &#39;b&#39;: 2 }];
+
+const deep = _.cloneDeep(objects);
+console.log(deep[0] === objects[0]);
+// → false
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;json-parse-json-stringify-object&#34;&gt;JSON.parse(JSON.stringify(object))&lt;/h1&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t have function within your object, a very simple:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const cloneOfA = JSON.parse(JSON.stringify(a));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This works with for all kinds of objects contain: &lt;code&gt;object&lt;/code&gt;, &lt;code&gt;array&lt;/code&gt;, &lt;code&gt;string&lt;/code&gt;, &lt;code&gt;boolean&lt;/code&gt;, &lt;code&gt;numbers&lt;/code&gt;;&lt;/p&gt;
+
+&lt;p&gt;Save my day:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.webreflection.co.uk/blog/2015/10/06/how-to-copy-objects-in-javascript#shallow-vs-deep-copy&#34;&gt;www.webreflection.co.uk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-clone-an-object&#34;&gt;stackoverflow.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
@@ -6064,1208 +6706,6 @@ Inflexible hierarchy problem (eventually, all evolving hierarchies are wrong for
 &lt;p&gt;The solution to all of these problems is to favor object &lt;strong&gt;composition over class inheritance&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;Save my day - &lt;a href=&#34;https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9#.2cya8y3jf&#34;&gt;Eric Elliott on Medium&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Kata: Function cache</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Kata-Functions-Function-cache/</link>
-      <pubDate>Sun, 14 Feb 2016 21:17:45 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Kata-Functions-Function-cache/</guid>
-      <description>&lt;p&gt;If you are calculating complex things or execute time-consuming API calls, you sometimes want to cache the results. In this case we want you to create a function wrapper, which takes a function and caches its results depending on the arguments, that were applied to the function.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;Usage example:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const complexFunction = (arg1, arg2) =&amp;gt; { /* complex calculation in here */ };
-const cachedFunction = cache(complexFunction);
-
-cachedFunction(&#39;foo&#39;, &#39;bar&#39;); // complex function should be executed
-cachedFunction(&#39;foo&#39;, &#39;bar&#39;); // complex function should not be invoked again, instead the cached result should be returned
-cachedFunction(&#39;foo&#39;, &#39;baz&#39;); // should be executed, because the method wasn&#39;t invoked before with these arguments
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Result:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const cache = fn =&amp;gt; {
-  const calls = {};
-  
-  return function(...args) {
-    if (!calls[args]) {
-      calls[args] = fn(...args);
-    }
-    return calls[args];
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;</description>
-    </item>
-    
-    <item>
-      <title>Practical design patterns in JavaScript</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Practical-design-patterns-in-JavaScript/</link>
-      <pubDate>Wed, 03 Feb 2016 12:43:26 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Practical-design-patterns-in-JavaScript/</guid>
-      <description>&lt;p&gt;One of the most important aspects of writing maintainable code is being able to notice the repeating themes in that code and optimize them. This is an area where knowledge of design patterns can prove invaluable.&lt;/p&gt;
-
-&lt;p&gt;I take a look at a number of popular JavaScript design patterns and explore why certain patterns may be suitable for your projects.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;why-is-it-important-to-understand-patterns-and-be-familiar-with-them&#34;&gt;Why is it important to understand patterns and be familiar with them?&lt;/h1&gt;
-
-&lt;p&gt;So, why is it important to understand patterns and be familiar with them? Design patterns have three main benefits:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Patterns are proven solutions: They provide solid approaches to solving issues in software development using proven techniques that reflect the experience and insights the developers that helped define them bring to the pattern.&lt;/li&gt;
-&lt;li&gt;Patterns can be easily reused: A pattern usually reflects an out of the box solution that can be adapted to suit our own needs.&lt;/li&gt;
-&lt;li&gt;Patterns can be expressive: When we look at a pattern there’s generally a set structure and vocabulary to the solution presented that can help express rather large solutions quite elegantly.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&#34;categories-of-design-pattern&#34;&gt;Categories Of Design Pattern&lt;/h1&gt;
-
-&lt;p&gt;Design patterns can be broken down into a number of different categories. In this section we’ll review three of these categories:&lt;/p&gt;
-
-&lt;h2 id=&#34;creation-design-patterns&#34;&gt;Creation Design Patterns&lt;/h2&gt;
-
-&lt;p&gt;The basic approach to object creation might otherwise lead to added complexity in a project whilst these patterns aim to solve this problem by &lt;strong&gt;controlling&lt;/strong&gt; the creation process.&lt;/p&gt;
-
-&lt;p&gt;Some of the patterns that fall under this category are: &lt;strong&gt;Constructor&lt;/strong&gt;, &lt;strong&gt;Factory&lt;/strong&gt;, &lt;strong&gt;Prototype&lt;/strong&gt;, &lt;strong&gt;Singleton&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;structural-design-patterns&#34;&gt;Structural Design Patterns&lt;/h2&gt;
-
-&lt;p&gt;Typically identify simple ways to realize relationships between different objects.&lt;/p&gt;
-
-&lt;p&gt;Patterns that fall under this category include: &lt;strong&gt;Decorator&lt;/strong&gt;, &lt;strong&gt;Facade&lt;/strong&gt;, &lt;strong&gt;Flyweight&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;behavioral-design-patterns&#34;&gt;Behavioral Design Patterns&lt;/h2&gt;
-
-&lt;p&gt;Behavioral patterns focus on improving the communication between disparate objects in a system.&lt;/p&gt;
-
-&lt;p&gt;Some behavioral patterns include: &lt;strong&gt;Mediator&lt;/strong&gt;, &lt;strong&gt;Observer&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;table-of-23-design-patterns-mentioned-by-the-gof&#34;&gt;Table of 23 Design Patterns mentioned by the GoF&lt;/h2&gt;
-
-&lt;p&gt;I personally found the following table a very useful reminder of what a number of patterns has to offer - it covers the 23 Design Patterns mentioned by the GoF:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;images/posts/Practical-design-patterns-in-JavaScript/img.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;creation-design-patterns-in-depth&#34;&gt;Creation Design Patterns in depth&lt;/h1&gt;
-
-&lt;p&gt;Developers commonly wonder whether there is an ideal pattern or set of patterns they should be using in their workflow. There isn&amp;rsquo;t a true single answer to this question; each script and web application we work on is likely to have its own individual needs and we need to think about where we feel a pattern can offer real value to an implementation.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-constructor-pattern&#34;&gt;The Constructor Pattern&lt;/h2&gt;
-
-&lt;p&gt;In classical object-oriented programming languages, a &lt;strong&gt;constructor&lt;/strong&gt; is a special method used to initialize a newly created object once memory has been allocated for it.&lt;/p&gt;
-
-&lt;p&gt;In JavaScript, as almost everything is an object, we&amp;rsquo;re most often interested in object constructors.&lt;/p&gt;
-
-&lt;h3 id=&#34;object-creation&#34;&gt;Object Creation&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// Each of the following options will create a new empty object:
-const newObject = {};
- 
-// or
-const newObject = Object.create( Object.prototype );
- 
-// or
-const newObject = new Object();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Where the &lt;code&gt;Object&lt;/code&gt; constructor in the final example creates an object wrapper for a specific value, or where no value is passed, it will create an empty object and return it.&lt;/p&gt;
-
-&lt;h3 id=&#34;basic-constructors&#34;&gt;Basic Constructors&lt;/h3&gt;
-
-&lt;p&gt;By simply prefixing a call to a constructor function with the keyword &lt;code&gt;new&lt;/code&gt;, we can tell JavaScript we would like the function to behave like a constructor and instantiate a new object with the members defined by that function.&lt;/p&gt;
-
-&lt;p&gt;Inside a &lt;code&gt;constructor&lt;/code&gt;, the keyword &lt;code&gt;this&lt;/code&gt; references the new object that&amp;rsquo;s being created:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function Car( model, year, miles ) {
- 
-  Object.assign(this, { model, year, miles });
- 
-  this.toString = function () {
-    return `${this.model} has done ${this.miles} miles`;
-  };
-}
- 
-// Usage:
-const civic = new Car( &amp;quot;Honda Civic&amp;quot;, 2009, 20000 );
-const mondeo = new Car( &amp;quot;Ford Mondeo&amp;quot;, 2010, 5000 );
- 
-console.log( civic.toString() );
-console.log( mondeo.toString() );
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;constructors-with-prototypes&#34;&gt;Constructors With Prototypes&lt;/h3&gt;
-
-&lt;p&gt;Functions, like almost all objects in JavaScript, contain a &lt;code&gt;prototype&lt;/code&gt; object. When we call a JavaScript constructor to create an object, all the properties of the constructor&amp;rsquo;s prototype are then made available to the new object:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function Car( model, year, miles ) {
- 
-  Object.assign(this, { model, year, miles });
- 
-}
- 
-// Note here that we are using Object.prototype.newMethod rather than
-// Object.prototype so as to avoid redefining the prototype object
-Car.prototype.toString = () =&amp;gt; `${this.model} has done ${this.miles} miles`;
- 
-// Usage:
-const civic = new Car( &amp;quot;Honda Civic&amp;quot;, 2009, 20000 );
-const mondeo = new Car( &amp;quot;Ford Mondeo&amp;quot;, 2010, 5000 );
- 
-console.log( civic.toString() );
-console.log( mondeo.toString() );
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;constructors-with-es6-class&#34;&gt;Constructors with ES6 class&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const Car = class {
-    constructor(props) {
-        Object.assign(this, props);
-    }
-
-    toString() {
-        return `${this.model} has done ${this.miles} miles`;
-    }
-}
-
-// Usage:
- 
-const civic = new Car( {model: &amp;quot;Honda Civic&amp;quot;, year: 2009, miles: 20000} );
-const mondeo = new Car( {model: &amp;quot;Honda Civic&amp;quot;, year: 2009, miles: 20000} );
- 
-console.log( civic.toString() );
-console.log( mondeo.toString() );
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;constructors-with-es6-class-for-node-js&#34;&gt;Constructors with ES6 class for Node.js&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// in the end/or better on the beginning share you constructor
-module.exports = Car;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;constructors-in-angular1-x&#34;&gt;Constructors in Angular1.x&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// Task.factory.js
-const app = angular.module(&#39;taskManager&#39;);
-
-app.factory(&#39;Task&#39;, () =&amp;gt; {
-    const Task = class {
-        constructor(name) {
-            this.name = name;
-            this.completed = false;
-        }
-
-        complete() {
-            this.complete = true;
-            console.log(`compete task: ${this.name}`);
-        }
-
-        save() {
-            console.log(`save task: ${this.name}`); 
-        }
-    }
-
-    return Task;
-})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;the-module-pattern&#34;&gt;The Module Pattern&lt;/h2&gt;
-
-&lt;p&gt;Modules are an integral piece of any robust application&amp;rsquo;s architecture and typically help in keeping the units of code for a project both cleanly separated and organized.&lt;/p&gt;
-
-&lt;p&gt;In JavaScript, there are several options for implementing modules. These include:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The Module pattern&lt;/li&gt;
-&lt;li&gt;Object literal notation&lt;/li&gt;
-&lt;li&gt;AMD modules&lt;/li&gt;
-&lt;li&gt;CommonJS modules&lt;/li&gt;
-&lt;li&gt;ES6 modules&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;the-revealing-module-pattern&#34;&gt;The Revealing Module Pattern&lt;/h3&gt;
-
-&lt;p&gt;We would simply define all of our functions and variables in the private scope and return an anonymous object with pointers to the private functionality we wished to reveal as public:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var myRevealingModule = (function () {
-    var privateVar = &amp;quot;Ben Cherry&amp;quot;,
-        publicVar = &amp;quot;Hey there!&amp;quot;;
-
-    function privateFunction() {
-        console.log( &amp;quot;Name:&amp;quot; + privateVar );
-    }
-
-    function publicSetName( strName ) {
-        privateVar = strName;
-    }
-
-    function publicGetName() {
-        privateFunction();
-    }
-
-
-    // Reveal public pointers to
-    // private functions and properties
-
-    return {
-        setName: publicSetName,
-        greeting: publicVar,
-        getName: publicGetName
-    };
-
-})();
-
-myRevealingModule.setName( &amp;quot;Paul Kinlan&amp;quot; );
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;the-module-pattern-for-node-js&#34;&gt;The Module Pattern for Node.js&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// just export what you need
-
-module.exports = myRevealingModule();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// Usage:
-var myModule = require(&#39;./myRevealingModule&#39;);
-
-// module.setName...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;the-module-pattern-for-angular1-x&#34;&gt;The Module Pattern for Angular1.x&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// taskRepo.factory.js
-const = app.module(taskManager);
-
-app.factory(taskRepo);
-
-function taskRepo($http) {
-    const db = {};
-
-    const get = (id) =&amp;gt; {
-        log(`Getting task ${id}`);
-    }
-
-    const save = (task) =&amp;gt; {
-        log(`Save ${task.nae} to the db`);
-    }
-
-    return { get, save };
-}
-taskRepo.$inject = [&#39;$http&#39;];
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;the-singleton-pattern&#34;&gt;The Singleton Pattern&lt;/h2&gt;
-
-&lt;p&gt;In JavaScript, &lt;strong&gt;Singletons&lt;/strong&gt; serve as a shared resource namespace which isolate implementation code from the global namespace so as to provide a single point of access for functions:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;class Singleton {
-
-  static instance;
-
-  constructor(){
-    if(instance){
-      return instance;
-    }
-
-    this.state = &amp;quot;duke&amp;quot;;
-    this.instance = this;
-  }
-
-}
-
-// usage
-const first = new Singleton();
-const second = new Singleton();
-
-console.log(first === second); // true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;the-singleton-pattern-for-node-js&#34;&gt;The Singleton Pattern for Node.js&lt;/h3&gt;
-
-&lt;p&gt;From &lt;strong&gt;Node.js&lt;/strong&gt; docs information about &lt;a href=&#34;https://nodejs.org/dist/latest-v5.x/docs/api/modules.html#modules_caching&#34;&gt;caching modules&lt;/a&gt;:&lt;/p&gt;
-
-&lt;p&gt;Modules are cached after the first time they are loaded. This means (among other things) that every call to &lt;code&gt;require(&#39;foo&#39;)&lt;/code&gt; will get exactly the same object returned, if it would resolve to the same file.&lt;/p&gt;
-
-&lt;p&gt;If you want to have a module execute code multiple times, then export a function, and call that function.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// repo.js
-// just return a function call
-// for singleton
-
-module.exports = repo();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// import a singleton
-const require = repo();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;the-singleton-pattern-for-angular1-x&#34;&gt;The Singleton Pattern for Angular1.x&lt;/h3&gt;
-
-&lt;p&gt;By default all service all singleton, because they are providers, more info &lt;a href=&#34;https://docs.angularjs.org/guide/providers&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-factory-pattern&#34;&gt;The Factory Pattern&lt;/h2&gt;
-
-&lt;p&gt;Factory provide a generic interface for creating objects, where we can specify the type of factory object we wish to be created.&lt;/p&gt;
-
-&lt;p&gt;Imagine that we have a UI factory where we are asked to create a type of UI component. Rather than creating this component directly using the new operator or via another creation constructor, we ask a Factory object for a new component instead. We inform the Factory what type of object is required (e.g &lt;em&gt;Button&lt;/em&gt;, &lt;em&gt;Panel&lt;/em&gt;) and it instantiates this, returning it to us for use:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// Types.js - Constructors used behind the scenes
- 
-// A constructor for defining new cars
-function Car( options ) {
- 
-  // some defaults
-  this.doors = options.doors || 4;
-  this.state = options.state || &amp;quot;brand new&amp;quot;;
-  this.color = options.color || &amp;quot;silver&amp;quot;;
- 
-}
- 
-// A constructor for defining new trucks
-function Truck( options){
- 
-  this.state = options.state || &amp;quot;used&amp;quot;;
-  this.wheelSize = options.wheelSize || &amp;quot;large&amp;quot;;
-  this.color = options.color || &amp;quot;blue&amp;quot;;
-}
- 
- 
-// FactoryExample.js
- 
-// Define a skeleton vehicle factory
-function VehicleFactory() {}
- 
-// Define the prototypes and utilities for this factory
- 
-// Our default vehicleClass is Car
-VehicleFactory.prototype.vehicleClass = Car;
- 
-// Our Factory method for creating new Vehicle instances
-VehicleFactory.prototype.createVehicle = function ( options ) {
- 
-  switch(options.vehicleType){
-    case &amp;quot;car&amp;quot;:
-      this.vehicleClass = Car;
-      break;
-    case &amp;quot;truck&amp;quot;:
-      this.vehicleClass = Truck;
-      break;
-    //defaults to VehicleFactory.prototype.vehicleClass (Car)
-  }
- 
-  return new this.vehicleClass( options );
- 
-};
- 
-// Create an instance of our factory that makes cars
-var carFactory = new VehicleFactory();
-var car = carFactory.createVehicle( {
-            vehicleType: &amp;quot;car&amp;quot;,
-            color: &amp;quot;yellow&amp;quot;,
-            doors: 6 } );
- 
-// Test to confirm our car was created using the vehicleClass/prototype Car
- 
-// Outputs: true
-console.log( car instanceof Car );
- 
-// Outputs: Car object of color &amp;quot;yellow&amp;quot;, doors: 6 in a &amp;quot;brand new&amp;quot; state
-console.log( car );
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;abstract-factories&#34;&gt;Abstract Factories&lt;/h3&gt;
-
-&lt;p&gt;It is also useful to be aware of the Abstract Factory pattern, which aims to encapsulate a group of individual factories with a common goal.&lt;/p&gt;
-
-&lt;p&gt;It separates the details of implementation of a set of objects from their general usage:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var abstractVehicleFactory = (function () {
- 
-  // Storage for our vehicle types
-  var types = {};
- 
-  return {
-      getVehicle: function ( type, customizations ) {
-          var Vehicle = types[type];
- 
-          return (Vehicle ? new Vehicle(customizations) : null);
-      },
- 
-      registerVehicle: function ( type, Vehicle ) {
-          var proto = Vehicle.prototype;
- 
-          // only register classes that fulfill the vehicle contract
-          if ( proto.drive &amp;amp;&amp;amp; proto.breakDown ) {
-              types[type] = Vehicle;
-          }
- 
-          return abstractVehicleFactory;
-      }
-  };
-})();
- 
- 
-// Usage:
-abstractVehicleFactory.registerVehicle( &amp;quot;car&amp;quot;, Car );
-abstractVehicleFactory.registerVehicle( &amp;quot;truck&amp;quot;, Truck );
- 
-// Instantiate a new car based on the abstract vehicle type
-var car = abstractVehicleFactory.getVehicle( &amp;quot;car&amp;quot;, {
-            color: &amp;quot;lime green&amp;quot;,
-            state: &amp;quot;like new&amp;quot; } );
- 
-// Instantiate a new truck in a similar manner
-var truck = abstractVehicleFactory.getVehicle( &amp;quot;truck&amp;quot;, {
-            wheelSize: &amp;quot;medium&amp;quot;,
-            color: &amp;quot;neon yellow&amp;quot; } );
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;structural-design-patterns-in-depth&#34;&gt;Structural Design Patterns in depth&lt;/h1&gt;
-
-&lt;p&gt;Structural design patterns are ones that focus on easing the relationship between different components of an application. They help to provide stability by ensuring that if one part of the app changes, the entire thing doesn&amp;rsquo;t need to as well.&lt;/p&gt;
-
-&lt;h2 id=&#34;mixins&#34;&gt;Mixins&lt;/h2&gt;
-
-&lt;p&gt;Mixins allow objects to borrow (or inherit) functionality from them with a minimal amount of complexity.&lt;/p&gt;
-
-&lt;p&gt;Imagine that we define a Mixin containing utility functions in a standard object literal as follows:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var myMixins = {
- 
-  moveUp: function(){
-    console.log( &amp;quot;move up&amp;quot; );
-  },
- 
-  moveDown: function(){
-    console.log( &amp;quot;move down&amp;quot; );
-  },
- 
-  stop: function(){
-    console.log( &amp;quot;stop! in the name of love!&amp;quot; );
-  }
- 
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We can then easily extend the prototype of existing constructor functions to include this behavior using a helper such as the Underscore.js &lt;code&gt;_.extend()&lt;/code&gt; method:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// A skeleton carAnimator constructor
-function CarAnimator(){
-  this.moveLeft = function(){
-    console.log( &amp;quot;move left&amp;quot; );
-  };
-}
- 
-// A skeleton personAnimator constructor
-function PersonAnimator(){
-  this.moveRandomly = function(){ /*..*/ };
-}
- 
-// Extend both constructors with our Mixin
-_.extend( CarAnimator.prototype, myMixins );
-_.extend( PersonAnimator.prototype, myMixins );
- 
-// Create a new instance of carAnimator
-var myAnimator = new CarAnimator();
-myAnimator.moveLeft();
-myAnimator.moveDown();
-myAnimator.stop();
- 
-// Outputs:
-// move left
-// move down
-// stop! in the name of love!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;mixins-with-es6&#34;&gt;Mixins with ES6&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;Object.assign( CarAnimator.prototype, myMixins );
-Object.assign( PersonAnimator.prototype, myMixins );
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;the-decorator-pattern&#34;&gt;The Decorator Pattern&lt;/h2&gt;
-
-&lt;p&gt;The Decorator pattern isn&amp;rsquo;t heavily tied to how objects are created but instead focuses on the problem of extending their functionality.&lt;/p&gt;
-
-&lt;p&gt;Adding new attributes to objects in JavaScript is a very straight-forward process so with this in mind, a very simplistic decorator may be implemented as follows:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// The constructor to decorate
-function MacBook() {
- 
-  this.cost = function () { return 997; };
-  this.screenSize = function () { return 11.6; };
- 
-}
- 
-// Decorator 1
-function memory( macbook ) {
- 
-  var v = macbook.cost();
-  macbook.cost = function() {
-    return v + 75;
-  };
- 
-}
- 
-// Decorator 2
-function engraving( macbook ){
- 
-  var v = macbook.cost();
-  macbook.cost = function(){
-    return v + 200;
-  };
- 
-}
- 
-// Decorator 3
-function insurance( macbook ){
- 
-  var v = macbook.cost();
-  macbook.cost = function(){
-     return v + 250;
-  };
- 
-}
- 
-var mb = new MacBook();
-memory( mb );
-engraving( mb );
-insurance( mb );
- 
-// Outputs: 1522
-console.log( mb.cost() );
- 
-// Outputs: 11.6
-console.log( mb.screenSize() );
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;the-decorator-pattern-in-angular1-x&#34;&gt;The Decorator Pattern in Angular1.x&lt;/h3&gt;
-
-&lt;p&gt;More information about &lt;code&gt;decorator&lt;/code&gt; method in &lt;a href=&#34;https://docs.angularjs.org/api/auto/service/$provide#decorator&#34;&gt;off documentation&lt;/a&gt; or &lt;a href=&#34;http://www.bennadel.com/blog/2870-using-module-decorator-in-angularjs-1-4.htm&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;angular.module( &amp;quot;Demo&amp;quot;, [] );
-
-angular.module( &amp;quot;Demo&amp;quot; ).run(
-    function runBlock( greeting ) {
-        console.log( greeting( &amp;quot;Joanna&amp;quot; ) );
-    }
-);  
-
-angular.module( &amp;quot;Demo&amp;quot; ).factory(
-    &amp;quot;greeting&amp;quot;,
-    function greetingFactory() {
-        return( greeting );
-        // I return a greeting for the given name.
-        function greeting( name ) {
-            return( &amp;quot;Hello &amp;quot; + name + &amp;quot;.&amp;quot; );
-        }
-    }
-);
-
-angular.module( &amp;quot;Demo&amp;quot; ).decorator(
-    &amp;quot;greeting&amp;quot;,
-    function greetingDecorator( $delegate ) {
-        // Return the decorated service.
-        return( decoratedGreeting );
-        // I append a new message to the existing greeting.
-        function decoratedGreeting( name ) {
-            return( $delegate( name ) + &amp;quot; How are you doing?&amp;quot; );
-        }
-    }
-);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;sub-classing&#34;&gt;Sub-classing&lt;/h2&gt;
-
-&lt;p&gt;Sub-classing is a term that refers to inheriting properties for a new object from a base or superclass object. In traditional object-oriented programming, a class &lt;code&gt;B&lt;/code&gt; is able to extend another class &lt;code&gt;A&lt;/code&gt;. Here we consider &lt;code&gt;A&lt;/code&gt; a superclass and &lt;code&gt;B&lt;/code&gt; a subclass of &lt;code&gt;A&lt;/code&gt;. As such, all instances of &lt;code&gt;B&lt;/code&gt; inherit the methods from &lt;code&gt;A&lt;/code&gt;. &lt;code&gt;B&lt;/code&gt; is however still able to define its own methods, including those that override methods originally defined by &lt;code&gt;A&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;We first need a base object:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var Person = function( firstName, lastName ){
- 
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.gender = &amp;quot;male&amp;quot;;
- 
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Next, we&amp;rsquo;ll want to specify a new class (object) that&amp;rsquo;s a subclass of the existing Person object:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// a new instance of Person can then easily be created as follows:
-var clark = new Person( &amp;quot;Clark&amp;quot;, &amp;quot;Kent&amp;quot; );
- 
-// Define a subclass constructor for for &amp;quot;Superhero&amp;quot;:
-var Superhero = function( firstName, lastName, powers ){
- 
-    // Invoke the superclass constructor on the new object
-    // then use .call() to invoke the constructor as a method of
-    // the object to be initialized.
- 
-    Person.apply( this, arguments );
- 
-    // Finally, store their powers, a new array of traits not found in a normal &amp;quot;Person&amp;quot;
-    this.powers = powers;
-};
- 
-Superhero.prototype = Object.create( Person.prototype );
-var superman = new Superhero( &amp;quot;Clark&amp;quot;, &amp;quot;Kent&amp;quot;, [&amp;quot;flight&amp;quot;,&amp;quot;heat-vision&amp;quot;] );
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;sub-classing-with-es6&#34;&gt;Sub-classing with ES6&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;class Person {
-  constructor ( firstName, lastName, gender = &amp;quot;male&amp;quot; ){
-  
-    Object.assign(this, { firstName, lastName, gender });
-  
-  };
-}
-
-class Superhero extends Person {
-  constructor ( firstName, lastName, gender, powers ){
-    super(firstName, lastName, gender);
-    this.powers = powers;
-  };
-}
-
-// usage
-const superman = new Superhero( &amp;quot;Clark&amp;quot;, &amp;quot;Kent&amp;quot;, &amp;quot;female&amp;quot;, [&amp;quot;flight&amp;quot;,&amp;quot;heat-vision&amp;quot;] );
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;the-facade-pattern&#34;&gt;The Facade Pattern&lt;/h2&gt;
-
-&lt;p&gt;This pattern provides a convenient higher-level interface to a larger body of code, hiding its true underlying complexity.&lt;/p&gt;
-
-&lt;p&gt;Whenever we use jQuery&amp;rsquo;s &lt;code&gt;$(el).css()&lt;/code&gt; or &lt;code&gt;$(el).animate()&lt;/code&gt; methods, we&amp;rsquo;re actually using a Facade - the simpler public interface that avoids us having to manually call the many internal methods in jQuery core required to get some behavior working.&lt;/p&gt;
-
-&lt;p&gt;In a similar manner, we&amp;rsquo;re all familiar with jQuery&amp;rsquo;s &lt;code&gt;$(document).ready(..)&lt;/code&gt;. Internally, this is actually being powered by a method called &lt;code&gt;bindReady()&lt;/code&gt;, which is doing this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;bindReady: function() {
-    ...
-    if ( document.addEventListener ) {
-      // Use the handy event callback
-      document.addEventListener( &amp;quot;DOMContentLoaded&amp;quot;, DOMContentLoaded, false );
- 
-      // A fallback to window.onload, that will always work
-      window.addEventListener( &amp;quot;load&amp;quot;, jQuery.ready, false );
- 
-    // If IE event model is used
-    } else if ( document.attachEvent ) {
- 
-      document.attachEvent( &amp;quot;onreadystatechange&amp;quot;, DOMContentLoaded );
- 
-      // A fallback to window.onload, that will always work
-      window.attachEvent( &amp;quot;onload&amp;quot;, jQuery.ready );
-               ...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;flyweight&#34;&gt;Flyweight&lt;/h2&gt;
-
-&lt;p&gt;The Flyweight pattern is a classical structural solution for optimizing code that is repetitive, slow and inefficiently shares data. It aims to minimize the use of memory in an application by sharing as much data as possible with related objects&lt;/p&gt;
-
-&lt;p&gt;There are two ways in which the Flyweight pattern can be applied. The first is at the &lt;strong&gt;data-layer&lt;/strong&gt;, where we deal with the concept of sharing data between large quantities of similar objects stored in memory.&lt;/p&gt;
-
-&lt;p&gt;The second is at the &lt;strong&gt;DOM-layer&lt;/strong&gt; where the Flyweight can be used as a central event-manager to avoid attaching event handlers to every child element in a parent container we wish to have some similar behavior.&lt;/p&gt;
-
-&lt;h1 id=&#34;behavior-design-patterns-in-depth&#34;&gt;Behavior Design Patterns in depth&lt;/h1&gt;
-
-&lt;h2 id=&#34;the-observer&#34;&gt;The observer&lt;/h2&gt;
-
-&lt;p&gt;The Observer is a design pattern where an object (known as a subject) maintains a list of objects depending on it (observers), automatically notifying them of any changes to state.&lt;/p&gt;
-
-&lt;p&gt;We can now expand on what we&amp;rsquo;ve learned to implement the Observer pattern with the following components:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Subject: maintains a list of observers, facilitates adding or removing observers&lt;/li&gt;
-&lt;li&gt;Observer: provides a update interface for objects that need to be notified of a Subject&amp;rsquo;s changes of state&lt;/li&gt;
-&lt;li&gt;ConcreteSubject: broadcasts notifications to observers on changes of state, stores the state of ConcreteObservers&lt;/li&gt;
-&lt;li&gt;ConcreteObserver: stores a reference to the ConcreteSubject, implements an update interface for the Observer to ensure state is consistent with the Subject&amp;rsquo;s&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;First, let&amp;rsquo;s model the list of dependent Observers a subject may have:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function ObserverList(){
-  this.observerList = [];
-}
- 
-ObserverList.prototype.add = function( obj ){
-  return this.observerList.push( obj );
-};
- 
-ObserverList.prototype.count = function(){
-  return this.observerList.length;
-};
- 
-ObserverList.prototype.get = function( index ){
-  if( index &amp;gt; -1 &amp;amp;&amp;amp; index &amp;lt; this.observerList.length ){
-    return this.observerList[ index ];
-  }
-};
- 
-ObserverList.prototype.indexOf = function( obj, startIndex ){
-  var i = startIndex;
- 
-  while( i &amp;lt; this.observerList.length ){
-    if( this.observerList[i] === obj ){
-      return i;
-    }
-    i++;
-  }
- 
-  return -1;
-};
- 
-ObserverList.prototype.removeAt = function( index ){
-  this.observerList.splice( index, 1 );
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The Subject and the ability to add, remove or notify observers on the observer list:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function Subject(){
-  this.observers = new ObserverList();
-}
- 
-Subject.prototype.addObserver = function( observer ){
-  this.observers.add( observer );
-};
- 
-Subject.prototype.removeObserver = function( observer ){
-  this.observers.removeAt( this.observers.indexOf( observer, 0 ) );
-};
- 
-Subject.prototype.notify = function( context ){
-  var observerCount = this.observers.count();
-  for(var i=0; i &amp;lt; observerCount; i++){
-    this.observers.get(i).update( context );
-  }
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Full example &lt;a href=&#34;http://plnkr.co/edit/w0wkN2BPIWK1PF3Nt8ZD&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;differences-between-the-observer-and-publish-subscribe-pattern&#34;&gt;Differences Between The Observer And Publish/Subscribe Pattern&lt;/h2&gt;
-
-&lt;p&gt;Whilst the &lt;em&gt;Observer&lt;/em&gt; pattern is useful to be aware of, quite often in the JavaScript world, we&amp;rsquo;ll find it commonly implemented using a variation known as the &lt;em&gt;Publish/Subscribe&lt;/em&gt; pattern.&lt;/p&gt;
-
-&lt;p&gt;The Publish/Subscribe pattern however uses a topic/event channel which sits between the objects wishing to receive notifications (subscribers) and the object firing the event (the publisher).&lt;/p&gt;
-
-&lt;p&gt;This event system allows code to define application specific events which can pass custom arguments containing values needed by the subscriber. The idea here is to avoid dependencies between the subscriber and publisher.&lt;/p&gt;
-
-&lt;p&gt;Here is an example of how one might use the Publish/Subscribe if provided with a functional implementation powering &lt;code&gt;publish()&lt;/code&gt;,&lt;code&gt;subscribe()&lt;/code&gt; and &lt;code&gt;unsubscribe()&lt;/code&gt; behind the scenes:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var eventBus = (function(){
-  var topics = Object.create({});
-  
-  return {
-    subscribe: function(topic, listener) {
-      // Create the topic&#39;s object if not yet created
-      if(!topics[topic]) topics[topic] = [];
-
-      // Add the listener to queue
-      var index = topics[topic].push(listener) -1;
-
-      // Provide handle back for removal of topic
-      return {
-        unsubscribe: function() {
-          delete topics[topic][index];
-        }
-      };
-    },
-    publish: function(topic, info) {
-      // If the topic doesn&#39;t exist, or there&#39;s no listeners in queue, just leave
-      if(!topics[topic]) return;
-
-      // Cycle through topics queue, fire!
-      topics[topic].forEach(function(item) {
-            item(info != undefined ? info : {});
-      });
-    }
-  };
-})();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Subscribe in order to be notified for events:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var subscription = events.subscribe(&#39;/page/load&#39;, function(obj) {
-    // Do something now that the event has occurred
-});
-
-// ...sometime later where I no longer want subscription...
-subscription.unsubscribe();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Publishing:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;events.publish(&#39;/page/load&#39;, {
-    url: &#39;/some/url/path&#39; // any arguments
-});
-&lt;/code&gt;&lt;/pre&gt;</description>
-    </item>
-    
-    <item>
-      <title>Huston, do we have a problem with promises?</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Huston-do-we-have-a-problem-with-promises/</link>
-      <pubDate>Mon, 02 Feb 2015 20:13:01 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Huston-do-we-have-a-problem-with-promises/</guid>
-      <description>&lt;p&gt;Many of us are using promises without really understanding them.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;wherefore-promises&#34;&gt;Wherefore promises?&lt;/h1&gt;
-
-&lt;p&gt;If you read the literature on promises, you&amp;rsquo;ll often find references to the &lt;em&gt;pyramid of doom&lt;/em&gt;, with some horrible callback-y code that steadily stretches toward the right side of the screen.&lt;/p&gt;
-
-&lt;p&gt;The whole point of promises is to give us back the language fundamentals we lost when we went async: &lt;code&gt;return&lt;/code&gt;, &lt;code&gt;throw&lt;/code&gt;, and the &lt;code&gt;stack&lt;/code&gt;. But you have to know how to use promises correctly in order to take advantage of them.&lt;/p&gt;
-
-&lt;h1 id=&#34;rookie-mistakes&#34;&gt;Rookie mistakes&lt;/h1&gt;
-
-&lt;p&gt;I&amp;rsquo;m only going to talk about the official spec, as exposed in modern browsers as &lt;code&gt;window.Promise&lt;/code&gt;. Not all browsers have &lt;code&gt;window.Promise&lt;/code&gt; though, so for a good &lt;em&gt;polyfill&lt;/em&gt;, check out the cheekily-named &lt;a href=&#34;https://github.com/calvinmetcalf/lie&#34;&gt;Lie&lt;/a&gt;, which is about the smallest spec-compliant library out there.&lt;/p&gt;
-
-&lt;h1 id=&#34;rookie-mistake-1-the-promises-pyramid-of-doom&#34;&gt;Rookie mistake #1: the promises pyramid of doom&lt;/h1&gt;
-
-&lt;p&gt;The most common bad practice is this one:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;remotedb.allDocs({
-  include_docs: true,
-  attachments: true
-}).then(function (result) {
-  var docs = result.rows;
-  docs.forEach(function(element) {
-    localdb.put(element.doc).then(function(response) {
-      alert(&amp;quot;Pulled doc with id &amp;quot; + element.doc._id + &amp;quot; and added to local db.&amp;quot;);
-    }).catch(function (err) {
-      if (err.status == 409) {
-        localdb.get(element.doc._id).then(function (resp) {
-          localdb.remove(resp._id, resp._rev).then(function (resp) {
-// et cetera...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Yes, it turns out you can use promises as if they were &lt;strong&gt;callbacks&lt;/strong&gt;, and yes, it&amp;rsquo;s a lot like using a power sander to file your nails, but you can do it.&lt;/p&gt;
-
-&lt;p&gt;A better style is this one:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;remotedb.allDocs(...).then(function (resultOfAllDocs) {
-  return localdb.put(...);
-}).then(function (resultOfPut) {
-  return localdb.get(...);
-}).then(function (resultOfGet) {
-  return localdb.put(...);
-}).catch(function (err) {
-  console.log(err);
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This is called &lt;strong&gt;composing&lt;/strong&gt; promises, and it&amp;rsquo;s one of the great superpowers of promises. Each function will only be called when the previous promise has resolved, and it&amp;rsquo;ll wbe called with that promise&amp;rsquo;s output. More on that later.&lt;/p&gt;
-
-&lt;h1 id=&#34;rookie-mistake-2-wtf-how-do-i-use-foreach-with-promises&#34;&gt;Rookie mistake #2: WTF, how do I use forEach() with promises?&lt;/h1&gt;
-
-&lt;p&gt;This is where most people&amp;rsquo;s understanding of promises starts to break down. As soon as they reach for their familiar &lt;code&gt;forEach()&lt;/code&gt; loop (or &lt;code&gt;for&lt;/code&gt; loop, or &lt;code&gt;while&lt;/code&gt; loop), they have no idea how to make it work with promises. So they write something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// I want to remove() all docs
-db.allDocs({include_docs: true}).then(function (result) {
-  result.rows.forEach(function (row) {
-    db.remove(row.doc);  
-  });
-}).then(function () {
-  // I naively believe all docs have been removed() now!
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;What&amp;rsquo;s the problem with this code? The problem is that the first function is actually returning &lt;code&gt;undefined&lt;/code&gt;, meaning that the second function isn&amp;rsquo;t waiting for &lt;code&gt;db.remove()&lt;/code&gt; to be called on all the documents. In fact, &lt;strong&gt;it isn&amp;rsquo;t waiting on anything&lt;/strong&gt;, and can execute when any number of docs have been removed!&lt;/p&gt;
-
-&lt;p&gt;The &lt;strong&gt;TLDR&lt;/strong&gt; of all this is that &lt;code&gt;forEach()&lt;/code&gt;/&lt;code&gt;for&lt;/code&gt;/&lt;code&gt;while&lt;/code&gt; are not the constructs you&amp;rsquo;re looking for. You want &lt;code&gt;Promise.all()&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;db.allDocs({include_docs: true}).then(function (result) {
-  return Promise.all(result.rows.map(function (row) {
-    return db.remove(row.doc);
-  }));
-}).then(function (arrayOfResults) {
-  // All docs have really been removed() now!
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;What&amp;rsquo;s going on here? Basically &lt;code&gt;Promise.all()&lt;/code&gt; takes an array of promises as input, and then it gives you another promise that only resolves when every one of those other promises has resolved. It is the asynchronous equivalent of a &lt;code&gt;for-loop&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;rookie-mistake-3-forgetting-to-add-catch&#34;&gt;Rookie mistake #3: forgetting to add .catch()&lt;/h1&gt;
-
-&lt;p&gt;Many developers forget to add a &lt;code&gt;.catch()&lt;/code&gt; anywhere in their code. Unfortunately this means that any thrown errors will be swallowed, and you won&amp;rsquo;t even see them in your console. This can be a real pain to debug.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;somePromise().then(function () {
-  return anotherPromise();
-}).then(function () {
-  return yetAnotherPromise();
-}).catch(console.log.bind(console)); // &amp;lt;-- this is badass
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;rookie-mistake-4-using-deferred&#34;&gt;Rookie mistake #4: using &amp;ldquo;deferred&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;If you are writing that word in your code you are doing something wrong. Here&amp;rsquo;s how to avoid it.&lt;/p&gt;
-
-&lt;p&gt;First off, most promise libraries give you a way to &lt;em&gt;import&lt;/em&gt; promises from third-party libraries. For instance, Angular&amp;rsquo;s &lt;code&gt;$q&lt;/code&gt; module allows you to wrap non-$q promises using &lt;code&gt;$q.when()&lt;/code&gt;. So Angular users can wrap PouchDB promises this way:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;$q.when(db.put(doc)).then(/* ... */); // &amp;lt;-- this is all the code you need
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Another strategy is to use the revealing constructor pattern, which is useful for wrapping &lt;em&gt;non-promise APIs&lt;/em&gt;. For instance, to wrap a callback-based API like Node&amp;rsquo;s &lt;code&gt;fs.readFile()&lt;/code&gt;, you can simply do:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;new Promise(function (resolve, reject) {
-  fs.readFile(&#39;myfile.txt&#39;, function (err, file) {
-    if (err) {
-      return reject(err);
-    }
-    resolve(file);
-  });
-}).then(/* ... */)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;rookie-mistake-5-using-side-effects-instead-of-returning&#34;&gt;Rookie mistake #5: using side effects instead of returning&lt;/h1&gt;
-
-&lt;p&gt;What&amp;rsquo;s wrong with this code?&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;somePromise().then(function () {
-  someOtherPromise();
-}).then(function () {
-  // Gee, I hope someOtherPromise() has resolved!
-  // Spoiler alert: it hasn&#39;t.
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Seriously, this is the &lt;strong&gt;one weird trick&lt;/strong&gt; that, once you understand it, will prevent all of the errors I&amp;rsquo;ve been talking about.&lt;/p&gt;
-
-&lt;p&gt;As I said before, the magic of promises is that they give us back our precious &lt;code&gt;return&lt;/code&gt; and &lt;code&gt;throw&lt;/code&gt;. But what does this actually look like in practice?&lt;/p&gt;
-
-&lt;p&gt;What can we do here? There are three things:&lt;/p&gt;
-
-&lt;p&gt;1.&lt;code&gt;return&lt;/code&gt; another promise
-2.&lt;code&gt;return&lt;/code&gt; a synchronous value (or &lt;code&gt;undefined&lt;/code&gt;)
-3.&lt;code&gt;throw&lt;/code&gt; a synchronous error&lt;/p&gt;
-
-&lt;h2 id=&#34;return-another-promise&#34;&gt;Return another promise&lt;/h2&gt;
-
-&lt;p&gt;This is a common pattern you see in the promise literature, as in the &lt;strong&gt;composing promises&lt;/strong&gt; example above:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;getUserByName(&#39;nolan&#39;).then(function (user) {
-  return getUserAccountById(user.id);
-}).then(function (userAccount) {
-  // I got a user account!
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Notice that I&amp;rsquo;m returning the second promise – that &lt;code&gt;return&lt;/code&gt; is crucial. If I didn&amp;rsquo;t say return, then the &lt;code&gt;getUserAccountById()&lt;/code&gt; would actually be a &lt;em&gt;side effect&lt;/em&gt;, and the next function would receive &lt;code&gt;undefined&lt;/code&gt; instead of the &lt;code&gt;userAccount&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;return-a-synchronous-value-or-undefined&#34;&gt;Return a synchronous value (or undefined)&lt;/h2&gt;
-
-&lt;p&gt;Returning &lt;code&gt;undefined&lt;/code&gt; is often a mistake, but returning a &lt;em&gt;synchronous value&lt;/em&gt; is actually an awesome way to convert synchronous code into promisey code. For instance, let&amp;rsquo;s say we have an in-memory cache of users. We can do:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;getUserByName(&#39;nolan&#39;).then(function (user) {
-  if (inMemoryCache[user.id]) {
-    return inMemoryCache[user.id];    // returning a synchronous value!
-  }
-  return getUserAccountById(user.id); // returning a promise!
-}).then(function (userAccount) {
-  // I got a user account!
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;For this reason, I make it a personal habit to always return or throw from inside a &lt;code&gt;then()&lt;/code&gt; function. I&amp;rsquo;d recommend you do the same.&lt;/p&gt;
-
-&lt;h2 id=&#34;throw-a-synchronous-error&#34;&gt;Throw a synchronous error&lt;/h2&gt;
-
-&lt;p&gt;Let&amp;rsquo;s say we want to throw a synchronous error in case the user is logged out. It&amp;rsquo;s quite easy:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;getUserByName(&#39;nolan&#39;).then(function (user) {
-  if (user.isLoggedOut()) {
-    throw new Error(&#39;user logged out!&#39;); // throwing a synchronous error!
-  }
-  if (inMemoryCache[user.id]) {
-    return inMemoryCache[user.id];       // returning a synchronous value!
-  }
-  return getUserAccountById(user.id);    // returning a promise!
-}).then(function (userAccount) {
-  // I got a user account!
-}).catch(function (err) {
-  // Boo, I got an error!
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;advanced-mistake-1-don-t-know-about-promise-resolve&#34;&gt;Advanced mistake #1: don&amp;rsquo;t know about Promise.resolve&lt;/h1&gt;
-
-&lt;p&gt;As I showed above, promises are very useful for wrapping synchronous code as asynchronous code. However, if you find yourself typing this a lot:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;new Promise(function (resolve, reject) {
-  resolve(someSynchronousValue);
-}).then(/* ... */);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You can express this more succinctly using &lt;code&gt;Promise.resolve()&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;Promise.resolve(someSynchronousValue).then(/* ... */);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;//more verbose exapmle
-function somePromiseAPI() {
-  return Promise.resolve().then(function () {
-    return &#39;foo&#39;;
-  }).then(/* ... */);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;advanced-mistake-2-catch-isn-t-exactly-like-then-null-cb&#34;&gt;Advanced mistake #2: catch() isn&amp;rsquo;t exactly like then(null, cb)&lt;/h1&gt;
-
-&lt;p&gt;If you&amp;rsquo;re wondering why they&amp;rsquo;re not equivalent, consider what happens if the first function throws an error:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;somePromise().then(function () {
-  throw new Error(&#39;oh noes&#39;);
-}).catch(function (err) {
-  // I caught your error! :)
-});
-
-somePromise().then(function () {
-  throw new Error(&#39;oh noes&#39;);
-}, function (err) {
-  // I didn&#39;t catch your error! :(
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As it turns out, when you use the then(resolveHandler, rejectHandler) format, the rejectHandler won&amp;rsquo;t actually catch an error if it&amp;rsquo;s thrown by the resolveHandler itself.&lt;/p&gt;
-
-&lt;h1 id=&#34;advanced-mistake-3-use-promise-in-parallel-or-promises-vs-promise-factories&#34;&gt;Advanced mistake #3: use promise in parallel or promises vs promise factories&lt;/h1&gt;
-
-&lt;p&gt;That is, you want something like &lt;code&gt;Promise.all()&lt;/code&gt;, but which doesn&amp;rsquo;t execute the &lt;em&gt;promises in parallel&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;You might naïvely write something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function executeSequentially(promises) {
-  var result = Promise.resolve();
-  promises.forEach(function (promise) {
-    result = result.then(promise);
-  });
-  return result;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The promises you pass in to &lt;code&gt;executeSequentially()&lt;/code&gt; will still execute in parallel.&lt;/p&gt;
-
-&lt;p&gt;The reason this happens is that you don&amp;rsquo;t want to operate over an array of promises at all. Per the promise spec, as soon as a promise is created, it begins executing. So what you really want is an array of promise factories.&lt;/p&gt;
-
-&lt;p&gt;A promise factory is very simple, though – it&amp;rsquo;s just a function that returns a promise:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function myPromiseFactory() {
-  return somethingThatCreatesAPromise();
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function executeSequentially(promiseFactories) {
-  var result = Promise.resolve();
-  promiseFactories.forEach(function (promiseFactory) {
-    result = result.then(promiseFactory);
-  });
-  return result;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Why does this work? It works because a promise factory doesn&amp;rsquo;t create the promise until it&amp;rsquo;s asked to. It works the same way as a &lt;code&gt;then&lt;/code&gt; function – in fact, it&amp;rsquo;s the same thing!&lt;/p&gt;
-
-&lt;p&gt;Another task, create code which will download recurses from array URLs in sequence:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;let urls = [
-  &#39;user.json&#39;,
-  &#39;guest.json&#39;
-];
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// begin of the chain
-let chain = Promise.resolve();
-
-let results = [];
-
-// in loop add tasks in chain
-urls.forEach(function(url) {
-  // task are added in sequence
-  chain = chain
-    .then(() =&amp;gt; httpGet(url))
-    .then((result) =&amp;gt; {
-      results.push(result);
-    });
-});
-
-// result of promises
-chain.then(console.log.bind(console));
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The same approach with parallel:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;Promise.all( urls.map(httpGet) )
-  .then(console.log.bind(console));
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;advanced-mistake-4-okay-what-if-i-want-the-result-of-two-promises&#34;&gt;Advanced mistake #4: okay, what if I want the result of two promises?&lt;/h1&gt;
-
-&lt;p&gt;Often times, one promise will depend on another, but we&amp;rsquo;ll want the output of both promises. For instance:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;getUserByName(&#39;nolan&#39;).then(function (user) {
-  return getUserAccountById(user.id);
-}).then(function (userAccount) {
-  // dangit, I need the &amp;quot;user&amp;quot; object too!
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Wanting to be good JavaScript developers and avoid the pyramid of doom, we might just store the user object in a higher-scoped variable:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var user;
-getUserByName(&#39;nolan&#39;).then(function (result) {
-  user = result;
-  return getUserAccountById(user.id);
-}).then(function (userAccount) {
-  // okay, I have both the &amp;quot;user&amp;quot; and the &amp;quot;userAccount&amp;quot;
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;My recommended strategy: just let go of your preconceptions and embrace the pyramid:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;getUserByName(&#39;nolan&#39;).then(function (user) {
-  return getUserAccountById(user.id).then(function (userAccount) {
-    // okay, I have both the &amp;quot;user&amp;quot; and the &amp;quot;userAccount&amp;quot;
-  });
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If the indentation ever becomes an issue, then you can do what JavaScript developers have been doing since time immemorial, and extract the function into a named function:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function onGetUserAndUserAccount(user, userAccount) {
-  return doSomething(user, userAccount);
-}
-
-function onGetUser(user) {
-  return getUserAccountById(user.id).then(function (userAccount) {
-    return onGetUserAndUserAccount(user, userAccount);
-  });
-}
-
-getUserByName(&#39;nolan&#39;)
-  .then(onGetUser)
-  .then(function () {
-  // at this point, doSomething() is done, and we are back to indentation 0
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As your promise code starts to get more complex, you may find yourself extracting more and more functions into named functions. I find this leads to very aesthetically-pleasing code, which might look like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;putYourRightFootIn()
-  .then(putYourRightFootOut)
-  .then(putYourRightFootIn)  
-  .then(shakeItAllAbout);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Save my day:
-    *   &lt;a href=&#34;http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html&#34;&gt;We have a problem with promises&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

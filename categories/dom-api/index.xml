@@ -2916,6 +2916,114 @@ for (var div of elements) { callback(div) };
     </item>
     
     <item>
+      <title>Class manipulation in Javascript, jQuery and AngularJS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Class-manipulation-in-Javascript-jQuery-and-AngularJS/</link>
+      <pubDate>Wed, 02 Jul 2014 23:24:37 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Class-manipulation-in-Javascript-jQuery-and-AngularJS/</guid>
+      <description>&lt;p&gt;In this article, I would like to create short reference for how &lt;code&gt;add/remove/toogle&lt;/code&gt; class in pure Javascript and with framework.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;javascript&#34;&gt;Javascript&lt;/h1&gt;
+
+&lt;h2 id=&#34;classname&#34;&gt;className&lt;/h2&gt;
+
+&lt;p&gt;Property &lt;code&gt;className&lt;/code&gt; has value of HTML-atribute &lt;code&gt;class&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;body class=&amp;quot;class1 class2&amp;quot;&amp;gt;&amp;lt;/body&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;console.log(document.body.className);
+//class1 class2
+
+document.body.className += &#39; class3&#39;;
+
+console.log(document.body.className);
+//class1 class2 class3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;classlist&#34;&gt;classList&lt;/h2&gt;
+
+&lt;p&gt;Property &lt;code&gt;classList&lt;/code&gt; gives convenient interface for work with certain classes.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;elem.classList.contains(cls)&lt;/code&gt; - return &lt;code&gt;true/false&lt;/code&gt; if element has class &lt;code&gt;cls&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;elem.classList.add/remove(cls)&lt;/code&gt; - adding/removing class &lt;code&gt;cls&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;elem.classList.toogle(cls)&lt;/code&gt; - if element has class &lt;code&gt;cls&lt;/code&gt;, remove it, else add class &lt;code&gt;cls&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;jquery&#34;&gt;jQuery&lt;/h1&gt;
+
+&lt;p&gt;These methods inspect and manpulate classes assigned to elements:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$(elem).hasClass(cls)&lt;/code&gt; - return &lt;code&gt;true/false&lt;/code&gt; if element has class &lt;code&gt;cls&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$(elem).addClass/removeClass(cls)&lt;/code&gt; - adding/removing class &lt;code&gt;cls&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$(elem).toogleClass(cls)&lt;/code&gt; - if element has class(es) &lt;code&gt;cls&lt;/code&gt;, remove it, else add class(es) &lt;code&gt;cls&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;angularjs&#34;&gt;AngularJS&lt;/h1&gt;
+
+&lt;h2 id=&#34;ng-class&#34;&gt;ng-class&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ng-class&lt;/code&gt; accepts an &amp;ldquo;expression&amp;rdquo; that must evaluate to one of the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a &lt;code&gt;string&lt;/code&gt; of space-delimited class names&lt;/li&gt;
+&lt;li&gt;an &lt;code&gt;array&lt;/code&gt; of class names&lt;/li&gt;
+&lt;li&gt;a &lt;code&gt;map/object&lt;/code&gt; of class names to boolean values&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/yjiAp/&#34;&gt;AngularJS, ng-class example&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.
+&lt;script async src=&#34;//codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ng-style&#34;&gt;ng-style&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ng-style&lt;/code&gt; accepts an &amp;ldquo;expression&amp;rdquo; that must evaluate to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;an &lt;code&gt;map/object&lt;/code&gt; of CSS style names to CSS values&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/KyBjs/&#34;&gt;AngularJS, ng-style example&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Form pop-up with inputs navigation</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Form-pop-up-with-inputs-navigation/</link>
+      <pubDate>Sun, 30 Mar 2014 21:41:30 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Form-pop-up-with-inputs-navigation/</guid>
+      <description>&lt;p&gt;Modal pop-up confirm with &amp;ldquo;correct&amp;rdquo; navigation through inputs.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Main functional requirements are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;When submitting a form &lt;code&gt;OK&lt;/code&gt; / &lt;code&gt;Enter&lt;/code&gt; - the callback function must be called with the value of the field&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Clicking on &lt;code&gt;Cancel&lt;/code&gt; or press the &lt;code&gt;Esc&lt;/code&gt; should be call the function callback. &lt;code&gt;Esc&lt;/code&gt; key to close the form should always, even if the message input field is not in focus.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Form should do modal affect, all other element on page must be unclickable.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Form always centered in middle, height of form has no matter&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;When form appears input field in focus and user have possibility use &lt;code&gt;Tab&lt;/code&gt; / &lt;code&gt;Tab-Shift&lt;/code&gt; for switch only inputs in the form.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;p data-height=&#34;268&#34; data-theme-id=&#34;0&#34; data-slug-hash=&#34;xuizw&#34; data-default-tab=&#34;result&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/xuizw/&#39;&gt;xuizw&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Make my day:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://learn.javascript.ru/forms-submit&#34;&gt;Forms: method and event &amp;ldquo;submit&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>What is event bubbling and capturing?</title>
       <link>https://qetr1ck-op.github.io/blog/post/what-is-event-bubbling-and-capturing/</link>
       <pubDate>Sun, 02 Feb 2014 00:00:00 +0000</pubDate>

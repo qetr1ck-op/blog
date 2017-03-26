@@ -2600,6 +2600,25 @@ Oh and did I mention that Karma is fast? Yeah it&amp;rsquo;s really fast&amp;hel
     </item>
     
     <item>
+      <title>Centering in CSS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Centering-in-CSS/</link>
+      <pubDate>Mon, 08 Sep 2014 22:54:09 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Centering-in-CSS/</guid>
+      <description>&lt;p&gt;A fast guide to help centering everything with CSS.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;So now you can easy to say, that centering in CSS isn&amp;rsquo;t a big deal.&lt;/p&gt;
+
+&lt;p&gt;Save My Day:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;on &lt;a href=&#34;http://css-tricks.com/centering-css-complete-guide/&#34;&gt;Css tricks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>Medium-Style Page Transition</title>
       <link>https://qetr1ck-op.github.io/blog/post/Medium-Style-Page-Transition/</link>
       <pubDate>Mon, 01 Sep 2014 22:50:51 +0000</pubDate>
@@ -2743,6 +2762,1304 @@ article.easing-upward {
     </item>
     
     <item>
+      <title>Article Intro Effects Examples</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Article-Intro-Effects-Examples/</link>
+      <pubDate>Tue, 19 Aug 2014 12:46:59 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Article-Intro-Effects-Examples/</guid>
+      <description>&lt;p&gt;Most of the effects we tried are highly experimental; animating large images can become a bit sluggish, also because a couple of transitions happening at the same time. The effect gets triggered when &lt;code&gt;scrolling begins&lt;/code&gt;  or when the &lt;code&gt;button is clicked&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;SaveMyDay:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;on &lt;a href=&#34;http://tympanus.net/codrops/2014/05/22/inspiration-for-article-intro-effects/&#34;&gt;tympanus.net&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Canvas-off icon navigation with an animated border effect</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Canvas-off-icon-navigation-with-an-animated-border-effect/</link>
+      <pubDate>Mon, 11 Aug 2014 21:11:48 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Canvas-off-icon-navigation-with-an-animated-border-effect/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;the-markup&#34;&gt;The Markup&lt;/h1&gt;
+
+&lt;p&gt;The HTML structure for our menu will consist of a &lt;code&gt;nav&lt;/code&gt; element that will contain a &lt;code&gt;trigger anchor&lt;/code&gt; and an unordered list with the menu items which will consist of icons:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;nav id=&amp;quot;bt-menu&amp;quot; class=&amp;quot;bt-menu&amp;quot;&amp;gt;
+    [&amp;lt;span&amp;gt;Menu&amp;lt;/span&amp;gt;](#)
+
+*   [Zoom](#)
+*   [Refresh](#)
+*   [Lock](#)
+*   [Sound](#)
+*   [Favorite](#)
+&amp;lt;/nav&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;the-css&#34;&gt;The CSS&lt;/h1&gt;
+
+&lt;p&gt;Let’s use the border-box box-sizing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;*,
+*:after,
+*::before {
+    box-sizing: border-box;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And let’s set some styles for the body and the main container:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;body  {
+    background: #04a466;
+}
+
+.container {
+    padding: 80px;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The padding will help providing some space around our content so that when the border appears, we guarantee that there is enough space around.&lt;/p&gt;
+
+&lt;p&gt;The main menu element will have position &lt;code&gt;fixed&lt;/code&gt; so that, no matter where we are in the page, the border is always around the viewport. We set an initial &lt;code&gt;border&lt;/code&gt; style which we will transition to a bigger border. Setting the initial &lt;code&gt;height&lt;/code&gt; to 0 will make sure that the menu does not cover anything initially. The “backward” or closing height &lt;code&gt;transition&lt;/code&gt; will have a delay of 0.3s:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-width: 0px;
+    border-style: solid;
+    border-color: #333;
+    background-color: rgba(0,0,0,0);
+    transition: border-width 0.3s, background-color 0.3s, height 0s 0.3s;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When we open the menu, we’ll set the &lt;code&gt;height&lt;/code&gt; to 100% (but we won’t transition that property) and the &lt;code&gt;border will&lt;/code&gt; animate to 90px on the left side and 30px on all the other sides. The &lt;code&gt;background color&lt;/code&gt; will be semi-transparent using an RGBA value:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-menu.bt-menu-open {
+    height: 100%;
+    border-width: 30px 30px 30px 90px;
+    background-color: rgba(0,0,0,0.3);
+    transition: border-width 0.3s, background-color 0.3s;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now we have to use a little trick. We will add another &lt;code&gt;element&lt;/code&gt; using JavaScript which will server as a dummy container covering the whole page except the border. This will allow us to distinguish where we are clicking in order to close the whole thing. We don’t want the menu to close when clicking on the border but only when clicking in the space between:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-overlay {
+    position: absolute;
+    width: 100%;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When we open the menu, this element will have full &lt;code&gt;height&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-menu-open .bt-overlay {
+    height: 100%;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let’s style that little &lt;code&gt;trigger element&lt;/code&gt;. We’ll give it a &lt;code&gt;fixed&lt;/code&gt; position and we’ll show it in the &lt;code&gt;top left corner&lt;/code&gt; of the page:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-menu-trigger {
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;trigger anchor&lt;/code&gt; itself will serve as a container and the span will be the middle line of our hamburger menu icon. So we position it in the middle by setting the &lt;code&gt;top&lt;/code&gt; to 50% and giving it a negative top &lt;code&gt;margin&lt;/code&gt; of half of its height:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-menu-trigger span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin-top: -2px;
+    background-color: #fff;
+    font-size: 0px;
+    user-select: none;
+    transition: background-color 0.3s;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When opening the menu, we will make a cross out of the icon. The other two lines will be created by pseudo-elements and when the menu is open, the middle line will disappear:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-menu-open .bt-menu-trigger span {
+    background-color: transparent;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, let’s create the two other lines. The pseudo-elements will be &lt;code&gt;positioned&lt;/code&gt; absolutely and their &lt;code&gt;height&lt;/code&gt; is going to be the same like of their parent by setting it to 100%:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-menu-trigger span:before,
+.bt-menu-trigger span:after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    content: &#39;&#39;;
+    transition: transform 0.3s;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For positioning them correctly, we’ll use &lt;code&gt;translateY&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-menu-trigger span:before {
+    transform: translateY(-250%);
+}
+
+.bt-menu-trigger span:after {
+    transform: translateY(250%);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The cross will be formed when opening the menu by setting the &lt;code&gt;translateY&lt;/code&gt; to 0 and rotating the pseudo-elements accordingly:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-menu-open .bt-menu-trigger span:before {
+    transform: translateY(0) rotate(45deg);
+}
+
+.bt-menu-open .bt-menu-trigger span:after {
+    transform: translateY(0) rotate(-45deg);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;unordered list&lt;/code&gt; with our icons will also have a &lt;code&gt;fixed&lt;/code&gt; position and we’ll set it to the left side of the window:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-menu ul {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 90px;
+    list-style: none;
+    backface-visibility: hidden;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let’s set the list items and the anchors to &lt;code&gt;display: block&lt;/code&gt; and give them full width:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-menu ul li,
+.bt-menu ul li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Each list item will be hidden initially and the &lt;code&gt;opacity&lt;/code&gt; will be 0. The “backward” transition of the visibility will be delayed until all the other &lt;code&gt;transitions&lt;/code&gt; of the transform and the opacity are finished:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-menu ul li {
+    padding: 16px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s, opacity 0.2s, visibility 0s 0.3s;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now we will transform each of the list items differently so that they are all placed in the &lt;code&gt;middle&lt;/code&gt; and to the left until they are hidden (-100% on the Y axis):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-menu ul li:first-child { 
+    transform: translate3d(-100%,200%,0);
+}
+
+.bt-menu ul li:nth-child(2) { 
+    transform: translate3d(-100%,100%,0);
+}
+
+.bt-menu ul li:nth-child(3) { 
+    transform: translate3d(-100%,0,0);
+}
+
+.bt-menu ul li:nth-child(4) { 
+    transform: translate3d(-100%,-100%,0);
+}
+
+.bt-menu ul li:nth-child(5) { 
+    transform: translate3d(-100%,-200%,0);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When opening the menu, the list items will become &lt;code&gt;visible&lt;/code&gt; (instantly, because we are not setting a transition for it) and they will fade in. They will also move to their original positions by setting the &lt;code&gt;transform3d&lt;/code&gt; to 0 for all axes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-menu.bt-menu-open ul li {
+    visibility: visible;
+    opacity: 1;
+    transition: transform 0.3s, opacity 0.3s;
+    transform: translate3d(0,0,0);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, let’s style the anchors. We will use an icon font and include the font reference and the icon classes in another CSS which will be provided by a service like &lt;a href=&#34;http://app.fontastic.me/&#34;&gt;Fontastic&lt;/a&gt; or the &lt;a href=&#34;https://icomoon.io/app&#34;&gt;IcoMoon app&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;By setting the &lt;code&gt;font size&lt;/code&gt; of the anchor to 0 and make it transparent, we’ll hide the text:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-menu ul li a {
+    display: block;
+    outline: none;
+    color: transparent;
+    text-decoration: none;
+    font-size: 0px;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We’ll reset the &lt;code&gt;font size&lt;/code&gt; for the pseudo-element which contains the icon. We’ll need to use a pixel-based value because the main element has a font-size of 0 so ems won’t work here:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-menu ul li a:before {
+    color: #04a466;
+    font-size: 48px;
+    transition: color 0.2s;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;On &lt;code&gt;hover&lt;/code&gt; we’ll make them white:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.bt-menu ul li a:hover:before,
+.bt-menu ul li a:focus:before  {
+    color: #fff;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And last, but not least, we want the icons to be smaller on mobile screens:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;@media screen and (max-height: 31.125em) {
+    .bt-menu ul li a:before {
+        font-size: 32px;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;the-javascript&#34;&gt;The Javascript&lt;/h1&gt;
+
+&lt;p&gt;Our script is pretty straightforward; when we click on the trigger anchor, we toggle the class &lt;code&gt;bt-menu-open&lt;/code&gt; and &lt;code&gt;bt-menu-close&lt;/code&gt; on the &lt;code&gt;nav&lt;/code&gt; element.&lt;/p&gt;
+
+&lt;p&gt;When we click on the &lt;code&gt;overlay&lt;/code&gt;, we will close the menu. We’ll also add some touch support:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;(function() {
+
+    // http://stackoverflow.com/a/11381730/989439
+    function mobilecheck() {
+        var check = false;
+        (function(a){if(/(android|ipad|playbook|silk|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
+        return check;
+    }
+
+    function init() {
+
+        var menu = document.getElementById( &#39;bt-menu&#39; ),
+            trigger = menu.querySelector( &#39;a.bt-menu-trigger&#39; ),
+            // event type (if mobile, use touch events)
+            eventtype = mobilecheck() ? &#39;touchstart&#39; : &#39;click&#39;,
+            resetMenu = function() {
+                classie.remove( menu, &#39;bt-menu-open&#39; );
+                classie.add( menu, &#39;bt-menu-close&#39; );
+            },
+            closeClickFn = function( ev ) {
+                resetMenu();
+                overlay.removeEventListener( eventtype, closeClickFn );
+            };
+
+        var overlay = document.createElement(&#39;div&#39;);
+        overlay.className = &#39;bt-overlay&#39;;
+        menu.appendChild( overlay );
+
+        trigger.addEventListener( eventtype, function( ev ) {
+            ev.stopPropagation();
+            ev.preventDefault();
+
+            if( classie.has( menu, &#39;bt-menu-open&#39; ) ) {
+                resetMenu();
+            }
+            else {
+                classie.remove( menu, &#39;bt-menu-close&#39; );
+                classie.add( menu, &#39;bt-menu-open&#39; );
+                overlay.addEventListener( eventtype, closeClickFn );
+            }
+        });
+
+    }
+
+    init();
+
+})();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;view-demo&#34;&gt;View Demo&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://tympanus.net/Development/OffCanvasMenuEffects/&#34;&gt;View demo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;SaveMyDay:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;on &lt;a href=&#34;http://tympanus.net/codrops/2013/09/30/animated-border-menus/&#34;&gt;tympanus.net&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>CSS Transforms</title>
+      <link>https://qetr1ck-op.github.io/blog/post/CSS-Transforms/</link>
+      <pubDate>Sun, 03 Aug 2014 22:13:20 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/CSS-Transforms/</guid>
+      <description>&lt;p&gt;So what are transforms and transitions? At their most basic level, transforms move or change the appearance of an element, while transitions make the element smoothly and gradually change from one state to another.
+&lt;/p&gt;
+
+&lt;h1 id=&#34;how-to-use-transforms&#34;&gt;How to use transforms&lt;/h1&gt;
+
+&lt;p&gt;There are two categories of transform - &lt;code&gt;2D transforms&lt;/code&gt; and &lt;code&gt;3D transforms&lt;/code&gt;. 2D transforms are more widely supported, whereas 3D transforms are only in newer browsers.&lt;/p&gt;
+
+&lt;h1 id=&#34;2d-examples&#34;&gt;2D examples&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;//don&#39;t forget about prefixes
+#skew {
+  -webkit-transform:skew(35deg);
+   -moz-transform:skew(35deg);
+    -ms-transform:skew(35deg);
+     -o-transform:skew(35deg);
+        transform:skew(35deg);
+}
+#scale {
+  -webkit-transform:scale(1,0.5);
+   -moz-transform:scale(1,0.5);
+    -ms-transform:scale(1,0.5);
+     -o-transform:scale(1,0.5);
+        transform:scale(1,0.5);
+}
+#rotate {
+  -webkit-transform:rotate(45deg);
+   -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+     -o-transform:rotate(45deg);
+        transform:rotate(45deg);
+}
+#translate {
+  -webkit-transform:translate(10px, 20px);
+   -moz-transform:translate(10px, 20px);
+    -ms-transform:translate(10px, 20px);
+     -o-transform:translate(10px, 20px);
+        transform:translate(10px, 20px);
+}
+
+.thumbnail {
+  -webkit-transition: all .5s ease-in;
+  -moz-transition: all .5s ease-in;  
+  -o-transition: all .5s ease-in;
+  transition: all .5s ease-in;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p data-height=&#34;473&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;BGAaf&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/BGAaf/&#39;&gt;CSS Transforms: 2D examples&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;
+
+# 3D examples and hadle `onTransitionEnd
+
+3D CSS transforms are similar to 2D CSS transforms. The basic properties are `translate3d`, `scale3d`, `rotateX`, `rotateY` and `rotateZ`. `translate3d` and `scale3d` take three arguments for x,y and z, whereas the rotates just take an angle. Here are some examples:
+
+```css
+#rotateX{
+-webkit-transform:rotateX(180deg);
+   -moz-transform:rotateX(180deg);
+    -ms-transform:rotateX(180deg);
+     -o-transform:rotateX(180deg);
+        transform:rotateX(180deg);
+}
+#rotateY{
+-webkit-transform:rotateY(180deg);
+   -moz-transform:rotateY(180deg);
+    -ms-transform:rotateY(180deg);
+     -o-transform:rotateY(180deg);
+        transform:rotateY(180deg);
+}
+#rotateZ{
+-webkit-transform:rotateZ(180deg);
+   -moz-transform:rotateZ(180deg);
+    -ms-transform:rotateZ(180deg);
+     -o-transform:rotateZ(180deg);
+        transform:rotateZ(180deg);
+}
+```
+
+```js
+$(&#39;.thumbnail&#39;).on(&#39;transitionend webkitTransitionEnd MSTransitionEnd&#39;, function(e) {
+  //transitionend fires for each property transitioned
+  if (e.originalEvent.propertyName != &#39;transform&#39;) return;
+
+  alert(&#39;webkitTransitionEnd&#39;)
+});
+```
+
+&lt;p data-height=&#34;474&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;CDrkj&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/CDrkj/&#39;&gt;CSS Transforms: 3D example and transtionEnd&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;3d-transform-image-slider&#34;&gt;3D Transform image slider&lt;/h1&gt;
+
+&lt;p&gt;Note that because of the way a cube works, the image is moved out towards the screen, and is bigger than it should be. You should move it back by &lt;code&gt;half&lt;/code&gt; the width of an image to make sure it is normal size.&lt;/p&gt;
+
+&lt;p data-height=&#34;545&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;GgCah&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/GgCah/&#39;&gt;CSS Transforms: 3D Transform image slider&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;SaveMyDay:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;on &lt;a href=&#34;http://css3.bradshawenterprises.com/transforms/&#34;&gt;css3.bradshawenterprises.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap 3: Components</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Bootstrap3-Components/</link>
+      <pubDate>Sat, 02 Aug 2014 16:59:51 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Bootstrap3-Components/</guid>
+      <description>&lt;p&gt;Set of standard components from popular library.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;icons&#34;&gt;Icons&lt;/h1&gt;
+
+&lt;p&gt;Use them in buttons, button groups for a toolbar, navigation, or prepended form inputs.&lt;/p&gt;
+
+&lt;p&gt;&lt;p data-height=&#34;268&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;zAupx&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/zAupx/&#39;&gt;Bootstrap Components: Icons Examples&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;dropdowns&#34;&gt;Dropdowns&lt;/h1&gt;
+
+&lt;p&gt;Wrap the dropdown&amp;rsquo;s trigger and the dropdown menu within &lt;code&gt;.dropdown&lt;/code&gt;, or another element that declares &lt;code&gt;position: relative;&lt;/code&gt;. Then add the menu&amp;rsquo;s HTML:&lt;/p&gt;
+
+&lt;p&gt;Via data attributes or JavaScript, the dropdown plugin toggles hidden content (dropdown menus) by toggling the &lt;code&gt;.open&lt;/code&gt; class on the parent list item. When opened, the plugin also adds &lt;code&gt;.dropdown-backdrop&lt;/code&gt; as a click area for closing dropdown menus when clicking outside the menu.&lt;/p&gt;
+
+&lt;p&gt;Call the dropdowns via JavaScript: &lt;code&gt;$(&#39;.dropdown-toggle&#39;).dropdown()&lt;/code&gt; or use &lt;code&gt;data-toggle=&amp;quot;dropdown&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://getbootstrap.com/javascript/#dropdowns-usage&#34;&gt;Full list Dropdown methods&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;p data-height=&#34;268&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;yoehq&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/yoehq/&#39;&gt;yoehq&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;buttons-group&#34;&gt;Buttons group&lt;/h1&gt;
+
+&lt;p&gt;Group a series of buttons together on a single line with the button group. Control via JavaScript: &lt;code&gt;$(&#39;.btn&#39;).button()&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://getbootstrap.com/javascript/#buttons-usage&#34;&gt;Full list methods&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;p data-height=&#34;268&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;qCbxy&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/qCbxy/&#39;&gt;Bootstrap Components: Buttons Group&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;input-groups&#34;&gt;Input groups&lt;/h1&gt;
+
+&lt;p&gt;Extend form controls by adding text or buttons before, after, or on both sides of any text-based input. Use &lt;code&gt;.input-group&lt;/code&gt; with an &lt;code&gt;.input-group-addon&lt;/code&gt; to prepend or append elements to a single &lt;code&gt;.form-control&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;p data-height=&#34;268&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;Cypci&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/Cypci/&#39;&gt;Bootstrap: Components - Input groups&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;navs&#34;&gt;Navs&lt;/h1&gt;
+
+&lt;p&gt;Navs available in Bootstrap have shared markup, starting with the base &lt;code&gt;.nav&lt;/code&gt; class, as well as shared states. Swap modifier classes to switch between each style.&lt;/p&gt;
+
+&lt;p&gt;Navs via JavaScript: &lt;code&gt;$(&#39;#myTab a&#39;).tab()&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://getbootstrap.com/javascript/#tabs&#34;&gt;Full list methods&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;p data-height=&#34;762&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;ousCl&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/ousCl/&#39;&gt;Bootstrap: Copmonents - Navs&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;pagination&#34;&gt;Pagination&lt;/h1&gt;
+
+&lt;p&gt;Provide pagination links for your site or app with the multi-page pagination component, or the simpler pager alternative.&lt;/p&gt;
+
+&lt;p&gt;Simple pagination inspired by Rdio, great for apps and search results. The large block is hard to miss, easily scalable, and provides large click areas.&lt;/p&gt;
+
+&lt;p&gt;&lt;p data-height=&#34;366&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;zwqHv&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/zwqHv/&#39;&gt;Bootstrap: Components - Pagination&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;labels-and-badges&#34;&gt;Labels and Badges&lt;/h1&gt;
+
+&lt;p&gt;Add any of the below mentioned modifier classes to change the appearance of a label.&lt;/p&gt;
+
+&lt;p&gt;&lt;p data-height=&#34;332&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;Aiywe&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/Aiywe/&#39;&gt;Bootstrap: Components - Labels and Badges&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;thumbnails&#34;&gt;Thumbnails&lt;/h1&gt;
+
+&lt;p&gt;With a bit of extra markup, it&amp;rsquo;s possible to add any kind of HTML content like headings, paragraphs, or buttons into thumbnails.&lt;/p&gt;
+
+&lt;p&gt;&lt;p data-height=&#34;355&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;rtbqu&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/rtbqu/&#39;&gt;Bootstrap: Components - Thumbnail&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;alerts&#34;&gt;Alerts&lt;/h1&gt;
+
+&lt;p&gt;Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://getbootstrap.com/javascript/#alerts&#34;&gt;Full list methods&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;p data-height=&#34;268&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;roLJc&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/roLJc/&#39;&gt;Bootstrap: Components - Alerts&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;progress-bars&#34;&gt;Progress Bars&lt;/h1&gt;
+
+&lt;p&gt;Provide up-to-date feedback on the progress of a work-flow or action with simple yet flexible progress bars.&lt;/p&gt;
+
+&lt;p&gt;&lt;p data-height=&#34;268&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;acvLq&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/acvLq/&#39;&gt;Bootstrap: Components - Progress Bar&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap 3: CSS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Bootstrap3-CSS/</link>
+      <pubDate>Thu, 17 Jul 2014 20:10:04 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Bootstrap3-CSS/</guid>
+      <description>&lt;p&gt;A detailed look for implementation of UI popular library.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;mobile-first&#34;&gt;Mobile First&lt;/h1&gt;
+
+&lt;p&gt;To ensure proper rendering and touch zooming, add the viewport &lt;code&gt;meta&lt;/code&gt; tag:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can disable zooming capabilities on mobile devices by adding:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;typography-and-links&#34;&gt;Typography and links&lt;/h1&gt;
+
+&lt;p&gt;Bootstrap sets basic global display, typography, and link styles. Specifically, we:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Set &lt;code&gt;background-color: #fff;&lt;/code&gt; on the body&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;@font-family-base&lt;/code&gt;, &lt;code&gt;@font-size-base&lt;/code&gt;, and &lt;code&gt;@line-height&lt;/code&gt; - base attributes as our typographic base&lt;/li&gt;
+&lt;li&gt;Set the global link color via &lt;code&gt;@link-color&lt;/code&gt; and apply link underlines only on &lt;code&gt;:hover&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These styles can be found within &lt;code&gt;scaffolding.less&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;normalize-css&#34;&gt;Normalize.css&lt;/h1&gt;
+
+&lt;p&gt;For improved cross-browser rendering, Bootstrap uses &lt;a href=&#34;http://necolas.github.io/normalize.css/&#34;&gt;Normalize.css&lt;/a&gt;, a project by Nicolas Gallagher and Jonathan Neal.&lt;/p&gt;
+
+&lt;h1 id=&#34;media-queries&#34;&gt;Media queries&lt;/h1&gt;
+
+&lt;p&gt;Bootstrap includes a responsive, mobile first fluid grid system that appropriately scales up to &lt;code&gt;12 columns as&lt;/code&gt; the device or viewport size increases.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s how the Bootstrap grid system works:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Rows must be placed within a &lt;code&gt;.container&lt;/code&gt; (fixed-width) or &lt;code&gt;.container-fluid&lt;/code&gt; (full-width) for proper alignment and padding.&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;rows&lt;/code&gt; to create horizontal groups of columns.&lt;/li&gt;
+&lt;li&gt;Content should be placed within columns, and only columns may be immediate children of rows.&lt;/li&gt;
+&lt;li&gt;Predefined grid classes like &lt;code&gt;.row&lt;/code&gt; and &lt;code&gt;.col-xs-4&lt;/code&gt; are available for quickly making grid layouts. Less mixins can also be used for more semantic layouts.&lt;/li&gt;
+&lt;li&gt;Columns create gutters (gaps between column content) via padding. That padding is offset in rows for the first and last column via negative margin on &lt;code&gt;.rows&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The negative margin is why the examples below are outdented. It&amp;rsquo;s so that content within grid columns is lined up with non-grid content.&lt;/li&gt;
+&lt;li&gt;Grid columns are created by specifying the number of twelve available columns you wish to span. For example, three equal columns would use three &lt;code&gt;.col-xs-4&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.&lt;/li&gt;
+&lt;li&gt;Grid classes apply to devices with screen widths greater than or equal to the breakpoint sizes, and override grid classes targeted at smaller devices. Therefore, e.g. applying any &lt;code&gt;.col-md-*&lt;/code&gt; class to an element will not only affect its styling on medium devices but also on large devices if a &lt;code&gt;.col-lg-*&lt;/code&gt; class is not present.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Initial grid system implementation:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+@media (min-width: @screen-xs-min) { ... }
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { ... }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { ... }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { ... }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Using a single set of &lt;code&gt;.col-md-*&lt;/code&gt; grid classes, you can create a basic grid system that starts out stacked on mobile devices and tablet devices (the extra small to small range) before becoming horizontal on desktop (medium) devices. Place grid columns in any &lt;code&gt;.row&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;stacked-to-horizontal&#34;&gt;Stacked-to-horizontal&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-1&amp;quot;&amp;gt;.col-md-1&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-1&amp;quot;&amp;gt;.col-md-1&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-1&amp;quot;&amp;gt;.col-md-1&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-1&amp;quot;&amp;gt;.col-md-1&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-1&amp;quot;&amp;gt;.col-md-1&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-1&amp;quot;&amp;gt;.col-md-1&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-1&amp;quot;&amp;gt;.col-md-1&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-1&amp;quot;&amp;gt;.col-md-1&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-1&amp;quot;&amp;gt;.col-md-1&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-1&amp;quot;&amp;gt;.col-md-1&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-1&amp;quot;&amp;gt;.col-md-1&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-1&amp;quot;&amp;gt;.col-md-1&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-8&amp;quot;&amp;gt;.col-md-8&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-4&amp;quot;&amp;gt;.col-md-4&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-4&amp;quot;&amp;gt;.col-md-4&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-4&amp;quot;&amp;gt;.col-md-4&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-4&amp;quot;&amp;gt;.col-md-4&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-6&amp;quot;&amp;gt;.col-md-6&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-6&amp;quot;&amp;gt;.col-md-6&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;fluid-container&#34;&gt;Fluid container&lt;/h1&gt;
+
+&lt;p&gt;Turn any fixed-width grid layout into a full-width layout by changing your outermost &lt;code&gt;.container&lt;/code&gt; to &lt;code&gt;.container-fluid&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;html class=&amp;quot;container-fluid&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
+    ...
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;offseting-columns&#34;&gt;Offseting columns&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-4&amp;quot;&amp;gt;.col-md-4&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-4 col-md-offset-4&amp;quot;&amp;gt;.col-md-4 .col-md-offset-4&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-3 col-md-offset-3&amp;quot;&amp;gt;.col-md-3 .col-md-offset-3&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-3 col-md-offset-3&amp;quot;&amp;gt;.col-md-3 .col-md-offset-3&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;col-md-6 col-md-offset-3&amp;quot;&amp;gt;.col-md-6 .col-md-offset-3&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Move columns to the right using &lt;code&gt;.col-md-offset-*&lt;/code&gt; classes. These classes increase the left margin of a column by * columns. For example, &lt;code&gt;.col-md-offset-4&lt;/code&gt; moves &lt;code&gt;.col-md-4&lt;/code&gt; over four columns:&lt;/p&gt;
+
+&lt;h1 id=&#34;grid-system-examples&#34;&gt;Grid System Examples&lt;/h1&gt;
+
+&lt;p&gt;&lt;p data-height=&#34;268&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;qLfBk&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/qLfBk/&#39;&gt;Bootstrap CSS: Grids&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;headings-and-secondary-text&#34;&gt;Headings and Secondary Text&lt;/h1&gt;
+
+&lt;p&gt;All HTML headings, &lt;code&gt;h1&lt;/code&gt; through &lt;code&gt;h6&lt;/code&gt;, are available. .h1 through .h6 classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.&lt;/p&gt;
+
+&lt;p&gt;Create lighter, secondary text in any heading with a generic &lt;code&gt;small&lt;/code&gt; tag or the .small class.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;h1&amp;gt;h1. Bootstrap heading &amp;lt;small&amp;gt;Secondary text&amp;lt;/small&amp;gt;&amp;lt;/h1&amp;gt;
+&amp;lt;h2&amp;gt;h2. Bootstrap heading &amp;lt;small&amp;gt;Secondary text&amp;lt;/small&amp;gt;&amp;lt;/h2&amp;gt;
+&amp;lt;h3&amp;gt;h3. Bootstrap heading &amp;lt;small&amp;gt;Secondary text&amp;lt;/small&amp;gt;&amp;lt;/h3&amp;gt;
+&amp;lt;h4&amp;gt;h4. Bootstrap heading &amp;lt;small&amp;gt;Secondary text&amp;lt;/small&amp;gt;&amp;lt;/h4&amp;gt;
+&amp;lt;h5&amp;gt;h5. Bootstrap heading &amp;lt;small&amp;gt;Secondary text&amp;lt;/small&amp;gt;&amp;lt;/h5&amp;gt;
+&amp;lt;h6&amp;gt;h6. Bootstrap heading &amp;lt;small&amp;gt;Secondary text&amp;lt;/small&amp;gt;&amp;lt;/h6&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;body-copy&#34;&gt;Body copy&lt;/h1&gt;
+
+&lt;p&gt;Bootstrap&amp;rsquo;s global default &lt;code&gt;font-size&lt;/code&gt; is 14px, with a &lt;code&gt;line-height&lt;/code&gt; of 1.428. This is applied to the &lt;code&gt;body&lt;/code&gt; and all paragraphs. In addition, &lt;code&gt;p&lt;/code&gt; (paragraphs) receive a bottom margin of half their computed &lt;code&gt;line-height&lt;/code&gt; (10px by default).&lt;/p&gt;
+
+&lt;p&gt;Make a paragraph stand out by adding &lt;code&gt;.lead&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p class=&amp;quot;lead&amp;quot;&amp;gt;...&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;inline-text-elements&#34;&gt;Inline text elements&lt;/h1&gt;
+
+&lt;p&gt;&lt;p data-height=&#34;268&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;hoLwb&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/hoLwb/&#39;&gt;Inline text element&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;alignment-classes&#34;&gt;Alignment classes&lt;/h1&gt;
+
+&lt;p&gt;Easily realign text to components with text alignment classes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p class=&amp;quot;text-left&amp;quot;&amp;gt;Left aligned text.&amp;lt;/p&amp;gt;
+&amp;lt;p class=&amp;quot;text-center&amp;quot;&amp;gt;Center aligned text.&amp;lt;/p&amp;gt;
+&amp;lt;p class=&amp;quot;text-right&amp;quot;&amp;gt;Right aligned text.&amp;lt;/p&amp;gt;
+&amp;lt;p class=&amp;quot;text-justify&amp;quot;&amp;gt;Justified text.&amp;lt;/p&amp;gt;
+&amp;lt;p class=&amp;quot;text-nowrap&amp;quot;&amp;gt;No wrap text.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;transformation-clases&#34;&gt;Transformation clases&lt;/h1&gt;
+
+&lt;p&gt;Transform text in components with text capitalization classes&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p class=&amp;quot;text-lowercase&amp;quot;&amp;gt;Lowercased text.&amp;lt;/p&amp;gt;
+&amp;lt;p class=&amp;quot;text-uppercase&amp;quot;&amp;gt;Uppercased text.&amp;lt;/p&amp;gt;
+&amp;lt;p class=&amp;quot;text-capitalize&amp;quot;&amp;gt;Capitalized text.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;abbreviations&#34;&gt;Abbreviations&lt;/h1&gt;
+
+&lt;p&gt;Stylized implementation of HTML&amp;rsquo;s &lt;code&gt;abbr&lt;/code&gt; element for abbreviations and acronyms to show the expanded version on hover. Abbreviations with a &lt;code&gt;title&lt;/code&gt; attribute have a light dotted bottom border and a help cursor on hover, providing additional context on hover.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;abbr title=&amp;quot;attribute&amp;quot;&amp;gt;attr&amp;lt;/abbr&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;blockquotes&#34;&gt;Blockquotes&lt;/h1&gt;
+
+&lt;p&gt;For quoting blocks of content from another source within your document.&lt;/p&gt;
+
+&lt;p&gt;Add a &lt;code&gt;footer&lt;/code&gt; for identifying the source. Add &lt;code&gt;.blockquote-reverse&lt;/code&gt; for a blockquote with right-aligned content.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;blockquote&amp;gt;
+  &amp;lt;p&amp;gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&amp;lt;/p&amp;gt;
+  &amp;lt;footer&amp;gt;Someone famous in &amp;lt;cite title=&amp;quot;Source Title&amp;quot;&amp;gt;Source Title&amp;lt;/cite&amp;gt;&amp;lt;/footer&amp;gt;
+&amp;lt;/blockquote&amp;gt;
+
+&amp;lt;blockquote class=&amp;quot;blockquote-reverse&amp;quot;&amp;gt;
+  ...
+&amp;lt;/blockquote&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;lists&#34;&gt;Lists&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ol&amp;gt;
+  &amp;lt;li&amp;gt;...&amp;lt;/li&amp;gt;
+&amp;lt;/ol&amp;gt;
+
+&amp;lt;ul class=&amp;quot;list-unstyled&amp;quot;&amp;gt;
+  &amp;lt;li&amp;gt;...&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+
+&amp;lt;ul class=&amp;quot;list-inline&amp;quot;&amp;gt;
+  &amp;lt;li&amp;gt;...&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+
+&amp;lt;dl class=&amp;quot;dl-horizontal&amp;quot;&amp;gt;
+  &amp;lt;dt&amp;gt;...&amp;lt;/dt&amp;gt;
+  &amp;lt;dd&amp;gt;...&amp;lt;/dd&amp;gt;
+&amp;lt;/dl&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;codes&#34;&gt;Codes&lt;/h1&gt;
+
+&lt;p&gt;Wrap inline snippets of code with &lt;code&gt;code&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;For example, `&amp;amp;lt;section&amp;amp;gt;` should be wrapped as inline.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;user-input&#34;&gt;User Input&lt;/h1&gt;
+
+&lt;p&gt;Use the &lt;code&gt;kbd&lt;/code&gt; to indicate input that is typically entered via keyboard.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;To switch directories, type &amp;lt;kbd&amp;gt;cd&amp;lt;/kbd&amp;gt; followed by the name of the directory.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;basic-block&#34;&gt;Basic block&lt;/h1&gt;
+
+&lt;p&gt;Use &lt;code&gt;&amp;amp;lt;pre&amp;amp;gt;&lt;/code&gt; for multiple lines of code. Be sure to escape any angle brackets in the code for proper rendering.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;pre&amp;gt;&amp;amp;lt;p&amp;amp;gt;Sample text here...&amp;amp;lt;/p&amp;amp;gt;&amp;lt;/pre&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You may optionally add the &lt;code&gt;.pre-scrollable&lt;/code&gt; class, which will set a max-height of 350px and provide a y-axis scrollbar.&lt;/p&gt;
+
+&lt;h1 id=&#34;varible&#34;&gt;Varible&lt;/h1&gt;
+
+&lt;p&gt;For indicating variables use the &lt;code&gt;&amp;amp;lt;var&amp;amp;gt;&lt;/code&gt; tag.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;var&amp;gt;y&amp;lt;/var&amp;gt; = &amp;lt;var&amp;gt;m&amp;lt;/var&amp;gt;&amp;lt;var&amp;gt;x&amp;lt;/var&amp;gt; + &amp;lt;var&amp;gt;b&amp;lt;/var&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;sample-output&#34;&gt;Sample output&lt;/h1&gt;
+
+&lt;p&gt;For indicating blocks sample output from a program use the &lt;code&gt;&amp;amp;lt;samp&amp;amp;gt;&lt;/code&gt; tag.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;samp&amp;gt;This text is meant to be treated as sample output from a computer program.&amp;lt;/samp&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;typography-examples&#34;&gt;Typography Examples&lt;/h1&gt;
+
+&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/ILeCa/&#34;&gt;Bootstrap CSS: Typography&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;basic-example&#34;&gt;Basic example&lt;/h1&gt;
+
+&lt;p&gt;For basic styling—light padding and only horizontal dividers—add the base class .table to any &lt;code&gt;table&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;table class=&amp;quot;table&amp;quot;&amp;gt;
+  ...
+&amp;lt;/table&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;bordered-table&#34;&gt;Bordered table&lt;/h1&gt;
+
+&lt;p&gt;Add &lt;code&gt;.table-bordered&lt;/code&gt; for borders on all sides of the table and cells.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;table class=&amp;quot;table table-bordered&amp;quot;&amp;gt;
+  ...
+&amp;lt;/table&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;hover-rows&#34;&gt;Hover rows&lt;/h1&gt;
+
+&lt;p&gt;Add &lt;code&gt;.table-hover&lt;/code&gt; to enable a hover state on table rows within a &lt;code&gt;tbody&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;table class=&amp;quot;table table-hover&amp;quot;&amp;gt;
+  ...
+&amp;lt;/table&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;condensed-table&#34;&gt;Condensed table&lt;/h1&gt;
+
+&lt;p&gt;Add &lt;code&gt;.table-condensed&lt;/code&gt; to make tables more compact by cutting cell padding in half.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;table class=&amp;quot;table table-condensed&amp;quot;&amp;gt;
+  ...
+&amp;lt;/table&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;contextual-classes&#34;&gt;Contextual classes&lt;/h1&gt;
+
+&lt;p&gt;Use contextual classes to color table rows or individual cells:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- On rows --&amp;gt;
+&amp;lt;tr class=&amp;quot;active&amp;quot;&amp;gt;...&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;success&amp;quot;&amp;gt;...&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;warning&amp;quot;&amp;gt;...&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;danger&amp;quot;&amp;gt;...&amp;lt;/tr&amp;gt;
+&amp;lt;tr class=&amp;quot;info&amp;quot;&amp;gt;...&amp;lt;/tr&amp;gt;
+
+&amp;lt;!-- On cells (`td` or `th`) --&amp;gt;
+&amp;lt;tr&amp;gt;
+  &amp;lt;td class=&amp;quot;active&amp;quot;&amp;gt;...&amp;lt;/td&amp;gt;
+  &amp;lt;td class=&amp;quot;success&amp;quot;&amp;gt;...&amp;lt;/td&amp;gt;
+  &amp;lt;td class=&amp;quot;warning&amp;quot;&amp;gt;...&amp;lt;/td&amp;gt;
+  &amp;lt;td class=&amp;quot;danger&amp;quot;&amp;gt;...&amp;lt;/td&amp;gt;
+  &amp;lt;td class=&amp;quot;info&amp;quot;&amp;gt;...&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;responsive-tables&#34;&gt;Responsive tables&lt;/h1&gt;
+
+&lt;p&gt;Create responsive tables by wrapping any &lt;code&gt;.table&lt;/code&gt; in &lt;code&gt;.table-responsive&lt;/code&gt; to make them scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, you will not see any difference in these tables.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;table-responsive&amp;quot;&amp;gt;
+  &amp;lt;table class=&amp;quot;table&amp;quot;&amp;gt;
+    ...
+  &amp;lt;/table&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;table-examples&#34;&gt;Table Examples&lt;/h1&gt;
+
+&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/wqrFH/&#34;&gt;Bootstrap CSS: Tables&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;script async src=&#34;//codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;
+
+&lt;h1 id=&#34;basic-example-1&#34;&gt;Basic example&lt;/h1&gt;
+
+&lt;p&gt;Individual form controls automatically receive some global styling. All textual &lt;code&gt;input&lt;/code&gt;, &lt;code&gt;textarea&lt;/code&gt;, and &lt;code&gt;select&lt;/code&gt; elements with .form-control are set to &lt;code&gt;width: 100%;&lt;/code&gt; by default. Wrap labels and controls in &lt;code&gt;.form-group&lt;/code&gt; for optimum spacing.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;form role=&amp;quot;form&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;
+    &amp;lt;label for=&amp;quot;exampleInputEmail1&amp;quot;&amp;gt;Email address&amp;lt;/label&amp;gt;
+    &amp;lt;input type=&amp;quot;email&amp;quot; class=&amp;quot;form-control&amp;quot; id=&amp;quot;exampleInputEmail1&amp;quot; placeholder=&amp;quot;Enter email&amp;quot;&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;
+    &amp;lt;label for=&amp;quot;exampleInputPassword1&amp;quot;&amp;gt;Password&amp;lt;/label&amp;gt;
+    &amp;lt;input type=&amp;quot;password&amp;quot; class=&amp;quot;form-control&amp;quot; id=&amp;quot;exampleInputPassword1&amp;quot; placeholder=&amp;quot;Password&amp;quot;&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;
+    &amp;lt;label for=&amp;quot;exampleInputFile&amp;quot;&amp;gt;File input&amp;lt;/label&amp;gt;
+    &amp;lt;input type=&amp;quot;file&amp;quot; id=&amp;quot;exampleInputFile&amp;quot;&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;checkbox&amp;quot;&amp;gt;
+    &amp;lt;label&amp;gt;
+      &amp;lt;input type=&amp;quot;checkbox&amp;quot;&amp;gt; Check me out
+    &amp;lt;/label&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;button type=&amp;quot;submit&amp;quot; class=&amp;quot;btn btn-default&amp;quot;&amp;gt;Submit&amp;lt;/button&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;inline-form&#34;&gt;Inline form&lt;/h1&gt;
+
+&lt;p&gt;Add &lt;code&gt;.form-inline&lt;/code&gt; to your &lt;code&gt;form&lt;/code&gt; for left-aligned and inline-block controls. This only applies to forms within viewports that are at least &lt;code&gt;768px&lt;/code&gt; wide.&lt;/p&gt;
+
+&lt;p&gt;For these inline forms, you can hide the labels using the &lt;code&gt;.sr-only&lt;/code&gt; class.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;form class=&amp;quot;form-inline&amp;quot; role=&amp;quot;form&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;
+    &amp;lt;label class=&amp;quot;sr-only&amp;quot; for=&amp;quot;exampleInputEmail2&amp;quot;&amp;gt;Email address&amp;lt;/label&amp;gt;
+    &amp;lt;input type=&amp;quot;email&amp;quot; class=&amp;quot;form-control&amp;quot; id=&amp;quot;exampleInputEmail2&amp;quot; placeholder=&amp;quot;Enter email&amp;quot;&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;input-group&amp;quot;&amp;gt;
+      &amp;lt;div class=&amp;quot;input-group-addon&amp;quot;&amp;gt;@&amp;lt;/div&amp;gt;
+      &amp;lt;input class=&amp;quot;form-control&amp;quot; type=&amp;quot;email&amp;quot; placeholder=&amp;quot;Enter email&amp;quot;&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;
+    &amp;lt;label class=&amp;quot;sr-only&amp;quot; for=&amp;quot;exampleInputPassword2&amp;quot;&amp;gt;Password&amp;lt;/label&amp;gt;
+    &amp;lt;input type=&amp;quot;password&amp;quot; class=&amp;quot;form-control&amp;quot; id=&amp;quot;exampleInputPassword2&amp;quot; placeholder=&amp;quot;Password&amp;quot;&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;checkbox&amp;quot;&amp;gt;
+    &amp;lt;label&amp;gt;
+      &amp;lt;input type=&amp;quot;checkbox&amp;quot;&amp;gt; Remember me
+    &amp;lt;/label&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;button type=&amp;quot;submit&amp;quot; class=&amp;quot;btn btn-default&amp;quot;&amp;gt;Sign in&amp;lt;/button&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;horizontal-form&#34;&gt;Horizontal form&lt;/h1&gt;
+
+&lt;p&gt;Use Bootstrap&amp;rsquo;s predefined grid classes to align labels and groups of form controls in a horizontal layout by adding &lt;code&gt;.form-horizontal&lt;/code&gt; to the form. Doing so changes &lt;code&gt;.form-groups&lt;/code&gt; to behave as grid rows, so no need for &lt;code&gt;.row&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;form class=&amp;quot;form-horizontal&amp;quot; role=&amp;quot;form&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;
+    &amp;lt;label for=&amp;quot;inputEmail3&amp;quot; class=&amp;quot;col-sm-2 control-label&amp;quot;&amp;gt;Email&amp;lt;/label&amp;gt;
+    &amp;lt;div class=&amp;quot;col-sm-10&amp;quot;&amp;gt;
+      &amp;lt;input type=&amp;quot;email&amp;quot; class=&amp;quot;form-control&amp;quot; id=&amp;quot;inputEmail3&amp;quot; placeholder=&amp;quot;Email&amp;quot;&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;
+    &amp;lt;label for=&amp;quot;inputPassword3&amp;quot; class=&amp;quot;col-sm-2 control-label&amp;quot;&amp;gt;Password&amp;lt;/label&amp;gt;
+    &amp;lt;div class=&amp;quot;col-sm-10&amp;quot;&amp;gt;
+      &amp;lt;input type=&amp;quot;password&amp;quot; class=&amp;quot;form-control&amp;quot; id=&amp;quot;inputPassword3&amp;quot; placeholder=&amp;quot;Password&amp;quot;&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;col-sm-offset-2 col-sm-10&amp;quot;&amp;gt;
+      &amp;lt;div class=&amp;quot;checkbox&amp;quot;&amp;gt;
+        &amp;lt;label&amp;gt;
+          &amp;lt;input type=&amp;quot;checkbox&amp;quot;&amp;gt; Remember me
+        &amp;lt;/label&amp;gt;
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;col-sm-offset-2 col-sm-10&amp;quot;&amp;gt;
+      &amp;lt;button type=&amp;quot;submit&amp;quot; class=&amp;quot;btn btn-default&amp;quot;&amp;gt;Sign in&amp;lt;/button&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;input-focus&#34;&gt;Input focus&lt;/h1&gt;
+
+&lt;p&gt;Bootstrap remove the default outline styles on some form controls and apply a &lt;code&gt;box-shadow&lt;/code&gt; in its place for &lt;code&gt;:focus&lt;/code&gt;:&lt;/p&gt;
+
+&lt;h1 id=&#34;validation-states&#34;&gt;Validation states&lt;/h1&gt;
+
+&lt;p&gt;Bootstrap includes validation styles for error, warning, and success states on form controls. To use, add &lt;code&gt;.has-warning&lt;/code&gt;, &lt;code&gt;.has-error&lt;/code&gt;, or &lt;code&gt;.has-success&lt;/code&gt; to the parent element. Any .control-label, .form-control, and .help-block within that element will receive the validation styles.&lt;/p&gt;
+
+&lt;p&gt;You can also add optional feedback icons with the addition of &lt;code&gt;.has-feedback&lt;/code&gt; and the right icon.&lt;/p&gt;
+
+&lt;h1 id=&#34;control-sizing-and-help-text&#34;&gt;Control sizing and help text&lt;/h1&gt;
+
+&lt;p&gt;Set heights using classes like &lt;code&gt;.input-lg&lt;/code&gt;, and set widths using grid column classes like &lt;code&gt;.col-lg-*&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Wrap inputs in grid columns, or any custom parent element, to easily enforce desired widths.&lt;/p&gt;
+
+&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/kAeGg/&#34;&gt;Bootstrap CSS: Forms&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;options&#34;&gt;Options&lt;/h1&gt;
+
+&lt;p&gt;Use any of the available button classes to quickly create a styled button:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- Standard button --&amp;gt;
+&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-default&amp;quot;&amp;gt;Default&amp;lt;/button&amp;gt;
+
+&amp;lt;!-- Provides extra visual weight and identifies the primary action in a set of buttons --&amp;gt;
+&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-primary&amp;quot;&amp;gt;Primary&amp;lt;/button&amp;gt;
+
+&amp;lt;!-- Indicates a successful or positive action --&amp;gt;
+&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-success&amp;quot;&amp;gt;Success&amp;lt;/button&amp;gt;
+
+&amp;lt;!-- Contextual button for informational alert messages --&amp;gt;
+&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-info&amp;quot;&amp;gt;Info&amp;lt;/button&amp;gt;
+
+&amp;lt;!-- Indicates caution should be taken with this action --&amp;gt;
+&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-warning&amp;quot;&amp;gt;Warning&amp;lt;/button&amp;gt;
+
+&amp;lt;!-- Indicates a dangerous or potentially negative action --&amp;gt;
+&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-danger&amp;quot;&amp;gt;Danger&amp;lt;/button&amp;gt;
+
+&amp;lt;!-- Deemphasize a button by making it look like a link while maintaining button behavior --&amp;gt;
+&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-link&amp;quot;&amp;gt;Link&amp;lt;/button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;sizes&#34;&gt;Sizes&lt;/h1&gt;
+
+&lt;p&gt;Fancy larger or smaller buttons? Add &lt;code&gt;.btn-lg&lt;/code&gt;, &lt;code&gt;.btn-sm&lt;/code&gt;, or &lt;code&gt;.btn-xs&lt;/code&gt; for additional sizes
+Create block level buttons—those that span the full width of a parent— by adding &lt;code&gt;.btn-block.&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-primary btn-lg&amp;quot;&amp;gt;Large button&amp;lt;/button&amp;gt;
+&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-default btn-lg&amp;quot;&amp;gt;Large button&amp;lt;/button&amp;gt;
+
+&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-primary&amp;quot;&amp;gt;Default button&amp;lt;/button&amp;gt;
+&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-default&amp;quot;&amp;gt;Default button&amp;lt;/button&amp;gt;
+
+&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-primary btn-sm&amp;quot;&amp;gt;Small button&amp;lt;/button&amp;gt;
+&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-default btn-sm&amp;quot;&amp;gt;Small button&amp;lt;/button&amp;gt;
+
+&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-primary btn-xs&amp;quot;&amp;gt;Extra small button&amp;lt;/button&amp;gt;
+&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-default btn-xs&amp;quot;&amp;gt;Extra small button&amp;lt;/button&amp;gt;
+
+&amp;lt;!-- Block level button --&amp;gt;
+&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-primary btn-lg btn-block&amp;quot;&amp;gt;Block level button&amp;lt;/button&amp;gt;
+&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-default btn-lg btn-block&amp;quot;&amp;gt;Block level button&amp;lt;/button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;active-state&#34;&gt;Active state&lt;/h1&gt;
+
+&lt;p&gt;Buttons will appear pressed (with a darker background, darker border, and inset shadow) when active. For &lt;code&gt;button&lt;/code&gt; elements, this is done via &lt;code&gt;:active&lt;/code&gt;. For &lt;code&gt;a&lt;/code&gt; elements, it&amp;rsquo;s done with &lt;code&gt;.active&lt;/code&gt;. However, you may use &lt;code&gt;.active&lt;/code&gt; on &lt;code&gt;button&lt;/code&gt; should you need to replicate the active state programmatically.&lt;/p&gt;
+
+&lt;h1 id=&#34;disabled-state&#34;&gt;Disabled state&lt;/h1&gt;
+
+&lt;p&gt;Make buttons look unclickable by fading them back 50%.&lt;/p&gt;
+
+&lt;p&gt;Add the &lt;code&gt;disabled&lt;/code&gt; attribute to &lt;code&gt;button&lt;/code&gt; or &lt;code&gt;.disabled&lt;/code&gt; class to &lt;code&gt;a&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-lg btn-primary&amp;quot; disabled=&amp;quot;disabled&amp;quot;&amp;gt;Primary button&amp;lt;/button&amp;gt;
+&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-default btn-lg&amp;quot; disabled=&amp;quot;disabled&amp;quot;&amp;gt;Button&amp;lt;/button&amp;gt;
+&amp;lt;!-- Anchors elements --&amp;gt;
+&amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;btn btn-primary btn-lg disabled&amp;quot; role=&amp;quot;button&amp;quot;&amp;gt;Primary link&amp;lt;/a&amp;gt;
+&amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;btn btn-default btn-lg disabled&amp;quot; role=&amp;quot;button&amp;quot;&amp;gt;Link&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/Chnep/&#34;&gt;Bootstrap CSS: Buttons&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;responsive-images&#34;&gt;Responsive images&lt;/h1&gt;
+
+&lt;p&gt;Images in Bootstrap 3 can be made responsive-friendly via the addition of the &lt;code&gt;.img-responsive&lt;/code&gt; class. This applies &lt;code&gt;max-width: 100%;&lt;/code&gt; and &lt;code&gt;height: auto;&lt;/code&gt; to the image so that it scales nicely to the parent element.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src=&amp;quot;...&amp;quot; class=&amp;quot;img-responsive&amp;quot; alt=&amp;quot;Responsive image&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;images-shapes&#34;&gt;Images shapes&lt;/h1&gt;
+
+&lt;p&gt;Add classes to an &lt;code&gt;img&lt;/code&gt; element to easily style images in any project:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src=&amp;quot;...&amp;quot; alt=&amp;quot;...&amp;quot; class=&amp;quot;img-rounded&amp;quot;&amp;gt;
+&amp;lt;img src=&amp;quot;...&amp;quot; alt=&amp;quot;...&amp;quot; class=&amp;quot;img-circle&amp;quot;&amp;gt;
+&amp;lt;img src=&amp;quot;...&amp;quot; alt=&amp;quot;...&amp;quot; class=&amp;quot;img-thumbnail&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/ILkHg/&#34;&gt;Images shapes&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;contextual-colors&#34;&gt;Contextual colors&lt;/h1&gt;
+
+&lt;p&gt;Convey meaning through color with a handful of emphasis utility classes: &lt;code&gt;text-muted&lt;/code&gt;, &lt;code&gt;text-primary&lt;/code&gt;, &lt;code&gt;text-success&lt;/code&gt;, &lt;code&gt;text-info&lt;/code&gt;, &lt;code&gt;text-warning&lt;/code&gt;, &lt;code&gt;text-danger&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p class=&amp;quot;text-muted&amp;quot;&amp;gt;...&amp;lt;/p&amp;gt;
+&amp;lt;p class=&amp;quot;text-primary&amp;quot;&amp;gt;...&amp;lt;/p&amp;gt;
+&amp;lt;p class=&amp;quot;text-success&amp;quot;&amp;gt;...&amp;lt;/p&amp;gt;
+&amp;lt;p class=&amp;quot;text-info&amp;quot;&amp;gt;...&amp;lt;/p&amp;gt;
+&amp;lt;p class=&amp;quot;text-warning&amp;quot;&amp;gt;...&amp;lt;/p&amp;gt;
+&amp;lt;p class=&amp;quot;text-danger&amp;quot;&amp;gt;...&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;contextual-backgrounds&#34;&gt;Contextual backgrounds&lt;/h1&gt;
+
+&lt;p&gt;Similar to the contextual text color classes, easily set the &lt;code&gt;background&lt;/code&gt; of an element to any contextual class. Anchor components will darken on hover, just like the text classes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p class=&amp;quot;bg-primary&amp;quot;&amp;gt;...&amp;lt;/p&amp;gt;
+&amp;lt;p class=&amp;quot;bg-success&amp;quot;&amp;gt;...&amp;lt;/p&amp;gt;
+&amp;lt;p class=&amp;quot;bg-info&amp;quot;&amp;gt;...&amp;lt;/p&amp;gt;
+&amp;lt;p class=&amp;quot;bg-warning&amp;quot;&amp;gt;...&amp;lt;/p&amp;gt;
+&amp;lt;p class=&amp;quot;bg-danger&amp;quot;&amp;gt;...&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;close-icon&#34;&gt;Close icon&lt;/h1&gt;
+
+&lt;p&gt;Use the generic close icon for dismissing content like modal and alert.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;close&amp;quot;&amp;gt;&amp;lt;span aria-hidden=&amp;quot;true&amp;quot;&amp;gt;&amp;amp;times;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;sr-only&amp;quot;&amp;gt;Close&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;carets&#34;&gt;Carets&lt;/h1&gt;
+
+&lt;p&gt;Use carets to indicate drop-down functionality and direction.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;span class=&amp;quot;caret&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;quick-floats&#34;&gt;Quick floats&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;pull-left&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;pull-right&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;center-content-blocks&#34;&gt;Center content blocks&lt;/h1&gt;
+
+&lt;p&gt;Set an element to &lt;code&gt;display: block&lt;/code&gt; and center via &lt;code&gt;margin&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;center-block&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;clearfix&#34;&gt;Clearfix&lt;/h1&gt;
+
+&lt;p&gt;Easily clear floats by adding &lt;code&gt;.clearfix&lt;/code&gt; to the parent element.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- Usage as a class --&amp;gt;
+&amp;lt;div class=&amp;quot;clearfix&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;showing-and-hiding-content&#34;&gt;Showing and hiding content&lt;/h1&gt;
+
+&lt;p&gt;Force an element to be shown or hidden (including for screen readers) with the use of &lt;code&gt;.show&lt;/code&gt; and &lt;code&gt;.hidden&lt;/code&gt; classes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;show&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;hidden&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;helper-classes-examples&#34;&gt;Helper Classes Examples&lt;/h1&gt;
+
+&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/zLJKp/&#34;&gt;Helper Classes&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The materials which save my day:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://getbootstrap.com/css&#34;&gt;Bootstrap Official Site&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Class manipulation in Javascript, jQuery and AngularJS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Class-manipulation-in-Javascript-jQuery-and-AngularJS/</link>
+      <pubDate>Wed, 02 Jul 2014 23:24:37 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Class-manipulation-in-Javascript-jQuery-and-AngularJS/</guid>
+      <description>&lt;p&gt;In this article, I would like to create short reference for how &lt;code&gt;add/remove/toogle&lt;/code&gt; class in pure Javascript and with framework.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;javascript&#34;&gt;Javascript&lt;/h1&gt;
+
+&lt;h2 id=&#34;classname&#34;&gt;className&lt;/h2&gt;
+
+&lt;p&gt;Property &lt;code&gt;className&lt;/code&gt; has value of HTML-atribute &lt;code&gt;class&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;body class=&amp;quot;class1 class2&amp;quot;&amp;gt;&amp;lt;/body&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;console.log(document.body.className);
+//class1 class2
+
+document.body.className += &#39; class3&#39;;
+
+console.log(document.body.className);
+//class1 class2 class3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;classlist&#34;&gt;classList&lt;/h2&gt;
+
+&lt;p&gt;Property &lt;code&gt;classList&lt;/code&gt; gives convenient interface for work with certain classes.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;elem.classList.contains(cls)&lt;/code&gt; - return &lt;code&gt;true/false&lt;/code&gt; if element has class &lt;code&gt;cls&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;elem.classList.add/remove(cls)&lt;/code&gt; - adding/removing class &lt;code&gt;cls&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;elem.classList.toogle(cls)&lt;/code&gt; - if element has class &lt;code&gt;cls&lt;/code&gt;, remove it, else add class &lt;code&gt;cls&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;jquery&#34;&gt;jQuery&lt;/h1&gt;
+
+&lt;p&gt;These methods inspect and manpulate classes assigned to elements:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$(elem).hasClass(cls)&lt;/code&gt; - return &lt;code&gt;true/false&lt;/code&gt; if element has class &lt;code&gt;cls&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$(elem).addClass/removeClass(cls)&lt;/code&gt; - adding/removing class &lt;code&gt;cls&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$(elem).toogleClass(cls)&lt;/code&gt; - if element has class(es) &lt;code&gt;cls&lt;/code&gt;, remove it, else add class(es) &lt;code&gt;cls&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;angularjs&#34;&gt;AngularJS&lt;/h1&gt;
+
+&lt;h2 id=&#34;ng-class&#34;&gt;ng-class&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ng-class&lt;/code&gt; accepts an &amp;ldquo;expression&amp;rdquo; that must evaluate to one of the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a &lt;code&gt;string&lt;/code&gt; of space-delimited class names&lt;/li&gt;
+&lt;li&gt;an &lt;code&gt;array&lt;/code&gt; of class names&lt;/li&gt;
+&lt;li&gt;a &lt;code&gt;map/object&lt;/code&gt; of class names to boolean values&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/yjiAp/&#34;&gt;AngularJS, ng-class example&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.
+&lt;script async src=&#34;//codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ng-style&#34;&gt;ng-style&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ng-style&lt;/code&gt; accepts an &amp;ldquo;expression&amp;rdquo; that must evaluate to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;an &lt;code&gt;map/object&lt;/code&gt; of CSS style names to CSS values&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/KyBjs/&#34;&gt;AngularJS, ng-style example&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Fluid three column layout with positioning, floats, tables and flexbox</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Fluid-three-column-layout-with-positioning-floats-tables-and-flexbox/</link>
+      <pubDate>Fri, 18 Apr 2014 11:09:46 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Fluid-three-column-layout-with-positioning-floats-tables-and-flexbox/</guid>
+      <description>&lt;p&gt;In Web world, fluid layout with 3 column is the most flexible and customizable layout. Mixing percentages and pixels for specify width of column allows create different layouts, for different task.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;In article sumbols mean:
+*   Here sumbol &lt;code&gt;%&lt;/code&gt; define, that column width is given in persantage of layout width;
+*   &lt;code&gt;px&lt;/code&gt;- column width in static pixels;
+*   &lt;code&gt;∞&lt;/code&gt; - column occupies all remain width space.&lt;/p&gt;
+
+&lt;h1 id=&#34;using-positioning&#34;&gt;Using positioning&lt;/h1&gt;
+
+&lt;p&gt;To control position layout relative to the parent element layers, necessary establish for parent property - &lt;code&gt;position: relative&lt;/code&gt;. And for child element set &lt;code&gt;position: absolute&lt;/code&gt;, conrols fluid element with &lt;code&gt;right/left&lt;/code&gt;, width in some cases used &lt;code&gt;margin-right/left&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/jtyhi/&#34;&gt;Three column fluid layout with positionig&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.
+&lt;script async src=&#34;//codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;floats&#34;&gt;Floats&lt;/h1&gt;
+
+&lt;p&gt;For this approach I used &lt;code&gt;float&lt;/code&gt; in combinatition with properties &lt;code&gt;margin&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt;. In some case used nested or additional &lt;code&gt;div.wrap&lt;/code&gt;, because we can&amp;rsquo;t use in the same time for onу HTML element margin in px and %.&lt;/p&gt;
+
+&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/asfKq/&#34;&gt;Fluid three column layout using floats&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;table-columns&#34;&gt;Table columns&lt;/h1&gt;
+
+&lt;p&gt;Actually, it&amp;rsquo;s convinient to use table when you want to create column with same height. Width of column calculated automatcaly based on their content so I just need to specify the require width. Remain columns would streach to avaible width of table.&lt;/p&gt;
+
+&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/olGHE/&#34;&gt;Fluid three column layout using table&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;flex-box&#34;&gt;Flex box&lt;/h1&gt;
+
+&lt;p&gt;Most layout or if you want grid system use one of next methods: &lt;code&gt;positioning&lt;/code&gt;, &lt;code&gt;tables&lt;/code&gt;, and most popular - &lt;code&gt;inline-blocks&lt;/code&gt; or &lt;code&gt;float&lt;/code&gt;. All this methods have pretty significaте problems and limetations.&lt;/p&gt;
+
+&lt;p&gt;For for achive bunch of three column layout Flex boxes are super ease. In generaly I used for parents : &lt;code&gt;display: flex&lt;/code&gt; and for children &lt;code&gt;flex: 1&lt;/code&gt; it&amp;rsquo;s shorthand for &lt;code&gt;flex-grow, flex-shrink and flex-basis&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In furture post I should discover this literally one of the most promosing feature of web disign.&lt;/p&gt;
+
+&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/uAfrh/&#34;&gt;Fluid three column layout with flexbox&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This resources Save My Day:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://htmlbook.ru/samlayout/tipovye-makety/rezinovyi-trekhkolonochnyi-maket&#34;&gt;htmlbook.ru&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://css-tricks.com/snippets/css/a-guide-to-flexbox/&#34;&gt;css-tricks.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://philipwalton.github.io/solved-by-flexbox/demos/grids/&#34;&gt;Solved by Flexbox&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>Original effects with CSS transition</title>
       <link>https://qetr1ck-op.github.io/blog/post/Original-effects-with-CSS3-transition/</link>
       <pubDate>Tue, 01 Apr 2014 14:48:05 +0000</pubDate>
@@ -2825,29 +4142,135 @@ article.easing-upward {
     </item>
     
     <item>
-      <title>Prevent CSS Caching in Wordpress</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Prevent-CSS-Caching/</link>
-      <pubDate>Thu, 02 Jan 2014 19:50:42 +0000</pubDate>
+      <title>Fluid two-column layout with float and flexbox</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Fluid-two-column-layout-with-float-and-flexbox/</link>
+      <pubDate>Mon, 31 Mar 2014 20:49:09 +0000</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/Prevent-CSS-Caching/</guid>
-      <description>&lt;p&gt;If you update your WordPress theme’s style.css, you may have noticed that you have to “force-reload” your site in your browser to see the changes. This is because your browser keeps a copy of the CSS cached on your hard drive.&lt;/p&gt;
+      <guid>https://qetr1ck-op.github.io/blog/post/Fluid-two-column-layout-with-float-and-flexbox/</guid>
+      <description>&lt;p&gt;Two-column layout allows effective use browser space. Layout doesn&amp;rsquo;t require hard work and it can used with combining column in pixels or percentage.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;Depending on how your server is set up, it may not check for a new version of the stylesheet for a couple hours, or longer! And even if you force-reload to see the changes, visitors who have previously accessed your site may still get the old CSS.&lt;/p&gt;
+&lt;!--toc--&gt;
 
-&lt;p&gt;One way to solve this is to “version” your CSS file, by adding:&lt;/p&gt;
+&lt;p&gt;There are several approach for formation such layout, but the quickest and easiest is combine &lt;code&gt;margin&lt;/code&gt; and &lt;code&gt;float&lt;/code&gt;.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; 
-href=&amp;quot;&amp;lt;?php bloginfo(&#39;stylesheet_url&#39;); echo &#39;?&#39; . filemtime( get_stylesheet_directory() . &#39;/style.css&#39;); ?&amp;gt;&amp;quot; type=&amp;quot;text/css&amp;quot; media=&amp;quot;screen, projection&amp;quot; /&amp;gt;
+&lt;h1 id=&#34;for-left-side-bar-with-static-width&#34;&gt;For left side bar with static width&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;For left layer with width 20%&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Left&lt;/code&gt; column&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Right&lt;/code&gt; column&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;float: left width: 20%&lt;/td&gt;
+&lt;td&gt;margin-left: 21%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;For left layer with width 200px&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;float: left width: 200px&lt;/td&gt;
+&lt;td&gt;margin-left: 210px&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;for-right-side-bar&#34;&gt;For right side bar:&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;For right layer with width 20%&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Left column&lt;/td&gt;
+&lt;td&gt;Right column&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;margin-right: 21%&lt;/td&gt;
+&lt;td&gt;float: right, width: 20%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;For right layer with width 200px&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;float: right width: 200px&lt;/td&gt;
+&lt;td&gt;margin-left: 210px&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p data-height=&#34;400&#34; data-theme-id=&#34;dark&#34; data-slug-hash=&#34;oAtih&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; data-embed-version=&#34;2&#34; data-pen-title=&#34;Fluid two-column layout with float&#34; data-preview=&#34;true&#34; class=&#34;codepen&#34;&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/oAtih/&#34;&gt;Fluid two-column layout with float&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;https://production-assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;
+
+#  With display: flex
+
+&lt;p data-height=&#34;400&#34; data-theme-id=&#34;dark&#34; data-slug-hash=&#34;MwdvEV&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; data-embed-version=&#34;2&#34; data-pen-title=&#34;Two-column layout with Flexbox&#34; data-preview=&#34;true&#34; class=&#34;codepen&#34;&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/MwdvEV/&#34;&gt;Two-column layout with Flexbox&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Make my day:
+*   &lt;a href=&#34;http://htmlbook.ru/samlayout/tipovye-makety/rezinovyi-dvukhkolonochnyi-maket&#34; title=&#34;fluid 2 column layout on htmlbook.ru&#34;&gt;fluid 2 column layout&lt;/a&gt;
+*   &lt;a href=&#34;http://www.inserthtml.com/demos/css/radio-buttons/&#34; title=&#34;awesome checkboxes on www.inserthtml.com&#34;&gt;awesome checkboxes&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Data URIs</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Data-URIs/</link>
+      <pubDate>Tue, 11 Feb 2014 12:48:12 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Data-URIs/</guid>
+      <description>&lt;p&gt;Did you know that you don&amp;rsquo;t have to link to an external image file when using an &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; element in HTML, or declaring a &lt;code&gt;background-image&lt;/code&gt; in CSS? You can embed the image data directly into the document with data URIs.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;why-would-you-do-this&#34;&gt;Why would you do this?&lt;/h1&gt;
+
+&lt;p&gt;The biggest reason: it saves HTTP Requests. Other than pure document size, this is the #1 factor concerning how fast a page loads. Less = better.&lt;/p&gt;
+
+&lt;p&gt;The format, to be specific:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;data:[&amp;lt;mime type&amp;gt;][;charset=&amp;lt;charset&amp;gt;][;base64],&amp;lt;encoded data&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Save my day:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;li {
+  background:
+    url(data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7)
+    no-repeat
+    left center;
+  padding: 5px 0 5px 25px;
+}
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://markjaquith.wordpress.com/2009/05/04/force-css-changes-to-go-live-immediately&#34;&gt;Mark post&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://css-tricks.com/can-we-prevent-css-caching/&#34;&gt;Css-tricks&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;img width=&amp;quot;16&amp;quot; height=&amp;quot;16&amp;quot; alt=&amp;quot;star&amp;quot; src=&amp;quot;data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;how-do-you-get-the-code&#34;&gt;How do you get the code?&lt;/h1&gt;
+
+&lt;p&gt;Use this &lt;a href=&#34;http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/&#34;&gt;online conversion tool&lt;/a&gt;. It&amp;rsquo;s the nicest one I have found. Here&amp;rsquo;s a &lt;a href=&#34;http://jpillora.com/base64-encoder/&#34;&gt;drag and drop one&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Save my day: &lt;a href=&#34;https://css-tricks.com/data-uris/&#34;&gt;css-tricks.com&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
