@@ -307,11 +307,6 @@
   </url>
   
   <url>
-    <loc>https://qetr1ck-op.github.io/blog/about/about/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://qetr1ck-op.github.io/blog/post/Original-effects-with-CSS3-transition/</loc>
     <lastmod>2014-04-01T14:48:05+00:00</lastmod>
   </url>
@@ -353,12 +348,6 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/post/Kata-String-Reverse-words/</loc>
-  </url>
-  
-  <url>
-    <loc>https://qetr1ck-op.github.io/blog/about/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -448,6 +437,10 @@
     <loc>https://qetr1ck-op.github.io/blog/categories/oop/</loc>
     <lastmod>2017-03-05T01:35:33+02:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/about/</loc>
   </url>
   
   <url>
