@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Javascript on My New Hugo Site</title>
+    <title>Javascript on OP blog</title>
     <link>https://qetr1ck-op.github.io/blog/categories/javascript/index.xml</link>
-    <description>Recent content in Javascript on My New Hugo Site</description>
+    <description>Recent content in Javascript on OP blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Building a JavaScript development environment</title>
+      <link>https://qetr1ck-op.github.io/blog/post/building-a-javaScript-development-environment/</link>
+      <pubDate>Sun, 02 Apr 2017 14:31:50 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/building-a-javaScript-development-environment/</guid>
+      <description>&lt;p&gt;Starting a new JavaScript project from scratch is overwhelming. This course provides a playbook outlining the key decisions you need to make. Build a robust development environment that handles bundling, linting, transpiling, testing, and much more.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;description&#34;&gt;Description&lt;/h1&gt;
+
+&lt;p&gt;Building a JavaScript application from scratch today is overwhelming. You have to make decisions about package management, bundling, linting, transpiling, automated testing, and much more. There are literally over 40 important decisions to consider. This course is a playbook of potential options that provides a clear path through the key decisions. Along the way, we&amp;rsquo;ll build a robust automated development environment from the ground up using ES6. You’ll learn how to set up a reusable development environment that provides a powerful foundation for future projects, that’s tailored just for your team’s needs.&lt;/p&gt;
+
+&lt;h1 id=&#34;link&#34;&gt;Link&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.pluralsight.com/courses/javascript-development-environment&#34;&gt;course on pluralsight&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>PatternCraft</title>
@@ -6476,43 +6495,6 @@ Test.assertEquals(list([]), &#39;&#39;, &amp;quot;Must work with no names&amp;qu
     }
   }, &#39;&#39;);
  }
-&lt;/code&gt;&lt;/pre&gt;</description>
-    </item>
-    
-    <item>
-      <title>Kata: Filter through name/email</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Kata-Array-RegExp-Filter-through-name-email/</link>
-      <pubDate>Mon, 15 Feb 2016 22:34:45 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Kata-Array-RegExp-Filter-through-name-email/</guid>
-      <description>&lt;p&gt;He has troubles with users ending or starting in a &lt;code&gt;.&lt;/code&gt;, and his user-array is a flat array of user-email-pairs, like so:&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[ &amp;quot;foo&amp;quot;, &amp;quot;foo@bar.com&amp;quot;, &amp;quot;bar&amp;quot;, &amp;quot;bar@foo.com&amp;quot;, &amp;quot;.foo&amp;quot;, &amp;quot;food@bar.com&amp;quot; ]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;He is only interested in e-mailing the users and ask them to sign up again, so no need to keep the user-name, only e-mail addresses for the user-names that start or end with a &lt;code&gt;.&lt;/code&gt; should be returned. For the above array, the correct return-array would be &lt;code&gt;[ &amp;quot;food@bar.com&amp;quot; ]&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Test:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;describe( &amp;quot;Testing a list&amp;quot;, function(){
-  it( &amp;quot;Basic list&amp;quot;, function(){
-    var a = [ &amp;quot;foo&amp;quot;, &amp;quot;foo@foo.com&amp;quot;, &amp;quot;bar.&amp;quot;, &amp;quot;bar@bar.com&amp;quot; ],
-    b = [ &amp;quot;bar@bar.com&amp;quot; ];    
-    Test.assertSimilar( searchNames( a ), b,
-      &amp;quot;not correct &amp;quot; + Test.inspect(a) + &amp;quot; given&amp;quot; );
-  } );
-} );
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Result:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const searchNames = logins =&amp;gt; {
-  return logins.filter(
-        ( login, i, ary) =&amp;gt; i % 2 === 1 &amp;amp;&amp;amp; ary[i - 1].match(/^\.|\.$/);
-    )
-};
 &lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     

@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/building-a-javaScript-development-environment/</loc>
+    <lastmod>2017-04-02T14:31:50+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://qetr1ck-op.github.io/blog/post/pattern-craft/</loc>
     <lastmod>2017-03-05T01:35:33+02:00</lastmod>
   </url>
@@ -183,7 +188,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/post/git-pull-versus-git-pull-rebase/</loc>
-    <lastmod>2014-11-26T23:46:41+00:00</lastmod>
+    <lastmod>2014-11-24T23:46:41+00:00</lastmod>
   </url>
   
   <url>
@@ -358,7 +363,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/architecture/</loc>
-    <lastmod>2017-03-05T01:35:33+02:00</lastmod>
+    <lastmod>2017-04-02T14:31:50+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -393,7 +398,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/es2015&#43;/</loc>
-    <lastmod>2017-03-05T01:35:33+02:00</lastmod>
+    <lastmod>2017-04-02T14:31:50+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -411,7 +416,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/javascript/</loc>
-    <lastmod>2017-03-05T01:35:33+02:00</lastmod>
+    <lastmod>2017-04-02T14:31:50+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -422,14 +427,14 @@
   </url>
   
   <url>
-    <loc>https://qetr1ck-op.github.io/blog/</loc>
-    <lastmod>2017-03-05T01:35:33+02:00</lastmod>
+    <loc>https://qetr1ck-op.github.io/blog/categories/nodejs/</loc>
+    <lastmod>2017-04-02T14:31:50+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://qetr1ck-op.github.io/blog/categories/nodejs/</loc>
-    <lastmod>2016-12-18T12:01:04+00:00</lastmod>
+    <loc>https://qetr1ck-op.github.io/blog/</loc>
+    <lastmod>2017-04-02T14:31:50+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -445,7 +450,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/patterns/</loc>
-    <lastmod>2017-03-05T01:35:33+02:00</lastmod>
+    <lastmod>2017-04-02T14:31:50+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -457,7 +462,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/post/</loc>
-    <lastmod>2017-03-05T01:35:33+02:00</lastmod>
+    <lastmod>2017-04-02T14:31:50+03:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git on My New Hugo Site</title>
+    <title>Git on OP blog</title>
     <link>https://qetr1ck-op.github.io/blog/categories/git/index.xml</link>
-    <description>Recent content in Git on My New Hugo Site</description>
+    <description>Recent content in Git on OP blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/git/index.xml" rel="self" type="application/rss+xml" />
@@ -2282,7 +2282,7 @@ It works by comparing the target value to the midpoint of the array; if they are
     <item>
       <title>git pull VS git pull --rebase</title>
       <link>https://qetr1ck-op.github.io/blog/post/git-pull-versus-git-pull-rebase/</link>
-      <pubDate>Wed, 26 Nov 2014 23:46:41 +0000</pubDate>
+      <pubDate>Mon, 24 Nov 2014 23:46:41 +0000</pubDate>
       
       <guid>https://qetr1ck-op.github.io/blog/post/git-pull-versus-git-pull-rebase/</guid>
       <description>&lt;p&gt;&lt;/p&gt;
