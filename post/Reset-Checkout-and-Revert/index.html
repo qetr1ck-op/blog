@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <base href="">
+    <base href="./">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="author" content="Orest Prystayko">
@@ -33,6 +33,8 @@
         <h3 data-open="last-posts">OP blog - Most recent posts</h3>
         <ul>
             
+            <li><a href="https://qetr1ck-op.github.io/blog/post/Js-30/">JS 30</a></li>
+            
             <li><a href="https://qetr1ck-op.github.io/blog/post/improve-web-performance-using-google-pageSpeed/">Improve web performance using Google PageSpeed</a></li>
             
             <li><a href="https://qetr1ck-op.github.io/blog/post/building-a-javaScript-development-environment/">Building a JavaScript development environment</a></li>
@@ -40,8 +42,6 @@
             <li><a href="https://qetr1ck-op.github.io/blog/post/pattern-craft/">PatternCraft</a></li>
             
             <li><a href="https://qetr1ck-op.github.io/blog/post/RESTful-Web-Services-with-Node-js-and-Express/">RESTful Web Services with Node.js and Express</a></li>
-            
-            <li><a href="https://qetr1ck-op.github.io/blog/post/Reset-Checkout-and-Revert/">Git reset, checkout and revert</a></li>
             
         </ul>
     </div>
@@ -109,7 +109,7 @@
 
 <p>The image bellow will help to think about each command in terms of their effect on the three main components of Git workflow. Keep this components always in mind when you&rsquo;re working with this commands.</p>
 
-<p><img src="images/posts/Reset-Checkout-and-Revert/git-main-components.png" alt="" /></p>
+<p><img src="../../images/posts/Reset-Checkout-and-Revert/git-main-components.png" alt="" /></p>
 
 <h1 id="reset">Reset</h1>
 
@@ -121,7 +121,7 @@ git reset HEAD~2
 
 <p>In other words, you&rsquo;re saying that you want to throw away this commits:</p>
 
-<p><img src="images/posts/Reset-Checkout-and-Revert/resetting-branch.png" alt="" /></p>
+<p><img src="../../images/posts/Reset-Checkout-and-Revert/resetting-branch.png" alt="" /></p>
 
 <p>This usage of <code>git reset</code> is a simple way to undo changes that haven&rsquo;t been shared with any one else. I use this command when I&rsquo;ve started working on feature find myself thinking that, &ldquo;Oh crap, what am I doing? I should start over&rdquo;.</p>
 
@@ -135,7 +135,7 @@ git reset HEAD~2
 
 <p>It&rsquo;s easer to thing of these modes by their scope:</p>
 
-<p><img src="images/posts/Reset-Checkout-and-Revert/git-reset-scopes.png" alt="" /></p>
+<p><img src="../../images/posts/Reset-Checkout-and-Revert/git-reset-scopes.png" alt="" /></p>
 
 <p>The command is often used with <code>HEAD</code> or with serious of commits hash as the parameter:</p>
 
@@ -166,14 +166,14 @@ git reset --no-edit ffffffff..12345678
 
 <p>Internally it moves <code>HEAD</code> to a different branch updates the <code>working directory</code> to match. Since this has a potential to overwrite local changes, Git forces you to commit or stash any changes in a working directory. Unlike <code>git reset</code> it doesn&rsquo;t move any branches around.</p>
 
-<p><img src="images/posts/Reset-Checkout-and-Revert/git-checkout.png" alt="" /></p>
+<p><img src="../../images/posts/Reset-Checkout-and-Revert/git-checkout.png" alt="" /></p>
 
 <p>I can also check arbitrary commits by passing the commit reference of the branch:</p>
 
 <pre><code class="language-bash">git checkout HEAD~2
 </code></pre>
 
-<p><img src="images/posts/Reset-Checkout-and-Revert/git-checkout-by-reference.png" alt="" /></p>
+<p><img src="../../images/posts/Reset-Checkout-and-Revert/git-checkout-by-reference.png" alt="" /></p>
 
 <p>This is useful for quickly inspecting an old version of your project. However, since there are no reference to the current <code>HEAD</code>, this puts you in a <code>detached HEAD state</code>. This can be dangerous if you start adding new commits, because there won&rsquo;t be a way to get back them after you switch to an another branch. For this reason, you should always create a new branch before adding commits to a <code>detached HEAD</code>.</p>
 
@@ -187,7 +187,7 @@ git revert HEAD~2
 
 <p>That can be visualized as following:</p>
 
-<p><img src="images/posts/Reset-Checkout-and-Revert/git-revert.png" alt="" /></p>
+<p><img src="../../images/posts/Reset-Checkout-and-Revert/git-revert.png" alt="" /></p>
 
 <p>Contrast this with <code>git reset</code>, which <strong>does</strong> alter the existing commit history. For this reason <code>git revert</code> should be used to undo changes on a public branch and <code>git reset</code> should be reserved for undoing changes on a private branch.</p>
 

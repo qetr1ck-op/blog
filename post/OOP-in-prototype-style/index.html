@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <base href="">
+    <base href="./">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="author" content="Orest Prystayko">
@@ -33,6 +33,8 @@
         <h3 data-open="last-posts">OP blog - Most recent posts</h3>
         <ul>
             
+            <li><a href="https://qetr1ck-op.github.io/blog/post/Js-30/">JS 30</a></li>
+            
             <li><a href="https://qetr1ck-op.github.io/blog/post/improve-web-performance-using-google-pageSpeed/">Improve web performance using Google PageSpeed</a></li>
             
             <li><a href="https://qetr1ck-op.github.io/blog/post/building-a-javaScript-development-environment/">Building a JavaScript development environment</a></li>
@@ -40,8 +42,6 @@
             <li><a href="https://qetr1ck-op.github.io/blog/post/pattern-craft/">PatternCraft</a></li>
             
             <li><a href="https://qetr1ck-op.github.io/blog/post/RESTful-Web-Services-with-Node-js-and-Express/">RESTful Web Services with Node.js and Express</a></li>
-            
-            <li><a href="https://qetr1ck-op.github.io/blog/post/Reset-Checkout-and-Revert/">Git reset, checkout and revert</a></li>
             
         </ul>
     </div>
@@ -132,7 +132,7 @@ console.log(rabbit.location) // call location object through window object
 
 <p>So, object pointed by <code>__proto__</code> it is his <code>prototype</code>. In another words <code>prototype</code> it&rsquo;s &ldquo;Backup Storage of Properties and Methods&rdquo;, which automatically used in the search.</p>
 
-<p><img src="images/posts/OOP-in-prototype-style/img1.png" alt="" /></p>
+<p><img src="../../images/posts/OOP-in-prototype-style/img1.png" alt="" /></p>
 
 <h1 id="method-hasownproperty">Method <code>hasOwnProperty</code></h1>
 
@@ -162,7 +162,7 @@ for (var key in rabbit) {
 
 <script src="https://gist.github.com/qetr1ck-op/d57b779a057e164bf1d2.js"></script>
 
-<p><img src="images/posts/OOP-in-prototype-style/img2.png" alt="" /></p>
+<p><img src="../../images/posts/OOP-in-prototype-style/img2.png" alt="" /></p>
 
 <h1 id="methods-to-work-with-proto">Methods to work with <code>__proto__</code></h1>
 
@@ -242,13 +242,13 @@ for (var key in rabbit) {
 <li><code>obj.toString === Object.prototype.toString</code> method will be taken from prototype object.</li>
 </ol>
 
-<p><img src="images/posts/OOP-in-prototype-style/img4.png" alt="" /></p>
+<p><img src="../../images/posts/OOP-in-prototype-style/img4.png" alt="" /></p>
 
 <h1 id="build-in-classes">Build-in &ldquo;Classes&rdquo;</h1>
 
 <p>The same methods use in arrays <code>Array</code>, functions <code>Function</code> and other objects. Build-in methods are in <code>Array.prototype</code>, <code>Function.prototype</code>, etc.</p>
 
-<p><img src="images/posts/OOP-in-prototype-style/img5.png" alt="" /></p>
+<p><img src="../../images/posts/OOP-in-prototype-style/img5.png" alt="" /></p>
 
 <p>Thats why everywhere JS developers like to say that &ldquo;All objects inherit from <code>Object</code>&rdquo;. But it&rsquo;s a quite incorrect. All objects inherit from <code>Object.prototype</code> via <code>__proto__</code> link.</p>
 

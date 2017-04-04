@@ -20,7 +20,7 @@
 
 &lt;p&gt;The image bellow will help to think about each command in terms of their effect on the three main components of Git workflow. Keep this components always in mind when you&amp;rsquo;re working with this commands.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/Reset-Checkout-and-Revert/git-main-components.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/posts/Reset-Checkout-and-Revert/git-main-components.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;reset&#34;&gt;Reset&lt;/h1&gt;
 
@@ -32,7 +32,7 @@ git reset HEAD~2
 
 &lt;p&gt;In other words, you&amp;rsquo;re saying that you want to throw away this commits:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/Reset-Checkout-and-Revert/resetting-branch.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/posts/Reset-Checkout-and-Revert/resetting-branch.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This usage of &lt;code&gt;git reset&lt;/code&gt; is a simple way to undo changes that haven&amp;rsquo;t been shared with any one else. I use this command when I&amp;rsquo;ve started working on feature find myself thinking that, &amp;ldquo;Oh crap, what am I doing? I should start over&amp;rdquo;.&lt;/p&gt;
 
@@ -46,7 +46,7 @@ git reset HEAD~2
 
 &lt;p&gt;It&amp;rsquo;s easer to thing of these modes by their scope:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/Reset-Checkout-and-Revert/git-reset-scopes.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/posts/Reset-Checkout-and-Revert/git-reset-scopes.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The command is often used with &lt;code&gt;HEAD&lt;/code&gt; or with serious of commits hash as the parameter:&lt;/p&gt;
 
@@ -77,14 +77,14 @@ git reset --no-edit ffffffff..12345678
 
 &lt;p&gt;Internally it moves &lt;code&gt;HEAD&lt;/code&gt; to a different branch updates the &lt;code&gt;working directory&lt;/code&gt; to match. Since this has a potential to overwrite local changes, Git forces you to commit or stash any changes in a working directory. Unlike &lt;code&gt;git reset&lt;/code&gt; it doesn&amp;rsquo;t move any branches around.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/Reset-Checkout-and-Revert/git-checkout.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/posts/Reset-Checkout-and-Revert/git-checkout.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I can also check arbitrary commits by passing the commit reference of the branch:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout HEAD~2
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/Reset-Checkout-and-Revert/git-checkout-by-reference.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/posts/Reset-Checkout-and-Revert/git-checkout-by-reference.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This is useful for quickly inspecting an old version of your project. However, since there are no reference to the current &lt;code&gt;HEAD&lt;/code&gt;, this puts you in a &lt;code&gt;detached HEAD state&lt;/code&gt;. This can be dangerous if you start adding new commits, because there won&amp;rsquo;t be a way to get back them after you switch to an another branch. For this reason, you should always create a new branch before adding commits to a &lt;code&gt;detached HEAD&lt;/code&gt;.&lt;/p&gt;
 
@@ -98,7 +98,7 @@ git revert HEAD~2
 
 &lt;p&gt;That can be visualized as following:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/Reset-Checkout-and-Revert/git-revert.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/posts/Reset-Checkout-and-Revert/git-revert.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Contrast this with &lt;code&gt;git reset&lt;/code&gt;, which &lt;strong&gt;does&lt;/strong&gt; alter the existing commit history. For this reason &lt;code&gt;git revert&lt;/code&gt; should be used to undo changes on a public branch and &lt;code&gt;git reset&lt;/code&gt; should be reserved for undoing changes on a private branch.&lt;/p&gt;
 

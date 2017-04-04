@@ -9,6 +9,33 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>JS 30</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Js-30/</link>
+      <pubDate>Tue, 04 Apr 2017 14:51:54 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Js-30/</guid>
+      <description>&lt;p&gt;To fresh memory with &lt;a href=&#34;https://javascript30.com/&#34;&gt;30 day vanilla js coding challenge&lt;/a&gt;. Build 30 things in 30 days with 30 tutorials. No Frameworks, No Compilers, No Libraries, No Boilerplate!&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;description&#34;&gt;Description&lt;/h1&gt;
+
+&lt;p&gt;How do you get better?&lt;/p&gt;
+
+&lt;p&gt;Build things. Lots of things. Build 1,000 things. Keep it up and don&amp;rsquo;t stop. Seriously.&lt;/p&gt;
+
+&lt;p&gt;This has always been my advice. Just put in the work and you will get better.&lt;/p&gt;
+
+&lt;p&gt;But Wes, what should I build? I have no ideas! Please don&amp;rsquo;t make me do another todo app.&lt;/p&gt;
+
+&lt;p&gt;Ideas, Eh? I&amp;rsquo;ve got lots! This is JavaScript30 — let&amp;rsquo;s build 30 things together.&lt;/p&gt;
+
+&lt;h1 id=&#34;links-to-challenges&#34;&gt;Links to challenges&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;../../html/js-30/01-drum-kit/index.html&#34;&gt;01 - Drum Kit&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Building a JavaScript development environment</title>
       <link>https://qetr1ck-op.github.io/blog/post/building-a-javaScript-development-environment/</link>
       <pubDate>Sun, 02 Apr 2017 14:31:50 +0300</pubDate>
@@ -6442,60 +6469,6 @@ console.log(deep[0] === objects[0]);
 &lt;li&gt;&lt;a href=&#34;https://www.webreflection.co.uk/blog/2015/10/06/how-to-copy-objects-in-javascript#shallow-vs-deep-copy&#34;&gt;www.webreflection.co.uk&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-clone-an-object&#34;&gt;stackoverflow.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Kata: Format a string of names like &#39;Bart, Lisa &amp; Maggie&#39;</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/</link>
-      <pubDate>Fri, 19 Feb 2016 00:05:14 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/</guid>
-      <description>&lt;p&gt;Given: an array containing hashes of names&lt;/p&gt;
-
-&lt;p&gt;Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
-&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;list([ {name: &#39;Bart&#39;}, {name: &#39;Lisa&#39;}, {name: &#39;Maggie&#39;} ])
-// returns &#39;Bart, Lisa &amp;amp; Maggie&#39;
-
-list([ {name: &#39;Bart&#39;}, {name: &#39;Lisa&#39;} ])
-// returns &#39;Bart &amp;amp; Lisa&#39;
-
-list([ {name: &#39;Bart&#39;} ])
-// returns &#39;Bart&#39;
-
-list([])
-// returns &#39;&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Tests:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;Test.assertEquals(list([{name: &#39;Bart&#39;},{name: &#39;Lisa&#39;},{name: &#39;Maggie&#39;},{name: &#39;Homer&#39;},{name: &#39;Marge&#39;}]), &#39;Bart, Lisa, Maggie, Homer &amp;amp; Marge&#39;,
-&amp;quot;Must work with many names&amp;quot;)
-Test.assertEquals(list([{name: &#39;Bart&#39;},{name: &#39;Lisa&#39;},{name: &#39;Maggie&#39;}]), &#39;Bart, Lisa &amp;amp; Maggie&#39;,
-&amp;quot;Must work with many names&amp;quot;)
-Test.assertEquals(list([{name: &#39;Bart&#39;},{name: &#39;Lisa&#39;}]), &#39;Bart &amp;amp; Lisa&#39;, 
-&amp;quot;Must work with two names&amp;quot;)
-Test.assertEquals(list([{name: &#39;Bart&#39;}]), &#39;Bart&#39;, &amp;quot;Wrong output for a single name&amp;quot;)
-Test.assertEquals(list([]), &#39;&#39;, &amp;quot;Must work with no names&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Result:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;const list = names =&amp;gt; {
-  return names.reduce( (prev, current, index, array) =&amp;gt; {
-    if (index === 0){
-      return current.name;
-    }
-    else if (index === array.length - 1){
-      return `${prev} &amp;amp; ${current.name}`;
-    } 
-    else {
-      return `${prev}, ${current.name}`;
-    }
-  }, &#39;&#39;);
- }
-&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

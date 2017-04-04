@@ -9,6 +9,33 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/architecture/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>JS 30</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Js-30/</link>
+      <pubDate>Tue, 04 Apr 2017 14:51:54 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Js-30/</guid>
+      <description>&lt;p&gt;To fresh memory with &lt;a href=&#34;https://javascript30.com/&#34;&gt;30 day vanilla js coding challenge&lt;/a&gt;. Build 30 things in 30 days with 30 tutorials. No Frameworks, No Compilers, No Libraries, No Boilerplate!&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;description&#34;&gt;Description&lt;/h1&gt;
+
+&lt;p&gt;How do you get better?&lt;/p&gt;
+
+&lt;p&gt;Build things. Lots of things. Build 1,000 things. Keep it up and don&amp;rsquo;t stop. Seriously.&lt;/p&gt;
+
+&lt;p&gt;This has always been my advice. Just put in the work and you will get better.&lt;/p&gt;
+
+&lt;p&gt;But Wes, what should I build? I have no ideas! Please don&amp;rsquo;t make me do another todo app.&lt;/p&gt;
+
+&lt;p&gt;Ideas, Eh? I&amp;rsquo;ve got lots! This is JavaScript30 — let&amp;rsquo;s build 30 things together.&lt;/p&gt;
+
+&lt;h1 id=&#34;links-to-challenges&#34;&gt;Links to challenges&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;../../html/js-30/01-drum-kit/index.html&#34;&gt;01 - Drum Kit&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Building a JavaScript development environment</title>
       <link>https://qetr1ck-op.github.io/blog/post/building-a-javaScript-development-environment/</link>
       <pubDate>Sun, 02 Apr 2017 14:31:50 +0300</pubDate>
@@ -6045,7 +6072,7 @@ function awesomeFooListener(dispatcher) {
 
 &lt;p&gt;I personally found the following table a very useful reminder of what a number of patterns has to offer - it covers the 23 Design Patterns mentioned by the GoF:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/Practical-design-patterns-in-JavaScript/img.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/posts/Practical-design-patterns-in-JavaScript/img.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;creation-design-patterns-in-depth&#34;&gt;Creation Design Patterns in depth&lt;/h1&gt;
 
@@ -6802,362 +6829,6 @@ subscription.unsubscribe();
     url: &#39;/some/url/path&#39; // any arguments
 });
 &lt;/code&gt;&lt;/pre&gt;</description>
-    </item>
-    
-    <item>
-      <title>TOP 10 mistakes when you develop on AngularJS</title>
-      <link>https://qetr1ck-op.github.io/blog/post/top-10-mistakes-when-you-develop-on-angularjs/</link>
-      <pubDate>Wed, 23 Sep 2015 18:40:03 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/top-10-mistakes-when-you-develop-on-angularjs/</guid>
-      <description>&lt;p&gt;The top 10 mistakes when beginners start to develop on AngularJS.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;mvc-directory-structure&#34;&gt;MVC directory structure&lt;/h1&gt;
-
-&lt;p&gt;When you work with MVC / MVW frameworks it&amp;rsquo;s convenience to structure code by &lt;code&gt;MVC components&lt;/code&gt; using the following template:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;templates/
-├───login.html
-└───feed.html
-app/
-├───app.js
-└───controllers/
-    ├───LoginController.js
-    └───FeedController.js
-    directives/
-    └───FeedEntryDirective.js
-    services/
-    ├───LoginService.js
-    └───FeedService.js
-    filters/
-    └───CapitalizeFilter.js
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;But when project will rise it&amp;rsquo;s hard to use such structure of folders. You always need to open a few folder at the same time. It isn&amp;rsquo;t depend what IDE or tool you use (Sublime, VS, Vim with NerdTree) - it&amp;rsquo;s uncomfortable.&lt;/p&gt;
-
-&lt;p&gt;To avoid this this developers often use grouping by &lt;code&gt;functionality type&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;app/
-├───app.js
-└───Feed/
-    ├───feed.html
-    ├───FeedController.js
-    ├───FeedEntryDirective.js
-    └───FeedService.js
-    Login/
-    ├───_login.html
-    ├───LoginController.js
-    └───LoginService.js
-    Shared/
-    └───CapitalizeFilter.js
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The structure allows more faster search for files which are related to the same feature. It may puzzled at the beginning to share js with html or even with test files. But it saves a lot of time, because it&amp;rsquo;s more natural.&lt;/p&gt;
-
-&lt;h1 id=&#34;not-scalable-modules&#34;&gt;Not scalable Modules&lt;/h1&gt;
-
-&lt;p&gt;At the beginning of development all functionalities include in a &lt;strong&gt;single module&lt;/strong&gt;. But manage a such type of code is inconvenient:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;let app = angular.module(&#39;app&#39;,[]);
-app.service(&#39;MyService&#39;, function(){
-    //service code
-});
-
-app.controller(&#39;MyCtrl&#39;, function($scope, MyService){
-    //controller code
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The next most common approach is grouping objects &lt;strong&gt;by type&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;let services = angular.module(&#39;services&#39;,[]);
-services.service(&#39;MyService&#39;, function(){
-    //service code
-});
-
-let controllers = angular.module(&#39;controllers&#39;, [&#39;services&#39;]);
-controllers.controller(&#39;MyCtrl&#39;, function($scope, MyService){
-    //controller code
-});
-
-let app = angular.module(&#39;app&#39;, [&#39;controllers&#39;, &#39;services&#39;]);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;For better scalability and future re-usability - split code &lt;strong&gt;by feature&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;let sharedServicesModule = angular.module(&#39;sharedServices&#39;,[]);
-sharedServices.service(&#39;NetworkService&#39;, function($http){});
-
-let loginModule = angular.module(&#39;login&#39;, [&#39;sharedServices&#39;]);
-loginModule.service(&#39;loginService&#39;, function(NetworkService){});
-loginModule.controller(&#39;loginCtrl&#39;, function($scope, loginService){});
-
-let app = angular.module(&#39;app&#39;, [&#39;sharedServices&#39;, &#39;login&#39;]);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;minification-with-dependency-injection&#34;&gt;Minification with Dependency Injection&lt;/h1&gt;
-
-&lt;p&gt;Pattern DI in AngularJS uses out of box. DI helps to keep code clean and helps with testing process.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;let app = angular.module(&#39;app&#39;,[]);
-app.controller(&#39;MainCtrl&#39;, function($scope, $timeout) { //MainCtrl has dependency on $scope and $timeout
-    $timeout(function(){
-        console.log($scope);
-    }, );
-});
-
-//And code after minification:
-
-let app=angular.module(&amp;quot;app&amp;quot;,[]);app.controller(&amp;quot;MainCtrl&amp;quot;,function(e,t){t(function(){console.log(e)})})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now AngularJS can&amp;rsquo;t resolve minificated variables. Easiest solution is:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;app.controller(&#39;MainCtrl&#39;, [&#39;$scope&#39;, &#39;$timeout&#39;, function($scope, $timeout){
-    $timeout(function() {
-        console.log($scope);
-    });
-}]);
-
-//another best practice approach with $inject
-
-app.controller(&#39;MainCtrl&#39;, mainCtrl);
-
-mainCtrl.$inject = [&#39;$scope&#39;, &#39;$timeout&#39;];
-
-function mainCtrl($scope, $timeout) {
-     $timeout(function() {
-        console.log($scope);
-    });
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now Angular can resolve dependency.&lt;/p&gt;
-
-&lt;p&gt;Another way to handle DI with minification is &lt;a href=&#34;https://github.com/olov/ng-annotate&#34;&gt;ng-annotate&lt;/a&gt; module. More information on official &lt;a href=&#34;https://docs.angularjs.org/tutorial/step_05#a-note-on-minification&#34;&gt;AngularJS docs&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;global-dependencies&#34;&gt;Global Dependencies&lt;/h1&gt;
-
-&lt;p&gt;Often when writing AngularJS apps there will be a dependency on an object that binds itself to the global scope. This means it&amp;rsquo;s available in any AngularJS code, but this breaks the dependency injection model.&lt;/p&gt;
-
-&lt;p&gt;AngularJS makes it simple to encapsulate these globals into modules so they can be injected like standard AngularJS modules:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;let underscore = angular.module(&#39;underscore&#39;, []);
-underscore.factory(&#39;_&#39;, function() {
-    return window._; //Underscore must already be loaded on the page
-});
-
-let app = angular.module(&#39;app&#39;, [&#39;underscore&#39;]);
-
-app.controller(&#39;MainCtrl&#39;, [&#39;$scope&#39;, &#39;_&#39;, function($scope, _) {
-    init = function() {
-        _.keys($scope);
-    }
-
-    init();
-}]);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;fat-controllers&#34;&gt;Fat controllers&lt;/h1&gt;
-
-&lt;p&gt;It&amp;rsquo;s easy, especially when starting out, to put to much logic in the controller. Controller should &lt;strong&gt;never&lt;/strong&gt; do a DOM manipulation. That&amp;rsquo;s work for directives! Likewise business logic should live in services.&lt;/p&gt;
-
-&lt;p&gt;App data should be also stored and fetched in services, except when we need bound to the &lt;code&gt;$scope&lt;/code&gt;. Services are singletons that persist throughout the lifetime of the application, while controllers are transient between application states. If data is stored in the controller then it will need to be fetched from somewhere when it is instantiate.&lt;/p&gt;
-
-&lt;p&gt;AngularJS works best when following the Single Responsibility Principle (SRP). If the controller is a coordinator between the view and the model, then the amount of logic it has should be minimal. This will also make testing much simpler.&lt;/p&gt;
-
-&lt;h1 id=&#34;service-vs-factory-vs-provider&#34;&gt;Service vs Factory vs Provider&lt;/h1&gt;
-
-&lt;p&gt;What is service:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;It provides methods to keep, share and organize data across the lifetime of the Angular app&lt;/li&gt;
-&lt;li&gt;Lazy loads, Angular only creates instance of a service when an application component depends on it&lt;/li&gt;
-&lt;li&gt;Singleton object, application component dependent on the service work with the single instance&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;An Angular service can be created in five different ways:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;service&lt;/li&gt;
-&lt;li&gt;factory&lt;/li&gt;
-&lt;li&gt;provider&lt;/li&gt;
-&lt;li&gt;value&lt;/li&gt;
-&lt;li&gt;constant&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;The most verbose, but also the most comprehensive one is a &lt;strong&gt;Provider&lt;/strong&gt; recipe. The remaining four recipe types — Value, Factory, Service and Constant — are just syntactic sugar on top of a provider recipe.&lt;/p&gt;
-
-&lt;p&gt;Here is a great examples by Misko:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;module.value(&#39;a&#39;, 123);
-module.constant(&#39;A&#39;, 321); //can&#39;t modify with a decorator
-
-function Controller(a, A) {
-    expect(a).toEqual(123);
-    expect(A).toEqual(231);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In this case the injectors simply return the value. But what if you want to compute the value?&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;module.factory(&#39;b&#39;, function(a) {
-    return a*2;
-});
-
-function Controller(b) {
-    expect(b).toEqual(246);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So &lt;strong&gt;factory&lt;/strong&gt; is a function which responsible to creating or/and modifying the value. Notice that the the factory function can ask for other &lt;strong&gt;dependencies&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;If you want to be more OO and have a class?&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;module.factory(&#39;greeterFactory&#39;, function(a) {
-    function Greeter(a) {
-        this.greet = function() {
-            return &#39;Hello &#39; + a;
-        }
-    }
-    
-    return new Greeter(a);
-});
-
-//or with service
-module.service(&#39;greeterService&#39;, function(a) {
-    this.greet = function() {
-        return &#39;Hello &#39; + a;
-    }
-});
-
-function Controller(greeterFactory, greeterService) {
-    expect(greeter instanceof Greeter).toBe(true);
-    expect(greeter.greet()).toEqual(&#39;Hello 123&#39;);
-    
-    const greeter2 = new greeter2;
-    expect(greeter2 instanceof greeterFactory).toBe(true);
-    expect(greeter2.greet()).toEqual(&#39;Hello 123&#39;);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;But if we want to configure service function before injection? Use &lt;strong&gt;provider&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;module.provider(&#39;greeter3&#39;, function() {
-    var salutation = &#39;Hello&#39;;
-    this.setSalutation = function(s) {
-        salutation = s;
-    }
-
-    function Greeter(a) {
-        this.greet = function() {
-            return `${salutation} ${a}`;
-        }
-    }
-
-    this.$get = function(a) {
-        return new Greeter(a);
-    };
-});
-
-// configuration in config phase
-module(&#39;abc&#39;, []).config(function(greeter3Provider) {
-    greeter3Provider.setSalutation(&#39;Halo&#39;);
-});
-
-function Controller(greeter2) {
-    expect(greeter2.greet()).toEqual(&#39;Halo 123&#39;);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As a side note, &lt;strong&gt;service&lt;/strong&gt;, &lt;strong&gt;factory&lt;/strong&gt;, and &lt;strong&gt;value&lt;/strong&gt; are all derived from provider:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;module.service = function(name, Class) {
-    provider.provide(name, function() {
-        this.$get = function($injector) {
-            return $injector.instantiate(Class);
-        };
-    });
-}
-
-module.factory = function(name, factory) {
-    provider.provide(name, function() {
-        this.$get = function($injector) {
-            return $injector.invoke(factory);
-        };
-    });
-}
-
-module.value = function(name, value) {
-    provider.factory(name, function() {
-        return value;
-    });
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;always-dot-in-vm-scope-s&#34;&gt;Always dot in VM $scope&amp;rsquo;s&lt;/h1&gt;
-
-&lt;p&gt;In AngularJS every &lt;code&gt;$scope&lt;/code&gt; prototypical inherits from its parent &lt;code&gt;$scope&lt;/code&gt; till the highest level &lt;code&gt;$rootScope&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div ng-controller=&amp;quot;navCtrl&amp;quot;&amp;gt;
-   &amp;lt;span&amp;gt;{{user}}&amp;lt;/span&amp;gt; &amp;lt;!-- won&#39;t be updating --&amp;gt;
-   &amp;lt;div ng-controller=&amp;quot;loginCtrl&amp;quot;&amp;gt;
-      &amp;lt;span&amp;gt;{{user}}&amp;lt;/span&amp;gt;
-      &amp;lt;input ng-model=&amp;quot;user&amp;quot;&amp;gt;&amp;lt;/input&amp;gt; &amp;lt;!-- changes update only loginCtrl scope --&amp;gt;
-   &amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;When looking up for &lt;code&gt;primitive&lt;/code&gt; value, the prototype chain is not consulted. If &lt;code&gt;navCtrl&lt;/code&gt; updated simultaneously then a prototype chain lookup is required, this won&amp;rsquo;t happen when the value is an &lt;strong&gt;object&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div ng-controller=&amp;quot;navCtrl&amp;quot;&amp;gt;
-   &amp;lt;span&amp;gt;{{user.name}}&amp;lt;/span&amp;gt;
-   &amp;lt;div ng-controller=&amp;quot;loginCtrl&amp;quot;&amp;gt;
-      &amp;lt;span&amp;gt;{{user.name}}&amp;lt;/span&amp;gt;
-      &amp;lt;input ng-model=&amp;quot;user.name&amp;quot;&amp;gt;&amp;lt;/input&amp;gt;
-   &amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;unit-testing-angularjs-apps&#34;&gt;Unit testing AngularJS apps&lt;/h1&gt;
-
-&lt;p&gt;JavaScript is a dynamically typed language which comes with great power of expression, but it also comes with almost no help from the compiler.
-For this reason we feel very strongly that any code written in JavaScript needs to come with a strong &lt;a href=&#34;https://docs.angularjs.org/guide/unit-testing&#34;&gt;set of tests&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;not-to-do-an-end-to-end-testing-with-protractor&#34;&gt;Not to do an end-to-end testing with Protractor&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/angular/protractor&#34;&gt;Protractor&lt;/a&gt; uses the &lt;a href=&#34;http://jasmine.github.io/1.3/introduction.html&#34;&gt;Jasmine&lt;/a&gt; test framework for defining tests. Protractor has a very robust API for different page interactions.
-There are other end to end test tools, but Protractor has the advantage of understanding how to work with AngularJS code, especially when it comes to &lt;code&gt;$digest&lt;/code&gt; cycles and more.&lt;/p&gt;
-
-&lt;h1 id=&#34;full-spectrum-testing-with-karma&#34;&gt;Full-Spectrum Testing with Karma&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.yearofmoo.com/2013/01/full-spectrum-testing-with-angularjs-and-karma.html&#34;&gt;Awesome post&lt;/a&gt; about testing AngularJS with &lt;code&gt;Karma&lt;/code&gt;, passage from the post:&lt;/p&gt;
-
-&lt;p&gt;Karma is an amazing testing tool which is designed to take all the frustration out of setting up a working test runner when testing JavaScript code.
-Karma works by spawning up each browser that is specified within its configuration file and then running JavaScript code against those browsers to see if they pass certain tests.
-Communication between Karma and each of the browsers is handled with the karma service running in the terminal using socket.io.
-Each time a test is run, Karma records its status and then tallies up which browsers have failed for each test and which ones passed and timed out.
-This makes each test work 100% natively in each browser without the need to test individually.
-Also, since the Karma service runs on a port and keeps track of browsers by itself, you can easily hook up other browsers and devices to it just by visiting its broadcasting port.
-Oh and did I mention that Karma is fast? Yeah it&amp;rsquo;s really fast&amp;hellip;&lt;/p&gt;
-
-&lt;h1 id=&#34;using-jquery&#34;&gt;Using jQuery&lt;/h1&gt;
-
-&lt;p&gt;AngularJS is a framework for building scalable apps. jQuery is a famous library for simplifying DOM manipulation, event handling, AJAX operation.&lt;/p&gt;
-
-&lt;p&gt;AngularJS is about architecture of app, not augmenting HTML pages.&lt;/p&gt;
-
-&lt;p&gt;Try to stop using jQuery and imperative paradigm, just let your code to extend HTML syntax in declarative style.&lt;/p&gt;
-
-&lt;p&gt;DOM manipulation should only be done in directives, but this doesn&amp;rsquo;t mean they have to be jQuery wrappers. Always consider what features AngularJS already provides before reaching for jQuery.&lt;/p&gt;
-
-&lt;p&gt;Save my day:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.airpair.com/angularjs/posts/top-10-mistakes-angularjs-developers-make&#34;&gt;Original post&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
     </item>
     
   </channel>

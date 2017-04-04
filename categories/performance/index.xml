@@ -4417,7 +4417,7 @@ window.addEventListener(&#39;resize&#39;, myEfficientFn);
 
 &lt;p&gt;Screenshot from jsperf:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/Performance-JavaScript-loops/performaceArray.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/posts/Performance-JavaScript-loops/performaceArray.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;SaveMyDay:&lt;/p&gt;
 
@@ -4445,7 +4445,7 @@ window.addEventListener(&#39;resize&#39;, myEfficientFn);
 &lt;li&gt;&lt;code&gt;document.createTextNode&lt;/code&gt; once per test run&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/Performance-Javascript-adding-text-to-a-node/title.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/posts/Performance-Javascript-adding-text-to-a-node/title.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 

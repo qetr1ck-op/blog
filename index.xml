@@ -6,8 +6,35 @@
     <description>Recent content on OP blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 02 Apr 2017 14:51:54 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 04 Apr 2017 14:51:54 +0300</lastBuildDate>
     <atom:link href="https://qetr1ck-op.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>JS 30</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Js-30/</link>
+      <pubDate>Tue, 04 Apr 2017 14:51:54 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Js-30/</guid>
+      <description>&lt;p&gt;To fresh memory with &lt;a href=&#34;https://javascript30.com/&#34;&gt;30 day vanilla js coding challenge&lt;/a&gt;. Build 30 things in 30 days with 30 tutorials. No Frameworks, No Compilers, No Libraries, No Boilerplate!&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;description&#34;&gt;Description&lt;/h1&gt;
+
+&lt;p&gt;How do you get better?&lt;/p&gt;
+
+&lt;p&gt;Build things. Lots of things. Build 1,000 things. Keep it up and don&amp;rsquo;t stop. Seriously.&lt;/p&gt;
+
+&lt;p&gt;This has always been my advice. Just put in the work and you will get better.&lt;/p&gt;
+
+&lt;p&gt;But Wes, what should I build? I have no ideas! Please don&amp;rsquo;t make me do another todo app.&lt;/p&gt;
+
+&lt;p&gt;Ideas, Eh? I&amp;rsquo;ve got lots! This is JavaScript30 — let&amp;rsquo;s build 30 things together.&lt;/p&gt;
+
+&lt;h1 id=&#34;links-to-challenges&#34;&gt;Links to challenges&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;./html/js-30/01-drum-kit/index.html&#34;&gt;01 - Drum Kit&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Improve web performance using Google PageSpeed</title>
@@ -634,7 +661,7 @@ There are implemented all of the RESTful verbs to get, add, and update data with
 
 &lt;p&gt;The image bellow will help to think about each command in terms of their effect on the three main components of Git workflow. Keep this components always in mind when you&amp;rsquo;re working with this commands.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/Reset-Checkout-and-Revert/git-main-components.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./images/posts/Reset-Checkout-and-Revert/git-main-components.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;reset&#34;&gt;Reset&lt;/h1&gt;
 
@@ -646,7 +673,7 @@ git reset HEAD~2
 
 &lt;p&gt;In other words, you&amp;rsquo;re saying that you want to throw away this commits:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/Reset-Checkout-and-Revert/resetting-branch.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./images/posts/Reset-Checkout-and-Revert/resetting-branch.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This usage of &lt;code&gt;git reset&lt;/code&gt; is a simple way to undo changes that haven&amp;rsquo;t been shared with any one else. I use this command when I&amp;rsquo;ve started working on feature find myself thinking that, &amp;ldquo;Oh crap, what am I doing? I should start over&amp;rdquo;.&lt;/p&gt;
 
@@ -660,7 +687,7 @@ git reset HEAD~2
 
 &lt;p&gt;It&amp;rsquo;s easer to thing of these modes by their scope:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/Reset-Checkout-and-Revert/git-reset-scopes.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./images/posts/Reset-Checkout-and-Revert/git-reset-scopes.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The command is often used with &lt;code&gt;HEAD&lt;/code&gt; or with serious of commits hash as the parameter:&lt;/p&gt;
 
@@ -691,14 +718,14 @@ git reset --no-edit ffffffff..12345678
 
 &lt;p&gt;Internally it moves &lt;code&gt;HEAD&lt;/code&gt; to a different branch updates the &lt;code&gt;working directory&lt;/code&gt; to match. Since this has a potential to overwrite local changes, Git forces you to commit or stash any changes in a working directory. Unlike &lt;code&gt;git reset&lt;/code&gt; it doesn&amp;rsquo;t move any branches around.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/Reset-Checkout-and-Revert/git-checkout.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./images/posts/Reset-Checkout-and-Revert/git-checkout.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I can also check arbitrary commits by passing the commit reference of the branch:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout HEAD~2
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/Reset-Checkout-and-Revert/git-checkout-by-reference.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./images/posts/Reset-Checkout-and-Revert/git-checkout-by-reference.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This is useful for quickly inspecting an old version of your project. However, since there are no reference to the current &lt;code&gt;HEAD&lt;/code&gt;, this puts you in a &lt;code&gt;detached HEAD state&lt;/code&gt;. This can be dangerous if you start adding new commits, because there won&amp;rsquo;t be a way to get back them after you switch to an another branch. For this reason, you should always create a new branch before adding commits to a &lt;code&gt;detached HEAD&lt;/code&gt;.&lt;/p&gt;
 
@@ -712,7 +739,7 @@ git revert HEAD~2
 
 &lt;p&gt;That can be visualized as following:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/Reset-Checkout-and-Revert/git-revert.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./images/posts/Reset-Checkout-and-Revert/git-revert.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Contrast this with &lt;code&gt;git reset&lt;/code&gt;, which &lt;strong&gt;does&lt;/strong&gt; alter the existing commit history. For this reason &lt;code&gt;git revert&lt;/code&gt; should be used to undo changes on a public branch and &lt;code&gt;git reset&lt;/code&gt; should be reserved for undoing changes on a private branch.&lt;/p&gt;
 
@@ -5996,254 +6023,6 @@ And later it stays unchangeable, even if explicitly bound or called with differe
 
 &lt;p&gt;Save my day:
 * &lt;a href=&#34;https://gist.github.com/DmitrySoshnikov/3928607cb8fdba42e712&#34;&gt;DmitrySoshnikov&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Exploring AngularJS 1.5 .component() method</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Exploring-AngularJS-1-5-component-method/</link>
-      <pubDate>Fri, 22 Jul 2016 22:20:03 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Exploring-AngularJS-1-5-component-method/</guid>
-      <description>&lt;p&gt;AngularJS 1.5 introduce &lt;code&gt;.component()&lt;/code&gt; helper method which is much simpler than the &lt;code&gt;.directive()&lt;/code&gt; definitions and advocates best practices and common default behavior.&lt;/p&gt;
-
-&lt;p&gt;Using &lt;code&gt;.component()&lt;/code&gt; will allow to write in Angular 2 style as well, which will turn transition to Angular 2 much easier.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;rsquo;s compare the difference in syntax and the possibility of new abstraction.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;from-directrive-to-component&#34;&gt;From &amp;ldquo;directrive()&amp;rdquo; to &amp;ldquo;component()&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;The syntax change is simple:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// before
-module.directive(name, fn);
-
-// after
-module.component(name, options);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I&amp;rsquo;ve rebuild a simple &lt;code&gt;counter&lt;/code&gt; directive which which we&amp;rsquo;ll refactor to &lt;code&gt;component()&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;module
-  .directive(&#39;counter&#39;, function counter() {
-    return {
-      scope: {},
-      bindToController: {
-        count: &#39;=&#39;
-      },
-      contorllerAs: &#39;$ctlr&#39;,
-      controller: function() {
-        this.increment = () =&amp;gt; this.count++;
-        this.decrement = () =&amp;gt; this.count--;
-      },
-      template: `
-        &amp;lt;div&amp;gt;
-          &amp;lt;input type=&amp;quot;number&amp;quot; ng-model=&amp;quot;$ctlr.count&amp;quot;&amp;gt;
-          &amp;lt;button ng-click=&amp;quot;$ctrl.increment()&amp;quot;&amp;gt;+&amp;lt;/button&amp;gt;
-          &amp;lt;button ng-click=&amp;quot;$ctrl.decrement()&amp;quot;&amp;gt;-&amp;lt;/button&amp;gt;
-        &amp;lt;/div&amp;gt;
-      `
-    }
-  })
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;function-to-object&#34;&gt;Function to Object&lt;/h1&gt;
-
-&lt;p&gt;Let&amp;rsquo;s start from the top and refactor the function argument to object:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// before
-module
-  .directive(&#39;counter&#39;, function counter() {
-    return {
-
-    }
-  })
-
-// after
-module
-  .component(&#39;counter&#39;, {
-
-  })
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Nice and simple.&lt;/p&gt;
-
-&lt;h1 id=&#34;scope-and-bindtocontroller-become-bindings&#34;&gt;&amp;ldquo;scope&amp;rdquo; and &amp;ldquo;bindToController&amp;rdquo; become &amp;ldquo;bindings&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;In &lt;code&gt;directive()&lt;/code&gt; the &lt;code&gt;scope&lt;/code&gt; property allows us to define whether we want to isolate the &lt;code&gt;$scope&lt;/code&gt; or inherit it. So repeating every time just create an extra boilerplate. With &lt;a href=&#34;https://docs.angularjs.org/api/ng/service/$compile&#34;&gt;bindToController&lt;/a&gt; we can explicitly define binding directly to instance of controller via &lt;code&gt;this&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;With &lt;code&gt;bindings&lt;/code&gt; we can remove this boilerplate and simple define what we want to pass down to the component.&lt;/p&gt;
-
-&lt;p&gt;And &lt;code&gt;component()&lt;/code&gt; will always have an isolated scope.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// before
-module
-  .directive(&#39;counter&#39;, function counter() {
-    return {
-      scope: {
-        count: &#39;=&#39;
-      },
-      bindToController: true
-    }
-  })
-
-// after
-module
-  .component(&#39;counter&#39;, {
-    binding: {
-      count: &#39;=&#39;
-    }
-  })
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;controller-and-contorlleras-changes&#34;&gt;Controller and &amp;ldquo;contorllerAs&amp;rdquo; changes&lt;/h1&gt;
-
-&lt;p&gt;Nothing has changed in the way we declare &lt;code&gt;controller&lt;/code&gt;, however it&amp;rsquo;s now smarter and has a default &lt;code&gt;contorllerAs&lt;/code&gt; value of &lt;code&gt;$ctrl&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Under the hood it looks like:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// inside angular.js
-controllerAs: identifierForController(options.controller) || options.controllerAs || &#39;$ctrl&#39;
-
-//...
-
-var CNTRL_REG = /^(\S+)(\s+as\s+(\w+))?$/;
-function identifierForController(controller, ident) {
-  if (ident &amp;amp;&amp;amp; isString(ident)) return ident;
-  if (isString(controller)) {
-    var match = CNTRL_REG.exec(controller);
-    if (match) return match[3];
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This allows us to do the following inside &lt;code&gt;.component()&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;{
-  ...
-  controller: &#39;FooController as foo&#39;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Based on the information we refactor our &lt;code&gt;Directive&lt;/code&gt; to &lt;code&gt;Component&lt;/code&gt; by dropping controllerAs property:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// before
-.directive(&#39;counter&#39;, function counter() {
-  return {
-    scope: {
-      count: &#39;=&#39;
-    },
-    bindToController: true,
-    controller: function () {
-      this.increment = () =&amp;gt; this.count++;
-      this.decrement = () =&amp;gt; this.count--;
-    },
-    controllerAs: &#39;counter&#39;
-  };
-});
-
-// after
-.component(&#39;counter&#39;, {
-  bindings: {
-    count: &#39;=&#39;
-  },
-  controller: function () {
-    this.increment = () =&amp;gt; this.count++;
-    this.decrement = () =&amp;gt; this.count--;
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Things now are becoming much simpler and funny.&lt;/p&gt;
-
-&lt;h1 id=&#34;template&#34;&gt;Template&lt;/h1&gt;
-
-&lt;p&gt;The &lt;code&gt;template&lt;/code&gt; property can be defined as a function property with injected &lt;code&gt;$elem&lt;/code&gt; and &lt;code&gt;$attrs&lt;/code&gt; values:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;{
-  ...
-  template: function ($element, $attrs) {
-    // access to $element and $attrs
-    return `
-      &amp;lt;div&amp;gt;
-        &amp;lt;input type=&amp;quot;text&amp;quot; ng-model=&amp;quot;$ctrl.count&amp;quot;&amp;gt;
-        &amp;lt;button type=&amp;quot;button&amp;quot; ng-click=&amp;quot;$ctrl.decrement();&amp;quot;&amp;gt;-&amp;lt;/button&amp;gt;
-        &amp;lt;button type=&amp;quot;button&amp;quot; ng-click=&amp;quot;$ctrl.increment();&amp;quot;&amp;gt;+&amp;lt;/button&amp;gt;
-      &amp;lt;/div&amp;gt;
-    `
-  }
-  ...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;inheriting-behavior-with-require&#34;&gt;Inheriting behavior with &amp;ldquo;require&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;Inherited Directive or Component methods will be bound to &lt;code&gt;this.parent&lt;/code&gt; property in the Controller:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;{
-  ...
-  require: {
-    parent: &#39;^^parentComponet&#39;
-  },
-  controller: function() {
-    // use this object to access to required Object
-    this.parent.foo();
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;one-way-binding&#34;&gt;One-way binding&lt;/h1&gt;
-
-&lt;p&gt;A new syntax expression for isolate scope values:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;{
-  ...
-  bindings: {
-    oneWay: &#39;&amp;lt;&#39;,
-    twoWay: &#39;=&#39;
-  },
-  ...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;But still remember that object are passed by reference, and Angular doesn&amp;rsquo;t make a clone of the object when it passed via &lt;code&gt;one-way binding&lt;/code&gt;, it actually sets the same value, which means that objects have still &lt;code&gt;two-way binding&lt;/code&gt; somehow.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&#34;upgrading-to-angular-2&#34;&gt;Upgrading to Angular 2&lt;/h1&gt;
-
-&lt;p&gt;Writing in this style using &lt;code&gt;.component()&lt;/code&gt; allows you easily transit to Angular 2, it&amp;rsquo;d look something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;import { Component } from &#39;@angular/core&#39;
-
-@Component({
-  selector: &#39;counter&#39;,
-  template: `
-    &amp;lt;div&amp;gt;
-      &amp;lt;input type=&amp;quot;number&amp;quot; [(ng-model)]=&amp;quot;count&amp;quot;&amp;gt;
-      &amp;lt;button (click)=&amp;quot;increment()&amp;quot;&amp;gt;+&amp;lt;/button&amp;gt;
-      &amp;lt;button (click)=&amp;quot;decrement()&amp;quot;&amp;gt;-&amp;lt;/button&amp;gt;
-    &amp;lt;/div&amp;gt;
-  `,
-})
-
-export default class CounterComponent {
-  constructor() {}
-  increment() {
-    this.count++;
-  }
-  decrement() {
-    this.count++;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Save my day:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://toddmotto.com/exploring-the-angular-1-5-component-method/&#34;&gt;toddmotto&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
     </item>
     
   </channel>

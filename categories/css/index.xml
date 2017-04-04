@@ -9,6 +9,33 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/css/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>JS 30</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Js-30/</link>
+      <pubDate>Tue, 04 Apr 2017 14:51:54 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Js-30/</guid>
+      <description>&lt;p&gt;To fresh memory with &lt;a href=&#34;https://javascript30.com/&#34;&gt;30 day vanilla js coding challenge&lt;/a&gt;. Build 30 things in 30 days with 30 tutorials. No Frameworks, No Compilers, No Libraries, No Boilerplate!&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;description&#34;&gt;Description&lt;/h1&gt;
+
+&lt;p&gt;How do you get better?&lt;/p&gt;
+
+&lt;p&gt;Build things. Lots of things. Build 1,000 things. Keep it up and don&amp;rsquo;t stop. Seriously.&lt;/p&gt;
+
+&lt;p&gt;This has always been my advice. Just put in the work and you will get better.&lt;/p&gt;
+
+&lt;p&gt;But Wes, what should I build? I have no ideas! Please don&amp;rsquo;t make me do another todo app.&lt;/p&gt;
+
+&lt;p&gt;Ideas, Eh? I&amp;rsquo;ve got lots! This is JavaScript30 — let&amp;rsquo;s build 30 things together.&lt;/p&gt;
+
+&lt;h1 id=&#34;links-to-challenges&#34;&gt;Links to challenges&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;../../html/js-30/01-drum-kit/index.html&#34;&gt;01 - Drum Kit&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Front End Interview Questions</title>
       <link>https://qetr1ck-op.github.io/blog/post/Front-End-Interview-Questions/</link>
       <pubDate>Sun, 14 Aug 2016 11:39:13 +0000</pubDate>
@@ -4233,44 +4260,6 @@ console.log(document.body.className);
 &lt;p&gt;Make my day:
 *   &lt;a href=&#34;http://htmlbook.ru/samlayout/tipovye-makety/rezinovyi-dvukhkolonochnyi-maket&#34; title=&#34;fluid 2 column layout on htmlbook.ru&#34;&gt;fluid 2 column layout&lt;/a&gt;
 *   &lt;a href=&#34;http://www.inserthtml.com/demos/css/radio-buttons/&#34; title=&#34;awesome checkboxes on www.inserthtml.com&#34;&gt;awesome checkboxes&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Data URIs</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Data-URIs/</link>
-      <pubDate>Tue, 11 Feb 2014 12:48:12 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Data-URIs/</guid>
-      <description>&lt;p&gt;Did you know that you don&amp;rsquo;t have to link to an external image file when using an &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; element in HTML, or declaring a &lt;code&gt;background-image&lt;/code&gt; in CSS? You can embed the image data directly into the document with data URIs.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;why-would-you-do-this&#34;&gt;Why would you do this?&lt;/h1&gt;
-
-&lt;p&gt;The biggest reason: it saves HTTP Requests. Other than pure document size, this is the #1 factor concerning how fast a page loads. Less = better.&lt;/p&gt;
-
-&lt;p&gt;The format, to be specific:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;data:[&amp;lt;mime type&amp;gt;][;charset=&amp;lt;charset&amp;gt;][;base64],&amp;lt;encoded data&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;li {
-  background:
-    url(data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7)
-    no-repeat
-    left center;
-  padding: 5px 0 5px 25px;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;img width=&amp;quot;16&amp;quot; height=&amp;quot;16&amp;quot; alt=&amp;quot;star&amp;quot; src=&amp;quot;data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7&amp;quot; /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;how-do-you-get-the-code&#34;&gt;How do you get the code?&lt;/h1&gt;
-
-&lt;p&gt;Use this &lt;a href=&#34;http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/&#34;&gt;online conversion tool&lt;/a&gt;. It&amp;rsquo;s the nicest one I have found. Here&amp;rsquo;s a &lt;a href=&#34;http://jpillora.com/base64-encoder/&#34;&gt;drag and drop one&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Save my day: &lt;a href=&#34;https://css-tricks.com/data-uris/&#34;&gt;css-tricks.com&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

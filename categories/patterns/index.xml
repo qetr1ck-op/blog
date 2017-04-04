@@ -9,6 +9,33 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/patterns/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>JS 30</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Js-30/</link>
+      <pubDate>Tue, 04 Apr 2017 14:51:54 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Js-30/</guid>
+      <description>&lt;p&gt;To fresh memory with &lt;a href=&#34;https://javascript30.com/&#34;&gt;30 day vanilla js coding challenge&lt;/a&gt;. Build 30 things in 30 days with 30 tutorials. No Frameworks, No Compilers, No Libraries, No Boilerplate!&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;description&#34;&gt;Description&lt;/h1&gt;
+
+&lt;p&gt;How do you get better?&lt;/p&gt;
+
+&lt;p&gt;Build things. Lots of things. Build 1,000 things. Keep it up and don&amp;rsquo;t stop. Seriously.&lt;/p&gt;
+
+&lt;p&gt;This has always been my advice. Just put in the work and you will get better.&lt;/p&gt;
+
+&lt;p&gt;But Wes, what should I build? I have no ideas! Please don&amp;rsquo;t make me do another todo app.&lt;/p&gt;
+
+&lt;p&gt;Ideas, Eh? I&amp;rsquo;ve got lots! This is JavaScript30 — let&amp;rsquo;s build 30 things together.&lt;/p&gt;
+
+&lt;h1 id=&#34;links-to-challenges&#34;&gt;Links to challenges&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;../../html/js-30/01-drum-kit/index.html&#34;&gt;01 - Drum Kit&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Building a JavaScript development environment</title>
       <link>https://qetr1ck-op.github.io/blog/post/building-a-javaScript-development-environment/</link>
       <pubDate>Sun, 02 Apr 2017 14:31:50 +0300</pubDate>
@@ -5313,7 +5340,7 @@ Inflexible hierarchy problem (eventually, all evolving hierarchies are wrong for
 
 &lt;p&gt;I personally found the following table a very useful reminder of what a number of patterns has to offer - it covers the 23 Design Patterns mentioned by the GoF:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/Practical-design-patterns-in-JavaScript/img.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/posts/Practical-design-patterns-in-JavaScript/img.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;creation-design-patterns-in-depth&#34;&gt;Creation Design Patterns in depth&lt;/h1&gt;
 
@@ -6467,7 +6494,7 @@ console.log(rabbit.location) // call location object through window object
 
 &lt;p&gt;So, object pointed by &lt;code&gt;__proto__&lt;/code&gt; it is his &lt;code&gt;prototype&lt;/code&gt;. In another words &lt;code&gt;prototype&lt;/code&gt; it&amp;rsquo;s &amp;ldquo;Backup Storage of Properties and Methods&amp;rdquo;, which automatically used in the search.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/OOP-in-prototype-style/img1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/posts/OOP-in-prototype-style/img1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;method-hasownproperty&#34;&gt;Method &lt;code&gt;hasOwnProperty&lt;/code&gt;&lt;/h1&gt;
 
@@ -6497,7 +6524,7 @@ for (var key in rabbit) {
 
 &lt;script src=&#34;https://gist.github.com/qetr1ck-op/d57b779a057e164bf1d2.js&#34;&gt;&lt;/script&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/OOP-in-prototype-style/img2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/posts/OOP-in-prototype-style/img2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;methods-to-work-with-proto&#34;&gt;Methods to work with &lt;code&gt;__proto__&lt;/code&gt;&lt;/h1&gt;
 
@@ -6577,13 +6604,13 @@ for (var key in rabbit) {
 &lt;li&gt;&lt;code&gt;obj.toString === Object.prototype.toString&lt;/code&gt; method will be taken from prototype object.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/OOP-in-prototype-style/img4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/posts/OOP-in-prototype-style/img4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;build-in-classes&#34;&gt;Build-in &amp;ldquo;Classes&amp;rdquo;&lt;/h1&gt;
 
 &lt;p&gt;The same methods use in arrays &lt;code&gt;Array&lt;/code&gt;, functions &lt;code&gt;Function&lt;/code&gt; and other objects. Build-in methods are in &lt;code&gt;Array.prototype&lt;/code&gt;, &lt;code&gt;Function.prototype&lt;/code&gt;, etc.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/posts/OOP-in-prototype-style/img5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/posts/OOP-in-prototype-style/img5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Thats why everywhere JS developers like to say that &amp;ldquo;All objects inherit from &lt;code&gt;Object&lt;/code&gt;&amp;rdquo;. But it&amp;rsquo;s a quite incorrect. All objects inherit from &lt;code&gt;Object.prototype&lt;/code&gt; via &lt;code&gt;__proto__&lt;/code&gt; link.&lt;/p&gt;
 
