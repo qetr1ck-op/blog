@@ -30,9 +30,14 @@
 
 &lt;p&gt;Ideas, Eh? I&amp;rsquo;ve got lots! This is JavaScript30 — let&amp;rsquo;s build 30 things together.&lt;/p&gt;
 
-&lt;h1 id=&#34;links-to-challenges&#34;&gt;Links to challenges&lt;/h1&gt;
+&lt;h1 id=&#34;done-challenges&#34;&gt;Done challenges&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&#34;../../html/js-30/01-drum-kit/index.html&#34;&gt;01 - Drum Kit&lt;/a&gt;&lt;/p&gt;</description>
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../html/js-30/01-drum-kit/index.html&#34;&gt;01 - Drum Kit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../html/js-30/02-js-and-css-clock/index.html&#34;&gt;02 - CSS + JS clock&lt;/a&gt;, &lt;a href=&#34;http://thenewcode.com/943/An-SVG-Analog-Clock-In-6-Lines-of-JavaScript&#34;&gt;SVG + JS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/wesbos/JavaScript30&#34;&gt;Github original source&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
