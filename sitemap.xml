@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/simple-favicon-generator/</loc>
+    <lastmod>2017-04-09T20:23:14+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://qetr1ck-op.github.io/blog/post/static-site-with-a-dynamic-search/</loc>
     <lastmod>2017-04-09T12:09:08+03:00</lastmod>
   </url>
@@ -382,7 +387,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/architecture/</loc>
-    <lastmod>2017-04-09T12:09:08+03:00</lastmod>
+    <lastmod>2017-04-09T20:23:14+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -453,7 +458,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/</loc>
-    <lastmod>2017-04-09T12:09:08+03:00</lastmod>
+    <lastmod>2017-04-09T20:23:14+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -481,7 +486,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/post/</loc>
-    <lastmod>2017-04-09T12:09:08+03:00</lastmod>
+    <lastmod>2017-04-09T20:23:14+03:00</lastmod>
     <priority>0</priority>
   </url>
   
