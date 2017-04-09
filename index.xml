@@ -6,8 +6,29 @@
     <description>Recent content on OP blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 04 Apr 2017 14:51:54 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 09 Apr 2017 12:09:08 +0300</lastBuildDate>
     <atom:link href="https://qetr1ck-op.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>A static site with a dynamic search function</title>
+      <link>https://qetr1ck-op.github.io/blog/post/static-site-with-a-dynamic-search/</link>
+      <pubDate>Sun, 09 Apr 2017 12:09:08 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/static-site-with-a-dynamic-search/</guid>
+      <description>&lt;p&gt;A static site with a dynamic search function? Yes. Alternatively to embeddable scripts from Google or other search engines you can provide your visitors a custom search by indexing your content files directly.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;hugo-lunr&#34;&gt;hugo-lunr&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.npmjs.com/package/hugo-lunr&#34;&gt;hugo-lunr&lt;/a&gt; - A simple way to add site search to your static Hugo site using &lt;a href=&#34;https://github.com/olivernn/lunr.js&#34;&gt;lunr.js&lt;/a&gt;. Hugo-lunr will create an index file of any html and markdown documents in your Hugo project&lt;/p&gt;
+
+&lt;h1 id=&#34;implementation&#34;&gt;implementation&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/blog-hugo-source/blob/master/themes/hugo-code-theme/layouts/partials/search.html&#34;&gt;source code&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://rayhightower.com/blog/2016/01/04/how-to-make-lunrjs-jekyll-work-together/&#34;&gt;How to Make lunr.js and Jekyll Work Together (with Gotchas)&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>JS 30</title>
@@ -5812,223 +5833,6 @@ It works by comparing the target value to the midpoint of the array; if they are
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95#.qwihvpqxq&#34;&gt;10 Interview Questions Every JavaScript Developer Should Know&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Kangax ES2015 quiz, expained</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Kangax-ES6-quiz-expained/</link>
-      <pubDate>Tue, 26 Jul 2016 23:01:02 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Kangax-ES6-quiz-expained/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://twitter.com/kangax&#34;&gt;@kangax&lt;/a&gt;&amp;rsquo;ve created a &lt;a href=&#34;http://perfectionkills.com/javascript-quiz-es6/&#34;&gt;quiz&lt;/a&gt;, it&amp;rsquo;s very interesting, the solution explains a tricky moment of spec.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;question-1&#34;&gt;Question 1&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;(function(x, f = () =&amp;gt; x) {
-  var x;
-  var y = x;
-  x = 2;
-  return [x, y, f()];
-})(1);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;[2, 1, 1]&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;[2, undefined, 1]&lt;/li&gt;
-&lt;li&gt;[2, 1, 2]&lt;/li&gt;
-&lt;li&gt;[2, undefined, 2]&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://dmitrysoshnikov.com/ecmascript/es6-notes-default-values-of-parameters/#conditional-intermediate-scope-for-parameters&#34;&gt;As we know&lt;/a&gt;, parameters create extra scope in case of using &lt;code&gt;default values&lt;/code&gt;.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Local variable &lt;code&gt;x&lt;/code&gt; shadows the parameter with the same name, &lt;code&gt;var x&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;It&amp;rsquo;s hoisted and assigned to default value, to &lt;code&gt;undefined&lt;/code&gt;?&lt;/li&gt;
-&lt;li&gt;Usually yes, but not in this case.&lt;/li&gt;
-&lt;li&gt;If there is a parameter with the same name, then the local binding is initialize not to &lt;code&gt;undefined&lt;/code&gt; but with value of that parameter, that is &lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;The variable &lt;code&gt;y&lt;/code&gt; gets the the value &lt;code&gt;1&lt;/code&gt; as well, because &lt;code&gt;var y = x;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;x&lt;/code&gt; is assigned to &lt;code&gt;2&lt;/code&gt;, &lt;code&gt;x = 2;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Now it&amp;rsquo;s tricky &lt;code&gt;f()&lt;/code&gt;. It is created in the &lt;code&gt;scope of parameters&lt;/code&gt;, so &lt;code&gt;x&lt;/code&gt; refers to the parameter &lt;code&gt;x&lt;/code&gt;, which is &lt;code&gt;1&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Final values are &lt;code&gt;[2, 1, 1]&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&#34;question-2&#34;&gt;Question 2&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;(function() {
-  return [
-    ( () =&amp;gt; this.x ).bind({ x: &#39;inner&#39; }),
-    ( () =&amp;gt; this.x )()
-  ];
-})().call({ x: &#39;outer&#39; });
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;[&amp;lsquo;inner&amp;rsquo;, &amp;lsquo;outer&amp;rsquo;]&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;[&amp;lsquo;outer&amp;rsquo;, &amp;lsquo;outer&amp;rsquo;]&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;[undefined, undefined]&lt;/li&gt;
-&lt;li&gt;Error&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Arrow function have &lt;code&gt;lexical this&lt;/code&gt; value. This means that, it inherits &lt;code&gt;this&lt;/code&gt; value from the context they are defined.
-And later it stays unchangeable, even if explicitly bound or called with different context.&lt;/p&gt;
-
-&lt;p&gt;In this case both arrow function are created within the context of &lt;code&gt;{x: &#39;outer&#39;}&lt;/code&gt;, and &lt;code&gt;bind({x: &#39;inner&#39;})&lt;/code&gt; applied on the first arrow function doesn&amp;rsquo;t make a difference.&lt;/p&gt;
-
-&lt;h1 id=&#34;question-3&#34;&gt;Question 3&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;let x, { x: y = 1} = { x }; y;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;undefined&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;{ x: 1}&lt;/li&gt;
-&lt;li&gt;Error&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;let x&lt;/code&gt; defines &lt;code&gt;x&lt;/code&gt;  with value &lt;code&gt;undefined&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Destructive assignment &lt;code&gt;{ x: y = 1} = { x }&lt;/code&gt;, on the right side has a short notation for an object literal - &lt;code&gt;{ x }&lt;/code&gt; which is equalent to &lt;code&gt;{ x: x }&lt;/code&gt;, that is in our case an object &lt;code&gt;{ x: undefined }&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Once it destucted the pattern&lt;code&gt;{ x: y = 1}&lt;/code&gt;, we extract variable &lt;code&gt;y&lt;/code&gt;, which correspond to the propery &lt;code&gt;x&lt;/code&gt;. Since propery &lt;code&gt;x&lt;/code&gt; is &lt;code&gt;undefined&lt;/code&gt;, the default value &lt;code&gt;1&lt;/code&gt; is assigned to it.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&#34;question-4&#34;&gt;Question 4&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;(function() {
-  let f = this ? class g {} : class h {};
-  return [
-    typeof f,
-    typeof h
-  ] 
-})()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;[&amp;lsquo;function&amp;rsquo;, undefined]&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;[&amp;lsquo;function&amp;rsquo;, &amp;lsquo;function&amp;rsquo;]&lt;/li&gt;
-&lt;li&gt;[&amp;lsquo;function&amp;rsquo;, &amp;lsquo;function&amp;rsquo;]&lt;/li&gt;
-&lt;li&gt;[&amp;lsquo;undefined&amp;rsquo;, &amp;lsquo;undefined&amp;rsquo;]&lt;/li&gt;
-&lt;li&gt;Error&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-&lt;li&gt;The IIFE is executed with no explicit &lt;code&gt;this&lt;/code&gt; value. In ES6 or with &lt;code&gt;use strict&lt;/code&gt; directive it means it will be &lt;code&gt;undefined&lt;/code&gt;;&lt;/li&gt;
-&lt;li&gt;So variable &lt;code&gt;f&lt;/code&gt; is a reference to &lt;code&gt;class h {}&lt;/code&gt;. It&amp;rsquo;s type is a &lt;code&gt;function&lt;/code&gt; because essentially classes in ES6 are syntactic sugar on top of &lt;code&gt;contructor function&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;However, the &lt;code&gt;class h {}&lt;/code&gt; is created in expression position, that means &lt;code&gt;h&lt;/code&gt; isn&amp;rsquo;t added to to the environment, and return &lt;code&gt;undefined&lt;/code&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&#34;question-5&#34;&gt;Question 5&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;(typeof (new (class { class () {} })))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&amp;lsquo;function&amp;rsquo;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&amp;lsquo;object&amp;rsquo;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&amp;lsquo;undefined&amp;rsquo;&lt;/li&gt;
-&lt;li&gt;Error&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This is an obfuscated syntax playing, let&amp;rsquo;s try to figure it out!&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;The ES6 allow concise method definition, that allows dropping the &lt;code&gt;: function&lt;/code&gt; part. So &lt;code&gt;class () {}&lt;/code&gt; is a method inside in &lt;a href=&#34;anonymous class expression&#34;&gt;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/class#Examples&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Now instead of assigning it to variable, we can instantiate it directly: &lt;code&gt;new class { class() { } }&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;The result of default class is always an object. So &lt;code&gt;typeof&lt;/code&gt; should return &lt;code&gt;object&lt;/code&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&#34;question-6&#34;&gt;Question 6&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;typeof (new (class F extends (String, Array) { })).substring
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&amp;lsquo;function&amp;rsquo;&lt;/li&gt;
-&lt;li&gt;&amp;lsquo;object&amp;rsquo;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&amp;lsquo;undefined&amp;rsquo;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Error&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Again an obfuscated syntax.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;The grouping operator always return the last argument, so the result of &lt;code&gt;(String, Array)&lt;/code&gt; is actually just &lt;code&gt;Array&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;So we get &lt;code&gt;class F extends Array {}&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;We can image as it&amp;rsquo;s assigning operation &lt;code&gt;let f = new F&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Obviously that &lt;code&gt;typeof f.substring&lt;/code&gt; is &lt;code&gt;undefined&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&#34;question-7&#34;&gt;Question 7&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;[...[...&#39;...&#39;]].length
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;1&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;6&lt;/li&gt;
-&lt;li&gt;Error&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The &lt;code&gt;spread&lt;/code&gt; operator allows to spread all the elements to the array. It works with any &lt;code&gt;iterable&lt;/code&gt; object.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;String are iterable, meaning that we can iterate char by char. So inner &lt;code&gt;[...&#39;...&#39;]&lt;/code&gt; results to an array &lt;code&gt;[&#39;.&#39;, &#39;.&#39;, &#39;.&#39;]&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Array is iterable as well, so outer array spreads into new array.&lt;/li&gt;
-&lt;li&gt;Result of &lt;code&gt;[&#39;.&#39;, &#39;.&#39;, &#39;.&#39;].length&lt;/code&gt; is &lt;code&gt;3&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&#34;question-8&#34;&gt;Question 8&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;typeof (function* f() { yield f })().next().next()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Generator object has &lt;code&gt;next&lt;/code&gt; method, that returns the next value at the &lt;code&gt;yield&lt;/code&gt; position. The returned value has signature: &lt;code&gt;{ value: &amp;lt;returned value&amp;gt;, done: boolean}&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;First &lt;code&gt;g.next()&lt;/code&gt; has result &lt;code&gt;{value: function f, done: false}&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;The returned value value itself doesn&amp;rsquo;t have &lt;code&gt;next()&lt;/code&gt; method, so trying to chain methods is an error.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&#34;question-9&#34;&gt;Question 9&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;typeof (new class f() { [f]() { }, f: { } })[`${f}`]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&amp;lsquo;function&amp;rsquo;&lt;/li&gt;
-&lt;li&gt;&amp;lsquo;undefined&amp;rsquo;&lt;/li&gt;
-&lt;li&gt;&amp;lsquo;object&amp;rsquo;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Error&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Since the syntax of class isn&amp;rsquo;t correct &lt;code&gt;class f()&lt;/code&gt;, the result is an error.&lt;/p&gt;
-
-&lt;h1 id=&#34;question-10&#34;&gt;Question 10&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;typeof `${{Object}}`.prototype
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&amp;ldquo;function&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;undefined&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;object&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Error&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;That one is very tricky!&lt;/p&gt;
-
-&lt;p&gt;We have something that looks a bit strange: it isn&amp;rsquo;t &lt;code&gt;${Object}&lt;/code&gt; how it &amp;ldquo;should be&amp;rdquo;, but the &lt;code&gt;${{Object}}&lt;/code&gt;. It isn&amp;rsquo;t a special syntax it is still a value &lt;code&gt;{Object}&lt;/code&gt; in template string &lt;code&gt;${}&lt;/code&gt;.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;What is &lt;code&gt;${Object}&lt;/code&gt;? ES6 has short notation for object literal, so in fact it&amp;rsquo;s just: &lt;code&gt;{Object: Object}&lt;/code&gt;, a simple object with the property named &lt;code&gt;&#39;Object&#39;&lt;/code&gt;, and the value &lt;code&gt;Object&lt;/code&gt; (the built in constructor).&lt;/li&gt;
-&lt;li&gt;So &lt;code&gt;${ {Object: Object} }&lt;/code&gt;, become &lt;code&gt;&#39;[object Object]&#39;&lt;/code&gt;. Because the &lt;code&gt;${x}&lt;/code&gt; is roughly equivalent to the &lt;code&gt;x + &#39;&#39;&lt;/code&gt; or &lt;code&gt;x.toString()&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Now the &lt;code&gt;&#39;[object Object]&#39;.prototype&lt;/code&gt; is &lt;code&gt;undefined&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Save my day:
-* &lt;a href=&#34;https://gist.github.com/DmitrySoshnikov/3928607cb8fdba42e712&#34;&gt;DmitrySoshnikov&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

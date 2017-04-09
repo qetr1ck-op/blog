@@ -9,6 +9,27 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/css/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>A static site with a dynamic search function</title>
+      <link>https://qetr1ck-op.github.io/blog/post/static-site-with-a-dynamic-search/</link>
+      <pubDate>Sun, 09 Apr 2017 12:09:08 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/static-site-with-a-dynamic-search/</guid>
+      <description>&lt;p&gt;A static site with a dynamic search function? Yes. Alternatively to embeddable scripts from Google or other search engines you can provide your visitors a custom search by indexing your content files directly.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;hugo-lunr&#34;&gt;hugo-lunr&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.npmjs.com/package/hugo-lunr&#34;&gt;hugo-lunr&lt;/a&gt; - A simple way to add site search to your static Hugo site using &lt;a href=&#34;https://github.com/olivernn/lunr.js&#34;&gt;lunr.js&lt;/a&gt;. Hugo-lunr will create an index file of any html and markdown documents in your Hugo project&lt;/p&gt;
+
+&lt;h1 id=&#34;implementation&#34;&gt;implementation&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/blog-hugo-source/blob/master/themes/hugo-code-theme/layouts/partials/search.html&#34;&gt;source code&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://rayhightower.com/blog/2016/01/04/how-to-make-lunrjs-jekyll-work-together/&#34;&gt;How to Make lunr.js and Jekyll Work Together (with Gotchas)&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>JS 30</title>
       <link>https://qetr1ck-op.github.io/blog/post/Js-30/</link>
       <pubDate>Tue, 04 Apr 2017 14:51:54 +0300</pubDate>
@@ -4172,100 +4193,6 @@ console.log(document.body.className);
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p data-height=&#34;277&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;veLhG&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/veLhG/&#39;&gt;CSS3 transition effects example 8&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Fluid two-column layout with float and flexbox</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Fluid-two-column-layout-with-float-and-flexbox/</link>
-      <pubDate>Mon, 31 Mar 2014 20:49:09 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Fluid-two-column-layout-with-float-and-flexbox/</guid>
-      <description>&lt;p&gt;Two-column layout allows effective use browser space. Layout doesn&amp;rsquo;t require hard work and it can used with combining column in pixels or percentage.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;!--toc--&gt;
-
-&lt;p&gt;There are several approach for formation such layout, but the quickest and easiest is combine &lt;code&gt;margin&lt;/code&gt; and &lt;code&gt;float&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;for-left-side-bar-with-static-width&#34;&gt;For left side bar with static width&lt;/h1&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;For left layer with width 20%&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;Left&lt;/code&gt; column&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;Right&lt;/code&gt; column&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;float: left width: 20%&lt;/td&gt;
-&lt;td&gt;margin-left: 21%&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;For left layer with width 200px&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;float: left width: 200px&lt;/td&gt;
-&lt;td&gt;margin-left: 210px&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h1 id=&#34;for-right-side-bar&#34;&gt;For right side bar:&lt;/h1&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;For right layer with width 20%&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Left column&lt;/td&gt;
-&lt;td&gt;Right column&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;margin-right: 21%&lt;/td&gt;
-&lt;td&gt;float: right, width: 20%&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;For right layer with width 200px&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;float: right width: 200px&lt;/td&gt;
-&lt;td&gt;margin-left: 210px&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p data-height=&#34;400&#34; data-theme-id=&#34;dark&#34; data-slug-hash=&#34;oAtih&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; data-embed-version=&#34;2&#34; data-pen-title=&#34;Fluid two-column layout with float&#34; data-preview=&#34;true&#34; class=&#34;codepen&#34;&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/oAtih/&#34;&gt;Fluid two-column layout with float&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-&lt;script async src=&#34;https://production-assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;
-
-#  With display: flex
-
-&lt;p data-height=&#34;400&#34; data-theme-id=&#34;dark&#34; data-slug-hash=&#34;MwdvEV&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; data-embed-version=&#34;2&#34; data-pen-title=&#34;Two-column layout with Flexbox&#34; data-preview=&#34;true&#34; class=&#34;codepen&#34;&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/MwdvEV/&#34;&gt;Two-column layout with Flexbox&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Make my day:
-*   &lt;a href=&#34;http://htmlbook.ru/samlayout/tipovye-makety/rezinovyi-dvukhkolonochnyi-maket&#34; title=&#34;fluid 2 column layout on htmlbook.ru&#34;&gt;fluid 2 column layout&lt;/a&gt;
-*   &lt;a href=&#34;http://www.inserthtml.com/demos/css/radio-buttons/&#34; title=&#34;awesome checkboxes on www.inserthtml.com&#34;&gt;awesome checkboxes&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

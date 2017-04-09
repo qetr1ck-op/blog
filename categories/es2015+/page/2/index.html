@@ -33,6 +33,8 @@
         <h3 data-open="last-posts">OP blog - Most recent posts</h3>
         <ul>
             
+            <li><a href="https://qetr1ck-op.github.io/blog/post/static-site-with-a-dynamic-search/">A static site with a dynamic search function</a></li>
+            
             <li><a href="https://qetr1ck-op.github.io/blog/post/Js-30/">JS 30</a></li>
             
             <li><a href="https://qetr1ck-op.github.io/blog/post/improve-web-performance-using-google-pageSpeed/">Improve web performance using Google PageSpeed</a></li>
@@ -40,8 +42,6 @@
             <li><a href="https://qetr1ck-op.github.io/blog/post/building-a-javaScript-development-environment/">Building a JavaScript development environment</a></li>
             
             <li><a href="https://qetr1ck-op.github.io/blog/post/pattern-craft/">PatternCraft</a></li>
-            
-            <li><a href="https://qetr1ck-op.github.io/blog/post/RESTful-Web-Services-with-Node-js-and-Express/">RESTful Web Services with Node.js and Express</a></li>
             
         </ul>
     </div>
@@ -99,6 +99,19 @@
 
 
 <div class="articles-list">
+    
+    <article>
+        <h3><a href="https://qetr1ck-op.github.io/blog/post/Moving-from-ngModel-parsers-ng-if-to-ngModel-validators-ngMessages/">Moving from &#34;ngModel.$parsers&#34;/&#34;ng-if&#34; to &#34;ngModel.$validators&#34;/&#34;ngMessages&#34;</a> - 2016-03-09</h3>
+        <p>Implementation custom Model validation is typically done by extending the built-in <code>$error</code> object to <code>ngForm</code> models.</p>
+
+<p>Prior to AngularJS 1.3 custom validation was done by injecting a function into the <code>ngModel.$parsers</code> array pipeline and manually setting validation states using <code>$setValidity('visa', true)</code> if the Model value matched a Visa credit card expression format, for example.</p>
+
+<p>AngularJS 1.3+ has the <code>$validators</code> pipeline object, which requires no manual setting of validation states.</p>
+
+<p>Let&rsquo;s take a look of old school way then we can shift to <code>ngModel.$validators</code> technique.</p>
+
+<p></p>
+    </article>
     
     <article>
         <h3><a href="https://qetr1ck-op.github.io/blog/post/Front-End-Interview-Questions/">Front End Interview Questions</a> - 2016-14-08</h3>
@@ -176,15 +189,6 @@
         <p>Webpack simplifies web development by solving a fundamental problem: bundling. It takes in various assets, such as JavaScript, CSS, and HTML, and then transforms these assets into a format that’s convenient to consume through a browser. Doing this well takes away a significant amount of pain from web development.</p>
 
 <p>It&rsquo;s not the easiest tool to learn due to its configuration-driven approach, but it&rsquo;s incredibly powerful. The purpose of this guide is to help you get started with webpack and then to go beyond the basics.</p>
-
-<p></p>
-    </article>
-    
-    <article>
-        <h3><a href="https://qetr1ck-op.github.io/blog/post/Practical-design-patterns-in-JavaScript/">Practical design patterns in JavaScript</a> - 2016-03-02</h3>
-        <p>One of the most important aspects of writing maintainable code is being able to notice the repeating themes in that code and optimize them. This is an area where knowledge of design patterns can prove invaluable.</p>
-
-<p>I take a look at a number of popular JavaScript design patterns and explore why certain patterns may be suitable for your projects.</p>
 
 <p></p>
     </article>

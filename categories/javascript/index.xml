@@ -9,6 +9,27 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>A static site with a dynamic search function</title>
+      <link>https://qetr1ck-op.github.io/blog/post/static-site-with-a-dynamic-search/</link>
+      <pubDate>Sun, 09 Apr 2017 12:09:08 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/static-site-with-a-dynamic-search/</guid>
+      <description>&lt;p&gt;A static site with a dynamic search function? Yes. Alternatively to embeddable scripts from Google or other search engines you can provide your visitors a custom search by indexing your content files directly.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;hugo-lunr&#34;&gt;hugo-lunr&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.npmjs.com/package/hugo-lunr&#34;&gt;hugo-lunr&lt;/a&gt; - A simple way to add site search to your static Hugo site using &lt;a href=&#34;https://github.com/olivernn/lunr.js&#34;&gt;lunr.js&lt;/a&gt;. Hugo-lunr will create an index file of any html and markdown documents in your Hugo project&lt;/p&gt;
+
+&lt;h1 id=&#34;implementation&#34;&gt;implementation&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/blog-hugo-source/blob/master/themes/hugo-code-theme/layouts/partials/search.html&#34;&gt;source code&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://rayhightower.com/blog/2016/01/04/how-to-make-lunrjs-jekyll-work-together/&#34;&gt;How to Make lunr.js and Jekyll Work Together (with Gotchas)&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>JS 30</title>
       <link>https://qetr1ck-op.github.io/blog/post/Js-30/</link>
       <pubDate>Tue, 04 Apr 2017 14:51:54 +0300</pubDate>
@@ -6313,167 +6334,6 @@ function awesomeFooListener(dispatcher) {
 &lt;li&gt;&lt;a href=&#34;http://thefullstack.xyz/solid-javascript/&#34;&gt;The Full Stack&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://aspiringcraftsman.com/2011/12/08/solid-javascript-single-responsibility-principle/&#34;&gt;Aspiring Craftsman&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://code.tutsplus.com/series/the-solid-principles--cms-634&#34;&gt;code.tutsplus&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>How to copy object in Javascript</title>
-      <link>https://qetr1ck-op.github.io/blog/post/How-to-copy-object-in-Javascript/</link>
-      <pubDate>Fri, 08 Jul 2016 21:55:05 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/How-to-copy-object-in-Javascript/</guid>
-      <description>&lt;p&gt;There are many ways to copy object in Javascript but most of the time such operation doesn&amp;rsquo;t do what we expected.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Are all properties copied by reference?&lt;/li&gt;
-&lt;li&gt;Are sub-properties merged or replaced?&lt;/li&gt;
-&lt;li&gt;Are accessor, like getter and setters, preserved?&lt;/li&gt;
-&lt;li&gt;And what about Sumbols and other non-enumerable properties?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;shallow-vs-deep-copy&#34;&gt;Shallow VS Deep copy&lt;/h1&gt;
-
-&lt;p&gt;When we copied reference nor a value, we are doing &lt;strong&gt;shallow&lt;/strong&gt; copy.&lt;/p&gt;
-
-&lt;p&gt;Whenever we do an operation like &lt;code&gt;a.prop = b.prop&lt;/code&gt; we are performing a shallow copy, meaning that modifying the object property &lt;code&gt;a.prop&lt;/code&gt; it will reflect changes in &lt;code&gt;b.prop&lt;/code&gt; too.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const a = { 
-    obj: {
-        test: &#39;Foo&#39;
-    }
-};
-
-const b = {};
-b.obj = a.obj;
-
-//if we modify it
-b.obj.test = &#39;Bar&#39;;
-
-//it will be reflected in a 
-a.obj.test;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In order to perform &lt;strong&gt;deep&lt;/strong&gt; copy of &lt;code&gt;a.prop&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const a = { 
-    obj: {
-        test: &#39;Foo&#39;
-    }
-};
-
-const b = {};
-b.obj = {};
-
-//not reflected in a
-b.obj.test = &#39;Bar&#39;;
-a.obj.test;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;object-assign-target-sourcen&#34;&gt;Object.assign(target, [, sourceN])&lt;/h1&gt;
-
-&lt;p&gt;&lt;code&gt;Object.assign&lt;/code&gt; performs a &lt;strong&gt;shallow&lt;/strong&gt; copy it merges enumerable properties with priority right to left:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const a = {
-    obj: {
-        foo: true
-    },
-    bar: 2
-};
-const b = {
-    obj: {
-        foz: true
-    },
-    baz: 3
-};
-//shallow merge
-const c = Object.assign({}, a, b);
-
-//which &#39;obj&#39; property was copied?
-//the priority is right to left
-c.obj === b.obj; //true
-c.obj === a.obj; //false
-
-c.bar; // 2
-c.baz; // 3
-
-//change will reflect by reference
-c.obj.foz = false;
-b.obj.foz; // false
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;object-assign-side-effects&#34;&gt;Object.assign side effects&lt;/h1&gt;
-
-&lt;p&gt;There are at least two main subtle problems most developers are not aware of:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;all accessors, those properties with &lt;code&gt;getter&lt;/code&gt; or &lt;code&gt;setter&lt;/code&gt;, will be copied as a simple data, invoking the getter
-during the copy&lt;/li&gt;
-&lt;li&gt;all &lt;code&gt;Symbol&lt;/code&gt; keys will be copied too, making &lt;code&gt;Symbol&lt;/code&gt; less private or protected than we thing&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const uid = Symbol(&#39;uid&#39;);
-const special = {
-    get next() {
-        return ++this.counter;
-    },
-    counter: 0
-};
-special[uid] = Math.random;
-
-//what could be possible wrong here?!
-const notSpecial = Object.assign({}, special);
-
-// if &#39;next&#39; is declared (and copied) before &#39;counter&#39;
-notSpecial.counter; // 1
-notSpecial.next; // 1 in any case
-
-notSpecial[uid] === special[uid]; // same as special[uid]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;If you want a advice -  use &lt;code&gt;Object.assign&lt;/code&gt; for simple shallow copy or merge with data that you are sure
-doesn&amp;rsquo;t contain accessors.&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&#34;use-one-of-the-simple-npm-package-or-lodash-underscore-rambda&#34;&gt;Use one of the simple npm package or lodash/underscore/rambda&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.npmjs.com/package/clone&#34;&gt;clone&lt;/a&gt; is one a popular package for &lt;strong&gt;deep&lt;/strong&gt; copying:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const clone = require(&#39;clone&#39;);
- 
-let a, b;
- 
-a = { foo: { bar: &#39;baz&#39; } };  // initial value of a 
- 
-b = clone(a);                 // clone a -&amp;gt; b 
-a.foo.bar = &#39;foo&#39;;            // changes not modify &#39;b&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Achieve the same result with &lt;a href=&#34;https://lodash.com/docs#cloneDeep&#34;&gt;_.deepCopy&lt;/a&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const objects = [{ &#39;a&#39;: 1 }, { &#39;b&#39;: 2 }];
-
-const deep = _.cloneDeep(objects);
-console.log(deep[0] === objects[0]);
-// → false
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;json-parse-json-stringify-object&#34;&gt;JSON.parse(JSON.stringify(object))&lt;/h1&gt;
-
-&lt;p&gt;If you don&amp;rsquo;t have function within your object, a very simple:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const cloneOfA = JSON.parse(JSON.stringify(a));
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This works with for all kinds of objects contain: &lt;code&gt;object&lt;/code&gt;, &lt;code&gt;array&lt;/code&gt;, &lt;code&gt;string&lt;/code&gt;, &lt;code&gt;boolean&lt;/code&gt;, &lt;code&gt;numbers&lt;/code&gt;;&lt;/p&gt;
-
-&lt;p&gt;Save my day:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.webreflection.co.uk/blog/2015/10/06/how-to-copy-objects-in-javascript#shallow-vs-deep-copy&#34;&gt;www.webreflection.co.uk&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-clone-an-object&#34;&gt;stackoverflow.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
