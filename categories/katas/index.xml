@@ -239,5 +239,31 @@ var isSquare = function(arr){
 &lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
+    <item>
+      <title>Kata: Reverse words</title>
+      <link>https://qetr1ck-op.github.io/blog/post/Kata-String-Reverse-words/</link>
+      <pubDate>Sun, 13 Sep 2015 11:50:12 +0000</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/Kata-String-Reverse-words/</guid>
+      <description>&lt;p&gt;Write a &lt;code&gt;reverseWords&lt;/code&gt; function that accepts a string a parameter, and reverses each word in the string. Every space should stay, so you cannot use words from Prelude.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const reverseWords = str =&amp;gt; {
+  return str
+    .split(&#39; &#39;)
+    .map( word =&amp;gt; word.split(&#39;&#39;).reverse().join(&#39;&#39;) )
+    .join(&#39; &#39;);
+}
+
+reverseWords(&amp;quot;This is an example!&amp;quot;); // &amp;quot;sihT si na !elpmaxe&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Test:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Test.assertEquals(reverseWords(&amp;quot;This is an example!&amp;quot;), &amp;quot;sihT si na !elpmaxe&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
   </channel>
 </rss>
