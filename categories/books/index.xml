@@ -9,6 +9,43 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/books/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Front End Handbook 2017</title>
+      <link>https://qetr1ck-op.github.io/blog/post/front-end-handbook-2017/</link>
+      <pubDate>Sun, 23 Apr 2017 19:11:25 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/front-end-handbook-2017/</guid>
+      <description>&lt;p&gt;This is a guide that anyone could use to learn about the practice of front-end development. It broadly outlines and discusses the practice of front-end engineering: how to learn it and what tools are used when practicing it in 2017&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;The handbook is divided into three parts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Part I. The Front-End Practice
+
+&lt;ul&gt;
+&lt;li&gt;Part one broadly describes the practice of front-end engineering.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Part II: Learning Front-End Development
+
+&lt;ul&gt;
+&lt;li&gt;Part two identifies self-directed and direct resources for learning to become a front-end developer.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Part III: Front-End Development Tools
+
+&lt;ul&gt;
+&lt;li&gt;Part three briefly explains and identifies tools of the trade.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;link&#34;&gt;Link&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://frontendmasters.com/books/front-end-handbook/2017/&#34;&gt;read online&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>Book: &#39;Node.js design pattern&#39;</title>
       <link>https://qetr1ck-op.github.io/blog/post/Node-js-design-pattern-book-review/</link>
       <pubDate>Thu, 06 Oct 2016 00:00:00 +0000</pubDate>

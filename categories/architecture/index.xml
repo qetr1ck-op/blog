@@ -9,6 +9,43 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/architecture/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Front End Handbook 2017</title>
+      <link>https://qetr1ck-op.github.io/blog/post/front-end-handbook-2017/</link>
+      <pubDate>Sun, 23 Apr 2017 19:11:25 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/front-end-handbook-2017/</guid>
+      <description>&lt;p&gt;This is a guide that anyone could use to learn about the practice of front-end development. It broadly outlines and discusses the practice of front-end engineering: how to learn it and what tools are used when practicing it in 2017&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;The handbook is divided into three parts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Part I. The Front-End Practice
+
+&lt;ul&gt;
+&lt;li&gt;Part one broadly describes the practice of front-end engineering.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Part II: Learning Front-End Development
+
+&lt;ul&gt;
+&lt;li&gt;Part two identifies self-directed and direct resources for learning to become a front-end developer.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Part III: Front-End Development Tools
+
+&lt;ul&gt;
+&lt;li&gt;Part three briefly explains and identifies tools of the trade.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;link&#34;&gt;Link&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://frontendmasters.com/books/front-end-handbook/2017/&#34;&gt;read online&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>Favicon generator</title>
       <link>https://qetr1ck-op.github.io/blog/post/simple-favicon-generator/</link>
       <pubDate>Sun, 09 Apr 2017 20:23:14 +0300</pubDate>
@@ -5913,29 +5950,6 @@ function awesomeFooListener(dispatcher) {
 &lt;li&gt;&lt;a href=&#34;http://aspiringcraftsman.com/2011/12/08/solid-javascript-single-responsibility-principle/&#34;&gt;Aspiring Craftsman&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://code.tutsplus.com/series/the-solid-principles--cms-634&#34;&gt;code.tutsplus&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Development with Webpack</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Development-with-Webpack/</link>
-      <pubDate>Sun, 07 Feb 2016 12:11:41 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Development-with-Webpack/</guid>
-      <description>&lt;p&gt;Webpack simplifies web development by solving a fundamental problem: bundling. It takes in various assets, such as JavaScript, CSS, and HTML, and then transforms these assets into a format that’s convenient to consume through a browser. Doing this well takes away a significant amount of pain from web development.&lt;/p&gt;
-
-&lt;p&gt;It&amp;rsquo;s not the easiest tool to learn due to its configuration-driven approach, but it&amp;rsquo;s incredibly powerful. The purpose of this guide is to help you get started with webpack and then to go beyond the basics.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;List of well known links to become an expert with Webpack v.~2.&lt;/p&gt;
-
-&lt;h1 id=&#34;survivejs&#34;&gt;SurviveJS&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://survivejs.com/webpack/introduction/&#34;&gt;A solid book&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;official-guides&#34;&gt;Official guides&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://webpack.js.org/guides/&#34;&gt;Guides&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

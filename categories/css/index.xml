@@ -9,6 +9,43 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/css/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Front End Handbook 2017</title>
+      <link>https://qetr1ck-op.github.io/blog/post/front-end-handbook-2017/</link>
+      <pubDate>Sun, 23 Apr 2017 19:11:25 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/front-end-handbook-2017/</guid>
+      <description>&lt;p&gt;This is a guide that anyone could use to learn about the practice of front-end development. It broadly outlines and discusses the practice of front-end engineering: how to learn it and what tools are used when practicing it in 2017&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;The handbook is divided into three parts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Part I. The Front-End Practice
+
+&lt;ul&gt;
+&lt;li&gt;Part one broadly describes the practice of front-end engineering.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Part II: Learning Front-End Development
+
+&lt;ul&gt;
+&lt;li&gt;Part two identifies self-directed and direct resources for learning to become a front-end developer.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Part III: Front-End Development Tools
+
+&lt;ul&gt;
+&lt;li&gt;Part three briefly explains and identifies tools of the trade.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;link&#34;&gt;Link&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://frontendmasters.com/books/front-end-handbook/2017/&#34;&gt;read online&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>A static site with a dynamic search function</title>
       <link>https://qetr1ck-op.github.io/blog/post/static-site-with-a-dynamic-search/</link>
       <pubDate>Sun, 09 Apr 2017 12:09:08 +0300</pubDate>
@@ -4118,88 +4155,6 @@ console.log(document.body.className);
 &lt;li&gt;&lt;a href=&#34;http://css-tricks.com/snippets/css/a-guide-to-flexbox/&#34;&gt;css-tricks.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://philipwalton.github.io/solved-by-flexbox/demos/grids/&#34;&gt;Solved by Flexbox&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Original effects with CSS transition</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Original-effects-with-CSS3-transition/</link>
-      <pubDate>Tue, 01 Apr 2014 14:48:05 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Original-effects-with-CSS3-transition/</guid>
-      <description>&lt;p&gt;The power of CSS3 is enormous and in this post I create appearing effect of &amp;ldquo;Sign In Form&amp;rdquo; using differn style in each example.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;Actually, now transition property of CSS supporting almost in all browsers, just in some case you need to use prefix &lt;code&gt;-webkit, -moz, -ms, -o&lt;/code&gt;. You may check it on &lt;a href=&#34;http://caniuse.com/#search=transition&#34; title=&#34;Can I use...&#34;&gt;Can I use&amp;hellip;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Awesome and simple &lt;a href=&#34;http://css3generator.com/&#34; title=&#34;css3generator.com&#34;&gt;CSS3 Transition generator&lt;/a&gt; (and not only).&lt;/p&gt;
-
-&lt;p&gt;More about &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function&#34; title=&#34;transition-timing-function&#34;&gt;transition-timing-funtion with example&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;If you look closely you may see that in all example firstly I hide &amp;ldquo;Sign In Form&amp;rdquo; with &lt;code&gt;transform: scale, rotate, translateX/Y&lt;/code&gt; and add &lt;code&gt;transition&lt;/code&gt;. Than I use different value of transform, transition-delay, opacity for show original transition CSS effects.&lt;/p&gt;
-
-&lt;h1 id=&#34;example-1&#34;&gt;Example 1&lt;/h1&gt;
-
-&lt;p data-height=&#34;268&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;gwJsh&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/gwJsh/&#39;&gt;CSS3 transition effects example 1&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;In first example I used &lt;code&gt;transition&lt;/code&gt; for base elements with different timestamps and time function. Also I used &lt;code&gt;transform: translateY&lt;/code&gt; property that push &amp;ldquo;Sign In Form&amp;rdquo; and child elements from current position.&lt;/p&gt;
-
-&lt;p&gt;When you click on main section, you can see delay property that emulate animation. In this example I added a &lt;code&gt;transition-delay: ...s&lt;/code&gt; which make transition effect start a bit later.&lt;/p&gt;
-
-&lt;h1 id=&#34;example-2&#34;&gt;Example 2&lt;/h1&gt;
-
-&lt;p data-height=&#34;268&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;wlxGq&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/wlxGq/&#39;&gt;CSS3 transition effects example 2&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;In second example I used new &lt;code&gt;div.content&lt;/code&gt;, you can see it in HTML mark-up. For &amp;ldquo;Sign In Form&amp;rdquo; I applied &lt;code&gt;transform: translate(...px, ...px) rotate(...deg)&lt;/code&gt; for children used only &lt;code&gt;translate&lt;/code&gt;. Of course added &lt;code&gt;transition&lt;/code&gt; for elements.&lt;/p&gt;
-
-&lt;p&gt;Translate transformation in order move elements in place. The &amp;ldquo;Sign In Form&amp;rdquo; will also be rotated. The each elements of the description will come with a little delay.&lt;/p&gt;
-
-&lt;h1 id=&#34;example-3&#34;&gt;Example 3&lt;/h1&gt;
-
-&lt;p data-height=&#34;270&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;tLaic&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/tLaic/&#39;&gt;CSS3 transition effects example 3&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;In third example I used the &lt;code&gt;translate&lt;/code&gt; and  &lt;code&gt;transforms: rotate&lt;/code&gt; to bring up content.&lt;/p&gt;
-
-&lt;p&gt;Than I just need to reset &lt;code&gt;transform: translateX(0px) rotate(0deg)&lt;/code&gt; and add &lt;code&gt;transition-delay: ...s&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;example-4&#34;&gt;Example 4&lt;/h1&gt;
-
-&lt;p&gt;Here in four example I performed zoom out for main block and zoom in for &amp;ldquo;Sign In Form&amp;rdquo; with rotation effect. All thanks to &lt;code&gt;transform: scale and rotate&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p data-height=&#34;266&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;aGqou&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/aGqou/&#39;&gt;CSS3 transition effects example 4&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;example-5&#34;&gt;Example 5&lt;/h1&gt;
-
-&lt;p&gt;In this example I used &lt;code&gt;transform: translateX()&lt;/code&gt; and transition timing function &lt;code&gt;ease-in-out&lt;/code&gt;. Transition effect make the &amp;ldquo;Sign In Form&amp;rdquo; slide from right, with pushing effect for main container.&lt;/p&gt;
-
-&lt;p data-height=&#34;268&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;Jbzvm&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/Jbzvm/&#39;&gt;CSS3 transition effects example 5&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;example-6&#34;&gt;Example 6&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;In sixth example I performed that &amp;ldquo;Sign In Form&amp;rdquo; comes from the front, zooming out until its original size: &lt;code&gt;transform: scale(from 10 to 1)&lt;/code&gt;. And inputs will slide from bottom, used &lt;code&gt;transform: translateY&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p data-height=&#34;271&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;Deijo&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/Deijo/&#39;&gt;CSS3 transition effects example 6&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;example-7&#34;&gt;Example 7&lt;/h1&gt;
-
-&lt;p&gt;In this seven example the idea is to rotate the image to center and scale it down: &lt;code&gt;transform: rotate(0deg)-&amp;gt;(720deg) scale(1)-&amp;gt;(0)&lt;/code&gt;. Then the &amp;ldquo;Sign In Form&amp;rdquo; comes from up with description content following. &lt;code&gt;transform: translateY())&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Also Added delay for the &amp;ldquo;Sign In Form&amp;rdquo; elements &lt;code&gt;transition-delay: ..s&lt;/code&gt;. This will show us the rotating main block first and then the description will come into. In the reverse transition, everything will disappear immediately and image will rotate back.&lt;/p&gt;
-
-&lt;p data-height=&#34;268&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;pIrwa&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/pIrwa/&#39;&gt;CSS3 transition effects example 7&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;example-8&#34;&gt;Example 8&lt;/h1&gt;
-
-&lt;p&gt;In eighth example I used an animation which recreate a bounce effect. The &amp;ldquo;Sign In Form&amp;rdquo; will bounce in from top. &lt;code&gt;animation: bounceY 0.9 linear&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;animation: bounceY 0.9 linear
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p data-height=&#34;277&#34; data-theme-id=&#34;10606&#34; data-slug-hash=&#34;veLhG&#34; data-default-tab=&#34;result&#34; data-user=&#34;qetr1ck-op&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/qetr1ck-op/pen/veLhG/&#39;&gt;CSS3 transition effects example 8&lt;/a&gt; by qetr1ck-op (&lt;a href=&#39;http://codepen.io/qetr1ck-op&#39;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>

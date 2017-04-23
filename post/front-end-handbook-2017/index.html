@@ -18,7 +18,7 @@
 
 <meta name="description" content="">
 
-<title>Kata: Format a string of names like &#39;Bart, Lisa &amp; Maggie&#39;</title>
+<title>Front End Handbook 2017</title>
 <meta name="generator" content="Hugo 0.19" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
@@ -107,58 +107,41 @@
 </div>
 <div class="col-md-9 content">
 
-<h1>Kata: Format a string of names like &#39;Bart, Lisa &amp; Maggie&#39;</h1>
-<h4>Published 2016-02-19</h4>
+<h1>Front End Handbook 2017</h1>
+<h4>Published 2017-04-23</h4>
 
 
 
 <article>
-    <p>Given: an array containing hashes of names</p>
+    <p>This is a guide that anyone could use to learn about the practice of front-end development. It broadly outlines and discusses the practice of front-end engineering: how to learn it and what tools are used when practicing it in 2017</p>
 
-<p>Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
-</p>
+<p></p>
 
-<pre><code class="language-javascript">list([ {name: 'Bart'}, {name: 'Lisa'}, {name: 'Maggie'} ])
-// returns 'Bart, Lisa &amp; Maggie'
+<p>The handbook is divided into three parts:</p>
 
-list([ {name: 'Bart'}, {name: 'Lisa'} ])
-// returns 'Bart &amp; Lisa'
+<ul>
+<li>Part I. The Front-End Practice
 
-list([ {name: 'Bart'} ])
-// returns 'Bart'
+<ul>
+<li>Part one broadly describes the practice of front-end engineering.</li>
+</ul></li>
+<li>Part II: Learning Front-End Development
 
-list([])
-// returns ''
-</code></pre>
+<ul>
+<li>Part two identifies self-directed and direct resources for learning to become a front-end developer.</li>
+</ul></li>
+<li>Part III: Front-End Development Tools
 
-<p>Tests:</p>
+<ul>
+<li>Part three briefly explains and identifies tools of the trade.</li>
+</ul></li>
+</ul>
 
-<pre><code class="language-javascript">Test.assertEquals(list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'},{name: 'Homer'},{name: 'Marge'}]), 'Bart, Lisa, Maggie, Homer &amp; Marge',
-&quot;Must work with many names&quot;)
-Test.assertEquals(list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'}]), 'Bart, Lisa &amp; Maggie',
-&quot;Must work with many names&quot;)
-Test.assertEquals(list([{name: 'Bart'},{name: 'Lisa'}]), 'Bart &amp; Lisa', 
-&quot;Must work with two names&quot;)
-Test.assertEquals(list([{name: 'Bart'}]), 'Bart', &quot;Wrong output for a single name&quot;)
-Test.assertEquals(list([]), '', &quot;Must work with no names&quot;)
-</code></pre>
+<h1 id="link">Link</h1>
 
-<p>Result:</p>
-
-<pre><code class="language-javascript">const list = names =&gt; {
-  return names.reduce( (prev, current, index, array) =&gt; {
-    if (index === 0){
-      return current.name;
-    }
-    else if (index === array.length - 1){
-      return `${prev} &amp; ${current.name}`;
-    } 
-    else {
-      return `${prev}, ${current.name}`;
-    }
-  }, '');
- }
-</code></pre>
+<ul>
+<li><a href="https://frontendmasters.com/books/front-end-handbook/2017/">read online</a></li>
+</ul>
 </article>
 
 
