@@ -9,6 +9,23 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/patterns/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Essential Programming Books</title>
+      <link>https://qetr1ck-op.github.io/blog/post/essential-programming-books/</link>
+      <pubDate>Sun, 23 Apr 2017 22:35:48 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/essential-programming-books/</guid>
+      <description>&lt;p&gt;The list of 129 books deemed fundamental to the art of programming and includes books for various languages.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;link&#34;&gt;Link&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.goodreads.com/list/show/542.Essential_Programming_Books?page=1&#34;&gt;good reads&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>JS 30</title>
       <link>https://qetr1ck-op.github.io/blog/post/Js-30/</link>
       <pubDate>Tue, 04 Apr 2017 14:51:54 +0300</pubDate>
@@ -43,6 +60,7 @@
 &lt;li&gt;&lt;a href=&#34;../../html/js-30/08-fun-with-html5-canvas/index.html&#34;&gt;08 - Fun with HTML5 Canvas&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../html/js-30/09-dev-tools-domination/index.html&#34;&gt;09 - Dev Tools Domination&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../html/js-30/10-hold-shift-and-check-checkboxes/index.html&#34;&gt;10 - Hold Shift and Check Checkboxes&lt;/a&gt;, [With Ctrl example][&lt;a href=&#34;http://plnkr.co/edit/NthETyzybeilD13jen4y?p=preview&#34;&gt;http://plnkr.co/edit/NthETyzybeilD13jen4y?p=preview&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../html/js-30/11-custom-video-player/index.html&#34;&gt;11 - Custom Video Player&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/wesbos/JavaScript30&#34;&gt;Github original source&lt;/a&gt;&lt;/p&gt;</description>
