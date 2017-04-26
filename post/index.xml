@@ -6,8 +6,32 @@
     <description>Recent content in Posts on OP blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 23 Apr 2017 22:35:48 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 26 Apr 2017 22:23:01 +0300</lastBuildDate>
     <atom:link href="https://qetr1ck-op.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Prettier as a formating tool for JS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/prettier-as-a-formating-tool-for-JS/</link>
+      <pubDate>Wed, 26 Apr 2017 22:23:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/prettier-as-a-formating-tool-for-JS/</guid>
+      <description>
+
+&lt;p&gt;Prettier is an opinionated JavaScript formatter with advanced support for language features from &lt;code&gt;ES2017&lt;/code&gt;, &lt;code&gt;JSX&lt;/code&gt;, and &lt;code&gt;Flow&lt;/code&gt;. It removes all original styling and ensures that all outputted JavaScript conforms to a consistent style.&lt;/p&gt;
+
+&lt;p&gt;This goes way beyond &lt;code&gt;ESLint&lt;/code&gt; and other projects built on it. Unlike &lt;code&gt;ESLint&lt;/code&gt;, there aren&amp;rsquo;t a million configuration options and rules. But more importantly: everything is fixable. This works because Prettier never &amp;ldquo;checks&amp;rdquo; anything; it takes JavaScript as input and delivers the formatted JavaScript as output.&lt;/p&gt;
+
+&lt;p&gt;In technical terms: Prettier parses your JavaScript into an &lt;code&gt;AST&lt;/code&gt; (Abstract Syntax Tree) and pretty-prints the AST, completely ignoring any of the original formatting. Say hello to completely consistent syntax!&lt;/p&gt;
+
+&lt;h1 id=&#34;links&#34;&gt;Links&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/prettier/prettier&#34;&gt;Github repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/prettier/prettier/tree/master/editors&#34;&gt;Integration list app&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.jetbrains.com/webstorm/2016/08/using-external-tools#Prettier&#34;&gt;Integration with WebStorm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Essential Programming Books</title>
@@ -3277,36 +3301,6 @@ console.log(&#39;loading...&#39;);
 &lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/gebidesign/NG6-starter-sass#ng6&#34;&gt;Github repo&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Start new project on Angular ^1.5</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Start-new-project-on-Angular-1-5/</link>
-      <pubDate>Sun, 18 Sep 2016 18:42:49 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Start-new-project-on-Angular-1-5/</guid>
-      <description>&lt;p&gt;Great series of recommendation how/why to start new &amp;ldquo;NG2 ready&amp;rdquo; Angular 1.5 app with architecture of component-oriented approach.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;how-to-do-it-right&#34;&gt;How to do it right&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://velesin.io/2016/04/14/starting-a-new-app-in-angular-1-5/&#34;&gt;Starting a new app in Angular 1.5, does it make sense?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://velesin.io/2016/04/26/angular-1-5-app-as-a-tree-of-components/&#34;&gt;Angular 1.5 app as tree of components&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://velesin.io/2016/05/18/communication-between-angular-1-5-components/&#34;&gt;Communication between Angular 1.5 components and with API&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://velesin.io/2016/05/31/angular-1-5-fractal-project-structure/&#34;&gt;A flexible Angular 1.5 project structure (the &amp;ldquo;fractal&amp;rdquo; approach)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://velesin.io/2016/07/12/angular-1-5-project-in-es6-es2015/&#34;&gt;Writing Angular 1.5 in ES6&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://velesin.io/2016/08/23/unit-testing-angular-1-5-components/&#34;&gt;Unit testing Angular 1.5 components&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;style-guides-for-app&#34;&gt;Style guides for app&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/toddmotto/angular-styleguide&#34;&gt;AngularJS styleguide from Todd Motto&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;generators&#34;&gt;Generators&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/Swiip/generator-gulp-angular/blob/master/docs/usage.md#features-included-in-the-gulpfile&#34;&gt;Yo gulp-angular generator&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

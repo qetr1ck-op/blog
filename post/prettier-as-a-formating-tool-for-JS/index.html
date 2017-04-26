@@ -18,7 +18,7 @@
 
 <meta name="description" content="">
 
-<title>Kata: Filter through name/email</title>
+<title>Prettier as a formating tool for JS</title>
 <meta name="generator" content="Hugo 0.19" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
@@ -107,41 +107,28 @@
 </div>
 <div class="col-md-9 content">
 
-<h1>Kata: Filter through name/email</h1>
-<h4>Published 2016-02-15</h4>
+<h1>Prettier as a formating tool for JS</h1>
+<h4>Published 2017-04-26</h4>
 
 
 
 <article>
-    <p>He has troubles with users ending or starting in a <code>.</code>, and his user-array is a flat array of user-email-pairs, like so:</p>
+    
 
-<p></p>
+<p>Prettier is an opinionated JavaScript formatter with advanced support for language features from <code>ES2017</code>, <code>JSX</code>, and <code>Flow</code>. It removes all original styling and ensures that all outputted JavaScript conforms to a consistent style.</p>
 
-<pre><code>[ &quot;foo&quot;, &quot;foo@bar.com&quot;, &quot;bar&quot;, &quot;bar@foo.com&quot;, &quot;.foo&quot;, &quot;food@bar.com&quot; ]
-</code></pre>
+<p>This goes way beyond <code>ESLint</code> and other projects built on it. Unlike <code>ESLint</code>, there aren&rsquo;t a million configuration options and rules. But more importantly: everything is fixable. This works because Prettier never &ldquo;checks&rdquo; anything; it takes JavaScript as input and delivers the formatted JavaScript as output.</p>
 
-<p>He is only interested in e-mailing the users and ask them to sign up again, so no need to keep the user-name, only e-mail addresses for the user-names that start or end with a <code>.</code> should be returned. For the above array, the correct return-array would be <code>[ &quot;food@bar.com&quot; ]</code>.</p>
+<p>In technical terms: Prettier parses your JavaScript into an <code>AST</code> (Abstract Syntax Tree) and pretty-prints the AST, completely ignoring any of the original formatting. Say hello to completely consistent syntax!</p>
 
-<p>Test:</p>
+<h1 id="links">Links</h1>
 
-<pre><code class="language-js">describe( &quot;Testing a list&quot;, function(){
-  it( &quot;Basic list&quot;, function(){
-    var a = [ &quot;foo&quot;, &quot;foo@foo.com&quot;, &quot;bar.&quot;, &quot;bar@bar.com&quot; ],
-    b = [ &quot;bar@bar.com&quot; ];    
-    Test.assertSimilar( searchNames( a ), b,
-      &quot;not correct &quot; + Test.inspect(a) + &quot; given&quot; );
-  } );
-} );
-</code></pre>
+<ul>
+<li><a href="https://github.com/prettier/prettier">Github repo</a></li>
+<li><a href="https://github.com/prettier/prettier/tree/master/editors">Integration list app</a></li>
+<li><a href="https://blog.jetbrains.com/webstorm/2016/08/using-external-tools#Prettier">Integration with WebStorm</a></li>
+</ul>
 
-<p>Result:</p>
-
-<pre><code class="language-js">const searchNames = logins =&gt; {
-  return logins.filter(
-        ( login, i, ary) =&gt; i % 2 === 1 &amp;&amp; ary[i - 1].match(/^\.|\.$/);
-    )
-};
-</code></pre>
 </article>
 
 

@@ -9,6 +9,30 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/cli/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Prettier as a formating tool for JS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/prettier-as-a-formating-tool-for-JS/</link>
+      <pubDate>Wed, 26 Apr 2017 22:23:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/prettier-as-a-formating-tool-for-JS/</guid>
+      <description>
+
+&lt;p&gt;Prettier is an opinionated JavaScript formatter with advanced support for language features from &lt;code&gt;ES2017&lt;/code&gt;, &lt;code&gt;JSX&lt;/code&gt;, and &lt;code&gt;Flow&lt;/code&gt;. It removes all original styling and ensures that all outputted JavaScript conforms to a consistent style.&lt;/p&gt;
+
+&lt;p&gt;This goes way beyond &lt;code&gt;ESLint&lt;/code&gt; and other projects built on it. Unlike &lt;code&gt;ESLint&lt;/code&gt;, there aren&amp;rsquo;t a million configuration options and rules. But more importantly: everything is fixable. This works because Prettier never &amp;ldquo;checks&amp;rdquo; anything; it takes JavaScript as input and delivers the formatted JavaScript as output.&lt;/p&gt;
+
+&lt;p&gt;In technical terms: Prettier parses your JavaScript into an &lt;code&gt;AST&lt;/code&gt; (Abstract Syntax Tree) and pretty-prints the AST, completely ignoring any of the original formatting. Say hello to completely consistent syntax!&lt;/p&gt;
+
+&lt;h1 id=&#34;links&#34;&gt;Links&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/prettier/prettier&#34;&gt;Github repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/prettier/prettier/tree/master/editors&#34;&gt;Integration list app&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.jetbrains.com/webstorm/2016/08/using-external-tools#Prettier&#34;&gt;Integration with WebStorm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Awesome terminal emulator for Windows</title>
       <link>https://qetr1ck-op.github.io/blog/post/Awesome-terminal-emulator-for-Windows/</link>
       <pubDate>Tue, 02 Dec 2014 21:15:37 +0000</pubDate>
