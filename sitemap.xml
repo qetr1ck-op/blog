@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/npm-scrips-as-your-build-tool/</loc>
+    <lastmod>2017-04-29T12:14:14+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://qetr1ck-op.github.io/blog/post/prettier-as-a-formating-tool-for-JS/</loc>
     <lastmod>2017-04-26T22:23:01+03:00</lastmod>
   </url>
@@ -403,7 +408,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/architecture/</loc>
-    <lastmod>2017-04-23T22:35:48+03:00</lastmod>
+    <lastmod>2017-04-29T12:14:14+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -414,13 +419,19 @@
   </url>
   
   <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/build-tools/</loc>
+    <lastmod>2017-04-29T12:14:14+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/cli/</loc>
-    <lastmod>2017-04-26T22:23:01+03:00</lastmod>
+    <lastmod>2017-04-29T12:14:14+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -456,7 +467,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/javascript/</loc>
-    <lastmod>2017-04-26T22:23:01+03:00</lastmod>
+    <lastmod>2017-04-29T12:14:14+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -468,13 +479,13 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/nodejs/</loc>
-    <lastmod>2017-04-23T19:11:25+03:00</lastmod>
+    <lastmod>2017-04-29T12:14:14+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/</loc>
-    <lastmod>2017-04-26T22:23:01+03:00</lastmod>
+    <lastmod>2017-04-29T12:14:14+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -502,7 +513,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/post/</loc>
-    <lastmod>2017-04-26T22:23:01+03:00</lastmod>
+    <lastmod>2017-04-29T12:14:14+03:00</lastmod>
     <priority>0</priority>
   </url>
   

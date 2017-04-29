@@ -9,6 +9,49 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/architecture/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>npm scrips as your build tool</title>
+      <link>https://qetr1ck-op.github.io/blog/post/npm-scrips-as-your-build-tool/</link>
+      <pubDate>Sat, 29 Apr 2017 12:14:14 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/npm-scrips-as-your-build-tool/</guid>
+      <description>&lt;p&gt;The course introduces the topic of using npm scripts as a build tool. It starts simple and then continue to build a small website as we introduce new topics.&lt;/p&gt;
+
+&lt;p&gt;By the end of the course, you&amp;rsquo;ll know how to get started and what tools and techniques are needed for you to create your own set of build scripts.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;topics&#34;&gt;Topics:&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create a basic &lt;code&gt;package.json&lt;/code&gt; file&lt;/li&gt;
+&lt;li&gt;Run the basic npm scripts&lt;/li&gt;
+&lt;li&gt;Create a custom npm script&lt;/li&gt;
+&lt;li&gt;Run npm scripts in &lt;code&gt;series&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run npm scripts in &lt;code&gt;parallel&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Use a shorthand syntax for running multiple npm scripts with &lt;code&gt;npm-run-all&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run a set of similar npm scripts with a &lt;code&gt;wildcard&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;pre&lt;/code&gt; and &lt;code&gt;post&lt;/code&gt; npm script lifecycle hooks with test coverage&lt;/li&gt;
+&lt;li&gt;Pass arguments to npm scripts via &lt;code&gt;--&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Pipe data from one npm script to another with build-site scripts&lt;/li&gt;
+&lt;li&gt;Run npm scripts when files change with &lt;code&gt;onchange&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Use package.json &lt;code&gt;variables&lt;/code&gt; in npm scripts&lt;/li&gt;
+&lt;li&gt;Use custom config settings in your npm scripts&lt;/li&gt;
+&lt;li&gt;Run npm scripts with git hooks using &lt;code&gt;husky&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Change the level of console output when running npm scripts&lt;/li&gt;
+&lt;li&gt;Make npm scripts cross-environment friendly with &lt;code&gt;cross-env&lt;/code&gt;, &lt;code&gt;rimraf&lt;/code&gt;, &lt;code&gt;opn-cli&lt;/code&gt;, &lt;code&gt;cross-var&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;List available npm scripts and support tab completion with &lt;code&gt;ntl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add comments to your npm scripts&lt;/li&gt;
+&lt;li&gt;Pull out npm scripts into another file with &lt;code&gt;p-s&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create a &lt;code&gt;bash script&lt;/code&gt; to replace a complex npm script&lt;/li&gt;
+&lt;li&gt;Create a &lt;code&gt;node script&lt;/code&gt; to replace a complex npm script&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;links&#34;&gt;Links&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://egghead.io/courses/how-to-use-npm-scripts-as-your-build-tool&#34;&gt;egghead course - How to Use npm Scripts as Your Build Tool&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Essential Programming Books</title>
       <link>https://qetr1ck-op.github.io/blog/post/essential-programming-books/</link>
       <pubDate>Sun, 23 Apr 2017 22:35:48 +0300</pubDate>
@@ -5473,254 +5516,6 @@ It works by comparing the target value to the midpoint of the array; if they are
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95#.qwihvpqxq&#34;&gt;10 Interview Questions Every JavaScript Developer Should Know&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Exploring AngularJS 1.5 .component() method</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Exploring-AngularJS-1-5-component-method/</link>
-      <pubDate>Fri, 22 Jul 2016 22:20:03 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Exploring-AngularJS-1-5-component-method/</guid>
-      <description>&lt;p&gt;AngularJS 1.5 introduce &lt;code&gt;.component()&lt;/code&gt; helper method which is much simpler than the &lt;code&gt;.directive()&lt;/code&gt; definitions and advocates best practices and common default behavior.&lt;/p&gt;
-
-&lt;p&gt;Using &lt;code&gt;.component()&lt;/code&gt; will allow to write in Angular 2 style as well, which will turn transition to Angular 2 much easier.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;rsquo;s compare the difference in syntax and the possibility of new abstraction.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;from-directrive-to-component&#34;&gt;From &amp;ldquo;directrive()&amp;rdquo; to &amp;ldquo;component()&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;The syntax change is simple:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// before
-module.directive(name, fn);
-
-// after
-module.component(name, options);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I&amp;rsquo;ve rebuild a simple &lt;code&gt;counter&lt;/code&gt; directive which which we&amp;rsquo;ll refactor to &lt;code&gt;component()&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;module
-  .directive(&#39;counter&#39;, function counter() {
-    return {
-      scope: {},
-      bindToController: {
-        count: &#39;=&#39;
-      },
-      contorllerAs: &#39;$ctlr&#39;,
-      controller: function() {
-        this.increment = () =&amp;gt; this.count++;
-        this.decrement = () =&amp;gt; this.count--;
-      },
-      template: `
-        &amp;lt;div&amp;gt;
-          &amp;lt;input type=&amp;quot;number&amp;quot; ng-model=&amp;quot;$ctlr.count&amp;quot;&amp;gt;
-          &amp;lt;button ng-click=&amp;quot;$ctrl.increment()&amp;quot;&amp;gt;+&amp;lt;/button&amp;gt;
-          &amp;lt;button ng-click=&amp;quot;$ctrl.decrement()&amp;quot;&amp;gt;-&amp;lt;/button&amp;gt;
-        &amp;lt;/div&amp;gt;
-      `
-    }
-  })
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;function-to-object&#34;&gt;Function to Object&lt;/h1&gt;
-
-&lt;p&gt;Let&amp;rsquo;s start from the top and refactor the function argument to object:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// before
-module
-  .directive(&#39;counter&#39;, function counter() {
-    return {
-
-    }
-  })
-
-// after
-module
-  .component(&#39;counter&#39;, {
-
-  })
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Nice and simple.&lt;/p&gt;
-
-&lt;h1 id=&#34;scope-and-bindtocontroller-become-bindings&#34;&gt;&amp;ldquo;scope&amp;rdquo; and &amp;ldquo;bindToController&amp;rdquo; become &amp;ldquo;bindings&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;In &lt;code&gt;directive()&lt;/code&gt; the &lt;code&gt;scope&lt;/code&gt; property allows us to define whether we want to isolate the &lt;code&gt;$scope&lt;/code&gt; or inherit it. So repeating every time just create an extra boilerplate. With &lt;a href=&#34;https://docs.angularjs.org/api/ng/service/$compile&#34;&gt;bindToController&lt;/a&gt; we can explicitly define binding directly to instance of controller via &lt;code&gt;this&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;With &lt;code&gt;bindings&lt;/code&gt; we can remove this boilerplate and simple define what we want to pass down to the component.&lt;/p&gt;
-
-&lt;p&gt;And &lt;code&gt;component()&lt;/code&gt; will always have an isolated scope.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// before
-module
-  .directive(&#39;counter&#39;, function counter() {
-    return {
-      scope: {
-        count: &#39;=&#39;
-      },
-      bindToController: true
-    }
-  })
-
-// after
-module
-  .component(&#39;counter&#39;, {
-    binding: {
-      count: &#39;=&#39;
-    }
-  })
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;controller-and-contorlleras-changes&#34;&gt;Controller and &amp;ldquo;contorllerAs&amp;rdquo; changes&lt;/h1&gt;
-
-&lt;p&gt;Nothing has changed in the way we declare &lt;code&gt;controller&lt;/code&gt;, however it&amp;rsquo;s now smarter and has a default &lt;code&gt;contorllerAs&lt;/code&gt; value of &lt;code&gt;$ctrl&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Under the hood it looks like:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// inside angular.js
-controllerAs: identifierForController(options.controller) || options.controllerAs || &#39;$ctrl&#39;
-
-//...
-
-var CNTRL_REG = /^(\S+)(\s+as\s+(\w+))?$/;
-function identifierForController(controller, ident) {
-  if (ident &amp;amp;&amp;amp; isString(ident)) return ident;
-  if (isString(controller)) {
-    var match = CNTRL_REG.exec(controller);
-    if (match) return match[3];
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This allows us to do the following inside &lt;code&gt;.component()&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;{
-  ...
-  controller: &#39;FooController as foo&#39;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Based on the information we refactor our &lt;code&gt;Directive&lt;/code&gt; to &lt;code&gt;Component&lt;/code&gt; by dropping controllerAs property:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// before
-.directive(&#39;counter&#39;, function counter() {
-  return {
-    scope: {
-      count: &#39;=&#39;
-    },
-    bindToController: true,
-    controller: function () {
-      this.increment = () =&amp;gt; this.count++;
-      this.decrement = () =&amp;gt; this.count--;
-    },
-    controllerAs: &#39;counter&#39;
-  };
-});
-
-// after
-.component(&#39;counter&#39;, {
-  bindings: {
-    count: &#39;=&#39;
-  },
-  controller: function () {
-    this.increment = () =&amp;gt; this.count++;
-    this.decrement = () =&amp;gt; this.count--;
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Things now are becoming much simpler and funny.&lt;/p&gt;
-
-&lt;h1 id=&#34;template&#34;&gt;Template&lt;/h1&gt;
-
-&lt;p&gt;The &lt;code&gt;template&lt;/code&gt; property can be defined as a function property with injected &lt;code&gt;$elem&lt;/code&gt; and &lt;code&gt;$attrs&lt;/code&gt; values:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;{
-  ...
-  template: function ($element, $attrs) {
-    // access to $element and $attrs
-    return `
-      &amp;lt;div&amp;gt;
-        &amp;lt;input type=&amp;quot;text&amp;quot; ng-model=&amp;quot;$ctrl.count&amp;quot;&amp;gt;
-        &amp;lt;button type=&amp;quot;button&amp;quot; ng-click=&amp;quot;$ctrl.decrement();&amp;quot;&amp;gt;-&amp;lt;/button&amp;gt;
-        &amp;lt;button type=&amp;quot;button&amp;quot; ng-click=&amp;quot;$ctrl.increment();&amp;quot;&amp;gt;+&amp;lt;/button&amp;gt;
-      &amp;lt;/div&amp;gt;
-    `
-  }
-  ...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;inheriting-behavior-with-require&#34;&gt;Inheriting behavior with &amp;ldquo;require&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;Inherited Directive or Component methods will be bound to &lt;code&gt;this.parent&lt;/code&gt; property in the Controller:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;{
-  ...
-  require: {
-    parent: &#39;^^parentComponet&#39;
-  },
-  controller: function() {
-    // use this object to access to required Object
-    this.parent.foo();
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;one-way-binding&#34;&gt;One-way binding&lt;/h1&gt;
-
-&lt;p&gt;A new syntax expression for isolate scope values:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;{
-  ...
-  bindings: {
-    oneWay: &#39;&amp;lt;&#39;,
-    twoWay: &#39;=&#39;
-  },
-  ...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;But still remember that object are passed by reference, and Angular doesn&amp;rsquo;t make a clone of the object when it passed via &lt;code&gt;one-way binding&lt;/code&gt;, it actually sets the same value, which means that objects have still &lt;code&gt;two-way binding&lt;/code&gt; somehow.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&#34;upgrading-to-angular-2&#34;&gt;Upgrading to Angular 2&lt;/h1&gt;
-
-&lt;p&gt;Writing in this style using &lt;code&gt;.component()&lt;/code&gt; allows you easily transit to Angular 2, it&amp;rsquo;d look something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;import { Component } from &#39;@angular/core&#39;
-
-@Component({
-  selector: &#39;counter&#39;,
-  template: `
-    &amp;lt;div&amp;gt;
-      &amp;lt;input type=&amp;quot;number&amp;quot; [(ng-model)]=&amp;quot;count&amp;quot;&amp;gt;
-      &amp;lt;button (click)=&amp;quot;increment()&amp;quot;&amp;gt;+&amp;lt;/button&amp;gt;
-      &amp;lt;button (click)=&amp;quot;decrement()&amp;quot;&amp;gt;-&amp;lt;/button&amp;gt;
-    &amp;lt;/div&amp;gt;
-  `,
-})
-
-export default class CounterComponent {
-  constructor() {}
-  increment() {
-    this.count++;
-  }
-  decrement() {
-    this.count++;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Save my day:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://toddmotto.com/exploring-the-angular-1-5-component-method/&#34;&gt;toddmotto&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
