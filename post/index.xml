@@ -6,8 +6,85 @@
     <description>Recent content in Posts on OP blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 29 Apr 2017 12:14:14 +0300</lastBuildDate>
+    <lastBuildDate>Sat, 29 Apr 2017 23:56:58 +0300</lastBuildDate>
     <atom:link href="https://qetr1ck-op.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Kata: Salesman&#39;s Travel</title>
+      <link>https://qetr1ck-op.github.io/blog/post/kata-salesmans-travel/</link>
+      <pubDate>Sat, 29 Apr 2017 23:56:58 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/kata-salesmans-travel/</guid>
+      <description>&lt;p&gt;A traveling salesman has to visit clients. He got each client&amp;rsquo;s address e.g. &amp;ldquo;432 Main Long Road St. Louisville OH 43071&amp;rdquo; as a list.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;The basic zipcode format usually consists of two capital letters followed by a white space and five digits. The list of clients to visit was given as a string of all addresses, each separated from the others by a comma, e.g. :&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;To ease his travel he wants to group the list by zipcode.&lt;/p&gt;
+
+&lt;h1 id=&#34;task&#34;&gt;Task&lt;/h1&gt;
+
+&lt;p&gt;The function travel will take two parameters r (list of all clients&amp;rsquo; addresses) and zipcode and returns a string in the following format:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;zipcode:street and town,street and town,.../house number,house number,...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The street numbers must be in the same order as the streets where they belong.&lt;/p&gt;
+
+&lt;p&gt;If a given zipcode doesn&amp;rsquo;t exist in the list of clients&amp;rsquo; addresses return &amp;ldquo;zipcode:/&amp;rdquo;&lt;/p&gt;
+
+&lt;h1 id=&#34;examples&#34;&gt;Examples&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;r = &amp;quot;123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432&amp;quot;
+
+travel(r, &amp;quot;OH 43071&amp;quot;) --&amp;gt; &amp;quot;OH 43071:Main Street St. Louisville,Main Long Road St. Louisville/123,432&amp;quot;
+
+travel(r, &amp;quot;NY 56432&amp;quot;) --&amp;gt; &amp;quot;NY 56432:High Street Pollocksville/786&amp;quot;
+
+travel(r, &amp;quot;NY 5643&amp;quot;) --&amp;gt; &amp;quot;NY 5643:/&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;spec&#34;&gt;Spec&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;Test.describe(&amp;quot;travel&amp;quot;,function() {
+    Test.it(&amp;quot;Basic tests&amp;quot;,function() {    
+        testing(travel(ad, &amp;quot;AA 45522&amp;quot;), &amp;quot;AA 45522:Paris St. Abbeville,Paris St. Abbeville/67,670&amp;quot;)
+        testing(travel(ad, &amp;quot;EX 34342&amp;quot;), &amp;quot;EX 34342:Pussy Cat Rd. Chicago,Pussy Cat Rd. Chicago/10,100&amp;quot;)
+        testing(travel(ad, &amp;quot;EX 34345&amp;quot;), &amp;quot;EX 34345:Pussy Cat Rd. Chicago/100&amp;quot;)
+        testing(travel(ad, &amp;quot;AA 45521&amp;quot;), &amp;quot;AA 45521:Paris bd. Abbeville,Paris St. Abbeville/674,67&amp;quot;)
+        testing(travel(ad, &amp;quot;AE 56215&amp;quot;), &amp;quot;AE 56215:Main Al. Bern/320&amp;quot;)
+    })
+})
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;code&#34;&gt;Code&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function travel(r, zipcode) {
+    const re = /(\d{1,4}) (.*?) (\w{2} \d{4,5}),?/gi
+    const res = {
+      prefix: zipcode + &#39;:&#39;,
+      addr: [],
+      nb: [],
+    }
+    while(arr = re.exec(r)){
+      const [_ , nb, addr, zip] = arr
+      if(zip != zipcode)
+        continue
+      res.addr.push(addr)
+      res.nb.push(nb)
+    }
+    return res.prefix + res.addr.join(&#39;,&#39;) + &#39;/&#39; + res.nb.join(&#39;,&#39;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;link&#34;&gt;Link&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.codewars.com/kata/salesmans-travel&#34;&gt;kata: salesmans-travel&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>npm scrips as your build tool</title>
@@ -3276,62 +3353,6 @@ console.log(&#39;loading...&#39;);
 &lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/14-webpack-stream&#34;&gt;Code examples 1&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/14-webpack-final-direct&#34;&gt;Code examples 2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Preflighted HTTP OPTIONS requests</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Preflighted-HTTP-OPTIONS-requests/</link>
-      <pubDate>Sun, 18 Sep 2016 21:02:27 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Preflighted-HTTP-OPTIONS-requests/</guid>
-      <description>&lt;p&gt;What is not-so-simple HTTP request?&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;the-cross-origin-resource-sharing-short-overview&#34;&gt;The Cross-Origin Resource sharing short overview&lt;/h1&gt;
-
-&lt;p&gt;The CORS standard works by adding new HTTP headers that allows servers to describe the sets of origins that are permitted to read that information.&lt;/p&gt;
-
-&lt;p&gt;If browser performs request with &amp;ldquo;side-effects&amp;rdquo; aka not a &amp;ldquo;simple request&amp;rdquo;, the specification says that that browser need to &amp;ldquo;preflight&amp;rdquo; an HTTP OPTIONS request. And then, upon &amp;ldquo;approval&amp;rdquo; from the server, sends the actual request.&lt;/p&gt;
-
-&lt;h1 id=&#34;the-simple-request&#34;&gt;The &amp;ldquo;simple request&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;A simple cross-site request is one that meets all the following conditions:&lt;/p&gt;
-
-&lt;p&gt;The only allowed methods are:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;GET&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;HEAD&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;POST&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Apart the headers which are set automatically by the browser (&lt;code&gt;Connection&lt;/code&gt;, &lt;code&gt;User-Agent&lt;/code&gt;, etc.), the only headers which are allowed to be manually set are:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Accept&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Accept-Language&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Content-Language&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Content-Type&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The only allowed values for the &lt;code&gt;Content-Type&lt;/code&gt; header are:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;application/x-www-form-urlencoded&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;multipart/form-data&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;text/plain&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;preflighted-requests&#34;&gt;Preflighted requests&lt;/h1&gt;
-
-&lt;p&gt;Unlike simple requests, &amp;ldquo;preflighted&amp;rdquo; first send an HTTP request by the OPTIONS method to the resource on the server, in order to determine whether the actual request is safe to send.&lt;/p&gt;
-
-&lt;p&gt;An &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Preflighted_requests&#34;&gt;example&lt;/a&gt; which creates &lt;code&gt;XHR&lt;/code&gt; and an HTTP transaction log.&lt;/p&gt;
-
-&lt;h1 id=&#34;cors-flow&#34;&gt;CORS flow&lt;/h1&gt;
-
-&lt;p&gt;An awesome &lt;a href=&#34;https://www.html5rocks.com/static/images/cors_server_flowchart.png&#34;&gt;diagram&lt;/a&gt; of processing HTTP CORS transaction&lt;/p&gt;</description>
     </item>
     
   </channel>

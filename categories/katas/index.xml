@@ -9,6 +9,83 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/katas/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Kata: Salesman&#39;s Travel</title>
+      <link>https://qetr1ck-op.github.io/blog/post/kata-salesmans-travel/</link>
+      <pubDate>Sat, 29 Apr 2017 23:56:58 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/kata-salesmans-travel/</guid>
+      <description>&lt;p&gt;A traveling salesman has to visit clients. He got each client&amp;rsquo;s address e.g. &amp;ldquo;432 Main Long Road St. Louisville OH 43071&amp;rdquo; as a list.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;The basic zipcode format usually consists of two capital letters followed by a white space and five digits. The list of clients to visit was given as a string of all addresses, each separated from the others by a comma, e.g. :&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;To ease his travel he wants to group the list by zipcode.&lt;/p&gt;
+
+&lt;h1 id=&#34;task&#34;&gt;Task&lt;/h1&gt;
+
+&lt;p&gt;The function travel will take two parameters r (list of all clients&amp;rsquo; addresses) and zipcode and returns a string in the following format:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;zipcode:street and town,street and town,.../house number,house number,...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The street numbers must be in the same order as the streets where they belong.&lt;/p&gt;
+
+&lt;p&gt;If a given zipcode doesn&amp;rsquo;t exist in the list of clients&amp;rsquo; addresses return &amp;ldquo;zipcode:/&amp;rdquo;&lt;/p&gt;
+
+&lt;h1 id=&#34;examples&#34;&gt;Examples&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;r = &amp;quot;123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432&amp;quot;
+
+travel(r, &amp;quot;OH 43071&amp;quot;) --&amp;gt; &amp;quot;OH 43071:Main Street St. Louisville,Main Long Road St. Louisville/123,432&amp;quot;
+
+travel(r, &amp;quot;NY 56432&amp;quot;) --&amp;gt; &amp;quot;NY 56432:High Street Pollocksville/786&amp;quot;
+
+travel(r, &amp;quot;NY 5643&amp;quot;) --&amp;gt; &amp;quot;NY 5643:/&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;spec&#34;&gt;Spec&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;Test.describe(&amp;quot;travel&amp;quot;,function() {
+    Test.it(&amp;quot;Basic tests&amp;quot;,function() {    
+        testing(travel(ad, &amp;quot;AA 45522&amp;quot;), &amp;quot;AA 45522:Paris St. Abbeville,Paris St. Abbeville/67,670&amp;quot;)
+        testing(travel(ad, &amp;quot;EX 34342&amp;quot;), &amp;quot;EX 34342:Pussy Cat Rd. Chicago,Pussy Cat Rd. Chicago/10,100&amp;quot;)
+        testing(travel(ad, &amp;quot;EX 34345&amp;quot;), &amp;quot;EX 34345:Pussy Cat Rd. Chicago/100&amp;quot;)
+        testing(travel(ad, &amp;quot;AA 45521&amp;quot;), &amp;quot;AA 45521:Paris bd. Abbeville,Paris St. Abbeville/674,67&amp;quot;)
+        testing(travel(ad, &amp;quot;AE 56215&amp;quot;), &amp;quot;AE 56215:Main Al. Bern/320&amp;quot;)
+    })
+})
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;code&#34;&gt;Code&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function travel(r, zipcode) {
+    const re = /(\d{1,4}) (.*?) (\w{2} \d{4,5}),?/gi
+    const res = {
+      prefix: zipcode + &#39;:&#39;,
+      addr: [],
+      nb: [],
+    }
+    while(arr = re.exec(r)){
+      const [_ , nb, addr, zip] = arr
+      if(zip != zipcode)
+        continue
+      res.addr.push(addr)
+      res.nb.push(nb)
+    }
+    return res.prefix + res.addr.join(&#39;,&#39;) + &#39;/&#39; + res.nb.join(&#39;,&#39;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;link&#34;&gt;Link&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.codewars.com/kata/salesmans-travel&#34;&gt;kata: salesmans-travel&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Kata: Format a string of names like &#39;Bart, Lisa &amp; Maggie&#39;</title>
       <link>https://qetr1ck-op.github.io/blog/post/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/</link>
       <pubDate>Fri, 19 Feb 2016 00:05:14 +0000</pubDate>
