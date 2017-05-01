@@ -281,6 +281,7 @@ travel(r, &amp;quot;NY 5643&amp;quot;) --&amp;gt; &amp;quot;NY 5643:/&amp;quot;
 &lt;li&gt;&lt;a href=&#34;../html/js-30/11-custom-video-player/index.html&#34;&gt;11 - Custom Video Player&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../html/js-30/12-key-sequence-detection/index.html&#34;&gt;12 - Key Sequence Detection&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../html/js-30/13-slide-in-on-scroll/index.html&#34;&gt;13 - Slide in on Scroll&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../html/js-30/14-js-references-vs-copying/index.html&#34;&gt;14 - JavaScript References VS Copying&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/wesbos/JavaScript30&#34;&gt;Github original source&lt;/a&gt;&lt;/p&gt;</description>
