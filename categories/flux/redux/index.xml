@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flux/Redux on OP blog</title>
+    <link>https://qetr1ck-op.github.io/blog/categories/flux/redux/index.xml</link>
+    <description>Recent content in Flux/Redux on OP blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <atom:link href="https://qetr1ck-op.github.io/blog/categories/flux/redux/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Mastering Flux and Redux</title>
+      <link>https://qetr1ck-op.github.io/blog/post/mastering-flux-and-redux/</link>
+      <pubDate>Tue, 02 May 2017 19:38:57 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/mastering-flux-and-redux/</guid>
+      <description>
+
+&lt;p&gt;At the core of any solid web application is an effective and well-managed data model. In this course, Mastering Flux and Redux, you&amp;rsquo;ll learn the skills and technologies necessary to manage your application&amp;rsquo;s data model in extremely efficient and standards-compliant ways.&lt;/p&gt;
+
+&lt;h1 id=&#34;topics&#34;&gt;Topics&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;First, you&amp;rsquo;ll learn all about the popular data-modeling libraries Flux and Redux; their differences and similarities, how they relate to one another, and which is appropriate for what kind of projects.&lt;/li&gt;
+&lt;li&gt;Next, you&amp;rsquo;ll apply what you&amp;rsquo;ve learned in four modules packed with hands-on demos where you will build a 3-part Flux and Redux application featuring a message board, a TodoMVC page, and a control panel.&lt;/li&gt;
+&lt;li&gt;Then, you&amp;rsquo;ll explore the skills needed to create any Flux or Redux application, modeling changes with actions, and developing idempotent functions for reducers.&lt;/li&gt;
+&lt;li&gt;Finally, you&amp;rsquo;ll create Redux stores with reducers and middleware, combining reducers, using and implementing a dispatcher, and much more.&lt;/li&gt;
+&lt;li&gt;When you&amp;rsquo;re finished, you&amp;rsquo;ll have a deep understanding of both Flux and Redux, allowing you to implement them for any project you choose, integrate seamlessly into any workplace project employing either of these technologies, and get started towards developing your own implementations and middleware.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;link&#34;&gt;Link&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://app.pluralsight.com/library/courses/flux-redux-mastering/table-of-contents&#34;&gt;Pluralsight - Course&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/danielstern/flux-redux&#34;&gt;Github - repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

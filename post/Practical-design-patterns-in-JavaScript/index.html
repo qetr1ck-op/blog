@@ -43,15 +43,15 @@
         <h3 data-open="last-posts">OP blog - Most recent posts</h3>
         <ul>
             
+            <li><a href="https://qetr1ck-op.github.io/blog/post/advanced-nodejs/">advanced nodejs</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/mastering-flux-and-redux/">Mastering Flux and Redux</a></li>
+            
             <li><a href="https://qetr1ck-op.github.io/blog/post/kata-salesmans-travel/">Kata: Salesman&#39;s Travel</a></li>
             
             <li><a href="https://qetr1ck-op.github.io/blog/post/npm-scrips-as-your-build-tool/">npm scrips as your build tool</a></li>
             
             <li><a href="https://qetr1ck-op.github.io/blog/post/prettier-as-a-formating-tool-for-JS/">Prettier as a formating tool for JS</a></li>
-            
-            <li><a href="https://qetr1ck-op.github.io/blog/post/essential-programming-books/">Essential Programming Books</a></li>
-            
-            <li><a href="https://qetr1ck-op.github.io/blog/post/front-end-handbook-2017/">Front End Handbook 2017</a></li>
             
         </ul>
     </div>
@@ -78,6 +78,8 @@
             <li><a href="../../categories/dom-api">dom-api</a></li>
             
             <li><a href="../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../categories/flux/redux">flux/redux</a></li>
             
             <li><a href="../../categories/git">git</a></li>
             
@@ -115,6 +117,65 @@
 
 
 <article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#why-is-it-important-to-understand-patterns-and-be-familiar-with-them">Why is it important to understand patterns and be familiar with them?</a></li>
+<li><a href="#categories-of-design-pattern">Categories Of Design Pattern</a>
+<ul>
+<li><a href="#creation-design-patterns">Creation Design Patterns</a></li>
+<li><a href="#structural-design-patterns">Structural Design Patterns</a></li>
+<li><a href="#behavioral-design-patterns">Behavioral Design Patterns</a></li>
+<li><a href="#table-of-23-design-patterns-mentioned-by-the-gof">Table of 23 Design Patterns mentioned by the GoF</a></li>
+</ul></li>
+<li><a href="#creation-design-patterns-in-depth">Creation Design Patterns in depth</a>
+<ul>
+<li><a href="#the-constructor-pattern">The Constructor Pattern</a>
+<ul>
+<li><a href="#object-creation">Object Creation</a></li>
+<li><a href="#basic-constructors">Basic Constructors</a></li>
+<li><a href="#constructors-with-prototypes">Constructors With Prototypes</a></li>
+<li><a href="#constructors-with-es6-class">Constructors with ES6 class</a></li>
+<li><a href="#constructors-with-es6-class-for-node-js">Constructors with ES6 class for Node.js</a></li>
+<li><a href="#constructors-in-angular1-x">Constructors in Angular1.x</a></li>
+</ul></li>
+<li><a href="#the-module-pattern">The Module Pattern</a>
+<ul>
+<li><a href="#the-revealing-module-pattern">The Revealing Module Pattern</a></li>
+<li><a href="#the-module-pattern-for-node-js">The Module Pattern for Node.js</a></li>
+<li><a href="#the-module-pattern-for-angular1-x">The Module Pattern for Angular1.x</a></li>
+</ul></li>
+<li><a href="#the-singleton-pattern">The Singleton Pattern</a>
+<ul>
+<li><a href="#the-singleton-pattern-for-node-js">The Singleton Pattern for Node.js</a></li>
+<li><a href="#the-singleton-pattern-for-angular1-x">The Singleton Pattern for Angular1.x</a></li>
+</ul></li>
+<li><a href="#the-factory-pattern">The Factory Pattern</a>
+<ul>
+<li><a href="#abstract-factories">Abstract Factories</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#structural-design-patterns-in-depth">Structural Design Patterns in depth</a>
+<ul>
+<li><a href="#mixins">Mixins</a>
+<ul>
+<li><a href="#mixins-with-es6">Mixins with ES6</a></li>
+</ul></li>
+<li><a href="#the-decorator-pattern">The Decorator Pattern</a>
+<ul>
+<li><a href="#the-decorator-pattern-in-angular1-x">The Decorator Pattern in Angular1.x</a></li>
+</ul></li>
+<li><a href="#sub-classing">Sub-classing</a></li>
+<li><a href="#sub-classing-with-es6">Sub-classing with ES6</a></li>
+<li><a href="#the-facade-pattern">The Facade Pattern</a></li>
+<li><a href="#flyweight">Flyweight</a></li>
+</ul></li>
+<li><a href="#behavior-design-patterns-in-depth">Behavior Design Patterns in depth</a>
+<ul>
+<li><a href="#the-observer">The observer</a></li>
+<li><a href="#differences-between-the-observer-and-publish-subscribe-pattern">Differences Between The Observer And Publish/Subscribe Pattern</a></li>
+</ul></li>
+</ul>
+</nav>
     <p>One of the most important aspects of writing maintainable code is being able to notice the repeating themes in that code and optimize them. This is an area where knowledge of design patterns can prove invaluable.</p>
 
 <p>I take a look at a number of popular JavaScript design patterns and explore why certain patterns may be suitable for your projects.</p>

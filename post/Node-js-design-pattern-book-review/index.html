@@ -43,15 +43,15 @@
         <h3 data-open="last-posts">OP blog - Most recent posts</h3>
         <ul>
             
+            <li><a href="https://qetr1ck-op.github.io/blog/post/advanced-nodejs/">advanced nodejs</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/mastering-flux-and-redux/">Mastering Flux and Redux</a></li>
+            
             <li><a href="https://qetr1ck-op.github.io/blog/post/kata-salesmans-travel/">Kata: Salesman&#39;s Travel</a></li>
             
             <li><a href="https://qetr1ck-op.github.io/blog/post/npm-scrips-as-your-build-tool/">npm scrips as your build tool</a></li>
             
             <li><a href="https://qetr1ck-op.github.io/blog/post/prettier-as-a-formating-tool-for-JS/">Prettier as a formating tool for JS</a></li>
-            
-            <li><a href="https://qetr1ck-op.github.io/blog/post/essential-programming-books/">Essential Programming Books</a></li>
-            
-            <li><a href="https://qetr1ck-op.github.io/blog/post/front-end-handbook-2017/">Front End Handbook 2017</a></li>
             
         </ul>
     </div>
@@ -78,6 +78,8 @@
             <li><a href="../../categories/dom-api">dom-api</a></li>
             
             <li><a href="../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../categories/flux/redux">flux/redux</a></li>
             
             <li><a href="../../categories/git">git</a></li>
             
@@ -115,6 +117,115 @@
 
 
 <article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#chapter-1-welcome-to-the-node-js-platform">Chapter 1: Welcome to the Node.js platform</a>
+<ul>
+<li><a href="#the-node-js-philosophy">The Node.js philosophy</a></li>
+<li><a href="#i-o-is-slow">I/O is slow</a>
+<ul>
+<li><a href="#blocking-i-o">Blocking I/O</a></li>
+<li><a href="#non-blocking-i-o-with-busy-waiting">Non-blocking I/O with &ldquo;busy-waiting&rdquo;</a></li>
+<li><a href="#event-demultiplexing">Event demultiplexing</a></li>
+</ul></li>
+<li><a href="#the-reactor-pattern">The reactor pattern</a></li>
+<li><a href="#the-non-blocking-i-o-engine-of-node-js-libuv">The non-blocking I/O engine of Node.js-libuv</a></li>
+<li><a href="#the-building-blocks-of-node-js-platform">The building blocks of Node.js platform</a></li>
+</ul></li>
+<li><a href="#chapter-2-node-js-essential-patterns">Chapter 2: Node.js essential patterns</a>
+<ul>
+<li><a href="#the-callback-pattern">The callback pattern</a>
+<ul>
+<li><a href="#the-continue-passing-style">The continue-passing style</a></li>
+<li><a href="#asynchronous-continue-passing-style">Asynchronous continue-passing style</a></li>
+<li><a href="#synchronous-or-asynchronous">Synchronous or asynchronous?</a>
+<ul>
+<li><a href="#an-unpredictable-function">An unpredictable function</a></li>
+<li><a href="#unleashing-zalgo">Unleashing Zalgo</a></li>
+</ul></li>
+<li><a href="#using-synchronous-apis">Using synchronous APIs</a></li>
+<li><a href="#using-asynchronous-operation-with-deferred-execution">Using asynchronous operation with deferred execution</a></li>
+<li><a href="#node-js-callback-convention">Node.js callback convention</a>
+<ul>
+<li><a href="#callback-come-last">Callback come last</a></li>
+<li><a href="#error-comes-first">Error comes first</a></li>
+<li><a href="#propagation-errors">Propagation errors</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#the-module-system-and-its-pattern">The module system and its pattern</a>
+<ul>
+<li><a href="#the-revealing-module-pattern">The revealing module pattern</a></li>
+<li><a href="#node-js-modules-explained">Node.js modules explained</a>
+<ul>
+<li><a href="#a-homemade-module-loader">A homemade module loader</a></li>
+<li><a href="#defining-a-modules">Defining a modules</a></li>
+<li><a href="#defining-globals">Defining globals</a></li>
+<li><a href="#module-exports-vs-exports">&ldquo;module.exports&rdquo; VS &ldquo;exports&rdquo;</a></li>
+<li><a href="#the-require-function-is-synchronous">The &ldquo;require&rdquo; function is synchronous</a></li>
+<li><a href="#the-resolving-algorithm">The resolving algorithm</a></li>
+<li><a href="#the-module-cache">The module cache</a></li>
+</ul></li>
+<li><a href="#module-definition-patterns">Module definition patterns</a>
+<ul>
+<li><a href="#named-exports">Named exports</a></li>
+<li><a href="#exporting-a-function">Exporting a function</a></li>
+<li><a href="#exporting-a-constructor">Exporting a constructor</a></li>
+<li><a href="#exporting-an-instance">Exporting an instance</a></li>
+<li><a href="#modifying-other-modules-or-the-global-scope">Modifying other modules or the global scope</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#the-observer-pattern">The observer pattern</a>
+<ul>
+<li><a href="#the-eventemitter-class">The EventEmitter class</a></li>
+<li><a href="#creating-and-using-eventemitter">Creating and using EventEmitter</a></li>
+<li><a href="#extends-from-eventemitter-class">Extends from EventEmitter class</a></li>
+<li><a href="#combining-callbacks-with-eventemitter">Combining callbacks with EventEmitter</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#chapter-3-asynchronous-control-flow-patterns-with-callbacks">Chapter 3: Asynchronous control flow patterns with callbacks</a>
+<ul>
+<li><a href="#creating-a-simple-web-spider">Creating a simple web spider</a></li>
+<li><a href="#the-callback-hell">The callback hell</a></li>
+<li><a href="#applying-the-callback-discipline">Applying the callback discipline</a></li>
+<li><a href="#sequential-execution">Sequential execution</a>
+<ul>
+<li><a href="#execution-a-set-of-known-task-in-sequence">Execution a set of known task in sequence</a></li>
+<li><a href="#sequential-iteration-with-crawling-of-links">Sequential iteration with crawling of links</a></li>
+<li><a href="#the-pattern-sequential-iteration">The pattern &ldquo;sequential iteration&rdquo;</a></li>
+</ul></li>
+<li><a href="#parallel-execution">Parallel execution</a>
+<ul>
+<li><a href="#execution-with-spiderlinks">Execution with &ldquo;spiderLinks&rdquo;</a></li>
+<li><a href="#the-pattern-unlimited-parallel-execution">The pattern &ldquo;unlimited parallel execution&rdquo;</a></li>
+<li><a href="#limited-parallel-execution">Limited parallel execution</a></li>
+<li><a href="#taskqueue-to-rescue">&ldquo;TaskQueue&rdquo; to rescue</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#chapter-4-asynchronous-control-flow-with-es6-and-beyond">Chapter 4: Asynchronous Control Flow with ES6 and beyond</a>
+<ul>
+<li><a href="#es6-promises-techniques">ES6 Promises techniques</a>
+<ul>
+<li><a href="#promisifying-a-node-js-style-function">Promisifying a Node.js style function</a></li>
+<li><a href="#sequential-execution-1">Sequential execution</a></li>
+<li><a href="#sequential-iteration">Sequential iteration</a></li>
+<li><a href="#parallel-execution-1">Parallel execution</a>
+<ul>
+<li><a href="#limited-parallel-execution-1">Limited parallel execution</a></li>
+<li><a href="#exposing-callbacks-and-promises-in-public-apis">Exposing callbacks and promises in public APIs</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#generators">Generators</a>
+<ul>
+<li><a href="#asynchronous-control-flow-with-generators">Asynchronous control flow with generators</a></li>
+<li><a href="#sequential-execution-2">Sequential execution</a></li>
+<li><a href="#parallel-execution-2">Parallel execution</a></li>
+<li><a href="#limited-parallel-execution-2">Limited parallel execution</a></li>
+</ul></li>
+<li><a href="#async-await-with-babel">&ldquo;async&hellip;await&rdquo; with Babel</a></li>
+<li><a href="#comparison-table">Comparison Table</a></li>
+</ul></li>
+</ul>
+</nav>
     <p>&ldquo;How could I organize my code?&rdquo;, &ldquo;What is the best way to design this?&rdquo;, &ldquo;How can I make my application more modular?&rdquo;, &ldquo;How do I handle a set of asynchronous call effectively?&rdquo;, &ldquo;How can I make sure that my application will not collapse while it grows?&rdquo;.</p>
 
 <p>If you have such questions without answers, that book is definitely for you!</p>

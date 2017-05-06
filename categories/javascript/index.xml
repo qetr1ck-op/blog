@@ -9,6 +9,209 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>advanced nodejs</title>
+      <link>https://qetr1ck-op.github.io/blog/post/advanced-nodejs/</link>
+      <pubDate>Tue, 02 May 2017 20:16:35 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/advanced-nodejs/</guid>
+      <description>&lt;p&gt;This course will teach you the core Node.js concepts and API modules from simple utility modules all the way to streams and clusters.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;!--toc--&gt;
+
+&lt;h1 id=&#34;node-javascript&#34;&gt;Node != Javascript&lt;/h1&gt;
+
+&lt;h2 id=&#34;node-s-architecture&#34;&gt;Node&amp;rsquo;s architecture&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Node VMs: &lt;code&gt;V8&lt;/code&gt;, &lt;code&gt;Chakra&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;V8 Feature Groups: &lt;code&gt;shipping&lt;/code&gt;, &lt;code&gt;staged (--harmony)&lt;/code&gt;, &lt;code&gt;inprogress (--harmony_for_in)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;All V8 options &lt;code&gt;node --v8-options | less&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Node&amp;rsquo;s architecture diagram: &lt;code&gt;V8&lt;/code&gt; and &lt;code&gt;libuv&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;node-s-cli-and-repl&#34;&gt;Node&amp;rsquo;s CLI and REPL&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Autocomplete feature&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_&lt;/code&gt; as last evaluated value&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.&lt;/code&gt; repl commands&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;repl&lt;/code&gt; module&lt;/li&gt;
+&lt;li&gt;Node&amp;rsquo;s available list commands &lt;code&gt;node --help | less&lt;/code&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;global-object-process-buffer&#34;&gt;&amp;ldquo;global&amp;rdquo; Object, &amp;ldquo;Process&amp;rdquo;, &amp;ldquo;Buffer&amp;rdquo;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;local vs &lt;code&gt;global&lt;/code&gt; scope&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;process&lt;/code&gt; as a bridge between Node app and its running env
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;process.versions&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;process.release.lts&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;process.env&lt;/code&gt; as &lt;code&gt;PATH&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;using as &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.5/index.js&#34;&gt;configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;process&lt;/code&gt; is an &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.5/process.js&#34;&gt;event emitter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Buffer&lt;/code&gt; is essentially a used to work with binary streams of data.
+
+&lt;ul&gt;
+&lt;li&gt;read length &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.5/buffer.js&#34;&gt;Buffer.from&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;can use similar method as on array, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.5/buff.slice.js&#34;&gt;slice&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;string_decoder&lt;/code&gt; module provides an API for decoding Buffer objects into strings in a manner that preserves encoded multi-byte UTF-8 and UTF-16 characters, [example]()&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;how-require-actually-works&#34;&gt;How &amp;ldquo;require&amp;rdquo; actually works&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Steps: resolving -&amp;gt; loading -&amp;gt; wrapping -&amp;gt; evaluating -&amp;gt; caching&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;module&lt;/code&gt; module, &lt;code&gt;module.path&lt;/code&gt;, &lt;code&gt;module.parent&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;require.resolve&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;algorithm of &lt;code&gt;require&lt;/code&gt; search&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;module.exports&lt;/code&gt; = &lt;code&gt;exports&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;module.loaded&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.6/index.js&#34;&gt;examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;json-and-c-addons&#34;&gt;JSON and C++ addons&lt;/h2&gt;
+
+&lt;h2 id=&#34;wrapping-and-caching-modules&#34;&gt;Wrapping and Caching modules&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;require(&#39;module&#39;).wrapper&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;require.main === module&lt;/code&gt; with CLI and requiring module &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.8/printStars.js&#34;&gt;printStars.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;delete &lt;code&gt;require.cache&lt;/code&gt; or &lt;code&gt;module.exports&lt;/code&gt; as a function&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;know-your-npm&#34;&gt;Know your npm&lt;/h2&gt;
+
+&lt;h1 id=&#34;concurrency-model-and-event-loop&#34;&gt;Concurrency model and Event Loop&lt;/h1&gt;
+
+&lt;h2 id=&#34;what-is-i-o-anyway&#34;&gt;What is I/O anyway?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the definition&lt;/li&gt;
+&lt;li&gt;node architecture in I/O&lt;/li&gt;
+&lt;li&gt;handling slow I/O operation: synchronous, &lt;code&gt;fork()&lt;/code&gt; for new process, threads (problem with sharing resources), event loop&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;the-event-loop&#34;&gt;The Event Loop&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the definition&lt;/li&gt;
+&lt;li&gt;the visualization&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;the-call-stack&#34;&gt;The Call Stack&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the definition&lt;/li&gt;
+&lt;li&gt;the visualization&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;handling-slow-operation&#34;&gt;Handling slow operation&lt;/h2&gt;
+
+&lt;h2 id=&#34;how-callbacks-actually-work&#34;&gt;How callbacks actually work&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the visualization&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;settimeout-setimmediate-process-nexttick&#34;&gt;&amp;ldquo;setTimeout&amp;rdquo;, &amp;ldquo;setImmediate&amp;rdquo;, &amp;ldquo;process.nextTick&amp;rdquo;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/2.7/nextTick.js&#34;&gt;example&lt;/a&gt; how to handle async error&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;setTimeout&lt;/code&gt; vs &lt;code&gt;setImmediate&lt;/code&gt; vs &lt;code&gt;process.nextTick&lt;/code&gt;, visual explanation [&lt;a href=&#34;http://stackoverflow.com/questions/17502948/nexttick-vs-setimmediate-visual-explanation#38742776&#34;&gt;http://stackoverflow.com/questions/17502948/nexttick-vs-setimmediate-visual-explanation#38742776&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;setImmediate&lt;/code&gt; executes after &lt;code&gt;setTimeout&lt;/code&gt;, &lt;a href=&#34;https://github.com/nodejs/node-v0.x-archive/issues/25788&#34;&gt;explanation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;node-s-event-driven-architecture&#34;&gt;Node&amp;rsquo;s Event-driven architecture&lt;/h1&gt;
+
+&lt;h2 id=&#34;callback-promises-async-await&#34;&gt;&amp;ldquo;Callback&amp;rdquo;, &amp;ldquo;Promises&amp;rdquo;, &amp;ldquo;async/await&amp;rdquo;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Async != Callback&lt;/li&gt;
+&lt;li&gt;async &lt;code&gt;callback&lt;/code&gt; &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.1/async-callback.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;async &lt;code&gt;promise&lt;/code&gt; and &lt;code&gt;async/await&lt;/code&gt; &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.1/async-promise.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;event-emitter&#34;&gt;Event Emitter&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;sync events &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.2/sync-events.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;async events &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.2/async-events.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;arguments-errors-order-of-listeners&#34;&gt;Arguments, Errors, Order of Listeners&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;data&lt;/code&gt; event&lt;/li&gt;
+&lt;li&gt;handling error with &lt;code&gt;error&lt;/code&gt; and &lt;code&gt;uncaughtException&lt;/code&gt;, register listener with &lt;code&gt;once&lt;/code&gt; method, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.3/errors.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;order of invoke listeners, &lt;code&gt;prependListener&lt;/code&gt;, &lt;code&gt;removeListener&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.3/order.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Task List Management &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/tree/master/3.4&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;node-for-networking&#34;&gt;Node for Networking&lt;/h1&gt;
+
+&lt;h2 id=&#34;tcp-networking-with&#34;&gt;TCP networking with&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;net&lt;/code&gt; module, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/4.1/net.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;working-with-multiple-sockets&#34;&gt;Working with multiple sockets&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/4.2/net.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;improving-the-chat-server&#34;&gt;Improving the chat server&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;remove logging message to ourself, adding names, timestamp, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/4.3/chat.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Node for Web&lt;/li&gt;
+&lt;li&gt;Node&amp;rsquo;s Common built-in modules&lt;/li&gt;
+&lt;li&gt;Working with streams&lt;/li&gt;
+&lt;li&gt;Cluster adn Child Process&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mastering Flux and Redux</title>
+      <link>https://qetr1ck-op.github.io/blog/post/mastering-flux-and-redux/</link>
+      <pubDate>Tue, 02 May 2017 19:38:57 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/mastering-flux-and-redux/</guid>
+      <description>
+
+&lt;p&gt;At the core of any solid web application is an effective and well-managed data model. In this course, Mastering Flux and Redux, you&amp;rsquo;ll learn the skills and technologies necessary to manage your application&amp;rsquo;s data model in extremely efficient and standards-compliant ways.&lt;/p&gt;
+
+&lt;h1 id=&#34;topics&#34;&gt;Topics&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;First, you&amp;rsquo;ll learn all about the popular data-modeling libraries Flux and Redux; their differences and similarities, how they relate to one another, and which is appropriate for what kind of projects.&lt;/li&gt;
+&lt;li&gt;Next, you&amp;rsquo;ll apply what you&amp;rsquo;ve learned in four modules packed with hands-on demos where you will build a 3-part Flux and Redux application featuring a message board, a TodoMVC page, and a control panel.&lt;/li&gt;
+&lt;li&gt;Then, you&amp;rsquo;ll explore the skills needed to create any Flux or Redux application, modeling changes with actions, and developing idempotent functions for reducers.&lt;/li&gt;
+&lt;li&gt;Finally, you&amp;rsquo;ll create Redux stores with reducers and middleware, combining reducers, using and implementing a dispatcher, and much more.&lt;/li&gt;
+&lt;li&gt;When you&amp;rsquo;re finished, you&amp;rsquo;ll have a deep understanding of both Flux and Redux, allowing you to implement them for any project you choose, integrate seamlessly into any workplace project employing either of these technologies, and get started towards developing your own implementations and middleware.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;link&#34;&gt;Link&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://app.pluralsight.com/library/courses/flux-redux-mastering/table-of-contents&#34;&gt;Pluralsight - Course&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/danielstern/flux-redux&#34;&gt;Github - repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Kata: Salesman&#39;s Travel</title>
       <link>https://qetr1ck-op.github.io/blog/post/kata-salesmans-travel/</link>
       <pubDate>Sat, 29 Apr 2017 23:56:58 +0300</pubDate>
@@ -249,6 +452,7 @@ travel(r, &amp;quot;NY 5643&amp;quot;) --&amp;gt; &amp;quot;NY 5643:/&amp;quot;
 &lt;li&gt;&lt;a href=&#34;../../html/js-30/12-key-sequence-detection/index.html&#34;&gt;12 - Key Sequence Detection&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../html/js-30/13-slide-in-on-scroll/index.html&#34;&gt;13 - Slide in on Scroll&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../html/js-30/14-js-references-vs-copying/index.html&#34;&gt;14 - JavaScript References VS Copying&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../html/js-30/15-local-storage/index.html&#34;&gt;15 - LocalStorage&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/wesbos/JavaScript30&#34;&gt;Github original source&lt;/a&gt;&lt;/p&gt;</description>
@@ -3210,474 +3414,6 @@ console.log(&#39;loading...&#39;);
 &lt;h1 id=&#34;generators&#34;&gt;Generators&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/Swiip/generator-gulp-angular/blob/master/docs/usage.md#features-included-in-the-gulpfile&#34;&gt;Yo gulp-angular generator&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Lifecycle hooks in AngularJS 1.5</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Lifecycle-hooks-in-AngularJS-1-5/</link>
-      <pubDate>Sun, 04 Sep 2016 10:48:03 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Lifecycle-hooks-in-AngularJS-1-5/</guid>
-      <description>&lt;p&gt;Lifecycle hooks are simple functions that are called at specific points of a component&amp;rsquo;s life in Angular apps. They landed in AngularJS 1.5 and are used with &lt;code&gt;.component()&lt;/code&gt; method and they were inspired of Angular 2 hooks.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;oninit-require&#34;&gt;&amp;rdquo;$onInit&amp;rdquo; + &amp;ldquo;require&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;Let&amp;rsquo;s create tabs component that uses &lt;code&gt;$onInit&lt;/code&gt; and &lt;code&gt;require&lt;/code&gt;. Full working exapmle:&lt;/p&gt;
-
-&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;//jsfiddle.net/vshmyfe8/embedded/&#34; allowfullscreen=&#34;allowfullscreen&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-
-&lt;h1 id=&#34;postling&#34;&gt;&amp;rdquo;$postLing&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;The &lt;code&gt;$postLink&lt;/code&gt; gives as non-hacky-looking way to control &lt;code&gt;link&lt;/code&gt; method.&lt;/p&gt;
-
-&lt;p&gt;We can actually use the it to set an initial value for active tab:&lt;/p&gt;
-
-&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;//jsfiddle.net/jm0b38ma/embedded/&#34; allowfullscreen=&#34;allowfullscreen&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-
-&lt;h1 id=&#34;onchanges&#34;&gt;&amp;rdquo;$onChanges&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;This is the most important one, and allow use component architecture with one-way data flow!&lt;/p&gt;
-
-&lt;p&gt;The &lt;code&gt;$onChanges&lt;/code&gt; method is called for a few reasons. The first is on component in initialization - component gets initial &lt;code&gt;changes&lt;/code&gt; object. The second reason it gets called is only when changes occur to &lt;code&gt;&amp;lt;&lt;/code&gt; (one-way databinding) and &lt;code&gt;@&lt;/code&gt; (for evaluating DOM attribute values) that are being bound the parent component.&lt;/p&gt;
-
-&lt;p&gt;Once the &lt;code&gt;$onChenges&lt;/code&gt; gets called, you get special &lt;code&gt;changes&lt;/code&gt; object back:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var childComponent = {
-  bindings: { user: &#39;&amp;lt;&#39; },
-  controller: function () {
-    this.$onChanges = function (changes) {
-      // `changes` is a special instance of a constructor Object,
-      // it contains a hash of a change Object and
-      // also contains a function called `isFirstChange()`
-      // it&#39;s implemented in the source code using a constructor Object
-      // and prototype method to create the function `isFirstChange()`
-    };
-  }
-};
-
-angular
-  .module(&#39;app&#39;)
-  .component(&#39;childComponent&#39;, childComponent);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In example we&amp;rsquo;re using &lt;code&gt;bindings: { user: &#39;&amp;lt;&#39; }&lt;/code&gt; which means we receive he data through one-way databinding under the alias of &lt;code&gt;user&lt;/code&gt;:&lt;/p&gt;
-
-&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;//jsfiddle.net/8cj1t4n7/embedded/&#34; allowfullscreen=&#34;allowfullscreen&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-
-&lt;h2 id=&#34;cloning-changes-for-immutable-bindings&#34;&gt;Cloning &amp;ldquo;changes&amp;rdquo; for &amp;ldquo;immutable&amp;rdquo; bindings&lt;/h2&gt;
-
-&lt;p&gt;Data passed through one-way databinding are not &lt;code&gt;$watch&lt;/code&gt;ed by Angular, however they are passed by reference. It means that any changes we make with object (primitives are not passed by reference) it affects the parent object, which acts as two-way databinding. We can clone data which are passed for non polluting changes from child to parent:&lt;/p&gt;
-
-&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;//jsfiddle.net/Lf4y3oad/embedded/&#34; allowfullscreen=&#34;allowfullscreen&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-
-&lt;h2 id=&#34;one-way-data-flow-events&#34;&gt;One-way data-flow + events&lt;/h2&gt;
-
-&lt;p&gt;To get data back up to our &lt;code&gt;parentComponent&lt;/code&gt;, we need to delegate a function to be used as an event callback, let’s add a function called &lt;code&gt;updateUser&lt;/code&gt;, which expects an &lt;code&gt;event&lt;/code&gt; back as an argument:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var parentComponent = {
-  ...
-  controller: function () {
-    ...
-    this.updateUser = function (event) {
-      this.user = event.user;
-    };
-  }
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Instead of just passig back &lt;code&gt;this.user&lt;/code&gt; into the function, we’re going to fake an &lt;code&gt;$event&lt;/code&gt; object, which complies with how Angular 2 does this (using EventEmitter), and also provides global consistency between your templates to fetch data back through the &lt;code&gt;$ctrl.updateUser($event);&lt;/code&gt; call we delegate down into the child component. The &lt;code&gt;$event&lt;/code&gt; argument is a real thing in Angular, you can use it with ng-submit and so on:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var childComponent = {
-  ...
-  controller: function () {
-    ...
-    this.saveUser = function () {
-      this.onUpdate({
-        $event: {
-          user: this.user
-        }
-      });
-    };
-  }
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The full example with delegating update of object:&lt;/p&gt;
-
-&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;//jsfiddle.net/0rb4nsma/embedded/&#34; allowfullscreen=&#34;allowfullscreen&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-
-&lt;h2 id=&#34;is-two-way-databinding-via-syntax-is-dead&#34;&gt;Is two-way databinding via syntax &amp;ldquo;=&amp;rdquo; is dead?&lt;/h2&gt;
-
-&lt;p&gt;Yes. One-way bindings establishes as the best approach for data flow. React, Angular 2 and other all use it.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://toddmotto.com/img/posts/binding-dead.jpg&#34; alt=&#34;Rip two-way bindings&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;ondestroy&#34;&gt;&amp;rdquo;$onDestroy&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;If you&amp;rsquo;re using &lt;code&gt;$postLink&lt;/code&gt; to set DOM event listener or any non-native Angular logic, &lt;code&gt;$onDestroy&lt;/code&gt; is the place to clean up everything.&lt;/p&gt;
-
-&lt;p&gt;The old &lt;code&gt;$scope&lt;/code&gt; way was kind of this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function SomeController($scope) {
-  $scope.$on(&#39;$destroy&#39;, function () {
-    // destroy event
-  });
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;With new school it looks like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var childComponent = {
-  bindings: {
-    user: &#39;&amp;lt;&#39;
-  },
-  controller: function () {
-    this.$onDestroy = function () {
-      // component scope is destroyed
-    };
-  }
-};
-
-angular
-  .module(&#39;app&#39;)
-  .component(&#39;childComponent&#39;, childComponent);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;docheck&#34;&gt;&amp;rdquo;$doCheck&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;In version 1.5.8 a new hook is introduced: &lt;code&gt;$doCheck&lt;/code&gt;. And this is the equivalent of the angular 2 &lt;code&gt;ngDoCheck&lt;/code&gt; implementation. It also serves the same purpose as the &lt;code&gt;$onChanges&lt;/code&gt;, allow to act on changes made to the bindable fields of a component. As &lt;code&gt;$onChanges&lt;/code&gt; uses the built-in change detection of angular, the &lt;code&gt;$doCheck&lt;/code&gt; implementation is totally up to you. The hook is called for every digest cycle of the component and just let’s you know you should check your bindings on changes so you can act on it.&lt;/p&gt;
-
-&lt;p&gt;One of the case this could be useful is when you make use of the one-way &lt;code&gt;(&amp;lt;)&lt;/code&gt; binding for passing objects. In this case the &lt;code&gt;$onChanges&lt;/code&gt; hook will be called if the reference of the object changes and not when fields on the object it self change. So currently you had 2 possibilities to solve this:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Always make sure you are passing a new object. This way $onChanges hook will be called for every change because the reference of the object will change from time to time.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// the following won&#39;t trigger $onChanges.
-
-function get() { 
-  api.getData().then( (data) =&amp;gt; {
-    ctrl.someModel.data = data
-  }
-}
-
-// pass new object every time after changes
-function get() { 
-  api.getData().then( (data=&#39;42&#39;) =&amp;gt; {
-    const updatedModel = Object.assign(ctrl.someModel, data);
-    ctrl.someModel = updatedModel
-  }
-}
-
-// And in the child component (assuming the model as been binded as &#39;data&#39;):
-
-this.$onInit = function(bindings) {
-  if (bindings.data &amp;amp;&amp;amp; bindings.data.currentValue) {
-    console.log(bindings.data.currentValue) // &#39;42&#39; 
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Add a watch on the object to keep track of the changes. This also means you need to destroy and recreate the the watch every the reference of the object changes and you have an (unwanted) dependency on $scope inside your component:&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;module.component(&amp;quot;component&amp;quot;,{
-    template: &amp;quot;&amp;lt;div&amp;gt;{{$ctrl.item}}&amp;lt;/div&amp;gt;&amp;quot;,
-    bindings: {
-        inputItem: &amp;quot;&amp;lt;item&amp;quot;
-    },
-    controller: [&amp;quot;$scope&amp;quot;, function($scope){
-        var $ctrl = this;
-        var destroyWatch;
-        this.$onChanges = function(changeObj){
-            if(changeObj.inputItem){
-                this.item = 
-                  angular.copy(changeObj.inputItem.currentValue);
-                if(destroyWatch) destroyWatch();
-                destroyWatch = $scope.watch(function (){ 
-                    return changeObj.inputItem.currentValue 
-                }, function (){ /* handle Changes */ })
-            }
-        }
-    }
-}]);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The &lt;code&gt;$doCheck&lt;/code&gt; hook now adds a third possibility to solve this issue. By checking manually if the object has changed you can act on it. This can be done by storing the passed value into a local variable, so it can be used in the next call as previous value for comparison:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;module.component(&amp;quot;component&amp;quot;,{
-    template: &amp;quot;&amp;lt;div&amp;gt;{{$ctrl.item}}&amp;lt;/div&amp;gt;&amp;quot;,
-    bindings: {
-        inputItem: &amp;quot;&amp;lt;item&amp;quot;
-    },
-    controller: function(){
-        var $ctrl = this;
-        var previousInputItem;
-        this.$doCheck = function(){
-            if(!angular.equals(previousInputItem, this.inputItem)){
-                previousInputItem = this.inputItem;
-                this.item = angular.copy(this.inputItem);
-            }
-        }
-    }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Change detection in angular 1.x is done using digest cycles and for every cycle the &lt;code&gt;$doCheck&lt;/code&gt; hook will be called. This means this will be called a lot. This is why you have the be careful using this hook so it doesn’t cause any performance issues. Also keep in mind that any change made to the model inside the &lt;code&gt;$doCheck&lt;/code&gt; hook will trigger a new digest cycle. If implemented wrong this can result into a loop of digest cycles.&lt;/p&gt;
-
-&lt;p&gt;In angular 2 the change is implemented on a different (more performant) way and this will result in less calls of the &lt;code&gt;ngDoCheck&lt;/code&gt;. It will also throw an error if you trigger changes outside of the component in prod mode.&lt;/p&gt;
-
-&lt;p&gt;Save my day:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://toddmotto.com/angular-1-5-lifecycle-hooks#real-world-postlink&#34;&gt;Todd Motto&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.kristofdegrave.be/2016/07/component-lifecycle-docheck-angular-15x_22.html&#34;&gt;$doCheck&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.angularjs.org/guide/component&#34;&gt;Off docs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Moving from &#34;ngModel.$parsers&#34;/&#34;ng-if&#34; to &#34;ngModel.$validators&#34;/&#34;ngMessages&#34;</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Moving-from-ngModel-parsers-ng-if-to-ngModel-validators-ngMessages/</link>
-      <pubDate>Sat, 03 Sep 2016 22:24:46 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Moving-from-ngModel-parsers-ng-if-to-ngModel-validators-ngMessages/</guid>
-      <description>&lt;p&gt;Implementation custom Model validation is typically done by extending the built-in &lt;code&gt;$error&lt;/code&gt; object to &lt;code&gt;ngForm&lt;/code&gt; models.&lt;/p&gt;
-
-&lt;p&gt;Prior to AngularJS 1.3 custom validation was done by injecting a function into the &lt;code&gt;ngModel.$parsers&lt;/code&gt; array pipeline and manually setting validation states using &lt;code&gt;$setValidity(&#39;visa&#39;, true)&lt;/code&gt; if the Model value matched a Visa credit card expression format, for example.&lt;/p&gt;
-
-&lt;p&gt;AngularJS 1.3+ has the &lt;code&gt;$validators&lt;/code&gt; pipeline object, which requires no manual setting of validation states.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;rsquo;s take a look of old school way then we can shift to &lt;code&gt;ngModel.$validators&lt;/code&gt; technique.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;old-school-parsers&#34;&gt;Old school &amp;ldquo;$parsers&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;Let’s take some basic form markup, binding &lt;code&gt;name=&amp;quot;myForm&amp;quot;&lt;/code&gt; to the &lt;code&gt;&amp;lt;form&amp;gt;&lt;/code&gt; element so Angular takes control of our form and validation states. Next we’ll add an &lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt; with the name &lt;code&gt;creditCard&lt;/code&gt;, which builds up the Model Object internally so we can access &lt;code&gt;myForm.creditCard&lt;/code&gt; and handle our validation. I’ve added a &lt;code&gt;validate-visa&lt;/code&gt; attribute, which will serve as the Directive bound to the input, so we can capture the Model and validate it.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;form name=&amp;quot;myForm&amp;quot;&amp;gt;
-  &amp;lt;h3&amp;gt;Visa validation ($parsers)&amp;lt;/h3&amp;gt;
-  &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;creditCard&amp;quot; ng-model=&amp;quot;creditCardModel&amp;quot; validate-visa&amp;gt;
-  {{ myForm.creditCard | json }}
-&amp;lt;/form&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The result is something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;{
-  &amp;quot;$validators&amp;quot;: {},
-  &amp;quot;$asyncValidators&amp;quot;: {},
-  &amp;quot;$parsers&amp;quot;: [],
-  &amp;quot;$formatters&amp;quot;: [
-    null
-  ],
-  &amp;quot;$viewChangeListeners&amp;quot;: [],
-  &amp;quot;$untouched&amp;quot;: true,
-  &amp;quot;$touched&amp;quot;: false,
-  &amp;quot;$pristine&amp;quot;: true,
-  &amp;quot;$dirty&amp;quot;: false,
-  &amp;quot;$valid&amp;quot;: false,
-  &amp;quot;$invalid&amp;quot;: true,
-  &amp;quot;$error&amp;quot;: {},
-  &amp;quot;$name&amp;quot;: &amp;quot;creditCard&amp;quot;,
-  &amp;quot;$options&amp;quot;: null
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The generated &lt;code&gt;ngModel.creditCard.$error&lt;/code&gt; object it the place where we need to hook into. At this point we want conditionally toggle DOM based on the boolean value of this property.&lt;/p&gt;
-
-&lt;p&gt;If &lt;code&gt;myForm.creditCard.$error.visa&lt;/code&gt; is &lt;code&gt;true&lt;/code&gt; create the element, otherwise &lt;code&gt;false&lt;/code&gt; framework will remove it from DOM.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;form name=&amp;quot;myForm&amp;quot;&amp;gt;
-  &amp;lt;h3&amp;gt;Visa validation ($parsers)&amp;lt;/h3&amp;gt;
-  &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;creditCard&amp;quot; ng-model=&amp;quot;creditCardModel&amp;quot; validate-visa&amp;gt;
-  &amp;lt;p ng-if=&amp;quot;myForm.creditCard.$error.visa&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-    Not a valid Visa format
-  &amp;lt;/p&amp;gt;
-&amp;lt;/form&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now we need to write logic for &lt;code&gt;validate-visa&lt;/code&gt; directive to tie in to the &lt;code&gt;ngModel&lt;/code&gt; and set states. Typically it&amp;rsquo;s done by using &lt;code&gt;ngMode.$parsers&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// create a validateVisa function
-function validateVisa() {
-
-  // link function
-  function link($scope, $element, $attrs, $ctrl) {
-    // Some basic Visa Regular Expression
-    const VISA_REGEXP = /^4[0-9]{12}(?:[0-9]{3})?$/;
-    // visaParser function, passing in the current viewValue
-    function visaParser(viewValue) {
-      // a Boolean variable evaluated by RegExp.test(String)
-      const isValid = VISA_REGEXP.test(viewValue);
-      // Manually set the validity of the &amp;quot;visa&amp;quot; property on 
-      // the &amp;quot;$error&amp;quot; Object bound to the Model.
-      // Note: $ctrl is the fourth argument in the &amp;quot;link&amp;quot; function
-      // as we&#39;re requiring &amp;quot;ngModel&amp;quot; (see below in the return {} statement)
-      $ctrl.$setValidity(&#39;visa&#39;, isValid);
-      // return the &amp;quot;viewValue&amp;quot; if it&#39;s valid or undefined 
-      // so Angular doesn&#39;t set the value
-      return isValid ? viewValue : undefined; 
-    }
-    // push the &amp;quot;visaParser&amp;quot; function into the &amp;quot;$parsers&amp;quot; Array
-    $ctrl.$parsers.push(visaParser);
-  }
-
-  // export the Directive Object
-  // which requires the &amp;quot;ngModel&amp;quot; Controller and
-  // binds the above &amp;quot;link&amp;quot; function
-  return {
-    require: &#39;ngModel&#39;,
-    link: link
-  };
-  
-}
-
-angular
-  .module(&#39;app&#39;)
-  .directive(&#39;validateVisa&#39;, validateVisa);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The syntax of pushing a function into &lt;code&gt;$parsers&lt;/code&gt; array isn&amp;rsquo;t very slick and we also manually set the validation state passing in string or boolean, which seems a very procedural way to do a thing.&lt;/p&gt;
-
-&lt;p&gt;At this point &lt;code&gt;$error&lt;/code&gt; object which is bounded to the input looks like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;{
-  ...
-  &amp;quot;$error&amp;quot;: {
-    &amp;quot;visa&amp;quot;: true
-  },
-  ...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;new-school-validators&#34;&gt;New school &amp;ldquo;$validators&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;In AngularJS 1.3+ we&amp;rsquo;ve a much better way of doing things!&lt;/p&gt;
-
-&lt;p&gt;Just like before we &lt;code&gt;require: &#39;ngModel&#39;&lt;/code&gt; into directive but instead of using &lt;code&gt;$parsers&lt;/code&gt; we can bind a function straight to &lt;code&gt;$validators&lt;/code&gt; object:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function validateVisa() {
-
-  function link($scope, $element, $attrs, $ctrl) {
-    var VISA_REGEXP = /^4[0-9]{12}(?:[0-9]{3})?$/;
-    $ctrl.$validators.visa = function visaParser(modelValue, viewValue) {
-      var value = modelValue || viewValue;
-      return (VISA_REGEXP.test(value));
-    };
-  }
-
-  return {
-    require: &#39;ngModel&#39;,
-    link: link
-  };
-  
-}
-
-angular
-  .module(&#39;app&#39;)
-  .directive(&#39;validateVisa&#39;, validateVisa);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The above doesn’t even need annotating, any &lt;code&gt;$validator&lt;/code&gt; property we add becomes the property name bound to &lt;code&gt;$error&lt;/code&gt;, and we just need to return a boolean. Super simple and much clearer to read. Usage as the Directive from an HTML perspective is identical, it’s just the difference of how we implement the validation that changes&lt;/p&gt;
-
-&lt;h1 id=&#34;old-school-ng-if&#34;&gt;Old school &amp;ldquo;ng-if&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;Using &lt;code&gt;ng-if&lt;/code&gt; is super simple, we tell to conditionally swap element based on property state bound to the &lt;code&gt;$error&lt;/code&gt; object:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;form name=&amp;quot;myForm&amp;quot;&amp;gt;
-  &amp;lt;h3&amp;gt;Visa validation (ngIf)&amp;lt;/h3&amp;gt;
-  &amp;lt;input 
-    type=&amp;quot;text&amp;quot; 
-    name=&amp;quot;creditCard&amp;quot; 
-    ng-model=&amp;quot;creditCardModel&amp;quot; 
-    required=&amp;quot;&amp;quot;
-    ng-minlength=&amp;quot;13&amp;quot;
-    ng-maxlength=&amp;quot;16&amp;quot;
-    validate-visa&amp;gt;
-  &amp;lt;p ng-if=&amp;quot;myForm.creditCard.$error.required&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-    This field is required
-  &amp;lt;/p&amp;gt;
-  &amp;lt;p ng-if=&amp;quot;myForm.creditCard.$error.visa&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-    Not a valid Visa format
-  &amp;lt;/p&amp;gt;
-  &amp;lt;p ng-if=&amp;quot;myForm.creditCard.$error.minlength&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-    Minimum of 13 characters
-  &amp;lt;/p&amp;gt;
-  &amp;lt;p ng-if=&amp;quot;myForm.creditCard.$error.maxlength&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-    Maximum of 16 characters
-  &amp;lt;/p&amp;gt;
-&amp;lt;/form&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;It&amp;rsquo;s a very manual and repetitive process dealing with each &lt;code&gt;$error&lt;/code&gt; property.&lt;/p&gt;
-
-&lt;h1 id=&#34;new-school-ngmassages&#34;&gt;New school &amp;ldquo;ngMassages&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;Unlike &lt;code&gt;ng-if&lt;/code&gt; approach we&amp;rsquo;re passing &lt;code&gt;myForm.creditCard.$error&lt;/code&gt; only once into &lt;code&gt;ngMassages&lt;/code&gt;. The directive will look of &lt;code&gt;$error&lt;/code&gt; object and the corresponding massage will be rendered:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;form name=&amp;quot;myForm&amp;quot;&amp;gt;
-  &amp;lt;h3&amp;gt;Visa validation (ngMessages)&amp;lt;/h3&amp;gt;
-  &amp;lt;input 
-    type=&amp;quot;text&amp;quot; 
-    name=&amp;quot;creditCard&amp;quot; 
-    ng-model=&amp;quot;creditCardModel&amp;quot; 
-    required=&amp;quot;&amp;quot;
-    ng-minlength=&amp;quot;13&amp;quot;
-    ng-maxlength=&amp;quot;16&amp;quot;
-    validate-visa&amp;gt;
-  &amp;lt;div ng-messages=&amp;quot;myForm.creditCard.$error&amp;quot;&amp;gt;
-    &amp;lt;p ng-message=&amp;quot;required&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-      This field is required
-    &amp;lt;/p&amp;gt;
-    &amp;lt;p ng-message=&amp;quot;visa&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-      Not a valid Visa format
-    &amp;lt;/p&amp;gt;
-    &amp;lt;p ng-message=&amp;quot;minlength&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-      Minimum of 13 characters
-    &amp;lt;/p&amp;gt;
-    &amp;lt;p ng-message=&amp;quot;maxlength&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-      Maximum of 16 characters
-    &amp;lt;/p&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/form&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;For reusable/generic validation states we can use &lt;code&gt;ngMassagesIncule&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script type=&amp;quot;text/ng-template&amp;quot; id=&amp;quot;generic-messages&amp;quot;&amp;gt;
-  &amp;lt;div ng-message=&amp;quot;required&amp;quot;&amp;gt;This field is required&amp;lt;/div&amp;gt;
-  &amp;lt;div ng-message=&amp;quot;minlength&amp;quot;&amp;gt;This field is too short&amp;lt;/div&amp;gt;
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And ramp up it with an existing &lt;code&gt;ngMassages&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div ng-messages=&amp;quot;myForm.creditCard.$error&amp;quot;&amp;gt;
-  &amp;lt;div ng-messages-include=&amp;quot;generic-messages&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-  &amp;lt;p ng-message=&amp;quot;visa&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-    Not a valid Visa format
-  &amp;lt;/p&amp;gt;
-  &amp;lt;p ng-message=&amp;quot;minlength&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-    Minimum of 13 characters
-  &amp;lt;/p&amp;gt;
-  &amp;lt;p ng-message=&amp;quot;maxlength&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-    Maximum of 16 characters
-  &amp;lt;/p&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;There are some other powerful features well worth checking out inside ngMessages, see the &lt;a href=&#34;https://docs.angularjs.org/api/ngMessages&#34;&gt;documentation&lt;/a&gt; for more.&lt;/p&gt;
-
-&lt;p&gt;Save my day:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://toddmotto.com/moving-from-ng-model-parsers-to-ng-model-validates-ng-messages/&#34;&gt;Todd Motto&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
     </item>
     
   </channel>

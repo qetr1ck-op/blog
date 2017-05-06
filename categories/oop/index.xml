@@ -9,6 +9,180 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/oop/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>advanced nodejs</title>
+      <link>https://qetr1ck-op.github.io/blog/post/advanced-nodejs/</link>
+      <pubDate>Tue, 02 May 2017 20:16:35 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/advanced-nodejs/</guid>
+      <description>&lt;p&gt;This course will teach you the core Node.js concepts and API modules from simple utility modules all the way to streams and clusters.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;!--toc--&gt;
+
+&lt;h1 id=&#34;node-javascript&#34;&gt;Node != Javascript&lt;/h1&gt;
+
+&lt;h2 id=&#34;node-s-architecture&#34;&gt;Node&amp;rsquo;s architecture&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Node VMs: &lt;code&gt;V8&lt;/code&gt;, &lt;code&gt;Chakra&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;V8 Feature Groups: &lt;code&gt;shipping&lt;/code&gt;, &lt;code&gt;staged (--harmony)&lt;/code&gt;, &lt;code&gt;inprogress (--harmony_for_in)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;All V8 options &lt;code&gt;node --v8-options | less&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Node&amp;rsquo;s architecture diagram: &lt;code&gt;V8&lt;/code&gt; and &lt;code&gt;libuv&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;node-s-cli-and-repl&#34;&gt;Node&amp;rsquo;s CLI and REPL&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Autocomplete feature&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_&lt;/code&gt; as last evaluated value&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.&lt;/code&gt; repl commands&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;repl&lt;/code&gt; module&lt;/li&gt;
+&lt;li&gt;Node&amp;rsquo;s available list commands &lt;code&gt;node --help | less&lt;/code&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;global-object-process-buffer&#34;&gt;&amp;ldquo;global&amp;rdquo; Object, &amp;ldquo;Process&amp;rdquo;, &amp;ldquo;Buffer&amp;rdquo;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;local vs &lt;code&gt;global&lt;/code&gt; scope&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;process&lt;/code&gt; as a bridge between Node app and its running env
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;process.versions&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;process.release.lts&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;process.env&lt;/code&gt; as &lt;code&gt;PATH&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;using as &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.5/index.js&#34;&gt;configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;process&lt;/code&gt; is an &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.5/process.js&#34;&gt;event emitter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Buffer&lt;/code&gt; is essentially a used to work with binary streams of data.
+
+&lt;ul&gt;
+&lt;li&gt;read length &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.5/buffer.js&#34;&gt;Buffer.from&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;can use similar method as on array, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.5/buff.slice.js&#34;&gt;slice&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;string_decoder&lt;/code&gt; module provides an API for decoding Buffer objects into strings in a manner that preserves encoded multi-byte UTF-8 and UTF-16 characters, [example]()&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;how-require-actually-works&#34;&gt;How &amp;ldquo;require&amp;rdquo; actually works&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Steps: resolving -&amp;gt; loading -&amp;gt; wrapping -&amp;gt; evaluating -&amp;gt; caching&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;module&lt;/code&gt; module, &lt;code&gt;module.path&lt;/code&gt;, &lt;code&gt;module.parent&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;require.resolve&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;algorithm of &lt;code&gt;require&lt;/code&gt; search&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;module.exports&lt;/code&gt; = &lt;code&gt;exports&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;module.loaded&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.6/index.js&#34;&gt;examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;json-and-c-addons&#34;&gt;JSON and C++ addons&lt;/h2&gt;
+
+&lt;h2 id=&#34;wrapping-and-caching-modules&#34;&gt;Wrapping and Caching modules&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;require(&#39;module&#39;).wrapper&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;require.main === module&lt;/code&gt; with CLI and requiring module &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/1.8/printStars.js&#34;&gt;printStars.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;delete &lt;code&gt;require.cache&lt;/code&gt; or &lt;code&gt;module.exports&lt;/code&gt; as a function&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;know-your-npm&#34;&gt;Know your npm&lt;/h2&gt;
+
+&lt;h1 id=&#34;concurrency-model-and-event-loop&#34;&gt;Concurrency model and Event Loop&lt;/h1&gt;
+
+&lt;h2 id=&#34;what-is-i-o-anyway&#34;&gt;What is I/O anyway?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the definition&lt;/li&gt;
+&lt;li&gt;node architecture in I/O&lt;/li&gt;
+&lt;li&gt;handling slow I/O operation: synchronous, &lt;code&gt;fork()&lt;/code&gt; for new process, threads (problem with sharing resources), event loop&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;the-event-loop&#34;&gt;The Event Loop&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the definition&lt;/li&gt;
+&lt;li&gt;the visualization&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;the-call-stack&#34;&gt;The Call Stack&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the definition&lt;/li&gt;
+&lt;li&gt;the visualization&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;handling-slow-operation&#34;&gt;Handling slow operation&lt;/h2&gt;
+
+&lt;h2 id=&#34;how-callbacks-actually-work&#34;&gt;How callbacks actually work&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the visualization&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;settimeout-setimmediate-process-nexttick&#34;&gt;&amp;ldquo;setTimeout&amp;rdquo;, &amp;ldquo;setImmediate&amp;rdquo;, &amp;ldquo;process.nextTick&amp;rdquo;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/2.7/nextTick.js&#34;&gt;example&lt;/a&gt; how to handle async error&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;setTimeout&lt;/code&gt; vs &lt;code&gt;setImmediate&lt;/code&gt; vs &lt;code&gt;process.nextTick&lt;/code&gt;, visual explanation [&lt;a href=&#34;http://stackoverflow.com/questions/17502948/nexttick-vs-setimmediate-visual-explanation#38742776&#34;&gt;http://stackoverflow.com/questions/17502948/nexttick-vs-setimmediate-visual-explanation#38742776&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;setImmediate&lt;/code&gt; executes after &lt;code&gt;setTimeout&lt;/code&gt;, &lt;a href=&#34;https://github.com/nodejs/node-v0.x-archive/issues/25788&#34;&gt;explanation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;node-s-event-driven-architecture&#34;&gt;Node&amp;rsquo;s Event-driven architecture&lt;/h1&gt;
+
+&lt;h2 id=&#34;callback-promises-async-await&#34;&gt;&amp;ldquo;Callback&amp;rdquo;, &amp;ldquo;Promises&amp;rdquo;, &amp;ldquo;async/await&amp;rdquo;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Async != Callback&lt;/li&gt;
+&lt;li&gt;async &lt;code&gt;callback&lt;/code&gt; &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.1/async-callback.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;async &lt;code&gt;promise&lt;/code&gt; and &lt;code&gt;async/await&lt;/code&gt; &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.1/async-promise.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;event-emitter&#34;&gt;Event Emitter&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;sync events &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.2/sync-events.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;async events &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.2/async-events.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;arguments-errors-order-of-listeners&#34;&gt;Arguments, Errors, Order of Listeners&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;data&lt;/code&gt; event&lt;/li&gt;
+&lt;li&gt;handling error with &lt;code&gt;error&lt;/code&gt; and &lt;code&gt;uncaughtException&lt;/code&gt;, register listener with &lt;code&gt;once&lt;/code&gt; method, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.3/errors.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;order of invoke listeners, &lt;code&gt;prependListener&lt;/code&gt;, &lt;code&gt;removeListener&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/3.3/order.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Task List Management &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/tree/master/3.4&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;node-for-networking&#34;&gt;Node for Networking&lt;/h1&gt;
+
+&lt;h2 id=&#34;tcp-networking-with&#34;&gt;TCP networking with&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;net&lt;/code&gt; module, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/4.1/net.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;working-with-multiple-sockets&#34;&gt;Working with multiple sockets&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/4.2/net.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;improving-the-chat-server&#34;&gt;Improving the chat server&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;remove logging message to ourself, adding names, timestamp, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/4.3/chat.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Node for Web&lt;/li&gt;
+&lt;li&gt;Node&amp;rsquo;s Common built-in modules&lt;/li&gt;
+&lt;li&gt;Working with streams&lt;/li&gt;
+&lt;li&gt;Cluster adn Child Process&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
       <title>Essential Programming Books</title>
       <link>https://qetr1ck-op.github.io/blog/post/essential-programming-books/</link>
       <pubDate>Sun, 23 Apr 2017 22:35:48 +0300</pubDate>

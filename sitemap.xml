@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/advanced-nodejs/</loc>
+    <lastmod>2017-05-02T20:16:35+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/mastering-flux-and-redux/</loc>
+    <lastmod>2017-05-02T19:38:57+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://qetr1ck-op.github.io/blog/post/kata-salesmans-travel/</loc>
     <lastmod>2017-04-29T23:56:58+03:00</lastmod>
   </url>
@@ -413,7 +423,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/architecture/</loc>
-    <lastmod>2017-04-29T12:14:14+03:00</lastmod>
+    <lastmod>2017-05-02T20:16:35+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -436,7 +446,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/cli/</loc>
-    <lastmod>2017-04-29T12:14:14+03:00</lastmod>
+    <lastmod>2017-05-02T20:16:35+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -454,7 +464,13 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/es2015&#43;/</loc>
-    <lastmod>2017-04-29T23:56:58+03:00</lastmod>
+    <lastmod>2017-05-02T20:16:35+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qetr1ck-op.github.io/blog/categories/flux/redux/</loc>
+    <lastmod>2017-05-02T19:38:57+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -472,7 +488,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/javascript/</loc>
-    <lastmod>2017-04-29T23:56:58+03:00</lastmod>
+    <lastmod>2017-05-02T20:16:35+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -484,19 +500,19 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/nodejs/</loc>
-    <lastmod>2017-04-29T23:56:58+03:00</lastmod>
+    <lastmod>2017-05-02T20:16:35+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/</loc>
-    <lastmod>2017-04-29T23:56:58+03:00</lastmod>
+    <lastmod>2017-05-02T20:16:35+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/oop/</loc>
-    <lastmod>2017-04-23T22:35:48+03:00</lastmod>
+    <lastmod>2017-05-02T20:16:35+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -506,7 +522,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/patterns/</loc>
-    <lastmod>2017-04-23T22:35:48+03:00</lastmod>
+    <lastmod>2017-05-02T20:16:35+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -518,7 +534,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/post/</loc>
-    <lastmod>2017-04-29T23:56:58+03:00</lastmod>
+    <lastmod>2017-05-02T20:16:35+03:00</lastmod>
     <priority>0</priority>
   </url>
   

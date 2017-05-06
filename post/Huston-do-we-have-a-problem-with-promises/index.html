@@ -43,15 +43,15 @@
         <h3 data-open="last-posts">OP blog - Most recent posts</h3>
         <ul>
             
+            <li><a href="https://qetr1ck-op.github.io/blog/post/advanced-nodejs/">advanced nodejs</a></li>
+            
+            <li><a href="https://qetr1ck-op.github.io/blog/post/mastering-flux-and-redux/">Mastering Flux and Redux</a></li>
+            
             <li><a href="https://qetr1ck-op.github.io/blog/post/kata-salesmans-travel/">Kata: Salesman&#39;s Travel</a></li>
             
             <li><a href="https://qetr1ck-op.github.io/blog/post/npm-scrips-as-your-build-tool/">npm scrips as your build tool</a></li>
             
             <li><a href="https://qetr1ck-op.github.io/blog/post/prettier-as-a-formating-tool-for-JS/">Prettier as a formating tool for JS</a></li>
-            
-            <li><a href="https://qetr1ck-op.github.io/blog/post/essential-programming-books/">Essential Programming Books</a></li>
-            
-            <li><a href="https://qetr1ck-op.github.io/blog/post/front-end-handbook-2017/">Front End Handbook 2017</a></li>
             
         </ul>
     </div>
@@ -78,6 +78,8 @@
             <li><a href="../../categories/dom-api">dom-api</a></li>
             
             <li><a href="../../categories/es2015&#43;">es2015&#43;</a></li>
+            
+            <li><a href="../../categories/flux/redux">flux/redux</a></li>
             
             <li><a href="../../categories/git">git</a></li>
             
@@ -115,6 +117,26 @@
 
 
 <article>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#wherefore-promises">Wherefore promises?</a></li>
+<li><a href="#rookie-mistakes">Rookie mistakes</a></li>
+<li><a href="#rookie-mistake-1-the-promises-pyramid-of-doom">Rookie mistake #1: the promises pyramid of doom</a></li>
+<li><a href="#rookie-mistake-2-wtf-how-do-i-use-foreach-with-promises">Rookie mistake #2: WTF, how do I use forEach() with promises?</a></li>
+<li><a href="#rookie-mistake-3-forgetting-to-add-catch">Rookie mistake #3: forgetting to add .catch()</a></li>
+<li><a href="#rookie-mistake-4-using-deferred">Rookie mistake #4: using &ldquo;deferred&rdquo;</a></li>
+<li><a href="#rookie-mistake-5-using-side-effects-instead-of-returning">Rookie mistake #5: using side effects instead of returning</a>
+<ul>
+<li><a href="#return-another-promise">Return another promise</a></li>
+<li><a href="#return-a-synchronous-value-or-undefined">Return a synchronous value (or undefined)</a></li>
+<li><a href="#throw-a-synchronous-error">Throw a synchronous error</a></li>
+</ul></li>
+<li><a href="#advanced-mistake-1-don-t-know-about-promise-resolve">Advanced mistake #1: don&rsquo;t know about Promise.resolve</a></li>
+<li><a href="#advanced-mistake-2-catch-isn-t-exactly-like-then-null-cb">Advanced mistake #2: catch() isn&rsquo;t exactly like then(null, cb)</a></li>
+<li><a href="#advanced-mistake-3-use-promise-in-parallel-or-promises-vs-promise-factories">Advanced mistake #3: use promise in parallel or promises vs promise factories</a></li>
+<li><a href="#advanced-mistake-4-okay-what-if-i-want-the-result-of-two-promises">Advanced mistake #4: okay, what if I want the result of two promises?</a></li>
+</ul>
+</nav>
     <p>Many of us are using promises without really understanding them.</p>
 
 <p></p>
