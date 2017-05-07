@@ -149,6 +149,13 @@
 <li><a href="#tcp-networking-with">TCP networking with</a></li>
 <li><a href="#working-with-multiple-sockets">Working with multiple sockets</a></li>
 <li><a href="#improving-the-chat-server">Improving the chat server</a></li>
+<li><a href="#the-dns-module">The DNS module</a></li>
+<li><a href="#udp-sockets">UDP sockets</a></li>
+</ul></li>
+<li><a href="#node-for-web">Node for Web</a>
+<ul>
+<li><a href="#the-basic-streaming-http-server">The basic streaming HTTP server</a></li>
+<li><a href="#working-with-https">Working with HTTPS</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -312,8 +319,34 @@
 <li>remove logging message to ourself, adding names, timestamp, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/4.3/chat.js">example</a></li>
 </ul>
 
+<h2 id="the-dns-module">The DNS module</h2>
+
+<ul>
+<li><code>lookup</code>, <code>resolve</code>, <code>reverse</code> methods <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/4.4/dns.js">example</a></li>
+</ul>
+
+<h2 id="udp-sockets">UDP sockets</h2>
+
+<ul>
+<li><code>dgram</code> module and creating event emitter by <code>dgram.createSocket('udp4')</code>, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/4.5/udp.js">example</a></li>
+</ul>
+
+<h1 id="node-for-web">Node for Web</h1>
+
+<h2 id="the-basic-streaming-http-server">The basic streaming HTTP server</h2>
+
+<ul>
+<li><code>http.createServer</code> as an event emitter, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.1/http.js">example</a></li>
+</ul>
+
+<h2 id="working-with-https">Working with HTTPS</h2>
+
+<ul>
+<li>create key and certificate with <code>openssl</code></li>
+<li>working with <code>https</code>, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.2/https.js">example</a></li>
+</ul>
+
 <ol>
-<li>Node for Web</li>
 <li>Node&rsquo;s Common built-in modules</li>
 <li>Working with streams</li>
 <li>Cluster adn Child Process</li>

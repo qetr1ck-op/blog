@@ -175,8 +175,34 @@
 &lt;li&gt;remove logging message to ourself, adding names, timestamp, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/4.3/chat.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h2 id=&#34;the-dns-module&#34;&gt;The DNS module&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;lookup&lt;/code&gt;, &lt;code&gt;resolve&lt;/code&gt;, &lt;code&gt;reverse&lt;/code&gt; methods &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/4.4/dns.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;udp-sockets&#34;&gt;UDP sockets&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;dgram&lt;/code&gt; module and creating event emitter by &lt;code&gt;dgram.createSocket(&#39;udp4&#39;)&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/4.5/udp.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;node-for-web&#34;&gt;Node for Web&lt;/h1&gt;
+
+&lt;h2 id=&#34;the-basic-streaming-http-server&#34;&gt;The basic streaming HTTP server&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;http.createServer&lt;/code&gt; as an event emitter, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.1/http.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;working-with-https&#34;&gt;Working with HTTPS&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;create key and certificate with &lt;code&gt;openssl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;working with &lt;code&gt;https&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.2/https.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;ol&gt;
-&lt;li&gt;Node for Web&lt;/li&gt;
 &lt;li&gt;Node&amp;rsquo;s Common built-in modules&lt;/li&gt;
 &lt;li&gt;Working with streams&lt;/li&gt;
 &lt;li&gt;Cluster adn Child Process&lt;/li&gt;
@@ -486,6 +512,7 @@ travel(r, &amp;quot;NY 5643&amp;quot;) --&amp;gt; &amp;quot;NY 5643:/&amp;quot;
 &lt;li&gt;&lt;a href=&#34;./html/js-30/13-slide-in-on-scroll/index.html&#34;&gt;13 - Slide in on Scroll&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;./html/js-30/14-js-references-vs-copying/index.html&#34;&gt;14 - JavaScript References VS Copying&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;./html/js-30/15-local-storage/index.html&#34;&gt;15 - LocalStorage&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./html/js-30/16-mouse-move-shadow/index.html&#34;&gt;16 - Mouse Move Shadow&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/wesbos/JavaScript30&#34;&gt;Github original source&lt;/a&gt;&lt;/p&gt;</description>
