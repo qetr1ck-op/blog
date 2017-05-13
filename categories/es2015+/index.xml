@@ -9,6 +9,184 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/es2015&#43;/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Asynchronous Javascript with async/await</title>
+      <link>https://qetr1ck-op.github.io/blog/post/asynchronous-javascript-with-async-await/</link>
+      <pubDate>Tue, 09 May 2017 21:57:55 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/asynchronous-javascript-with-async-await/</guid>
+      <description>&lt;p&gt;ES2017 async and await keywords to write asynchronous code that is more readable and easier to follow than equivalent code based on long promise chains or deeply nested callbacks.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;The await operator takes a promise and then pauses the function execution until that promise is settled which allows for an async function to read like sequential synchronous code.&lt;/p&gt;
+
+&lt;h1 id=&#34;write-an-asynchronous-function-with-async-await&#34;&gt;Write an Asynchronous Function with async/await&lt;/h1&gt;
+
+&lt;p&gt;With traditional chain of promises:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+
+function showGitHubUser(userName) {
+  fetch(`http://api.github.com/users/${userName}`)
+    .then(data =&amp;gt; data.json())
+    .then(user =&amp;gt; {
+      const { name, location } = user
+
+      console.log(name, location)
+    })
+}
+
+showGitHubUser(&#39;qetr1ck-op&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Rewrite to &lt;code&gt;async/await&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+
+async function showGitHubUser(userName) {
+  const data = await fetch(`http://api.github.com/users/${userName}`)
+  const user = await data.json()
+  const { name, location } = user
+
+  console.log(name, location)
+}
+
+showGitHubUser(&#39;qetr1ck-op&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;call-an-asynchronous-function-in-a-promise-chain&#34;&gt;Call an Asynchronous function in a Promise chain&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+
+async function showGitHubUser(userName) {
+  const data = await fetch(`http://api.github.com/users/${userName}`)
+  return await data.json()
+}
+
+showGitHubUser(&#39;qetr1ck-op&#39;).then(user =&amp;gt; {
+  const { name, location } = user
+
+  console.log(name, location)
+})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;convert-any-function-into-asynchronous-function&#34;&gt;Convert any function into Asynchronous Function&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+
+class GitHubApiClient {
+  // the same syntax with objects
+  async fetchUser(handle) {
+    const url = `https://api.github.com/users/${handle}`
+    const response = await fetch(url)
+    return await response.json()
+  }
+}
+
+// classic iife
+;(async () =&amp;gt; {
+  const client = new GitHubApiClient()
+  const user = await client.fetchUser(&#39;qetr1ck-op&#39;)
+  console.log(user.name)
+  console.log(user.location)
+})()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;handle-errors-in-asynchronous-function&#34;&gt;Handle Errors in Asynchronous Function&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+
+async function fetchGitHubUser(userName) {
+  const response = await fetch(`http://api.github.com/users/${userName}`)
+
+  if (!response.ok)
+    throw Error(response.statusText)
+
+  return await response.json()
+}
+
+(async () =&amp;gt; {
+  try {
+    const { name, location } = await fetchGitHubUser(&#39;unknownuserstring&#39;)
+    console.log(name, location)
+  } catch(e) {
+    console.error(e)
+  }
+})()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;await-multiple-promises-sequentially-or-concurrently&#34;&gt;Await multiple promises sequentially or concurrently&lt;/h1&gt;
+
+&lt;p&gt;You can await multiple promises either sequentially or concurrently, depending on where you put the await operators.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+const measureTime = require(&#39;measure-time&#39;)
+
+async function fetchGitHubUser(endpoint) {
+  const response = await fetch(`http://api.github.com${endpoint}`)
+
+  if (!response.ok) throw Error(response.statusText)
+
+  return await response.json()
+}
+
+;(async () =&amp;gt; {
+  // concurrent
+  const t1 = measureTime()
+  const user = await fetchGitHubUser(&#39;/users/qetr1ck-op&#39;)
+  const repos = await fetchGitHubUser(&#39;/users/qetr1ck-op/repos&#39;)
+
+  console.log(`concurrent: ${t1().millisecondsTotal}`)
+  console.log(user.name, `repos: ${repos.length}`)
+})()
+
+;(async () =&amp;gt; {
+  // parallel
+  const t1 = measureTime()
+  const userPromise = fetchGitHubUser(&#39;/users/qetr1ck-op&#39;)
+  const reposPromise = fetchGitHubUser(&#39;/users/qetr1ck-op/repos&#39;)
+
+  const user = await userPromise
+  const repos = await reposPromise
+
+  console.log(`parallel: ${t1().millisecondsTotal}`)
+  console.log(user.name, `repos: ${repos.length}`)
+})()
+
+
+;(async () =&amp;gt; {
+  // parallel vol.2
+  const t1 = measureTime()
+  const [ user, repos ] = await Promise.all([
+      fetchGitHubUser(&#39;/users/qetr1ck-op&#39;),
+      fetchGitHubUser(&#39;/users/qetr1ck-op/repos&#39;)
+  ])
+
+  console.log(user.name, `repos: ${repos.length}`)
+})()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;use-the-await-operator-with-any-thenable&#34;&gt;Use the &lt;code&gt;await&lt;/code&gt; Operator with Any Thenable&lt;/h1&gt;
+
+&lt;p&gt;The await operator is not restricted to ES2015 promises. It can be used to await any thenable — that is, any object with a .then() method.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const Bluebird = require(&amp;quot;bluebird&amp;quot;);
+
+async function main() {
+    console.log(&amp;quot;Working ...&amp;quot;);
+    await Bluebird.delay(2000);
+    console.log(&amp;quot;Done.&amp;quot;);
+}
+
+main();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;iterate-asynchronously-with-the-for-await-of-loop&#34;&gt;Iterate Asynchronously with the &lt;code&gt;for-await-of&lt;/code&gt; Loop&lt;/h1&gt;
+
+&lt;p&gt;An &lt;a href=&#34;https://github.com/mariusschulz/egghead-async-await/tree/master/lesson-8&#34;&gt;example&lt;/a&gt; with &lt;code&gt;ts&lt;/code&gt; configuration&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>advanced nodejs</title>
       <link>https://qetr1ck-op.github.io/blog/post/advanced-nodejs/</link>
       <pubDate>Tue, 02 May 2017 20:16:35 +0300</pubDate>
@@ -201,11 +379,65 @@
 &lt;li&gt;working with &lt;code&gt;https&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.2/https.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;ol&gt;
-&lt;li&gt;Node&amp;rsquo;s Common built-in modules&lt;/li&gt;
-&lt;li&gt;Working with streams&lt;/li&gt;
-&lt;li&gt;Cluster adn Child Process&lt;/li&gt;
-&lt;/ol&gt;</description>
+&lt;h2 id=&#34;requesting-http-https-data&#34;&gt;Requesting HTTP/HTTPS data&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;5 major classes of &lt;code&gt;http&lt;/code&gt; module&lt;/li&gt;
+&lt;li&gt;client &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.3/request.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;server &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.3/server.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;working-with-routes&#34;&gt;Working with Routes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;read requested url with &lt;code&gt;http.IncomingMessage&lt;/code&gt; &amp;lt;- &lt;code&gt;req.url&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;response pages with &lt;code&gt;http.ServerResponse&lt;/code&gt; &amp;lt;- &lt;code&gt;res.writeHeader()&lt;/code&gt; and &lt;code&gt;res.end()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;redirect response&lt;/li&gt;
+&lt;li&gt;response with JSON&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;404&lt;/code&gt; response&lt;/li&gt;
+&lt;li&gt;get all response in &lt;code&gt;http.STATUS_CODES&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.4/server.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;parsing-url-and-query-string&#34;&gt;Parsing URL and Query String&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;module &lt;code&gt;url&lt;/code&gt; with &lt;code&gt;url.parse(&#39;hrefString&#39;, ?parseQueryString)&lt;/code&gt; and &lt;code&gt;url.format()&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.5/url.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;querystring&lt;/code&gt; module, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.5/querystring.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;node-s-common-built-in-modules&#34;&gt;Node&amp;rsquo;s Common built-in modules&lt;/h1&gt;
+
+&lt;h2 id=&#34;working-with-operation-system&#34;&gt;Working with operation system&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;module &lt;code&gt;os&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/6.1/index.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;working-with-file-system&#34;&gt;Working with File System&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Task 1: script to fix files in directory. Each file has its data duplicated. Truncate each file in half. &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/tree/master/6.2/task1&#34;&gt;solution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Task 2: scripts to generate/clean old files in a directory. Anything older than 7 days should be deleted &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/tree/master/6.2/task2&#34;&gt;solution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Task 3: watch a directory and report events which were occurred: added, removed, changed &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/tree/master/6.2/task3&#34;&gt;solution&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;console-and-utilites&#34;&gt;Console and Utilites&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;console.Console&lt;/code&gt;, &lt;code&gt;util.debuglog&lt;/code&gt;, &lt;code&gt;util.deprecate&lt;/code&gt;, &lt;code&gt;util.inherits&lt;/code&gt; and ES6 &lt;code&gt;extends&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/6.3/index.js&#34;&gt;examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;debugging&#34;&gt;Debugging&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;node debug script.js&lt;/code&gt;, commands: &lt;code&gt;help&lt;/code&gt;, &lt;code&gt;restart&lt;/code&gt;, &lt;code&gt;sb(line)&lt;/code&gt;, &lt;code&gt;repl&lt;/code&gt;, &lt;code&gt;watch(var)&lt;/code&gt;, &lt;code&gt;list(lines)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;node --inspect --debug-brk script.js&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;working-with-streams&#34;&gt;Working with streams&lt;/h1&gt;
+
+&lt;h1 id=&#34;cluster-adn-child-process&#34;&gt;Cluster adn Child Process&lt;/h1&gt;</description>
     </item>
     
     <item>
@@ -3601,247 +3833,6 @@ this.$onInit = function(bindings) {
 &lt;li&gt;&lt;a href=&#34;https://toddmotto.com/angular-1-5-lifecycle-hooks#real-world-postlink&#34;&gt;Todd Motto&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.kristofdegrave.be/2016/07/component-lifecycle-docheck-angular-15x_22.html&#34;&gt;$doCheck&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.angularjs.org/guide/component&#34;&gt;Off docs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Moving from &#34;ngModel.$parsers&#34;/&#34;ng-if&#34; to &#34;ngModel.$validators&#34;/&#34;ngMessages&#34;</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Moving-from-ngModel-parsers-ng-if-to-ngModel-validators-ngMessages/</link>
-      <pubDate>Sat, 03 Sep 2016 22:24:46 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Moving-from-ngModel-parsers-ng-if-to-ngModel-validators-ngMessages/</guid>
-      <description>&lt;p&gt;Implementation custom Model validation is typically done by extending the built-in &lt;code&gt;$error&lt;/code&gt; object to &lt;code&gt;ngForm&lt;/code&gt; models.&lt;/p&gt;
-
-&lt;p&gt;Prior to AngularJS 1.3 custom validation was done by injecting a function into the &lt;code&gt;ngModel.$parsers&lt;/code&gt; array pipeline and manually setting validation states using &lt;code&gt;$setValidity(&#39;visa&#39;, true)&lt;/code&gt; if the Model value matched a Visa credit card expression format, for example.&lt;/p&gt;
-
-&lt;p&gt;AngularJS 1.3+ has the &lt;code&gt;$validators&lt;/code&gt; pipeline object, which requires no manual setting of validation states.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;rsquo;s take a look of old school way then we can shift to &lt;code&gt;ngModel.$validators&lt;/code&gt; technique.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;old-school-parsers&#34;&gt;Old school &amp;ldquo;$parsers&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;Let’s take some basic form markup, binding &lt;code&gt;name=&amp;quot;myForm&amp;quot;&lt;/code&gt; to the &lt;code&gt;&amp;lt;form&amp;gt;&lt;/code&gt; element so Angular takes control of our form and validation states. Next we’ll add an &lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt; with the name &lt;code&gt;creditCard&lt;/code&gt;, which builds up the Model Object internally so we can access &lt;code&gt;myForm.creditCard&lt;/code&gt; and handle our validation. I’ve added a &lt;code&gt;validate-visa&lt;/code&gt; attribute, which will serve as the Directive bound to the input, so we can capture the Model and validate it.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;form name=&amp;quot;myForm&amp;quot;&amp;gt;
-  &amp;lt;h3&amp;gt;Visa validation ($parsers)&amp;lt;/h3&amp;gt;
-  &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;creditCard&amp;quot; ng-model=&amp;quot;creditCardModel&amp;quot; validate-visa&amp;gt;
-  {{ myForm.creditCard | json }}
-&amp;lt;/form&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The result is something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;{
-  &amp;quot;$validators&amp;quot;: {},
-  &amp;quot;$asyncValidators&amp;quot;: {},
-  &amp;quot;$parsers&amp;quot;: [],
-  &amp;quot;$formatters&amp;quot;: [
-    null
-  ],
-  &amp;quot;$viewChangeListeners&amp;quot;: [],
-  &amp;quot;$untouched&amp;quot;: true,
-  &amp;quot;$touched&amp;quot;: false,
-  &amp;quot;$pristine&amp;quot;: true,
-  &amp;quot;$dirty&amp;quot;: false,
-  &amp;quot;$valid&amp;quot;: false,
-  &amp;quot;$invalid&amp;quot;: true,
-  &amp;quot;$error&amp;quot;: {},
-  &amp;quot;$name&amp;quot;: &amp;quot;creditCard&amp;quot;,
-  &amp;quot;$options&amp;quot;: null
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The generated &lt;code&gt;ngModel.creditCard.$error&lt;/code&gt; object it the place where we need to hook into. At this point we want conditionally toggle DOM based on the boolean value of this property.&lt;/p&gt;
-
-&lt;p&gt;If &lt;code&gt;myForm.creditCard.$error.visa&lt;/code&gt; is &lt;code&gt;true&lt;/code&gt; create the element, otherwise &lt;code&gt;false&lt;/code&gt; framework will remove it from DOM.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;form name=&amp;quot;myForm&amp;quot;&amp;gt;
-  &amp;lt;h3&amp;gt;Visa validation ($parsers)&amp;lt;/h3&amp;gt;
-  &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;creditCard&amp;quot; ng-model=&amp;quot;creditCardModel&amp;quot; validate-visa&amp;gt;
-  &amp;lt;p ng-if=&amp;quot;myForm.creditCard.$error.visa&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-    Not a valid Visa format
-  &amp;lt;/p&amp;gt;
-&amp;lt;/form&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now we need to write logic for &lt;code&gt;validate-visa&lt;/code&gt; directive to tie in to the &lt;code&gt;ngModel&lt;/code&gt; and set states. Typically it&amp;rsquo;s done by using &lt;code&gt;ngMode.$parsers&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// create a validateVisa function
-function validateVisa() {
-
-  // link function
-  function link($scope, $element, $attrs, $ctrl) {
-    // Some basic Visa Regular Expression
-    const VISA_REGEXP = /^4[0-9]{12}(?:[0-9]{3})?$/;
-    // visaParser function, passing in the current viewValue
-    function visaParser(viewValue) {
-      // a Boolean variable evaluated by RegExp.test(String)
-      const isValid = VISA_REGEXP.test(viewValue);
-      // Manually set the validity of the &amp;quot;visa&amp;quot; property on 
-      // the &amp;quot;$error&amp;quot; Object bound to the Model.
-      // Note: $ctrl is the fourth argument in the &amp;quot;link&amp;quot; function
-      // as we&#39;re requiring &amp;quot;ngModel&amp;quot; (see below in the return {} statement)
-      $ctrl.$setValidity(&#39;visa&#39;, isValid);
-      // return the &amp;quot;viewValue&amp;quot; if it&#39;s valid or undefined 
-      // so Angular doesn&#39;t set the value
-      return isValid ? viewValue : undefined; 
-    }
-    // push the &amp;quot;visaParser&amp;quot; function into the &amp;quot;$parsers&amp;quot; Array
-    $ctrl.$parsers.push(visaParser);
-  }
-
-  // export the Directive Object
-  // which requires the &amp;quot;ngModel&amp;quot; Controller and
-  // binds the above &amp;quot;link&amp;quot; function
-  return {
-    require: &#39;ngModel&#39;,
-    link: link
-  };
-  
-}
-
-angular
-  .module(&#39;app&#39;)
-  .directive(&#39;validateVisa&#39;, validateVisa);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The syntax of pushing a function into &lt;code&gt;$parsers&lt;/code&gt; array isn&amp;rsquo;t very slick and we also manually set the validation state passing in string or boolean, which seems a very procedural way to do a thing.&lt;/p&gt;
-
-&lt;p&gt;At this point &lt;code&gt;$error&lt;/code&gt; object which is bounded to the input looks like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;{
-  ...
-  &amp;quot;$error&amp;quot;: {
-    &amp;quot;visa&amp;quot;: true
-  },
-  ...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;new-school-validators&#34;&gt;New school &amp;ldquo;$validators&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;In AngularJS 1.3+ we&amp;rsquo;ve a much better way of doing things!&lt;/p&gt;
-
-&lt;p&gt;Just like before we &lt;code&gt;require: &#39;ngModel&#39;&lt;/code&gt; into directive but instead of using &lt;code&gt;$parsers&lt;/code&gt; we can bind a function straight to &lt;code&gt;$validators&lt;/code&gt; object:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function validateVisa() {
-
-  function link($scope, $element, $attrs, $ctrl) {
-    var VISA_REGEXP = /^4[0-9]{12}(?:[0-9]{3})?$/;
-    $ctrl.$validators.visa = function visaParser(modelValue, viewValue) {
-      var value = modelValue || viewValue;
-      return (VISA_REGEXP.test(value));
-    };
-  }
-
-  return {
-    require: &#39;ngModel&#39;,
-    link: link
-  };
-  
-}
-
-angular
-  .module(&#39;app&#39;)
-  .directive(&#39;validateVisa&#39;, validateVisa);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The above doesn’t even need annotating, any &lt;code&gt;$validator&lt;/code&gt; property we add becomes the property name bound to &lt;code&gt;$error&lt;/code&gt;, and we just need to return a boolean. Super simple and much clearer to read. Usage as the Directive from an HTML perspective is identical, it’s just the difference of how we implement the validation that changes&lt;/p&gt;
-
-&lt;h1 id=&#34;old-school-ng-if&#34;&gt;Old school &amp;ldquo;ng-if&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;Using &lt;code&gt;ng-if&lt;/code&gt; is super simple, we tell to conditionally swap element based on property state bound to the &lt;code&gt;$error&lt;/code&gt; object:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;form name=&amp;quot;myForm&amp;quot;&amp;gt;
-  &amp;lt;h3&amp;gt;Visa validation (ngIf)&amp;lt;/h3&amp;gt;
-  &amp;lt;input 
-    type=&amp;quot;text&amp;quot; 
-    name=&amp;quot;creditCard&amp;quot; 
-    ng-model=&amp;quot;creditCardModel&amp;quot; 
-    required=&amp;quot;&amp;quot;
-    ng-minlength=&amp;quot;13&amp;quot;
-    ng-maxlength=&amp;quot;16&amp;quot;
-    validate-visa&amp;gt;
-  &amp;lt;p ng-if=&amp;quot;myForm.creditCard.$error.required&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-    This field is required
-  &amp;lt;/p&amp;gt;
-  &amp;lt;p ng-if=&amp;quot;myForm.creditCard.$error.visa&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-    Not a valid Visa format
-  &amp;lt;/p&amp;gt;
-  &amp;lt;p ng-if=&amp;quot;myForm.creditCard.$error.minlength&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-    Minimum of 13 characters
-  &amp;lt;/p&amp;gt;
-  &amp;lt;p ng-if=&amp;quot;myForm.creditCard.$error.maxlength&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-    Maximum of 16 characters
-  &amp;lt;/p&amp;gt;
-&amp;lt;/form&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;It&amp;rsquo;s a very manual and repetitive process dealing with each &lt;code&gt;$error&lt;/code&gt; property.&lt;/p&gt;
-
-&lt;h1 id=&#34;new-school-ngmassages&#34;&gt;New school &amp;ldquo;ngMassages&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;Unlike &lt;code&gt;ng-if&lt;/code&gt; approach we&amp;rsquo;re passing &lt;code&gt;myForm.creditCard.$error&lt;/code&gt; only once into &lt;code&gt;ngMassages&lt;/code&gt;. The directive will look of &lt;code&gt;$error&lt;/code&gt; object and the corresponding massage will be rendered:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;form name=&amp;quot;myForm&amp;quot;&amp;gt;
-  &amp;lt;h3&amp;gt;Visa validation (ngMessages)&amp;lt;/h3&amp;gt;
-  &amp;lt;input 
-    type=&amp;quot;text&amp;quot; 
-    name=&amp;quot;creditCard&amp;quot; 
-    ng-model=&amp;quot;creditCardModel&amp;quot; 
-    required=&amp;quot;&amp;quot;
-    ng-minlength=&amp;quot;13&amp;quot;
-    ng-maxlength=&amp;quot;16&amp;quot;
-    validate-visa&amp;gt;
-  &amp;lt;div ng-messages=&amp;quot;myForm.creditCard.$error&amp;quot;&amp;gt;
-    &amp;lt;p ng-message=&amp;quot;required&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-      This field is required
-    &amp;lt;/p&amp;gt;
-    &amp;lt;p ng-message=&amp;quot;visa&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-      Not a valid Visa format
-    &amp;lt;/p&amp;gt;
-    &amp;lt;p ng-message=&amp;quot;minlength&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-      Minimum of 13 characters
-    &amp;lt;/p&amp;gt;
-    &amp;lt;p ng-message=&amp;quot;maxlength&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-      Maximum of 16 characters
-    &amp;lt;/p&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/form&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;For reusable/generic validation states we can use &lt;code&gt;ngMassagesIncule&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script type=&amp;quot;text/ng-template&amp;quot; id=&amp;quot;generic-messages&amp;quot;&amp;gt;
-  &amp;lt;div ng-message=&amp;quot;required&amp;quot;&amp;gt;This field is required&amp;lt;/div&amp;gt;
-  &amp;lt;div ng-message=&amp;quot;minlength&amp;quot;&amp;gt;This field is too short&amp;lt;/div&amp;gt;
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And ramp up it with an existing &lt;code&gt;ngMassages&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div ng-messages=&amp;quot;myForm.creditCard.$error&amp;quot;&amp;gt;
-  &amp;lt;div ng-messages-include=&amp;quot;generic-messages&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-  &amp;lt;p ng-message=&amp;quot;visa&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-    Not a valid Visa format
-  &amp;lt;/p&amp;gt;
-  &amp;lt;p ng-message=&amp;quot;minlength&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-    Minimum of 13 characters
-  &amp;lt;/p&amp;gt;
-  &amp;lt;p ng-message=&amp;quot;maxlength&amp;quot; class=&amp;quot;invalid&amp;quot;&amp;gt;
-    Maximum of 16 characters
-  &amp;lt;/p&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;There are some other powerful features well worth checking out inside ngMessages, see the &lt;a href=&#34;https://docs.angularjs.org/api/ngMessages&#34;&gt;documentation&lt;/a&gt; for more.&lt;/p&gt;
-
-&lt;p&gt;Save my day:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://toddmotto.com/moving-from-ng-model-parsers-to-ng-model-validates-ng-messages/&#34;&gt;Todd Motto&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     

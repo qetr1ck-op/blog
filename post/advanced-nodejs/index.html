@@ -43,6 +43,8 @@
         <h3 data-open="last-posts">OP blog - Most recent posts</h3>
         <ul>
             
+            <li><a href="https://qetr1ck-op.github.io/blog/post/asynchronous-javascript-with-async-await/">Asynchronous Javascript with async/await</a></li>
+            
             <li><a href="https://qetr1ck-op.github.io/blog/post/advanced-nodejs/">advanced nodejs</a></li>
             
             <li><a href="https://qetr1ck-op.github.io/blog/post/mastering-flux-and-redux/">Mastering Flux and Redux</a></li>
@@ -50,8 +52,6 @@
             <li><a href="https://qetr1ck-op.github.io/blog/post/kata-salesmans-travel/">Kata: Salesman&#39;s Travel</a></li>
             
             <li><a href="https://qetr1ck-op.github.io/blog/post/npm-scrips-as-your-build-tool/">npm scrips as your build tool</a></li>
-            
-            <li><a href="https://qetr1ck-op.github.io/blog/post/prettier-as-a-formating-tool-for-JS/">Prettier as a formating tool for JS</a></li>
             
         </ul>
     </div>
@@ -156,7 +156,19 @@
 <ul>
 <li><a href="#the-basic-streaming-http-server">The basic streaming HTTP server</a></li>
 <li><a href="#working-with-https">Working with HTTPS</a></li>
+<li><a href="#requesting-http-https-data">Requesting HTTP/HTTPS data</a></li>
+<li><a href="#working-with-routes">Working with Routes</a></li>
+<li><a href="#parsing-url-and-query-string">Parsing URL and Query String</a></li>
 </ul></li>
+<li><a href="#node-s-common-built-in-modules">Node&rsquo;s Common built-in modules</a>
+<ul>
+<li><a href="#working-with-operation-system">Working with operation system</a></li>
+<li><a href="#working-with-file-system">Working with File System</a></li>
+<li><a href="#console-and-utilites">Console and Utilites</a></li>
+<li><a href="#debugging">Debugging</a></li>
+</ul></li>
+<li><a href="#working-with-streams">Working with streams</a></li>
+<li><a href="#cluster-adn-child-process">Cluster adn Child Process</a></li>
 </ul>
 </nav>
     <p>This course will teach you the core Node.js concepts and API modules from simple utility modules all the way to streams and clusters.</p>
@@ -346,11 +358,65 @@
 <li>working with <code>https</code>, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.2/https.js">example</a></li>
 </ul>
 
-<ol>
-<li>Node&rsquo;s Common built-in modules</li>
-<li>Working with streams</li>
-<li>Cluster adn Child Process</li>
-</ol>
+<h2 id="requesting-http-https-data">Requesting HTTP/HTTPS data</h2>
+
+<ul>
+<li>5 major classes of <code>http</code> module</li>
+<li>client <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.3/request.js">example</a></li>
+<li>server <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.3/server.js">example</a></li>
+</ul>
+
+<h2 id="working-with-routes">Working with Routes</h2>
+
+<ul>
+<li>read requested url with <code>http.IncomingMessage</code> &lt;- <code>req.url</code></li>
+<li>response pages with <code>http.ServerResponse</code> &lt;- <code>res.writeHeader()</code> and <code>res.end()</code></li>
+<li>redirect response</li>
+<li>response with JSON</li>
+<li><code>404</code> response</li>
+<li>get all response in <code>http.STATUS_CODES</code></li>
+<li><a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.4/server.js">example</a></li>
+</ul>
+
+<h2 id="parsing-url-and-query-string">Parsing URL and Query String</h2>
+
+<ul>
+<li>module <code>url</code> with <code>url.parse('hrefString', ?parseQueryString)</code> and <code>url.format()</code>, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.5/url.js">example</a></li>
+<li><code>querystring</code> module, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.5/querystring.js">example</a></li>
+</ul>
+
+<h1 id="node-s-common-built-in-modules">Node&rsquo;s Common built-in modules</h1>
+
+<h2 id="working-with-operation-system">Working with operation system</h2>
+
+<ul>
+<li>module <code>os</code>, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/6.1/index.js">example</a></li>
+</ul>
+
+<h2 id="working-with-file-system">Working with File System</h2>
+
+<ul>
+<li>Task 1: script to fix files in directory. Each file has its data duplicated. Truncate each file in half. <a href="https://github.com/qetr1ck-op/advanced-nodejs/tree/master/6.2/task1">solution</a></li>
+<li>Task 2: scripts to generate/clean old files in a directory. Anything older than 7 days should be deleted <a href="https://github.com/qetr1ck-op/advanced-nodejs/tree/master/6.2/task2">solution</a></li>
+<li>Task 3: watch a directory and report events which were occurred: added, removed, changed <a href="https://github.com/qetr1ck-op/advanced-nodejs/tree/master/6.2/task3">solution</a></li>
+</ul>
+
+<h2 id="console-and-utilites">Console and Utilites</h2>
+
+<ul>
+<li><code>console.Console</code>, <code>util.debuglog</code>, <code>util.deprecate</code>, <code>util.inherits</code> and ES6 <code>extends</code>, <a href="https://github.com/qetr1ck-op/advanced-nodejs/blob/master/6.3/index.js">examples</a></li>
+</ul>
+
+<h2 id="debugging">Debugging</h2>
+
+<ul>
+<li><code>node debug script.js</code>, commands: <code>help</code>, <code>restart</code>, <code>sb(line)</code>, <code>repl</code>, <code>watch(var)</code>, <code>list(lines)</code></li>
+<li><code>node --inspect --debug-brk script.js</code></li>
+</ul>
+
+<h1 id="working-with-streams">Working with streams</h1>
+
+<h1 id="cluster-adn-child-process">Cluster adn Child Process</h1>
 </article>
 
 

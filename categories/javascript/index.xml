@@ -9,6 +9,184 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Asynchronous Javascript with async/await</title>
+      <link>https://qetr1ck-op.github.io/blog/post/asynchronous-javascript-with-async-await/</link>
+      <pubDate>Tue, 09 May 2017 21:57:55 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/asynchronous-javascript-with-async-await/</guid>
+      <description>&lt;p&gt;ES2017 async and await keywords to write asynchronous code that is more readable and easier to follow than equivalent code based on long promise chains or deeply nested callbacks.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;The await operator takes a promise and then pauses the function execution until that promise is settled which allows for an async function to read like sequential synchronous code.&lt;/p&gt;
+
+&lt;h1 id=&#34;write-an-asynchronous-function-with-async-await&#34;&gt;Write an Asynchronous Function with async/await&lt;/h1&gt;
+
+&lt;p&gt;With traditional chain of promises:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+
+function showGitHubUser(userName) {
+  fetch(`http://api.github.com/users/${userName}`)
+    .then(data =&amp;gt; data.json())
+    .then(user =&amp;gt; {
+      const { name, location } = user
+
+      console.log(name, location)
+    })
+}
+
+showGitHubUser(&#39;qetr1ck-op&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Rewrite to &lt;code&gt;async/await&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+
+async function showGitHubUser(userName) {
+  const data = await fetch(`http://api.github.com/users/${userName}`)
+  const user = await data.json()
+  const { name, location } = user
+
+  console.log(name, location)
+}
+
+showGitHubUser(&#39;qetr1ck-op&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;call-an-asynchronous-function-in-a-promise-chain&#34;&gt;Call an Asynchronous function in a Promise chain&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+
+async function showGitHubUser(userName) {
+  const data = await fetch(`http://api.github.com/users/${userName}`)
+  return await data.json()
+}
+
+showGitHubUser(&#39;qetr1ck-op&#39;).then(user =&amp;gt; {
+  const { name, location } = user
+
+  console.log(name, location)
+})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;convert-any-function-into-asynchronous-function&#34;&gt;Convert any function into Asynchronous Function&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+
+class GitHubApiClient {
+  // the same syntax with objects
+  async fetchUser(handle) {
+    const url = `https://api.github.com/users/${handle}`
+    const response = await fetch(url)
+    return await response.json()
+  }
+}
+
+// classic iife
+;(async () =&amp;gt; {
+  const client = new GitHubApiClient()
+  const user = await client.fetchUser(&#39;qetr1ck-op&#39;)
+  console.log(user.name)
+  console.log(user.location)
+})()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;handle-errors-in-asynchronous-function&#34;&gt;Handle Errors in Asynchronous Function&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+
+async function fetchGitHubUser(userName) {
+  const response = await fetch(`http://api.github.com/users/${userName}`)
+
+  if (!response.ok)
+    throw Error(response.statusText)
+
+  return await response.json()
+}
+
+(async () =&amp;gt; {
+  try {
+    const { name, location } = await fetchGitHubUser(&#39;unknownuserstring&#39;)
+    console.log(name, location)
+  } catch(e) {
+    console.error(e)
+  }
+})()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;await-multiple-promises-sequentially-or-concurrently&#34;&gt;Await multiple promises sequentially or concurrently&lt;/h1&gt;
+
+&lt;p&gt;You can await multiple promises either sequentially or concurrently, depending on where you put the await operators.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+const measureTime = require(&#39;measure-time&#39;)
+
+async function fetchGitHubUser(endpoint) {
+  const response = await fetch(`http://api.github.com${endpoint}`)
+
+  if (!response.ok) throw Error(response.statusText)
+
+  return await response.json()
+}
+
+;(async () =&amp;gt; {
+  // concurrent
+  const t1 = measureTime()
+  const user = await fetchGitHubUser(&#39;/users/qetr1ck-op&#39;)
+  const repos = await fetchGitHubUser(&#39;/users/qetr1ck-op/repos&#39;)
+
+  console.log(`concurrent: ${t1().millisecondsTotal}`)
+  console.log(user.name, `repos: ${repos.length}`)
+})()
+
+;(async () =&amp;gt; {
+  // parallel
+  const t1 = measureTime()
+  const userPromise = fetchGitHubUser(&#39;/users/qetr1ck-op&#39;)
+  const reposPromise = fetchGitHubUser(&#39;/users/qetr1ck-op/repos&#39;)
+
+  const user = await userPromise
+  const repos = await reposPromise
+
+  console.log(`parallel: ${t1().millisecondsTotal}`)
+  console.log(user.name, `repos: ${repos.length}`)
+})()
+
+
+;(async () =&amp;gt; {
+  // parallel vol.2
+  const t1 = measureTime()
+  const [ user, repos ] = await Promise.all([
+      fetchGitHubUser(&#39;/users/qetr1ck-op&#39;),
+      fetchGitHubUser(&#39;/users/qetr1ck-op/repos&#39;)
+  ])
+
+  console.log(user.name, `repos: ${repos.length}`)
+})()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;use-the-await-operator-with-any-thenable&#34;&gt;Use the &lt;code&gt;await&lt;/code&gt; Operator with Any Thenable&lt;/h1&gt;
+
+&lt;p&gt;The await operator is not restricted to ES2015 promises. It can be used to await any thenable — that is, any object with a .then() method.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const Bluebird = require(&amp;quot;bluebird&amp;quot;);
+
+async function main() {
+    console.log(&amp;quot;Working ...&amp;quot;);
+    await Bluebird.delay(2000);
+    console.log(&amp;quot;Done.&amp;quot;);
+}
+
+main();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;iterate-asynchronously-with-the-for-await-of-loop&#34;&gt;Iterate Asynchronously with the &lt;code&gt;for-await-of&lt;/code&gt; Loop&lt;/h1&gt;
+
+&lt;p&gt;An &lt;a href=&#34;https://github.com/mariusschulz/egghead-async-await/tree/master/lesson-8&#34;&gt;example&lt;/a&gt; with &lt;code&gt;ts&lt;/code&gt; configuration&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>advanced nodejs</title>
       <link>https://qetr1ck-op.github.io/blog/post/advanced-nodejs/</link>
       <pubDate>Tue, 02 May 2017 20:16:35 +0300</pubDate>
@@ -201,11 +379,65 @@
 &lt;li&gt;working with &lt;code&gt;https&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.2/https.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;ol&gt;
-&lt;li&gt;Node&amp;rsquo;s Common built-in modules&lt;/li&gt;
-&lt;li&gt;Working with streams&lt;/li&gt;
-&lt;li&gt;Cluster adn Child Process&lt;/li&gt;
-&lt;/ol&gt;</description>
+&lt;h2 id=&#34;requesting-http-https-data&#34;&gt;Requesting HTTP/HTTPS data&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;5 major classes of &lt;code&gt;http&lt;/code&gt; module&lt;/li&gt;
+&lt;li&gt;client &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.3/request.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;server &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.3/server.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;working-with-routes&#34;&gt;Working with Routes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;read requested url with &lt;code&gt;http.IncomingMessage&lt;/code&gt; &amp;lt;- &lt;code&gt;req.url&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;response pages with &lt;code&gt;http.ServerResponse&lt;/code&gt; &amp;lt;- &lt;code&gt;res.writeHeader()&lt;/code&gt; and &lt;code&gt;res.end()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;redirect response&lt;/li&gt;
+&lt;li&gt;response with JSON&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;404&lt;/code&gt; response&lt;/li&gt;
+&lt;li&gt;get all response in &lt;code&gt;http.STATUS_CODES&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.4/server.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;parsing-url-and-query-string&#34;&gt;Parsing URL and Query String&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;module &lt;code&gt;url&lt;/code&gt; with &lt;code&gt;url.parse(&#39;hrefString&#39;, ?parseQueryString)&lt;/code&gt; and &lt;code&gt;url.format()&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.5/url.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;querystring&lt;/code&gt; module, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.5/querystring.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;node-s-common-built-in-modules&#34;&gt;Node&amp;rsquo;s Common built-in modules&lt;/h1&gt;
+
+&lt;h2 id=&#34;working-with-operation-system&#34;&gt;Working with operation system&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;module &lt;code&gt;os&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/6.1/index.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;working-with-file-system&#34;&gt;Working with File System&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Task 1: script to fix files in directory. Each file has its data duplicated. Truncate each file in half. &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/tree/master/6.2/task1&#34;&gt;solution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Task 2: scripts to generate/clean old files in a directory. Anything older than 7 days should be deleted &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/tree/master/6.2/task2&#34;&gt;solution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Task 3: watch a directory and report events which were occurred: added, removed, changed &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/tree/master/6.2/task3&#34;&gt;solution&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;console-and-utilites&#34;&gt;Console and Utilites&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;console.Console&lt;/code&gt;, &lt;code&gt;util.debuglog&lt;/code&gt;, &lt;code&gt;util.deprecate&lt;/code&gt;, &lt;code&gt;util.inherits&lt;/code&gt; and ES6 &lt;code&gt;extends&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/6.3/index.js&#34;&gt;examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;debugging&#34;&gt;Debugging&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;node debug script.js&lt;/code&gt;, commands: &lt;code&gt;help&lt;/code&gt;, &lt;code&gt;restart&lt;/code&gt;, &lt;code&gt;sb(line)&lt;/code&gt;, &lt;code&gt;repl&lt;/code&gt;, &lt;code&gt;watch(var)&lt;/code&gt;, &lt;code&gt;list(lines)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;node --inspect --debug-brk script.js&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;working-with-streams&#34;&gt;Working with streams&lt;/h1&gt;
+
+&lt;h1 id=&#34;cluster-adn-child-process&#34;&gt;Cluster adn Child Process&lt;/h1&gt;</description>
     </item>
     
     <item>
@@ -3412,36 +3644,6 @@ console.log(&#39;loading...&#39;);
 &lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/gebidesign/NG6-starter-sass#ng6&#34;&gt;Github repo&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Start new project on Angular ^1.5</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Start-new-project-on-Angular-1-5/</link>
-      <pubDate>Sun, 18 Sep 2016 18:42:49 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Start-new-project-on-Angular-1-5/</guid>
-      <description>&lt;p&gt;Great series of recommendation how/why to start new &amp;ldquo;NG2 ready&amp;rdquo; Angular 1.5 app with architecture of component-oriented approach.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;how-to-do-it-right&#34;&gt;How to do it right&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://velesin.io/2016/04/14/starting-a-new-app-in-angular-1-5/&#34;&gt;Starting a new app in Angular 1.5, does it make sense?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://velesin.io/2016/04/26/angular-1-5-app-as-a-tree-of-components/&#34;&gt;Angular 1.5 app as tree of components&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://velesin.io/2016/05/18/communication-between-angular-1-5-components/&#34;&gt;Communication between Angular 1.5 components and with API&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://velesin.io/2016/05/31/angular-1-5-fractal-project-structure/&#34;&gt;A flexible Angular 1.5 project structure (the &amp;ldquo;fractal&amp;rdquo; approach)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://velesin.io/2016/07/12/angular-1-5-project-in-es6-es2015/&#34;&gt;Writing Angular 1.5 in ES6&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://velesin.io/2016/08/23/unit-testing-angular-1-5-components/&#34;&gt;Unit testing Angular 1.5 components&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;style-guides-for-app&#34;&gt;Style guides for app&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/toddmotto/angular-styleguide&#34;&gt;AngularJS styleguide from Todd Motto&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;generators&#34;&gt;Generators&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/Swiip/generator-gulp-angular/blob/master/docs/usage.md#features-included-in-the-gulpfile&#34;&gt;Yo gulp-angular generator&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -6,8 +6,186 @@
     <description>Recent content on OP blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 02 May 2017 20:16:35 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 09 May 2017 21:57:55 +0300</lastBuildDate>
     <atom:link href="https://qetr1ck-op.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Asynchronous Javascript with async/await</title>
+      <link>https://qetr1ck-op.github.io/blog/post/asynchronous-javascript-with-async-await/</link>
+      <pubDate>Tue, 09 May 2017 21:57:55 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/asynchronous-javascript-with-async-await/</guid>
+      <description>&lt;p&gt;ES2017 async and await keywords to write asynchronous code that is more readable and easier to follow than equivalent code based on long promise chains or deeply nested callbacks.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;The await operator takes a promise and then pauses the function execution until that promise is settled which allows for an async function to read like sequential synchronous code.&lt;/p&gt;
+
+&lt;h1 id=&#34;write-an-asynchronous-function-with-async-await&#34;&gt;Write an Asynchronous Function with async/await&lt;/h1&gt;
+
+&lt;p&gt;With traditional chain of promises:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+
+function showGitHubUser(userName) {
+  fetch(`http://api.github.com/users/${userName}`)
+    .then(data =&amp;gt; data.json())
+    .then(user =&amp;gt; {
+      const { name, location } = user
+
+      console.log(name, location)
+    })
+}
+
+showGitHubUser(&#39;qetr1ck-op&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Rewrite to &lt;code&gt;async/await&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+
+async function showGitHubUser(userName) {
+  const data = await fetch(`http://api.github.com/users/${userName}`)
+  const user = await data.json()
+  const { name, location } = user
+
+  console.log(name, location)
+}
+
+showGitHubUser(&#39;qetr1ck-op&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;call-an-asynchronous-function-in-a-promise-chain&#34;&gt;Call an Asynchronous function in a Promise chain&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+
+async function showGitHubUser(userName) {
+  const data = await fetch(`http://api.github.com/users/${userName}`)
+  return await data.json()
+}
+
+showGitHubUser(&#39;qetr1ck-op&#39;).then(user =&amp;gt; {
+  const { name, location } = user
+
+  console.log(name, location)
+})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;convert-any-function-into-asynchronous-function&#34;&gt;Convert any function into Asynchronous Function&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+
+class GitHubApiClient {
+  // the same syntax with objects
+  async fetchUser(handle) {
+    const url = `https://api.github.com/users/${handle}`
+    const response = await fetch(url)
+    return await response.json()
+  }
+}
+
+// classic iife
+;(async () =&amp;gt; {
+  const client = new GitHubApiClient()
+  const user = await client.fetchUser(&#39;qetr1ck-op&#39;)
+  console.log(user.name)
+  console.log(user.location)
+})()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;handle-errors-in-asynchronous-function&#34;&gt;Handle Errors in Asynchronous Function&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+
+async function fetchGitHubUser(userName) {
+  const response = await fetch(`http://api.github.com/users/${userName}`)
+
+  if (!response.ok)
+    throw Error(response.statusText)
+
+  return await response.json()
+}
+
+(async () =&amp;gt; {
+  try {
+    const { name, location } = await fetchGitHubUser(&#39;unknownuserstring&#39;)
+    console.log(name, location)
+  } catch(e) {
+    console.error(e)
+  }
+})()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;await-multiple-promises-sequentially-or-concurrently&#34;&gt;Await multiple promises sequentially or concurrently&lt;/h1&gt;
+
+&lt;p&gt;You can await multiple promises either sequentially or concurrently, depending on where you put the await operators.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const fetch = require(&#39;node-fetch&#39;)
+const measureTime = require(&#39;measure-time&#39;)
+
+async function fetchGitHubUser(endpoint) {
+  const response = await fetch(`http://api.github.com${endpoint}`)
+
+  if (!response.ok) throw Error(response.statusText)
+
+  return await response.json()
+}
+
+;(async () =&amp;gt; {
+  // concurrent
+  const t1 = measureTime()
+  const user = await fetchGitHubUser(&#39;/users/qetr1ck-op&#39;)
+  const repos = await fetchGitHubUser(&#39;/users/qetr1ck-op/repos&#39;)
+
+  console.log(`concurrent: ${t1().millisecondsTotal}`)
+  console.log(user.name, `repos: ${repos.length}`)
+})()
+
+;(async () =&amp;gt; {
+  // parallel
+  const t1 = measureTime()
+  const userPromise = fetchGitHubUser(&#39;/users/qetr1ck-op&#39;)
+  const reposPromise = fetchGitHubUser(&#39;/users/qetr1ck-op/repos&#39;)
+
+  const user = await userPromise
+  const repos = await reposPromise
+
+  console.log(`parallel: ${t1().millisecondsTotal}`)
+  console.log(user.name, `repos: ${repos.length}`)
+})()
+
+
+;(async () =&amp;gt; {
+  // parallel vol.2
+  const t1 = measureTime()
+  const [ user, repos ] = await Promise.all([
+      fetchGitHubUser(&#39;/users/qetr1ck-op&#39;),
+      fetchGitHubUser(&#39;/users/qetr1ck-op/repos&#39;)
+  ])
+
+  console.log(user.name, `repos: ${repos.length}`)
+})()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;use-the-await-operator-with-any-thenable&#34;&gt;Use the &lt;code&gt;await&lt;/code&gt; Operator with Any Thenable&lt;/h1&gt;
+
+&lt;p&gt;The await operator is not restricted to ES2015 promises. It can be used to await any thenable — that is, any object with a .then() method.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const Bluebird = require(&amp;quot;bluebird&amp;quot;);
+
+async function main() {
+    console.log(&amp;quot;Working ...&amp;quot;);
+    await Bluebird.delay(2000);
+    console.log(&amp;quot;Done.&amp;quot;);
+}
+
+main();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;iterate-asynchronously-with-the-for-await-of-loop&#34;&gt;Iterate Asynchronously with the &lt;code&gt;for-await-of&lt;/code&gt; Loop&lt;/h1&gt;
+
+&lt;p&gt;An &lt;a href=&#34;https://github.com/mariusschulz/egghead-async-await/tree/master/lesson-8&#34;&gt;example&lt;/a&gt; with &lt;code&gt;ts&lt;/code&gt; configuration&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>advanced nodejs</title>
@@ -202,11 +380,65 @@
 &lt;li&gt;working with &lt;code&gt;https&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.2/https.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;ol&gt;
-&lt;li&gt;Node&amp;rsquo;s Common built-in modules&lt;/li&gt;
-&lt;li&gt;Working with streams&lt;/li&gt;
-&lt;li&gt;Cluster adn Child Process&lt;/li&gt;
-&lt;/ol&gt;</description>
+&lt;h2 id=&#34;requesting-http-https-data&#34;&gt;Requesting HTTP/HTTPS data&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;5 major classes of &lt;code&gt;http&lt;/code&gt; module&lt;/li&gt;
+&lt;li&gt;client &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.3/request.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;server &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.3/server.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;working-with-routes&#34;&gt;Working with Routes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;read requested url with &lt;code&gt;http.IncomingMessage&lt;/code&gt; &amp;lt;- &lt;code&gt;req.url&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;response pages with &lt;code&gt;http.ServerResponse&lt;/code&gt; &amp;lt;- &lt;code&gt;res.writeHeader()&lt;/code&gt; and &lt;code&gt;res.end()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;redirect response&lt;/li&gt;
+&lt;li&gt;response with JSON&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;404&lt;/code&gt; response&lt;/li&gt;
+&lt;li&gt;get all response in &lt;code&gt;http.STATUS_CODES&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.4/server.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;parsing-url-and-query-string&#34;&gt;Parsing URL and Query String&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;module &lt;code&gt;url&lt;/code&gt; with &lt;code&gt;url.parse(&#39;hrefString&#39;, ?parseQueryString)&lt;/code&gt; and &lt;code&gt;url.format()&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.5/url.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;querystring&lt;/code&gt; module, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/5.5/querystring.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;node-s-common-built-in-modules&#34;&gt;Node&amp;rsquo;s Common built-in modules&lt;/h1&gt;
+
+&lt;h2 id=&#34;working-with-operation-system&#34;&gt;Working with operation system&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;module &lt;code&gt;os&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/6.1/index.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;working-with-file-system&#34;&gt;Working with File System&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Task 1: script to fix files in directory. Each file has its data duplicated. Truncate each file in half. &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/tree/master/6.2/task1&#34;&gt;solution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Task 2: scripts to generate/clean old files in a directory. Anything older than 7 days should be deleted &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/tree/master/6.2/task2&#34;&gt;solution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Task 3: watch a directory and report events which were occurred: added, removed, changed &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/tree/master/6.2/task3&#34;&gt;solution&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;console-and-utilites&#34;&gt;Console and Utilites&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;console.Console&lt;/code&gt;, &lt;code&gt;util.debuglog&lt;/code&gt;, &lt;code&gt;util.deprecate&lt;/code&gt;, &lt;code&gt;util.inherits&lt;/code&gt; and ES6 &lt;code&gt;extends&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/6.3/index.js&#34;&gt;examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;debugging&#34;&gt;Debugging&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;node debug script.js&lt;/code&gt;, commands: &lt;code&gt;help&lt;/code&gt;, &lt;code&gt;restart&lt;/code&gt;, &lt;code&gt;sb(line)&lt;/code&gt;, &lt;code&gt;repl&lt;/code&gt;, &lt;code&gt;watch(var)&lt;/code&gt;, &lt;code&gt;list(lines)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;node --inspect --debug-brk script.js&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;working-with-streams&#34;&gt;Working with streams&lt;/h1&gt;
+
+&lt;h1 id=&#34;cluster-adn-child-process&#34;&gt;Cluster adn Child Process&lt;/h1&gt;</description>
     </item>
     
     <item>
@@ -1129,141 +1361,6 @@ There are implemented all of the RESTful verbs to get, add, and update data with
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://app.pluralsight.com/library/courses/node-js-express-rest-web-services/description&#34;&gt;RESTful Web Services with Node.js and Express&lt;/a&gt; by Jonathan Mills on pluralsight&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Git reset, checkout and revert</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Reset-Checkout-and-Revert/</link>
-      <pubDate>Sun, 06 Nov 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Reset-Checkout-and-Revert/</guid>
-      <description>&lt;p&gt;The &lt;code&gt;git reset&lt;/code&gt;, &lt;code&gt;git checkout&lt;/code&gt; and &lt;code&gt;git revert&lt;/code&gt; let you to undo changes in repository, and the first two can be use to manipulate either commits or individual files.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;The image bellow will help to think about each command in terms of their effect on the three main components of Git workflow. Keep this components always in mind when you&amp;rsquo;re working with this commands.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;./images/posts/Reset-Checkout-and-Revert/git-main-components.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;reset&#34;&gt;Reset&lt;/h1&gt;
-
-&lt;p&gt;On the commit-level, resetting is way to move a tip of a branch to a different commit. This can be used to remove commits from the current branch. Following command moves branch backwards by two commits:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout hotfix
-git reset HEAD~2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In other words, you&amp;rsquo;re saying that you want to throw away this commits:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;./images/posts/Reset-Checkout-and-Revert/resetting-branch.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This usage of &lt;code&gt;git reset&lt;/code&gt; is a simple way to undo changes that haven&amp;rsquo;t been shared with any one else. I use this command when I&amp;rsquo;ve started working on feature find myself thinking that, &amp;ldquo;Oh crap, what am I doing? I should start over&amp;rdquo;.&lt;/p&gt;
-
-&lt;p&gt;There are following flags:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;--soft&lt;/code&gt; - the &lt;code&gt;stage&lt;/code&gt; and &lt;code&gt;working&lt;/code&gt; areas are not altered in this way&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--mixed&lt;/code&gt; - only the &lt;code&gt;staged&lt;/code&gt; area is affected. This is option be default&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--hard&lt;/code&gt; - the &lt;code&gt;stage&lt;/code&gt; and &lt;code&gt;working&lt;/code&gt; are both updated to match the specific commit&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;It&amp;rsquo;s easer to thing of these modes by their scope:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;./images/posts/Reset-Checkout-and-Revert/git-reset-scopes.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The command is often used with &lt;code&gt;HEAD&lt;/code&gt; or with serious of commits hash as the parameter:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# has effect on unstaging all changes, but leaves them in a working directory
-git reset --mixed HEAD
-
-# completely throw away all changes
-git reset --hard HEAD
-
-# reset a specif commit
-git reset --hard &amp;lt;commit-hash&amp;gt;
-
-# reset a series using ancestor notation
-git reset dev~5..dev
-
-# reset a series using commit hashes
-git reset --no-edit ffffffff..12345678
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Be careful when passing other than &lt;code&gt;HEAD&lt;/code&gt;, since this re-writes the current branch history&lt;/p&gt;
-
-&lt;h1 id=&#34;checkout&#34;&gt;Checkout&lt;/h1&gt;
-
-&lt;p&gt;When passed a branch name, it lets you to switch between branches:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout hotfix
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Internally it moves &lt;code&gt;HEAD&lt;/code&gt; to a different branch updates the &lt;code&gt;working directory&lt;/code&gt; to match. Since this has a potential to overwrite local changes, Git forces you to commit or stash any changes in a working directory. Unlike &lt;code&gt;git reset&lt;/code&gt; it doesn&amp;rsquo;t move any branches around.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;./images/posts/Reset-Checkout-and-Revert/git-checkout.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I can also check arbitrary commits by passing the commit reference of the branch:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout HEAD~2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;./images/posts/Reset-Checkout-and-Revert/git-checkout-by-reference.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This is useful for quickly inspecting an old version of your project. However, since there are no reference to the current &lt;code&gt;HEAD&lt;/code&gt;, this puts you in a &lt;code&gt;detached HEAD state&lt;/code&gt;. This can be dangerous if you start adding new commits, because there won&amp;rsquo;t be a way to get back them after you switch to an another branch. For this reason, you should always create a new branch before adding commits to a &lt;code&gt;detached HEAD&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;revert&#34;&gt;Revert&lt;/h1&gt;
-
-&lt;p&gt;Reverting undoes a commit by creating a new commit. This is a safe way to undo changes, as it has no change of re-writing the commit history. For example, the following command will figure out the changes in the 2nd to last commit, create a new commit to undoing these changes:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout hotfix
-git revert HEAD~2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;That can be visualized as following:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;./images/posts/Reset-Checkout-and-Revert/git-revert.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Contrast this with &lt;code&gt;git reset&lt;/code&gt;, which &lt;strong&gt;does&lt;/strong&gt; alter the existing commit history. For this reason &lt;code&gt;git revert&lt;/code&gt; should be used to undo changes on a public branch and &lt;code&gt;git reset&lt;/code&gt; should be reserved for undoing changes on a private branch.&lt;/p&gt;
-
-&lt;p&gt;You can also think of a &lt;code&gt;git revert&lt;/code&gt; as a tool for undoing committed changes, while &lt;code&gt;git reset HEAD&lt;/code&gt; is for undoing uncommitted changes.&lt;/p&gt;
-
-&lt;p&gt;If I just want to revert with a specific commit I use &lt;code&gt;--no-commit&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# -n is shortcut for --no-commit
-git revert -n &amp;lt;commit hash&amp;gt;
-git commit -m &#39;the commit message&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Another flow can be if you want to revert multiple commits:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git revert --no-commit &amp;lt;commit hash A&amp;gt;
-git revert --no-commit &amp;lt;commit hash B&amp;gt;
-git revert --no-commit &amp;lt;commit hash C&amp;gt;
-git commit -m &#39;the commit message&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If there are sequence of commits which I want to revert:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git revert --no-commit HEAD~3..
-# or
-git revert --no-commit A..HEAD  
-git commit -m &#39;the commit message&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The problem can be appeared when you want to revert a merge commit. The &lt;code&gt;-m&lt;/code&gt; parameter specified the &lt;code&gt;parent number&lt;/code&gt;. This is need because a merge commit has more than one parent, and Git doesn&amp;rsquo;t know which parent was the mainline, and which parent was the branch you want to un-merge.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git revert -m 1 &amp;lt;commit-hash&amp;gt; 
-git commit -m &amp;quot;Reverting the last merge-commit which messed the repo.&amp;quot;
-git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/7099833/how-to-revert-a-merge-commit-thats-already-pushed-to-remote-branch&#34;&gt;The dedicating answer about how to revert merged commit which has been pushed on remote&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Save my day:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.atlassian.com/git/tutorials/advanced-overview&#34;&gt;Advanced Git Tutorials&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
