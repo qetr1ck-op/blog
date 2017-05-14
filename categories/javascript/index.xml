@@ -183,7 +183,13 @@ main();
 
 &lt;h1 id=&#34;iterate-asynchronously-with-the-for-await-of-loop&#34;&gt;Iterate Asynchronously with the &lt;code&gt;for-await-of&lt;/code&gt; Loop&lt;/h1&gt;
 
-&lt;p&gt;An &lt;a href=&#34;https://github.com/mariusschulz/egghead-async-await/tree/master/lesson-8&#34;&gt;example&lt;/a&gt; with &lt;code&gt;ts&lt;/code&gt; configuration&lt;/p&gt;</description>
+&lt;p&gt;An &lt;a href=&#34;https://github.com/mariusschulz/egghead-async-await/tree/master/lesson-8&#34;&gt;example&lt;/a&gt; with &lt;code&gt;ts&lt;/code&gt; configuration&lt;/p&gt;
+
+&lt;h1 id=&#34;save-my-day&#34;&gt;Save my day&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://egghead.io/courses/asynchronous-javascript-with-async-await&#34;&gt;original videos by Marius Schulz on egghead&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -537,6 +543,13 @@ main();
 &lt;ul&gt;
 &lt;li&gt;Why shared states with different workers is a problem?&lt;/li&gt;
 &lt;li&gt;Sticky Load Balancer as a solution&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;save-my-day&#34;&gt;Save my day&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.pluralsight.com/courses/nodejs-advanced&#34;&gt;original course by Samer Buna on pluralsight&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs&#34;&gt;github repo of examples&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
@@ -813,6 +826,7 @@ travel(r, &amp;quot;NY 5643&amp;quot;) --&amp;gt; &amp;quot;NY 5643:/&amp;quot;
 &lt;li&gt;&lt;a href=&#34;../../html/js-30/15-local-storage/index.html&#34;&gt;15 - LocalStorage&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../html/js-30/16-mouse-move-shadow/index.html&#34;&gt;16 - Mouse Move Shadow&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../html/js-30/17-sort-without-articles/index.html&#34;&gt;17 - Sort Without Articles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../html/js-30/19-webcam-fun/index.html&#34;&gt;19 - Webcam Fun&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/wesbos/JavaScript30&#34;&gt;Github original source&lt;/a&gt;&lt;/p&gt;</description>

@@ -359,6 +359,13 @@
 &lt;ul&gt;
 &lt;li&gt;Why shared states with different workers is a problem?&lt;/li&gt;
 &lt;li&gt;Sticky Load Balancer as a solution&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;save-my-day&#34;&gt;Save my day&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.pluralsight.com/courses/nodejs-advanced&#34;&gt;original course by Samer Buna on pluralsight&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs&#34;&gt;github repo of examples&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     

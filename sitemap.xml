@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qetr1ck-op.github.io/blog/post/nodejs-interview-question/</loc>
+    <lastmod>2017-05-14T17:43:40+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://qetr1ck-op.github.io/blog/post/asynchronous-javascript-with-async-await/</loc>
     <lastmod>2017-05-09T21:57:55+03:00</lastmod>
   </url>
@@ -428,7 +433,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/architecture/</loc>
-    <lastmod>2017-05-09T21:57:55+03:00</lastmod>
+    <lastmod>2017-05-14T17:43:40+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -440,7 +445,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/build-tools/</loc>
-    <lastmod>2017-04-29T12:14:14+03:00</lastmod>
+    <lastmod>2017-05-14T17:43:40+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -469,7 +474,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/es2015&#43;/</loc>
-    <lastmod>2017-05-09T21:57:55+03:00</lastmod>
+    <lastmod>2017-05-14T17:43:40+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -505,19 +510,19 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/nodejs/</loc>
-    <lastmod>2017-05-09T21:57:55+03:00</lastmod>
+    <lastmod>2017-05-14T17:43:40+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/</loc>
-    <lastmod>2017-05-09T21:57:55+03:00</lastmod>
+    <lastmod>2017-05-14T17:43:40+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/oop/</loc>
-    <lastmod>2017-05-02T20:16:35+03:00</lastmod>
+    <lastmod>2017-05-14T17:43:40+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -527,7 +532,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/categories/patterns/</loc>
-    <lastmod>2017-05-02T20:16:35+03:00</lastmod>
+    <lastmod>2017-05-14T17:43:40+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -539,7 +544,7 @@
   
   <url>
     <loc>https://qetr1ck-op.github.io/blog/post/</loc>
-    <lastmod>2017-05-09T21:57:55+03:00</lastmod>
+    <lastmod>2017-05-14T17:43:40+03:00</lastmod>
     <priority>0</priority>
   </url>
   

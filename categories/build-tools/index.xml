@@ -9,6 +9,118 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/build-tools/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Interview question: NodeJS</title>
+      <link>https://qetr1ck-op.github.io/blog/post/nodejs-interview-question/</link>
+      <pubDate>Sun, 14 May 2017 17:43:40 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/nodejs-interview-question/</guid>
+      <description>&lt;p&gt;Based on original post &lt;a href=&#34;https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8&#34;&gt;How well do you know Node.js?&lt;/a&gt;. In it, Samer Buna lists 48 questions which be expects a Node.js developer to be able to answer.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;what-is-the-relationship-between-node-js-and-v8-can-node-work-without-v8&#34;&gt;What is the relationship between Node.js and V8? Can Node work without V8?&lt;/h1&gt;
+
+&lt;p&gt;V8 is a JavaScript engine developed by The Chromium Project, first for the Google Chrome web browser and later for other projects, including NodeJS. It allows to compile, optimize and run JavaScript code and is the base for code execution inside Node.js. However, V8 is not essential for Node.js; There are attempts to use other javascript engines, such as &lt;a href=&#34;https://github.com/nodejs/node-chakracore&#34;&gt;node-chakracore&lt;/a&gt; (Node.js on ChakraCore) or &lt;a href=&#34;https://github.com/mozilla/spidernode&#34;&gt;spidernode&lt;/a&gt; (Node.js on top of SpiderMonkey).&lt;/p&gt;
+
+&lt;h1 id=&#34;how-come-when-you-declare-a-global-variable-in-any-node-js-file-it-s-not-really-global-to-all-modules&#34;&gt;How come when you declare a global variable in any Node.js file it’s not really global to all modules?&lt;/h1&gt;
+
+&lt;p&gt;A module’s code is wrapped by a function wrapper. To see it just execute node.js file with syntax error on first line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;&amp;gt; node 1/bugToSeeWrapperFn.js
+&amp;gt; /home/oop/Documents/bugToSeeWrapperFn.js:1
+
+(function (exports, require, module, __filename, __dirname) { foo
+  // module code
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This wrapping allows to keeps top-level variables (defined with var, const or let) scoped to the module, rather than to the global object.&lt;/p&gt;
+
+&lt;p&gt;Read more on the &lt;a href=&#34;https://nodejs.org/api/modules.html#modules_the_module_wrapper&#34;&gt;module wrapper&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;when-exporting-the-api-of-a-node-module-why-can-we-sometimes-use-exports-and-other-times-we-have-to-use-module-exports&#34;&gt;When exporting the API of a Node module, why can we sometimes use &lt;code&gt;exports&lt;/code&gt; and other times we have to use &lt;code&gt;module.exports?&lt;/code&gt;&lt;/h1&gt;
+
+&lt;p&gt;To understand the difference, we can look at this simplified view of a JavaScript file in Node.js:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var module = { exports: {} };
+var exports = module.exports;
+
+// your code
+
+return module.exports;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So, &lt;code&gt;exports&lt;/code&gt; is initially a reference to &lt;code&gt;module.exports&lt;/code&gt;. if you want to simply export an object with named fields, you can use the exports shortcut. For example, had we written &lt;code&gt;exports.a = 9&lt;/code&gt;, we’d actually export this object: &lt;code&gt;{ a: 9 }&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;However, if you want to export a function or another object, you have to use the &lt;code&gt;module.exports&lt;/code&gt; but you cannot use &lt;code&gt;exports&lt;/code&gt;. For example: &lt;code&gt;module.exports = function bar() {}&lt;/code&gt;. Once you do that, &lt;code&gt;exports&lt;/code&gt; and &lt;code&gt;module.exports&lt;/code&gt; no longer reference the same object.&lt;/p&gt;
+
+&lt;h1 id=&#34;can-we-require-local-files-without-using-relative-paths&#34;&gt;Can we require local files without using relative paths?&lt;/h1&gt;
+
+&lt;p&gt;There are several options, as described &lt;a href=&#34;https://gist.github.com/qetr1ck-op/ba2c8ad84ae8cd3ce6c928872eaa6933&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;can-different-versions-of-the-same-package-be-used-in-the-same-application&#34;&gt;Can different versions of the same package be used in the same application?&lt;/h1&gt;
+
+&lt;p&gt;No, this is currently prevented by NPM. see this issue for &lt;a href=&#34;https://github.com/npm/npm/issues/2943#issuecomment-10388316&#34;&gt;more details&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;what-is-the-event-loop-is-it-part-of-v8&#34;&gt;What is the Event Loop? Is it part of V8?&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;../../images/posts/nodejs-interview-question/nodejs-arhitecture.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In event-driven programming, an application expresses interest in certain events and respond to them when they occur. This is the way Node.js can handle asynchronous execution while running the code in a single thread.&lt;/p&gt;
+
+&lt;p&gt;When an asynchronous operation starts (for example, when we call &lt;code&gt;setTimeout&lt;/code&gt;, &lt;code&gt;http.get&lt;/code&gt; or &lt;code&gt;fs.readFile&lt;/code&gt;), Node.js sends these operations to a different thread allowing &lt;code&gt;V8&lt;/code&gt; to keep executing our code. Node also calls the callback when the counter has run down or the &lt;code&gt;IO / http&lt;/code&gt; operation has finished.&lt;/p&gt;
+
+&lt;p&gt;In Node.js, the responsibility of gathering events from the operating system or monitoring other sources of events is handled by &lt;code&gt;libuv&lt;/code&gt;, and the user can register callbacks to be invoked when an event occurs. When async operation is done &lt;code&gt;libuv&lt;/code&gt; passes control to &lt;code&gt;V8&lt;/code&gt; to execute the callbacks.&lt;/p&gt;
+
+&lt;h1 id=&#34;what-is-the-call-stack-is-it-part-of-v8&#34;&gt;What is the Call Stack? Is it part of V8?&lt;/h1&gt;
+
+&lt;p&gt;The call stack is the basic mechanism for javascript code execution. When we call a function, we push the function parameters and the return address to the stack. This allows to runtime to know where to continue code execution once the function ends. In Node.js, the Call Stack is handled by &lt;code&gt;V8&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;what-is-the-difference-between-setimmediate-and-process-nexttick&#34;&gt;What is the difference between setImmediate and process.nextTick?&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;setImmediate&lt;/code&gt; queues a function behind whatever I/O event callbacks that are already in the event queue.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;process.nextTick&lt;/code&gt; queues a function at the head of the event queue so that it executes immediately after the currently running function completes.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;setTimeout&lt;/code&gt; vs &lt;code&gt;setImmediate&lt;/code&gt; vs &lt;code&gt;process.nextTick&lt;/code&gt;, visual explanation [&lt;a href=&#34;http://stackoverflow.com/questions/17502948/nexttick-vs-setimmediate-visual-explanation#38742776&#34;&gt;http://stackoverflow.com/questions/17502948/nexttick-vs-setimmediate-visual-explanation#38742776&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;setImmediate&lt;/code&gt; executes after &lt;code&gt;setTimeout&lt;/code&gt;, &lt;a href=&#34;https://github.com/nodejs/node-v0.x-archive/issues/25788&#34;&gt;explanation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;how-do-you-make-an-asynchronous-function-return-a-value&#34;&gt;How do you make an asynchronous function return a value?&lt;/h1&gt;
+
+&lt;p&gt;You could return a promise resolving to that value, for example return &lt;code&gt;Promise.resolve(value)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;can-callbacks-be-used-with-promises-or-is-it-one-way-or-the-other&#34;&gt;Can callbacks be used with promises or is it one way or the other?&lt;/h1&gt;
+
+&lt;p&gt;Callbacks and promises can be used together. For example, the following method calls a callback and returns a promise:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function processToGetValue(cb) {
+  // do some processing to value
+  if (cb) {
+    cb(value);
+  }
+  return Promise.resolve(value);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;what-are-the-major-differences-between-spawn-exec-and-fork&#34;&gt;What are the major differences between spawn, exec, and fork?&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;exec&lt;/code&gt; methods spawns a shell and then executes a command within that shell, buffering any generated output&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;spawn&lt;/code&gt; works similarly to &lt;code&gt;exec&lt;/code&gt;. The main difference is that spawn returns the process output as a stream while exec returns it as a buffer&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fork&lt;/code&gt; is a special case of spawn that also creates a new &lt;code&gt;V8&lt;/code&gt; engine instance. This is useful to create additional workers of the same Node.js code base. (for example, in the &lt;a href=&#34;https://nodejs.org/api/cluster.html&#34;&gt;cluster module&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Great article &lt;a href=&#34;https://dzone.com/articles/understanding-execfile-spawn-exec-and-fork-in-node&#34;&gt;Understanding execFile, spawn, exec, and fork in Node.js&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;save-my-day&#34;&gt;Save my day&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8&#34;&gt;original questions by Samer Buna&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://asafdav2.github.io/2017/how-well-do-you-know-node-js-answers-part-1/&#34;&gt;original post by asafdav2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>npm scrips as your build tool</title>
       <link>https://qetr1ck-op.github.io/blog/post/npm-scrips-as-your-build-tool/</link>
       <pubDate>Sat, 29 Apr 2017 12:14:14 +0300</pubDate>
