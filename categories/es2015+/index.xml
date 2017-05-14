@@ -187,7 +187,7 @@ main();
     </item>
     
     <item>
-      <title>advanced nodejs</title>
+      <title>Advanced NodeJS</title>
       <link>https://qetr1ck-op.github.io/blog/post/advanced-nodejs/</link>
       <pubDate>Tue, 02 May 2017 20:16:35 +0300</pubDate>
       
@@ -432,12 +432,112 @@ main();
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;node debug script.js&lt;/code&gt;, commands: &lt;code&gt;help&lt;/code&gt;, &lt;code&gt;restart&lt;/code&gt;, &lt;code&gt;sb(line)&lt;/code&gt;, &lt;code&gt;repl&lt;/code&gt;, &lt;code&gt;watch(var)&lt;/code&gt;, &lt;code&gt;list(lines)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;node --inspect --debug-brk script.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;node --inspect-brk script.js&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&#34;working-with-streams&#34;&gt;Working with streams&lt;/h1&gt;
 
-&lt;h1 id=&#34;cluster-adn-child-process&#34;&gt;Cluster adn Child Process&lt;/h1&gt;</description>
+&lt;h2 id=&#34;streams-all-the-thing&#34;&gt;Streams all the thing!&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The definition&lt;/li&gt;
+&lt;li&gt;Distinguish to serve enormous file with buffer &lt;code&gt;fs.readFile&lt;/code&gt; and stream &lt;code&gt;fs.createReadStream&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/tree/master/7.1&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;steam-101&#34;&gt;Steam 101&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Types of stream&lt;/li&gt;
+&lt;li&gt;All stream are instance of EventEmitter&lt;/li&gt;
+&lt;li&gt;Consuming streams &lt;code&gt;readableStream.pipe(writableStream)&lt;/code&gt; / events&lt;/li&gt;
+&lt;li&gt;Stream Events Table&lt;/li&gt;
+&lt;li&gt;Readable stream mode: &amp;ldquo;paused/pull&amp;rdquo;, &amp;ldquo;flowing/push&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;implementing-readable-and-writable-streams&#34;&gt;Implementing Readable and Writable streams&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;writable &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/7.3/writable.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;readable &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/7.3/readable.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;duplex-and-transform-streams&#34;&gt;Duplex and Transform streams&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;duplex &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/7.4/duplex.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;transform &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/7.4/transform.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;transform with &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/7.4/zip.js&#34;&gt;gzip example&lt;/a&gt; and &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/7.4/unzip.js&#34;&gt;unzip&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;cluster-adn-child-process&#34;&gt;Cluster adn Child Process&lt;/h1&gt;
+
+&lt;h2 id=&#34;scalling-node-js-application&#34;&gt;Scalling Node.js application&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Why one process in one CPU is not enough&lt;/li&gt;
+&lt;li&gt;Using multiple process is only way to scale&lt;/li&gt;
+&lt;li&gt;Scalability strategies:&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Cloning&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Decomposing (associated with term microservices)&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Splitting (sharding)&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;child-processes-events-and-standard-io&#34;&gt;Child processes events and standard IO&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;4 different way to create child process: &lt;code&gt;spawn()&lt;/code&gt;, &lt;code&gt;fork()&lt;/code&gt;, &lt;code&gt;exec()&lt;/code&gt;, &lt;code&gt;execFile()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;spawn()&lt;/code&gt; child process &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.2/spawn.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;using &lt;code&gt;spawn()&lt;/code&gt; as an stream &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.2/spawn-pipe.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;the-shell-syntax-with-exec-and-execfile&#34;&gt;The Shell syntax with &lt;code&gt;exec()&lt;/code&gt; and &lt;code&gt;execFile()&lt;/code&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;exec()&lt;/code&gt; vs &lt;code&gt;spawn()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;exec()&lt;/code&gt; with options &lt;code&gt;shell, cwd, env&lt;/code&gt;, &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.3/exec.js&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;detached&lt;/code&gt; option and &lt;code&gt;childProcess.unref()&lt;/code&gt; &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.3/detach.js&#34;&gt;example&lt;/a&gt; with &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.3/timer.js&#34;&gt;timer.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;the-fork-function&#34;&gt;The &lt;code&gt;fork()&lt;/code&gt; function&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fork()&lt;/code&gt; vs &lt;code&gt;spawn()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;communication with &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.4/parent.js&#34;&gt;parent&lt;/a&gt; and &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.4/child.js&#34;&gt;child&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;long running process with http request: &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.4/server.js&#34;&gt;server&lt;/a&gt; and &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/blob/master/8.4/compute.js&#34;&gt;computation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;the-cluster-module&#34;&gt;The Cluster module&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Using as a Load Balancer&lt;/li&gt;
+&lt;li&gt;Diagram with Master Process and Cloning Process&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;load-balancing-an-http-server&#34;&gt;Load-balancing an HTTP server&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;benchmark with request per seconds&lt;/li&gt;
+&lt;li&gt;clustering HTTP server &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/tree/master/8.6&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;broadcasting-messages-to-each-worker&#34;&gt;Broadcasting messages to each Worker&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;mocking fetch user from DB only from Master Worker &lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/tree/master/8.7&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;availability-and-zero-downtime-restart&#34;&gt;Availability and Zero-downtime restart&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/advanced-nodejs/tree/master/8.7&#34;&gt;example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;shared-state-and-sticky-load-balancer&#34;&gt;Shared State and Sticky Load Balancer&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Why shared states with different workers is a problem?&lt;/li&gt;
+&lt;li&gt;Sticky Load Balancer as a solution&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
