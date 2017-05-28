@@ -9,6 +9,31 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/performance/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>What is Load Balancing?</title>
+      <link>https://qetr1ck-op.github.io/blog/post/what-is-load-balancing/</link>
+      <pubDate>Sun, 14 May 2017 23:49:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/what-is-load-balancing/</guid>
+      <description>&lt;p&gt;Modern high-traffic websites must serve hundreds of thousands, if not millions, of concurrent requests from users or clients and return the correct text, images, video, or application data, all in a fast and reliable manner.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;summary&#34;&gt;Summary&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Definition and why to use Load Balancer&lt;/li&gt;
+&lt;li&gt;Load Balancing algorithm&lt;/li&gt;
+&lt;li&gt;Session persistency&lt;/li&gt;
+&lt;li&gt;Elastic/Dynamic configuration of Server Groups&lt;/li&gt;
+&lt;li&gt;Hardware vs Software Load Balancing&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;link&#34;&gt;Link&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.nginx.com/resources/glossary/load-balancing&#34;&gt;official nginx resource&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Front End Handbook 2017</title>
       <link>https://qetr1ck-op.github.io/blog/post/front-end-handbook-2017/</link>
       <pubDate>Sun, 23 Apr 2017 19:11:25 +0300</pubDate>

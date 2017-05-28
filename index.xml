@@ -6,15 +6,233 @@
     <description>Recent content on OP blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 14 May 2017 17:43:40 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 28 May 2017 17:43:40 +0300</lastBuildDate>
     <atom:link href="https://qetr1ck-op.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Interview question: NodeJS</title>
-      <link>https://qetr1ck-op.github.io/blog/post/nodejs-interview-question/</link>
+      <title>Interview question: NodeJS, part 2</title>
+      <link>https://qetr1ck-op.github.io/blog/post/interview-question-nodejs-part-2/</link>
+      <pubDate>Sun, 28 May 2017 17:43:40 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/interview-question-nodejs-part-2/</guid>
+      <description>&lt;p&gt;Part two of original post &lt;a href=&#34;https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8&#34;&gt;How well do you know Node.js?&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;what-s-the-problem-with-the-process-uncaughtexception-event-how-is-it-different-than-the-exit-event&#34;&gt;What’s the problem with the process &lt;code&gt;uncaughtException&lt;/code&gt; event? How is it different than the exit event?&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;uncaughtException&lt;/code&gt; event is emitted when an uncaught Javascript exception bubbles all the way back to the event loop. Once this event emmits, it means that your application is in an undefined state and it is not safe to continue. Hence this event should only be used to perform synchronous cleanup of resources, logging and shutting down the process.&lt;/p&gt;
+
+&lt;p&gt;The exit event is emitted when the Node.js process is about the exit as a result of either:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;process.exit()&lt;/code&gt; method being called explicitly&lt;/li&gt;
+&lt;li&gt;The event loop has no additional work to perform&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;what-does-the-mean-inside-of-node-s-repl&#34;&gt;What does the &lt;code&gt;_&lt;/code&gt;mean inside of Node’s REPL?&lt;/h1&gt;
+
+&lt;p&gt;Node’s REPL always sets &lt;code&gt;_&lt;/code&gt; to the result of the last expression:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; 2
+2
+&amp;gt; _
+2
+&amp;gt; 2+2
+4
+&amp;gt; _
+4
+&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;do-node-buffers-use-v8-memory-can-they-be-resized&#34;&gt;Do Node buffers use V8 memory? Can they be resized?&lt;/h1&gt;
+
+&lt;p&gt;No to both questions - Node.js buffers correspond to fixed-sized, raw memory allocations outside the V8 heap.&lt;/p&gt;
+
+&lt;h1 id=&#34;hat-s-the-difference-between-buffer-alloc-and-buffer-allocunsafe&#34;&gt;hat’s the difference between &lt;code&gt;Buffer.alloc&lt;/code&gt; and &lt;code&gt;Buffer.allocUnsafe&lt;/code&gt;?&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;Buffer.alloc&lt;/code&gt; allocates a memory chunk, initializes it (sets every cell to either zero or some predefined value) and returns a Node.js Buffer wrapping this memory chunk. &lt;code&gt;Buffer.allocUnsafe&lt;/code&gt; skips the initialization stage. Instead it returns a Buffer pointing to uninitialized memory. This reduces the allocation time duration, but creates a possibility for (sensitive) data leakage, if this uninitialized memory is exposed to the user. Thus, you should only &lt;code&gt;Buffer.allocUnsafe&lt;/code&gt; only if you plan to initialize the memory chunk yourself.&lt;/p&gt;
+
+&lt;h1 id=&#34;how-is-the-slice-method-on-buffers-different-from-that-on-arrays&#34;&gt;How is the slice method on buffers different from that on arrays?&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;buf.slice()&lt;/code&gt; method on buffers is a mutating operation which modifies the memory in the original buffer. The &lt;code&gt;Array.prototype.slice()&lt;/code&gt; method returns a shallow copy of a portion of an array and does not modify it.&lt;/p&gt;
+
+&lt;h1 id=&#34;what-is-the-string-decoder-module-useful-for-how-is-it-different-than-casting-buffers-to-strings&#34;&gt;What is the &lt;code&gt;string_decoder&lt;/code&gt; module useful for? How is it different than casting buffers to strings?&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;string_decoder&lt;/code&gt; is useful for decoding a Buffer instance into strings while preserving endoded multi-byte UTF-8 / UTF-16 characters. In oppose to simple buffer cast to string, the string_decodure can detect incomplete multibyte characters and handle them. For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const StringDecoder = require(&#39;string_decoder&#39;).StringDecoder;
+const decoder = new StringDecoder(&#39;utf8&#39;);
+
+const euro = Buffer.from([0xE2, 0x82, 0xAC]);
+const incompleteEuro = Buffer.from([0xE2, 0x82]);
+
+console.log(decoder.write(euro)); // prints &#39;€&#39;
+console.log(incompleteEuro.toString(&#39;utf8&#39;)); // prints &#39;��&#39;
+console.log(decoder.write(incompleteEuro)); // prints &#39;&#39; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;what-are-the-5-major-steps-that-the-require-function-does&#34;&gt;What are the 5 major steps that the require function does?&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Check Module._cache for the cached module&lt;/li&gt;
+&lt;li&gt;If cache is empty, create a new Module instance and save it to the cache&lt;/li&gt;
+&lt;li&gt;Call module.load() with the given filename. This will call module.compile() after reading the file contents&lt;/li&gt;
+&lt;li&gt;If there was an error loading/parsing the file, delete the bad module from the cache&lt;/li&gt;
+&lt;li&gt;return module.exports&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;what-is-the-require-resolve-function-and-what-is-it-useful-for&#34;&gt;What is the &lt;code&gt;require.resolve&lt;/code&gt; function and what is it useful for?&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;require.resolve&lt;/code&gt; methods resolves a module to its absolute path.&lt;/p&gt;
+
+&lt;h1 id=&#34;what-is-the-main-property-in-package-json-useful-for&#34;&gt;What is the main property in &lt;code&gt;package.json&lt;/code&gt; useful for?&lt;/h1&gt;
+
+&lt;p&gt;The main field is a module ID that is the primary entry point to your program. For example, if your package is named foo, and a user does &lt;code&gt;require(&amp;quot;foo&amp;quot;)&lt;/code&gt;, then your main module’s exports object will be returned.&lt;/p&gt;
+
+&lt;h1 id=&#34;what-are-circular-modular-dependencies-in-node-and-how-can-they-be-avoided&#34;&gt;What are circular modular dependencies in Node and how can they be avoided?&lt;/h1&gt;
+
+&lt;p&gt;We say that module &lt;code&gt;A&lt;/code&gt; dependends on module &lt;code&gt;B&lt;/code&gt; if &lt;code&gt;A&lt;/code&gt; has &lt;code&gt;require(&#39;B&#39;)&lt;/code&gt; in it. Assume a dependency graph where an edge &lt;code&gt;(A,B)&lt;/code&gt; means that &lt;code&gt;A&lt;/code&gt; dependens on &lt;code&gt;B&lt;/code&gt;. Then Circular modular dependencies are cycles in this dependency graph. Two ways to avoid circular modular are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;move the require statements from the top of the file to the point in code they’re actually used. this will delay their execution, allowing for the exports to have been created properly&lt;/li&gt;
+&lt;li&gt;restructure the code. For example move the code that both modules depend on into a new module &lt;code&gt;C&lt;/code&gt; and let both &lt;code&gt;A&lt;/code&gt; and &lt;code&gt;B&lt;/code&gt; depend on &lt;code&gt;C&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;what-are-the-3-file-extensions-that-will-be-automatically-tried-by-the-require-function&#34;&gt;What are the 3 file extensions that will be automatically tried by the require function?&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;.js&lt;/code&gt;, &lt;code&gt;.json&lt;/code&gt; and &lt;code&gt;.node&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;when-creating-an-http-server-and-writing-a-response-for-a-request-why-is-the-end-function-required&#34;&gt;When creating an http server and writing a response for a request, why is the &lt;code&gt;end()&lt;/code&gt; function required?&lt;/h1&gt;
+
+&lt;p&gt;Since the res object is a stream, we can write into it in several stages. the &lt;code&gt;end()&lt;/code&gt; method indicates that we’ve finished writing into it and that the response is ready to be sent to the client.&lt;/p&gt;
+
+&lt;h1 id=&#34;when-is-it-ok-to-use-the-file-system-sync-methods&#34;&gt;When is it ok to use the file system *Sync methods?&lt;/h1&gt;
+
+&lt;p&gt;When it is OK to block the process while the synchronous operation takes place. For example, this may be valid when writing a CLI tool. It’s most likely not OK when writing a server that should handle multiple clients concurrently.&lt;/p&gt;
+
+&lt;h1 id=&#34;how-can-you-print-only-one-level-of-a-deeply-nested-object&#34;&gt;How can you print only one level of a deeply nested object?&lt;/h1&gt;
+
+&lt;p&gt;You can use the util.inspect method.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const obj = {
+  a: &amp;quot;a&amp;quot;,
+  b: {
+    c: &amp;quot;c&amp;quot;,
+    d: {
+      e: &amp;quot;e&amp;quot;,
+      f: {
+        g: &amp;quot;g&amp;quot;,
+      }
+    }
+  }
+};    
+
+const util = require(&#39;util&#39;);
+console.log(util.inspect(obj, {depth: 0})); // prints: &#39;{ a: \&#39;a\&#39;, b: [Object]}&#39;
+console.log(util.inspect(obj, {depth: null})); // prints: &#39;{ a: \&#39;a\&#39;, b: { c: \&#39;c\&#39;, d: { e: \&#39;e\&#39;, f: { g: \&#39;g\&#39; } } } }&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;the-objects-exports-require-and-module-are-all-globally-available-in-every-module-but-they-are-different-in-every-module-how&#34;&gt;The objects exports, require, and module are all globally available in every module but they are different in every module. How?&lt;/h1&gt;
+
+&lt;p&gt;Before a module’s code is executed, Node.js wraps it in the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;(function (exports, require, module, __filename, __dirname) {
+// Your module code actually lives in here
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This means that while &lt;code&gt;exports&lt;/code&gt;, &lt;code&gt;require&lt;/code&gt; and &lt;code&gt;module&lt;/code&gt; appear to be global variables, they’re actually specific to the module.&lt;/p&gt;
+
+&lt;h1 id=&#34;if-you-execute-a-node-script-file-that-has-the-single-line-console-log-arguments-what-exactly-will-node-print&#34;&gt;If you execute a node script file that has the single line: &lt;code&gt;console.log(arguments);&lt;/code&gt;, what exactly will node print?&lt;/h1&gt;
+
+&lt;p&gt;As seen in the answer above, the module code is an invocation of a function taking exports, &lt;code&gt;require&lt;/code&gt;, &lt;code&gt;module&lt;/code&gt;, &lt;code&gt;__filename&lt;/code&gt; and &lt;code&gt;__dirname&lt;/code&gt; as arguments, so these arguments will be printed.&lt;/p&gt;
+
+&lt;h1 id=&#34;how-can-a-module-be-both-requirable-by-other-modules-and-executable-directly-using-the-node-command&#34;&gt;How can a module be both requirable by other modules and executable directly using the node command?&lt;/h1&gt;
+
+&lt;p&gt;A module can detect if its being requirable or executed directly by inspecting the &lt;code&gt;require.main&lt;/code&gt; value:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;if (require.main === module) {
+    console.log(&#39;called directly&#39;);
+} else {
+    console.log(&#39;required as a module&#39;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;what-s-an-example-of-a-built-in-stream-in-node-that-is-both-readable-and-writable&#34;&gt;What’s an example of a built-in stream in Node that is both readable and writable?&lt;/h1&gt;
+
+&lt;p&gt;Duplex streams are streams that implement both the Readable and Writable interfaces. Examples of Duplex streams include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;TCP sockets&lt;/li&gt;
+&lt;li&gt;zlib streams&lt;/li&gt;
+&lt;li&gt;crypto streams&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;the-require-function-always-caches-the-module-it-requires-what-can-you-do-if-you-need-to-execute-the-code-in-a-required-module-many-times&#34;&gt;The &lt;code&gt;require&lt;/code&gt; function always caches the module it requires. What can you do if you need to execute the code in a required module many times?&lt;/h1&gt;
+
+&lt;p&gt;The cache in which modules are cached in is accessible using &lt;code&gt;require.cache&lt;/code&gt;. Thus, if you delete a module key from require.cache, the next time you require it will reload it (and will execute the code in it again).&lt;/p&gt;
+
+&lt;h1 id=&#34;what-is-the-console-time-function-useful-for&#34;&gt;What is the &lt;code&gt;console.time&lt;/code&gt; function useful for?&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;console.time&lt;/code&gt; is useful to measure the time difference between two points in the code; calling &lt;code&gt;console.time&lt;/code&gt;(&amp;lsquo;label&amp;rsquo;) will record the current time, and later calling &lt;code&gt;console.timeEnd(&#39;label&#39;&lt;/code&gt;) will display the time difference up to this point (in milliseconds), alongside the label.&lt;/p&gt;
+
+&lt;h1 id=&#34;what-s-the-difference-between-the-paused-and-the-flowing-modes-of-readable-streams&#34;&gt;What’s the difference between the paused and the flowing modes of readable streams?&lt;/h1&gt;
+
+&lt;p&gt;Readable streams operate in either paused or flowing modes. When in flowing mode, data is read from the underlying system automatically and provided to an application as quickly as possible using events via the EventEmitter interface. In paused mode, the &lt;code&gt;stream.read()&lt;/code&gt; method must be called explicitly to read chunks of data from the stream.&lt;/p&gt;
+
+&lt;h1 id=&#34;what-does-the-inspect-argument-do-for-the-node-command&#34;&gt;What does the &lt;code&gt;--inspect&lt;/code&gt; argument do for the node command?&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;--inspect&lt;/code&gt; argument allows to attache Chrome DevTools to Node.js instances for debugging and profiling.&lt;/p&gt;
+
+&lt;h1 id=&#34;when-working-with-streams-when-do-you-use-the-pipe-function-and-when-do-you-use-events-can-those-two-methods-be-combined&#34;&gt;When working with streams, when do you use the pipe function and when do you use events? Can those two methods be combined?&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;.pipe()&lt;/code&gt; is a function that takes a readable source stream src and hooks the output to a destination writable stream dst&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;src.pipe(dst)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;essentially it means that &lt;code&gt;.pipe()&lt;/code&gt; takes care of listening for data and end events from src. So, to answer the questions, using &lt;code&gt;.pipe()&lt;/code&gt; can make the code more straight forward when this is the functionally you’re interested in. Events can be used to tailor more specific functionally for your use case.&lt;/p&gt;
+
+&lt;h1 id=&#34;save-my-day&#34;&gt;Save my day&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8&#34;&gt;original questions by Samer Buna&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://asafdav2.github.io/2017/how-well-do-you-know-node-js-answers-part-2/&#34;&gt;original post by asafdav2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>What is Load Balancing?</title>
+      <link>https://qetr1ck-op.github.io/blog/post/what-is-load-balancing/</link>
+      <pubDate>Sun, 14 May 2017 23:49:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/what-is-load-balancing/</guid>
+      <description>&lt;p&gt;Modern high-traffic websites must serve hundreds of thousands, if not millions, of concurrent requests from users or clients and return the correct text, images, video, or application data, all in a fast and reliable manner.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;summary&#34;&gt;Summary&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Definition and why to use Load Balancer&lt;/li&gt;
+&lt;li&gt;Load Balancing algorithm&lt;/li&gt;
+&lt;li&gt;Session persistency&lt;/li&gt;
+&lt;li&gt;Elastic/Dynamic configuration of Server Groups&lt;/li&gt;
+&lt;li&gt;Hardware vs Software Load Balancing&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;link&#34;&gt;Link&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.nginx.com/resources/glossary/load-balancing&#34;&gt;official nginx resource&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Interview question: NodeJS, part 1</title>
+      <link>https://qetr1ck-op.github.io/blog/post/interview-question-nodejs-part-1/</link>
       <pubDate>Sun, 14 May 2017 17:43:40 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/nodejs-interview-question/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/interview-question-nodejs-part-1/</guid>
       <description>&lt;p&gt;Based on original post &lt;a href=&#34;https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8&#34;&gt;How well do you know Node.js?&lt;/a&gt;. In it, Samer Buna lists 48 questions which be expects a Node.js developer to be able to answer.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -73,6 +291,10 @@ return module.exports;
 
 &lt;p&gt;In Node.js, the responsibility of gathering events from the operating system or monitoring other sources of events is handled by &lt;code&gt;libuv&lt;/code&gt;, and the user can register callbacks to be invoked when an event occurs. When async operation is done &lt;code&gt;libuv&lt;/code&gt; passes control to &lt;code&gt;V8&lt;/code&gt; to execute the callbacks.&lt;/p&gt;
 
+&lt;h1 id=&#34;what-is-libuv-and-how-does-node-js-use-it-is-it-part-of-v8&#34;&gt;What is libuv and how does Node.js use it? Is it part of V8?&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/libuv/libuv&#34;&gt;libuv&lt;/a&gt; is a multi-platform support library with a focus on asynchronous I/O. Its core job is to provide an event loop and callback based notifications of I/O and other activities. In addition, libuv offers core utilities such as timers, non-blocking networking support, asynchronous file system access, child processes and more.&lt;/p&gt;
+
 &lt;h1 id=&#34;what-is-the-call-stack-is-it-part-of-v8&#34;&gt;What is the Call Stack? Is it part of V8?&lt;/h1&gt;
 
 &lt;p&gt;The call stack is the basic mechanism for javascript code execution. When we call a function, we push the function parameters and the return address to the stack. This allows to runtime to know where to continue code execution once the function ends. In Node.js, the Call Stack is handled by &lt;code&gt;V8&lt;/code&gt;.&lt;/p&gt;
@@ -82,7 +304,7 @@ return module.exports;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;setImmediate&lt;/code&gt; queues a function behind whatever I/O event callbacks that are already in the event queue.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;process.nextTick&lt;/code&gt; queues a function at the head of the event queue so that it executes immediately after the currently running function completes.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;setTimeout&lt;/code&gt; vs &lt;code&gt;setImmediate&lt;/code&gt; vs &lt;code&gt;process.nextTick&lt;/code&gt;, visual explanation [&lt;a href=&#34;http://stackoverflow.com/questions/17502948/nexttick-vs-setimmediate-visual-explanation#38742776&#34;&gt;http://stackoverflow.com/questions/17502948/nexttick-vs-setimmediate-visual-explanation#38742776&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;setTimeout&lt;/code&gt; vs &lt;code&gt;setImmediate&lt;/code&gt; vs &lt;code&gt;process.nextTick&lt;/code&gt;, &lt;a href=&#34;http://stackoverflow.com/questions/17502948/nexttick-vs-setimmediate-visual-explanation#38742776&#34;&gt;visual explanation&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;setImmediate&lt;/code&gt; executes after &lt;code&gt;setTimeout&lt;/code&gt;, &lt;a href=&#34;https://github.com/nodejs/node-v0.x-archive/issues/25788&#34;&gt;explanation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -112,6 +334,68 @@ return module.exports;
 &lt;/ul&gt;
 
 &lt;p&gt;Great article &lt;a href=&#34;https://dzone.com/articles/understanding-execfile-spawn-exec-and-fork-in-node&#34;&gt;Understanding execFile, spawn, exec, and fork in Node.js&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;how-does-the-cluster-module-work-how-is-it-different-than-using-a-load-balancer&#34;&gt;How does the cluster module work? How is it different than using a load balancer?&lt;/h1&gt;
+
+&lt;p&gt;The cluster module works by forking the server into several worker processes (all run inside the &lt;strong&gt;same host&lt;/strong&gt;). The master process listens and accepts new connections and distributes them across the worker processes in a &lt;code&gt;round-robin&lt;/code&gt; fashionhug (with some built-in smarts to avoid overloading a worker process).&lt;/p&gt;
+
+&lt;p&gt;A load balancer, in contrast, is used to distribute incoming connections across &lt;strong&gt;multiple hosts&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;what-is-load-balancing&#34;&gt;What is load balancing?&lt;/h1&gt;
+
+&lt;p&gt;Detailed answer &lt;a href=&#34;./post/what-is-load-balancing/&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;what-are-the-harmony-flags&#34;&gt;What are the &lt;code&gt;--harmony-*&lt;/code&gt; flags?&lt;/h1&gt;
+
+&lt;p&gt;These are flags that one can pass to the Node.js runtime to enable Staged features. Staged features are almost-completed features that are not considered stable by the V8 team.&lt;/p&gt;
+
+&lt;h1 id=&#34;how-can-you-read-and-inspect-the-memory-usage-of-a-node-js-process&#34;&gt;How can you read and inspect the memory usage of a Node.js process?&lt;/h1&gt;
+
+&lt;p&gt;You can invoke the &lt;code&gt;process.memoryUsage()&lt;/code&gt; method which returns an object describing the memory usage of the Node.js process, measured in bytes.&lt;/p&gt;
+
+&lt;h1 id=&#34;what-is-process-argv-what-type-of-data-does-it-hold&#34;&gt;What is &lt;code&gt;process.argv&lt;/code&gt;? What type of data does it hold?&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;process.argv&lt;/code&gt; property returns an array containing the command line arguments passed when the Node.js process was launched. The first element will be &lt;code&gt;process.execPath&lt;/code&gt;. The second element will be the path to the JavaScript file being executed. The remaining elements will be any additional command line arguments.&lt;/p&gt;
+
+&lt;h1 id=&#34;how-can-we-do-one-final-operation-before-a-node-process-exits-can-that-operation-be-done-asynchronously&#34;&gt;How can we do one final operation before a Node process exits? Can that operation be done asynchronously?&lt;/h1&gt;
+
+&lt;p&gt;By registering a handler for &lt;code&gt;process.on(&#39;exit&#39;)&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function exitHandler(options, err) {
+    console.log(&#39;clean&#39;);
+}
+
+process.on(&#39;exit&#39;, exitHandler.bind(null));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Listener functions to the exit event must only perform synchronous operations. To perform asynchronous operations, one can register a handler for &lt;code&gt;process.on(&#39;beforeExit&#39;)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;what-are-some-of-the-built-in-dot-commands-you-can-use-in-node-s-repl&#34;&gt;What are some of the built-in dot commands you can use in Node’s REPL?&lt;/h1&gt;
+
+&lt;p&gt;The following dot commands can be used:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.break&lt;/code&gt; - When in the process of inputting a multi-line expression, entering the .break command (or pressing the &lt;code&gt;&amp;lt;ctrl&amp;gt;-C&lt;/code&gt; key combination) will abort further input or processing of that expression.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.clear&lt;/code&gt; - Resets the REPL ‘context’ to an empty object and clears any multi-line expression currently being input.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.exit&lt;/code&gt; - Close the I/O stream, causing the REPL to exit.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.help&lt;/code&gt; - Show this list of special commands.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.save&lt;/code&gt; - Save the current REPL session to a file: &lt;code&gt;&amp;gt; .save ./file/to/save.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.load&lt;/code&gt; - Load a file into the current REPL session. &lt;code&gt;&amp;gt; .load ./file/to/load.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.editor&lt;/code&gt; - Enter editor mode (&lt;code&gt;&amp;lt;ctrl&amp;gt;-D&lt;/code&gt; to finish, &lt;code&gt;&amp;lt;ctrl&amp;gt;-C&lt;/code&gt; to cancel)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;besides-v8-and-libuv-what-other-external-dependencies-does-node-have&#34;&gt;Besides V8 and libuv, what other external dependencies does Node have?&lt;/h1&gt;
+
+&lt;p&gt;Beside V8 and libuv, node has several other dependencies:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;http-parser: a lightweight C library which handles HTTP parsing&lt;/li&gt;
+&lt;li&gt;c-areas: used for some asynchronous DNS requests&lt;/li&gt;
+&lt;li&gt;OpenSSL: used extensively in both the tls and crypto modules&lt;/li&gt;
+&lt;li&gt;zlib: used for fast compression and decompression&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Read more about &lt;a href=&#34;https://nodejs.org/en/docs/meta/topics/dependencies/&#34;&gt;node dependencies&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h1 id=&#34;save-my-day&#34;&gt;Save my day&lt;/h1&gt;
 
@@ -994,545 +1278,6 @@ travel(r, &amp;quot;NY 5643&amp;quot;) --&amp;gt; &amp;quot;NY 5643:/&amp;quot;
 &lt;h1 id=&#34;link&#34;&gt;Link&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.pluralsight.com/courses/google-pagespeed-insights-web-performance&#34;&gt;course on pluralsight&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Building a JavaScript development environment</title>
-      <link>https://qetr1ck-op.github.io/blog/post/building-a-javaScript-development-environment/</link>
-      <pubDate>Sun, 02 Apr 2017 14:31:50 +0300</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/building-a-javaScript-development-environment/</guid>
-      <description>&lt;p&gt;Starting a new JavaScript project from scratch is overwhelming. This course provides a playbook outlining the key decisions you need to make. Build a robust development environment that handles bundling, linting, transpiling, testing, and much more.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;description&#34;&gt;Description&lt;/h1&gt;
-
-&lt;p&gt;Building a JavaScript application from scratch today is overwhelming. You have to make decisions about package management, bundling, linting, transpiling, automated testing, and much more. There are literally over 40 important decisions to consider. This course is a playbook of potential options that provides a clear path through the key decisions. Along the way, we&amp;rsquo;ll build a robust automated development environment from the ground up using ES6. You’ll learn how to set up a reusable development environment that provides a powerful foundation for future projects, that’s tailored just for your team’s needs.&lt;/p&gt;
-
-&lt;h1 id=&#34;link&#34;&gt;Link&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.pluralsight.com/courses/javascript-development-environment&#34;&gt;course on pluralsight&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>PatternCraft</title>
-      <link>https://qetr1ck-op.github.io/blog/post/pattern-craft/</link>
-      <pubDate>Sun, 05 Mar 2017 01:35:33 +0200</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/pattern-craft/</guid>
-      <description>&lt;p&gt;An awesome explanation of GOF design patterns. The only way to learn pattern is to know what problem it solves.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;state&#34;&gt;State&lt;/h1&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://www.youtube.com/watch?v=yZt7mUVDijU&#34;&gt;State Design Pattern&lt;/a&gt; can be used, for example, to manage the state of tank in StarCraft game.&lt;/p&gt;
-
-&lt;p&gt;The pattern consists in isolating the state logic in different &lt;code&gt;class&lt;/code&gt;es than having multiple &lt;code&gt;if&lt;/code&gt;s to determinate the flow.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;class TankState {
-    constructor(damage = 5, canMove = true) {
-        Object.assign(this, { damage, canMove });
-    }
-
-    static get defaultState() { return new SiegeState(); }
-}
-
-// state #1
-class SiegeState extends TankState {
-    constructor() {
-        super(20, false);
-    }
-}
-
-// state #2
-class SpeedState extends TankState {
-    constructor() {
-        super(5, true);
-    }
-}
-
-class Tank {
-    constructor() {
-        this.state = TankState.defaultState;
-    }
-
-    // implementation bellow relies only on current state, without using multiple if/switch
-    get canMove() { return this.state.canMove; } 
-
-    get damage() { return this.state.damage; }
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Test specs:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;describe(&#39;State pattern&#39;, () =&amp;gt; {
-    it(&#39;Default tank state is SiegeState&#39;, () =&amp;gt; {
-        const tank = new Tank();
-        
-        expect(tank.state instanceof SiegeTank).to.be.true;
-    });
-
-    it(&#39;SiegeState&#39;, () =&amp;gt; {
-        const tank = new SiegeState();
-
-        expect(tank.damage).to.equal(20);
-        expect(tank.canMove).to.be.false;
-    });
-
-    it(&#39;SpeedState&#39;, () =&amp;gt; {
-        const tank = new SpeedState();
-
-        expect(tank.damage).to.equal(5);
-        expect(tank.canMove).to.be.true;
-    });
-})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;strategy&#34;&gt;Strategy&lt;/h1&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://www.youtube.com/watch?v=MOEsKHqLiBM&#34;&gt;Strategy Design Pattern&lt;/a&gt; can be used, for example, to determinate how a unit moves in StarCraft game.&lt;/p&gt;
-
-&lt;p&gt;The pattern consists in having different strategy for one functionality. A unit, for example, can move by walking or flying or swimming.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// strategy #1
-class Walk() {
-    move(unit) {
-        unit.position += 5;
-    }
-}
-// strategy #2
-class Fly() {
-    move(unit) {
-        unit.position += 20;
-    }
-}
-
-class Viking {
-    constructor() {
-        this.moveBehavior = new Walk();
-        this.position = 0;
-    }
-
-    move() { this.moveBehavior.move(this); } // delegate behavior to strategy
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Test specs:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;describe(&#39;Strategy pattern&#39;, () =&amp;gt; {
-    it(&#39;Default viking move behavior is Walk&#39;, () =&amp;gt; {
-        const viking = new Viking();
-        
-        expect(viking.moveBehavior instanceof Walk).to.be.true;
-    });
-
-    it(&#39;Walk behavior&#39;, () =&amp;gt; {
-        const viking = new Viking();
-
-        viking.move();
-        expect(viking.position).to.equal(5);
-        viking.move();
-        expect(viking.position).to.equal(10);
-    });
-
-    it(&#39;Fly behavior&#39;, () =&amp;gt; {
-        const viking = new Viking();
-        
-        viking.moveBehavior = new Fly();
-        viking.move();
-        expect(viking.position).to.equal(20);
-        viking.move();
-        expect(viking.position).to.equal(40);
-    });
-})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;adapter&#34;&gt;Adapter&lt;/h1&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://www.youtube.com/watch?v=hvpXKZhNINc&#34;&gt;Adapter Design Pattern&lt;/a&gt; can be used, to insert an external character in the game.&lt;/p&gt;
-
-&lt;p&gt;The pattern consists in having a wrapper class to adapt the external source.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// in app characters
-class Marine {
-  attack(target) {
-    target.health -= 6;
-  }
-}
-
-class Zealot {
-  attack(target) {
-    target.health -= 8;
-  }
-}
-
-class Zergling {
-  attack(target) {
-    target.health -= 5;
-  }
-}
-
-// external
-class Mario {
-  jumpAttack() {
-    console.log(&#39;Mamamia!&#39;);
-    return 3;
-  }
-}
-
-// mario adapter
-class MarioAdapter {
-    constructor(mario) {
-        this.mario = mario;
-    }
-    
-    attack(target) {
-        target.health -= this.mario.jumpAttack();
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Test specs:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;describe(&#39;Adapter pattern&#39;, () =&amp;gt; {
-    it(&#39;Mario can not attack&#39;, () =&amp;gt; {
-        const mario = new Mario();
-        
-        expect(mario.attack).to.be.undefined;
-    });
-
-    it(&#39;MarioAdapter can attack&#39;, () =&amp;gt; {
-        const mario = new MarioAdapter();
-        const target = { health: 50 };
-
-        mario.attack(target);
-
-        expect(target.health).to.equal(47);
-    });
-})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;visitor&#34;&gt;Visitor&lt;/h1&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://www.youtube.com/watch?v=KSEyIXnknoY&#34;&gt;Strategy Design Pattern&lt;/a&gt; can be used, for example, to determinate how an attack deals a different amount of damage to unit in StarCraft game.&lt;/p&gt;
-
-&lt;p&gt;The pattern delegates the responsibilities to different &lt;code&gt;class&lt;/code&gt;. When a unit takes a damage it can say to the &lt;code&gt;visitor&lt;/code&gt; what do with itself.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;class Soldier {
-    constructor(health = 100) {
-        Object.assign(this, { health });
-    }
-}
-
-class Marine extends Soldier {
-    constructor() {
-        super();
-    }
-    
-    // an idiomatic name
-    accept(visitor) {
-        visitor.visitLight(this);
-    }
-}
-
-class Marauder extends Soldier {
-    constructor() {
-        super(180);
-    }
-    
-    accept(visitor) {
-        visitor.visitArmored(this);
-    }
-}
-
-// visitor
-class TankBullet {
-    visitLight(unit) {
-        unit.health -= 11;
-    }
-    visitArmored(unit) {
-        unit.health -= 32;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Test specs:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;describe(&#39;Visitor pattern&#39;, () =&amp;gt; {
-    it(&#39;Visit light&#39;, () =&amp;gt; {
-        const marine = new Marine();
-        const tankBullet = new TankBullet();
-        
-        tankBullet.visitLight(marine);
-
-        expect(mario.health).to.be(89);
-    });
-
-    it(&#39;Visit armored&#39;, () =&amp;gt; {
-        const marauder = new Marauder();
-        const tankBullet = new TankBullet();
-        
-        tankBullet.visitArmored(marauder);
-
-        expect(mario.health).to.be(148);
-    });
-})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;decorator&#34;&gt;Decorator&lt;/h1&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://www.youtube.com/watch?v=17XTOODeWQE&#34;&gt;Decorator Design Pattern&lt;/a&gt; can be used, for example, to manage upgrades.&lt;/p&gt;
-
-&lt;p&gt;The pattern is consists in upgrade your base class with extra functionality.&lt;/p&gt;
-
-&lt;p&gt;A decorator will receive an instance of base class and use it to call a new thing you want.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;class Marine {
-    constructor(_damage, _armor) {
-        Object.assign(this, { _damage, _armor });
-    }
-
-    get damage { return this._damage; }
-    get armor { return this._armor; }
-}
-
-// decorator #1
-class WeaponUpgrade {
-    constructor(unit) {
-        this.unit = unit;
-    }
-
-    get damage { return this.unit.damage + 1; }
-    get armor { return this.unit.armor; }
-}
-
-// decorator #2
-class ArmorUpgrade {
-    constructor(unit) {
-        this.unit = unit;
-    }
-
-    get damage { return this.unit.damage; }
-    get armor { return this.unit.armor + 1; }
-}
-
-let marine = new Marine();
-marine = new WeaponUpgrade(marine);
-marine = new WeaponUpgrade(marine);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Test specs:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;describe(&#39;Decorator pattern&#39;, () =&amp;gt; {
-    it(&#39;Weapon upgrade&#39;, () =&amp;gt; {
-        let marine = new Marine(10, 2);
-        
-        marine = new WeaponUpgrade(marine);
-        marine = new WeaponUpgrade(marine);
-
-        expect(marine.damage).to.be(12);
-        expect(marine.armor).to.be(2);
-    });
-
-    it(&#39;Armor upgrade&#39;, () =&amp;gt; {
-        let marine = new Marine(10, 2);
-        
-        marine = new ArmorUpgrade(marine);
-        marine = new ArmorUpgrade(marine);
-
-        expect(marine.armor).to.be(4);
-        expect(marine.damage).to.be(10);
-    });
-})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;strategy-1&#34;&gt;Strategy&lt;/h1&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://www.youtube.com/watch?v=MOEsKHqLiBM&#34;&gt;Strategy Design Pattern&lt;/a&gt; can be used, for example, to queue actions.&lt;/p&gt;
-
-&lt;p&gt;The pattern consists in isolating command logic in a class so it can:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;queue: you can queue actions to move a probe to a different locations&lt;/li&gt;
-&lt;li&gt;undone: you can tell a probe to build something and then call a stop command to undo the action&lt;/li&gt;
-&lt;li&gt;validate: you can check if the action can be executed or not, you can not move if building action is in progress&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;class Probe {
-    constructor(commands = [], minerals = 0, x = 0, y = 0) {
-        Object.assign(this, {
-            position: { x, y },
-            commands,
-            minerals
-        });
-    }
-
-    move(x, y) {
-        this.commands = [...this.commands, new MoveCommand(this, x, y)];
-    }
-
-    gather() {
-        this.commands = [...this.commands, new GatherCommand(this)];
-    }
-}
-
-// command #1
-class MoveCommand {
-    constructor(unit, x, y) {
-        Object.assign(this, { unit, x, y});
-    }
-
-    // idiomatic 
-    execute() {
-        this.unit.position.x = this.x;
-        this.unit.position.y = this.y;
-    }
-}
-
-// command #2
-class GatherCommand {
-    constructor(unit) {
-        this.unit = unit;
-    }
-
-    execute() {
-        if (this.canExecute) {
-            this.unit.minerals += 5;
-        }
-    }
-
-    get canExecute() {
-        return this.unit.minerals === 0;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Test specs:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;describe(&#39;Command pattern&#39;, () =&amp;gt; {
-    it(&#39;MoveCommand should move unit&#39;, () =&amp;gt; {
-        const unit = new Probe();
-        const moveBehavior = new MoveBehavior(unit, 10, 20);
-
-        moveBehavior.execute();
-
-        expect(unit.position.x).to.equal(10);
-        expect(unit.position.y).to.equal(20);
-    });
-
-    it(&#39;GatherCommand should gather resources&#39;, () =&amp;gt; {
-        const unit = new Probe();
-        const moveBehavior = new GatherBehavior(unit);
-
-        moveBehavior.execute();
-
-        expect(unit.materials).to.equal(5);
-    });
-
-    it(&#39;GatherCommand should only gather resources if unit does not have resources&#39;, () =&amp;gt; {
-        const unit = new Probe();
-        const moveBehavior = new GatherBehavior(unit);
-
-        expect(unit.materials).to.equal(5);
-        moveBehavior.execute();
-        expect(unit.materials).to.equal(5);
-        moveBehavior.execute();
-        expect(unit.materials).to.equal(5);
-    });
-})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;proxy&#34;&gt;Proxy&lt;/h1&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://www.youtube.com/watch?v=WcAV9rOGjxw&#34;&gt;Proxy Design Pattern&lt;/a&gt; can be used, for example, to create a &lt;code&gt;drone&lt;/code&gt; by using a proxy &lt;code&gt;cocoon&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;p&gt;The pattern is responsible (&amp;ldquo;stands in&amp;rdquo;) for all requests on original object, typical extend or change behavior, than delegates action again to original object.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// original
-class Drone {
-    move(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-}
-
-// proxy
-class Cocoon {
-    constructor() {
-        this.lifetime = 3000;
-        // proxing
-        this.hatchDrone();
-    }
-
-    hatchDrone() {
-        setTimeout(this.onHatchDroneDone.bind(this), this.lifetime);
-    }
-    
-    onHatchDroneDone() {
-      this.drone = new Drone();
-      this.drone.move(this.rallyPath.x, this.rallyPath.y);
-    }
-
-    move(x, y) {
-        if (this.drone) {
-            this.drone.move(x, y);
-        } else {
-          this.rallyPath = { x, y };
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;describe(&#39;Proxy pattern&#39;, () =&amp;gt; {
-    it(&#39;Create drone when cocoon is hatched&#39;, done =&amp;gt; {
-        const drone = new Cocoon();
-        
-        drone.move(10, 20);
-
-        expect(drone.drone).to.be.undefined;
-        expect(drone.rallyPath).to.be({ x: 10, y: 20 });
-
-        setTimeout(() =&amp;gt; {
-            expect(drone.drone).to.be.defined;
-            expect(drone.drone.x).to.be.equal(10);
-            expect(drone.drone.y).to.be.equal(20);
-            done();
-        }, drone.lifetime)
-    });
-
-    it(&#39;Visit armored&#39;, () =&amp;gt; {
-        const marauder = new Marauder();
-        const tankBullet = new TankBullet();
-        
-        tankBullet.visitArmored(marauder);
-
-        expect(mario.health).to.be(148);
-    });
-})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A classical JS example to proxing, for example, HTTP request by adding logging before every action:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// proxy
-const proxiedFetch = fetch;
-
-fetch = (url) =&amp;gt; {
-    // proxing
-    console.log(&#39;logging...&#39;);
-    // original
-    proxiedFetch(url);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Save my day:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PL8B19C3040F6381A2&#34;&gt;Original series of John Lindquist&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://sourcemaking.com/design_patterns&#34;&gt;Just a great resource of Design Patterns&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
     </item>
     
   </channel>
