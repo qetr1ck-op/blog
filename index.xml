@@ -10,11 +10,11 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>react app with express in production</title>
-      <link>https://qetr1ck-op.github.io/blog/post/react-app-with-express-in-production/</link>
+      <title>React app with Express in production</title>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/</link>
       <pubDate>Sat, 24 Jun 2017 20:46:01 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/react-app-with-express-in-production/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/06/react-app-with-express-in-production/</guid>
       <description>&lt;p&gt;Password randomizer app which was done with: REST API on &lt;code&gt;Express.js&lt;/code&gt;, Client app on &lt;code&gt;React.js&lt;/code&gt;, Build with &lt;code&gt;npm&lt;/code&gt;, Deploy on &lt;code&gt;Heroku&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -36,10 +36,10 @@
     
     <item>
       <title>Interview question: NodeJS, part 2</title>
-      <link>https://qetr1ck-op.github.io/blog/post/interview-question-nodejs-part-2/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/</link>
       <pubDate>Sun, 28 May 2017 17:43:40 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/interview-question-nodejs-part-2/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-2/</guid>
       <description>&lt;p&gt;Part two of original post &lt;a href=&#34;https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8&#34;&gt;How well do you know Node.js?&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -229,10 +229,10 @@ console.log(util.inspect(obj, {depth: null})); // prints: &#39;{ a: \&#39;a\&#39
     
     <item>
       <title>What is Load Balancing?</title>
-      <link>https://qetr1ck-op.github.io/blog/post/what-is-load-balancing/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/</link>
       <pubDate>Sun, 14 May 2017 23:49:01 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/what-is-load-balancing/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/</guid>
       <description>&lt;p&gt;Modern high-traffic websites must serve hundreds of thousands, if not millions, of concurrent requests from users or clients and return the correct text, images, video, or application data, all in a fast and reliable manner.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -254,10 +254,10 @@ console.log(util.inspect(obj, {depth: null})); // prints: &#39;{ a: \&#39;a\&#39
     
     <item>
       <title>Interview question: NodeJS, part 1</title>
-      <link>https://qetr1ck-op.github.io/blog/post/interview-question-nodejs-part-1/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/</link>
       <pubDate>Sun, 14 May 2017 17:43:40 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/interview-question-nodejs-part-1/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/interview-question-nodejs-part-1/</guid>
       <description>&lt;p&gt;Based on original post &lt;a href=&#34;https://edgecoders.com/how-well-do-you-know-node-js-36b1473c01c8&#34;&gt;How well do you know Node.js?&lt;/a&gt;. In it, Samer Buna lists 48 questions which be expects a Node.js developer to be able to answer.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -432,10 +432,10 @@ process.on(&#39;exit&#39;, exitHandler.bind(null));
     
     <item>
       <title>Asynchronous Javascript with async/await</title>
-      <link>https://qetr1ck-op.github.io/blog/post/asynchronous-javascript-with-async-await/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/</link>
       <pubDate>Tue, 09 May 2017 21:57:55 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/asynchronous-javascript-with-async-await/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/asynchronous-javascript-with-async-await/</guid>
       <description>&lt;p&gt;ES2017 async and await keywords to write asynchronous code that is more readable and easier to follow than equivalent code based on long promise chains or deeply nested callbacks.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -616,10 +616,10 @@ main();
     
     <item>
       <title>Advanced NodeJS</title>
-      <link>https://qetr1ck-op.github.io/blog/post/advanced-nodejs/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/advanced-nodejs/</link>
       <pubDate>Tue, 02 May 2017 20:16:35 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/advanced-nodejs/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/advanced-nodejs/</guid>
       <description>&lt;p&gt;This course will teach you the core Node.js concepts and API modules from simple utility modules all the way to streams and clusters.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -977,10 +977,10 @@ main();
     
     <item>
       <title>Mastering Flux and Redux</title>
-      <link>https://qetr1ck-op.github.io/blog/post/mastering-flux-and-redux/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/mastering-flux-and-redux/</link>
       <pubDate>Tue, 02 May 2017 19:38:57 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/mastering-flux-and-redux/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/mastering-flux-and-redux/</guid>
       <description>
 
 &lt;p&gt;At the core of any solid web application is an effective and well-managed data model. In this course, Mastering Flux and Redux, you&amp;rsquo;ll learn the skills and technologies necessary to manage your application&amp;rsquo;s data model in extremely efficient and standards-compliant ways.&lt;/p&gt;
@@ -1006,10 +1006,10 @@ main();
     
     <item>
       <title>Kata: Salesman&#39;s Travel</title>
-      <link>https://qetr1ck-op.github.io/blog/post/kata-salesmans-travel/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/kata-salesmans-travel/</link>
       <pubDate>Sat, 29 Apr 2017 23:56:58 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/kata-salesmans-travel/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/kata-salesmans-travel/</guid>
       <description>&lt;p&gt;A traveling salesman has to visit clients. He got each client&amp;rsquo;s address e.g. &amp;ldquo;432 Main Long Road St. Louisville OH 43071&amp;rdquo; as a list.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -1083,10 +1083,10 @@ travel(r, &amp;quot;NY 5643&amp;quot;) --&amp;gt; &amp;quot;NY 5643:/&amp;quot;
     
     <item>
       <title>npm scrips as your build tool</title>
-      <link>https://qetr1ck-op.github.io/blog/post/npm-scrips-as-your-build-tool/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/npm-scrips-as-your-build-tool/</link>
       <pubDate>Sat, 29 Apr 2017 12:14:14 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/npm-scrips-as-your-build-tool/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/npm-scrips-as-your-build-tool/</guid>
       <description>&lt;p&gt;The course introduces the topic of using npm scripts as a build tool. It starts simple and then continue to build a small website as we introduce new topics.&lt;/p&gt;
 
 &lt;p&gt;By the end of the course, you&amp;rsquo;ll know how to get started and what tools and techniques are needed for you to create your own set of build scripts.&lt;/p&gt;
@@ -1126,10 +1126,10 @@ travel(r, &amp;quot;NY 5643&amp;quot;) --&amp;gt; &amp;quot;NY 5643:/&amp;quot;
     
     <item>
       <title>Prettier as a formating tool for JS</title>
-      <link>https://qetr1ck-op.github.io/blog/post/prettier-as-a-formating-tool-for-JS/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/prettier-as-a-formating-tool-for-JS/</link>
       <pubDate>Wed, 26 Apr 2017 22:23:01 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/prettier-as-a-formating-tool-for-JS/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/prettier-as-a-formating-tool-for-JS/</guid>
       <description>
 
 &lt;p&gt;Prettier is an opinionated JavaScript formatter with advanced support for language features from &lt;code&gt;ES2017&lt;/code&gt;, &lt;code&gt;JSX&lt;/code&gt;, and &lt;code&gt;Flow&lt;/code&gt;. It removes all original styling and ensures that all outputted JavaScript conforms to a consistent style.&lt;/p&gt;
@@ -1150,10 +1150,10 @@ travel(r, &amp;quot;NY 5643&amp;quot;) --&amp;gt; &amp;quot;NY 5643:/&amp;quot;
     
     <item>
       <title>Essential Programming Books</title>
-      <link>https://qetr1ck-op.github.io/blog/post/essential-programming-books/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/essential-programming-books/</link>
       <pubDate>Sun, 23 Apr 2017 22:35:48 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/essential-programming-books/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/essential-programming-books/</guid>
       <description>&lt;p&gt;The list of 129 books deemed fundamental to the art of programming and includes books for various languages.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -1167,10 +1167,10 @@ travel(r, &amp;quot;NY 5643&amp;quot;) --&amp;gt; &amp;quot;NY 5643:/&amp;quot;
     
     <item>
       <title>Front End Handbook 2017</title>
-      <link>https://qetr1ck-op.github.io/blog/post/front-end-handbook-2017/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</link>
       <pubDate>Sun, 23 Apr 2017 19:11:25 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/front-end-handbook-2017/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</guid>
       <description>&lt;p&gt;This is a guide that anyone could use to learn about the practice of front-end development. It broadly outlines and discusses the practice of front-end engineering: how to learn it and what tools are used when practicing it in 2017&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -1204,10 +1204,10 @@ travel(r, &amp;quot;NY 5643&amp;quot;) --&amp;gt; &amp;quot;NY 5643:/&amp;quot;
     
     <item>
       <title>Favicon generator</title>
-      <link>https://qetr1ck-op.github.io/blog/post/simple-favicon-generator/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/simple-favicon-generator/</link>
       <pubDate>Sun, 09 Apr 2017 20:23:14 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/simple-favicon-generator/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/simple-favicon-generator/</guid>
       <description>&lt;p&gt;With so many platforms and icons, it&amp;rsquo;s hard to know exactly what you should do. What are the dimensions of favicon.ico? How many Touch icons do I need? RealFaviconGenerator did the research and testing for you.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -1219,10 +1219,10 @@ travel(r, &amp;quot;NY 5643&amp;quot;) --&amp;gt; &amp;quot;NY 5643:/&amp;quot;
     
     <item>
       <title>A static site with a dynamic search function</title>
-      <link>https://qetr1ck-op.github.io/blog/post/static-site-with-a-dynamic-search/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/static-site-with-a-dynamic-search/</link>
       <pubDate>Sun, 09 Apr 2017 12:09:08 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/static-site-with-a-dynamic-search/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/static-site-with-a-dynamic-search/</guid>
       <description>&lt;p&gt;A static site with a dynamic search function? Yes. Alternatively to embeddable scripts from Google or other search engines you can provide your visitors a custom search by indexing your content files directly.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -1240,10 +1240,10 @@ travel(r, &amp;quot;NY 5643&amp;quot;) --&amp;gt; &amp;quot;NY 5643:/&amp;quot;
     
     <item>
       <title>JS 30</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Js-30/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/Js-30/</link>
       <pubDate>Tue, 04 Apr 2017 14:51:54 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/Js-30/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/Js-30/</guid>
       <description>&lt;p&gt;To fresh memory with &lt;a href=&#34;https://javascript30.com/&#34;&gt;30 day vanilla js coding challenge&lt;/a&gt;. Build 30 things in 30 days with 30 tutorials. No Frameworks, No Compilers, No Libraries, No Boilerplate!&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;

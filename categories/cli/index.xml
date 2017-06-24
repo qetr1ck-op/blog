@@ -10,10 +10,10 @@
     
     <item>
       <title>Advanced NodeJS</title>
-      <link>https://qetr1ck-op.github.io/blog/post/advanced-nodejs/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/advanced-nodejs/</link>
       <pubDate>Tue, 02 May 2017 20:16:35 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/advanced-nodejs/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/advanced-nodejs/</guid>
       <description>&lt;p&gt;This course will teach you the core Node.js concepts and API modules from simple utility modules all the way to streams and clusters.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -371,10 +371,10 @@
     
     <item>
       <title>npm scrips as your build tool</title>
-      <link>https://qetr1ck-op.github.io/blog/post/npm-scrips-as-your-build-tool/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/npm-scrips-as-your-build-tool/</link>
       <pubDate>Sat, 29 Apr 2017 12:14:14 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/npm-scrips-as-your-build-tool/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/npm-scrips-as-your-build-tool/</guid>
       <description>&lt;p&gt;The course introduces the topic of using npm scripts as a build tool. It starts simple and then continue to build a small website as we introduce new topics.&lt;/p&gt;
 
 &lt;p&gt;By the end of the course, you&amp;rsquo;ll know how to get started and what tools and techniques are needed for you to create your own set of build scripts.&lt;/p&gt;
@@ -414,10 +414,10 @@
     
     <item>
       <title>Prettier as a formating tool for JS</title>
-      <link>https://qetr1ck-op.github.io/blog/post/prettier-as-a-formating-tool-for-JS/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/prettier-as-a-formating-tool-for-JS/</link>
       <pubDate>Wed, 26 Apr 2017 22:23:01 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/prettier-as-a-formating-tool-for-JS/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/prettier-as-a-formating-tool-for-JS/</guid>
       <description>
 
 &lt;p&gt;Prettier is an opinionated JavaScript formatter with advanced support for language features from &lt;code&gt;ES2017&lt;/code&gt;, &lt;code&gt;JSX&lt;/code&gt;, and &lt;code&gt;Flow&lt;/code&gt;. It removes all original styling and ensures that all outputted JavaScript conforms to a consistent style.&lt;/p&gt;
@@ -438,10 +438,10 @@
     
     <item>
       <title>Awesome terminal emulator for Windows</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Awesome-terminal-emulator-for-Windows/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/12/Awesome-terminal-emulator-for-Windows/</link>
       <pubDate>Tue, 02 Dec 2014 21:15:37 +0000</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/Awesome-terminal-emulator-for-Windows/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/12/Awesome-terminal-emulator-for-Windows/</guid>
       <description>&lt;p&gt;Cmder is a software package created out of pure frustration over the absence of nice console emulators on Windows. It is based on amazing software, and spiced up with the Monokai color scheme and a custom prompt layout. Looking sexy from the start.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -453,10 +453,10 @@
     
     <item>
       <title>CLI in Windows, useful commands</title>
-      <link>https://qetr1ck-op.github.io/blog/post/CLI-in-Windows-useful-commands/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/06/CLI-in-Windows-useful-commands/</link>
       <pubDate>Sat, 14 Jun 2014 10:22:15 +0000</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/CLI-in-Windows-useful-commands/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/06/CLI-in-Windows-useful-commands/</guid>
       <description>&lt;p&gt;The command line lets you communicate directly with your computer and instruct it to perform various tasks. For this you have to use specific commands&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;

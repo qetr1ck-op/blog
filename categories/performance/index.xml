@@ -10,10 +10,10 @@
     
     <item>
       <title>What is Load Balancing?</title>
-      <link>https://qetr1ck-op.github.io/blog/post/what-is-load-balancing/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/</link>
       <pubDate>Sun, 14 May 2017 23:49:01 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/what-is-load-balancing/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/05/what-is-load-balancing/</guid>
       <description>&lt;p&gt;Modern high-traffic websites must serve hundreds of thousands, if not millions, of concurrent requests from users or clients and return the correct text, images, video, or application data, all in a fast and reliable manner.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -35,10 +35,10 @@
     
     <item>
       <title>Front End Handbook 2017</title>
-      <link>https://qetr1ck-op.github.io/blog/post/front-end-handbook-2017/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</link>
       <pubDate>Sun, 23 Apr 2017 19:11:25 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/front-end-handbook-2017/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/front-end-handbook-2017/</guid>
       <description>&lt;p&gt;This is a guide that anyone could use to learn about the practice of front-end development. It broadly outlines and discusses the practice of front-end engineering: how to learn it and what tools are used when practicing it in 2017&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -72,10 +72,10 @@
     
     <item>
       <title>Improve web performance using Google PageSpeed</title>
-      <link>https://qetr1ck-op.github.io/blog/post/improve-web-performance-using-google-pageSpeed/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/improve-web-performance-using-google-pageSpeed/</link>
       <pubDate>Sun, 02 Apr 2017 14:51:54 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/improve-web-performance-using-google-pageSpeed/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/improve-web-performance-using-google-pageSpeed/</guid>
       <description>&lt;p&gt;This course covers how to analyze your web pages to make sure they are following known performance best practices.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -91,10 +91,10 @@
     
     <item>
       <title>Book: &#39;Node.js design pattern&#39;</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Node-js-design-pattern-book-review/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/10/Node-js-design-pattern-book-review/</link>
       <pubDate>Thu, 06 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/Node-js-design-pattern-book-review/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/10/Node-js-design-pattern-book-review/</guid>
       <description>&lt;p&gt;&amp;ldquo;How could I organize my code?&amp;rdquo;, &amp;ldquo;What is the best way to design this?&amp;rdquo;, &amp;ldquo;How can I make my application more modular?&amp;rdquo;, &amp;ldquo;How do I handle a set of asynchronous call effectively?&amp;rdquo;, &amp;ldquo;How can I make sure that my application will not collapse while it grows?&amp;rdquo;.&lt;/p&gt;
 
 &lt;p&gt;If you have such questions without answers, that book is definitely for you!&lt;/p&gt;
@@ -2179,10 +2179,10 @@ console.log(&#39;loading...&#39;);
     
     <item>
       <title>Front End Interview Questions</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Front-End-Interview-Questions/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/08/Front-End-Interview-Questions/</link>
       <pubDate>Sun, 14 Aug 2016 11:39:13 +0000</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/Front-End-Interview-Questions/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/08/Front-End-Interview-Questions/</guid>
       <description>&lt;p&gt;To rock the interview to achieve what you deserve and to improve your concepts about front end technologies, I have consolidated a list of questions and answers. It&amp;rsquo;s a one stop solution for front end interview process.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -4315,10 +4315,10 @@ It works by comparing the target value to the midpoint of the array; if they are
     
     <item>
       <title>The difference between throttling and debouncing</title>
-      <link>https://qetr1ck-op.github.io/blog/post/The-Difference-Between-Throttling-and-Debouncing/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/01/The-Difference-Between-Throttling-and-Debouncing/</link>
       <pubDate>Mon, 11 Jan 2016 13:14:13 +0000</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/The-Difference-Between-Throttling-and-Debouncing/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/01/The-Difference-Between-Throttling-and-Debouncing/</guid>
       <description>&lt;p&gt;One of the biggest mistakes I see when looking to optimize existing code is the absence of the debounce/throttle function. Both of them are ways to limit the amount of JavaScript you are executing based on DOM events for performance reasons. But they are, you guessed it, different.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -4449,10 +4449,10 @@ window.addEventListener(&#39;resize&#39;, myEfficientFn);
     
     <item>
       <title>Performance: JavaScript loops</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Performance-JavaScript-loops/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/08/Performance-JavaScript-loops/</link>
       <pubDate>Wed, 06 Aug 2014 20:38:48 +0000</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/Performance-JavaScript-loops/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/08/Performance-JavaScript-loops/</guid>
       <description>&lt;p&gt;Is it faster to use the native forEach or just loop with for?&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -4490,10 +4490,10 @@ window.addEventListener(&#39;resize&#39;, myEfficientFn);
     
     <item>
       <title>Performance: JavaScript adding text to a node</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Performance-Javascript-adding-text-to-a-node/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2014/07/Performance-Javascript-adding-text-to-a-node/</link>
       <pubDate>Fri, 25 Jul 2014 23:10:14 +0000</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/Performance-Javascript-adding-text-to-a-node/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2014/07/Performance-Javascript-adding-text-to-a-node/</guid>
       <description>&lt;p&gt;What is the most reasonable approach?&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;

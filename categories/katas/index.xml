@@ -10,10 +10,10 @@
     
     <item>
       <title>Kata: Salesman&#39;s Travel</title>
-      <link>https://qetr1ck-op.github.io/blog/post/kata-salesmans-travel/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2017/04/kata-salesmans-travel/</link>
       <pubDate>Sat, 29 Apr 2017 23:56:58 +0300</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/kata-salesmans-travel/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2017/04/kata-salesmans-travel/</guid>
       <description>&lt;p&gt;A traveling salesman has to visit clients. He got each client&amp;rsquo;s address e.g. &amp;ldquo;432 Main Long Road St. Louisville OH 43071&amp;rdquo; as a list.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -87,10 +87,10 @@ travel(r, &amp;quot;NY 5643&amp;quot;) --&amp;gt; &amp;quot;NY 5643:/&amp;quot;
     
     <item>
       <title>Kata: Format a string of names like &#39;Bart, Lisa &amp; Maggie&#39;</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/</link>
       <pubDate>Fri, 19 Feb 2016 00:05:14 +0000</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/Kata-String-Format-a-string-of-names-like-Bart-Lisa-Maggie/</guid>
       <description>&lt;p&gt;Given: an array containing hashes of names&lt;/p&gt;
 
 &lt;p&gt;Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
@@ -141,10 +141,10 @@ Test.assertEquals(list([]), &#39;&#39;, &amp;quot;Must work with no names&amp;qu
     
     <item>
       <title>Kata: Filter through name/email</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Kata-Array-RegExp-Filter-through-name-email/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/Kata-Array-RegExp-Filter-through-name-email/</link>
       <pubDate>Mon, 15 Feb 2016 22:34:45 +0000</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/Kata-Array-RegExp-Filter-through-name-email/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/Kata-Array-RegExp-Filter-through-name-email/</guid>
       <description>&lt;p&gt;He has troubles with users ending or starting in a &lt;code&gt;.&lt;/code&gt;, and his user-array is a flat array of user-email-pairs, like so:&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -178,10 +178,10 @@ Test.assertEquals(list([]), &#39;&#39;, &amp;quot;Must work with no names&amp;qu
     
     <item>
       <title>Kata: Function cache</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Kata-Functions-Function-cache/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/Kata-Functions-Function-cache/</link>
       <pubDate>Sun, 14 Feb 2016 21:17:45 +0000</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/Kata-Functions-Function-cache/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/Kata-Functions-Function-cache/</guid>
       <description>&lt;p&gt;If you are calculating complex things or execute time-consuming API calls, you sometimes want to cache the results. In this case we want you to create a function wrapper, which takes a function and caches its results depending on the arguments, that were applied to the function.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -213,10 +213,10 @@ cachedFunction(&#39;foo&#39;, &#39;baz&#39;); // should be executed, because the
     
     <item>
       <title>Kata: All, None &amp; Any</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Kata-Fundamentals-Arrays-All-None-Any/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/02/Kata-Fundamentals-Arrays-All-None-Any/</link>
       <pubDate>Wed, 10 Feb 2016 20:58:59 +0000</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/Kata-Fundamentals-Arrays-All-None-Any/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/02/Kata-Fundamentals-Arrays-All-None-Any/</guid>
       <description>&lt;p&gt;As a part of this Kata, you need to create three functions that one needs to be able to call upon an array:&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -287,10 +287,10 @@ Array.prototype.any = function (p) {
     
     <item>
       <title>Kata: Are they square?</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Kata-Arrays-Are-they-square/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2016/01/Kata-Arrays-Are-they-square/</link>
       <pubDate>Sat, 09 Jan 2016 23:54:01 +0000</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/Kata-Arrays-Are-they-square/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2016/01/Kata-Arrays-Are-they-square/</guid>
       <description>&lt;p&gt;Write a function that checks whether all elements in an array are square numbers. The function should be able to take any number of array elements.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -318,10 +318,10 @@ var isSquare = function(arr){
     
     <item>
       <title>Kata: Reverse words</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Kata-String-Reverse-words/</link>
+      <link>https://qetr1ck-op.github.io/blog/post/2015/09/Kata-String-Reverse-words/</link>
       <pubDate>Sun, 13 Sep 2015 11:50:12 +0000</pubDate>
       
-      <guid>https://qetr1ck-op.github.io/blog/post/Kata-String-Reverse-words/</guid>
+      <guid>https://qetr1ck-op.github.io/blog/post/2015/09/Kata-String-Reverse-words/</guid>
       <description>&lt;p&gt;Write a &lt;code&gt;reverseWords&lt;/code&gt; function that accepts a string a parameter, and reverses each word in the string. Every space should stay, so you cannot use words from Prelude.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
