@@ -6,8 +6,33 @@
     <description>Recent content in Posts on OP blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 28 May 2017 17:43:40 +0300</lastBuildDate>
+    <lastBuildDate>Sat, 24 Jun 2017 20:46:01 +0300</lastBuildDate>
     <atom:link href="https://qetr1ck-op.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>react app with express in production</title>
+      <link>https://qetr1ck-op.github.io/blog/post/react-app-with-express-in-production/</link>
+      <pubDate>Sat, 24 Jun 2017 20:46:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/react-app-with-express-in-production/</guid>
+      <description>&lt;p&gt;Password randomizer app which was done with: REST API on &lt;code&gt;Express.js&lt;/code&gt;, Client app on &lt;code&gt;React.js&lt;/code&gt;, Build with &lt;code&gt;npm&lt;/code&gt;, Deploy on &lt;code&gt;Heroku&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;demo&#34;&gt;Demo&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://morning-ocean-99678.herokuapp.com/&#34;&gt;client app&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://morning-ocean-99678.herokuapp.com/api/password&#34;&gt;api/password&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/rando&#34;&gt;repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;documentation&#34;&gt;Documentation&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://daveceddia.com/create-react-app-express-production/&#34;&gt;Create React App with Express in Production by Dave Ceddia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
     
     <item>
       <title>Interview question: NodeJS, part 2</title>
@@ -1259,25 +1284,6 @@ travel(r, &amp;quot;NY 5643&amp;quot;) --&amp;gt; &amp;quot;NY 5643:/&amp;quot;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/wesbos/JavaScript30&#34;&gt;Github original source&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Improve web performance using Google PageSpeed</title>
-      <link>https://qetr1ck-op.github.io/blog/post/improve-web-performance-using-google-pageSpeed/</link>
-      <pubDate>Sun, 02 Apr 2017 14:51:54 +0300</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/improve-web-performance-using-google-pageSpeed/</guid>
-      <description>&lt;p&gt;This course covers how to analyze your web pages to make sure they are following known performance best practices.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;description&#34;&gt;Description&lt;/h1&gt;
-
-&lt;p&gt;Developers today have access to multiple tools that can quickly analyze a web page for performance best practices and give specific suggestions on what items should be addressed. This course first covers the different analysis tools that are available. It then uses one of these tools, the Performance Scorecard Chrome extension to analyze a sample website. Then, the course walks through each of the important recommendations given by the extension and shows how to fix them. By the end of this course, you will have a firm grasp of the most important web performance issues and how to address them.&lt;/p&gt;
-
-&lt;h1 id=&#34;link&#34;&gt;Link&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.pluralsight.com/courses/google-pagespeed-insights-web-performance&#34;&gt;course on pluralsight&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

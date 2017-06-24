@@ -9,6 +9,31 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/patterns/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>react app with express in production</title>
+      <link>https://qetr1ck-op.github.io/blog/post/react-app-with-express-in-production/</link>
+      <pubDate>Sat, 24 Jun 2017 20:46:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/react-app-with-express-in-production/</guid>
+      <description>&lt;p&gt;Password randomizer app which was done with: REST API on &lt;code&gt;Express.js&lt;/code&gt;, Client app on &lt;code&gt;React.js&lt;/code&gt;, Build with &lt;code&gt;npm&lt;/code&gt;, Deploy on &lt;code&gt;Heroku&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;demo&#34;&gt;Demo&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://morning-ocean-99678.herokuapp.com/&#34;&gt;client app&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://morning-ocean-99678.herokuapp.com/api/password&#34;&gt;api/password&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/rando&#34;&gt;repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;documentation&#34;&gt;Documentation&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://daveceddia.com/create-react-app-express-production/&#34;&gt;Create React App with Express in Production by Dave Ceddia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>Interview question: NodeJS, part 2</title>
       <link>https://qetr1ck-op.github.io/blog/post/interview-question-nodejs-part-2/</link>
       <pubDate>Sun, 28 May 2017 17:43:40 +0300</pubDate>
@@ -7256,221 +7281,6 @@ getUserByName(&#39;nolan&#39;)
 
 &lt;p&gt;Save my day:
     *   &lt;a href=&#34;http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html&#34;&gt;We have a problem with promises&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>OOP in prototype style</title>
-      <link>https://qetr1ck-op.github.io/blog/post/OOP-in-prototype-style/</link>
-      <pubDate>Mon, 15 Sep 2014 22:40:38 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/OOP-in-prototype-style/</guid>
-      <description>&lt;p&gt;The main point is that one object can be &lt;code&gt;prototype&lt;/code&gt; of another object. That means if property isn&amp;rsquo;t found in the object - than it takes from &lt;code&gt;prototype&lt;/code&gt; object. In JavaScript this implementation is at the language level.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;inheritance-through-link-proto&#34;&gt;Inheritance through link &lt;code&gt;__proto__&lt;/code&gt;&lt;/h1&gt;
-
-&lt;p&gt;Inheritance in JavaScript is realized via special property &lt;code&gt;__proto__&lt;/code&gt; (In specs EcmaScript the name is &lt;code&gt;[[Prototype]]&lt;/code&gt;). In ES5 the property was available in Chrome / Firefox and Safari, but in other browser was hidden. ES6 includes &lt;code&gt;__proto__&lt;/code&gt; property as standard. In this article, for more efficient way I&amp;rsquo;ll use &lt;code&gt;__proto__&lt;/code&gt; property, but for legacy you should use &lt;code&gt;Object.getPrototypeOf()&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;If the object, for instance &lt;code&gt;rabbit&lt;/code&gt;, has a special link &lt;code&gt;__proto__&lt;/code&gt; to another object &lt;code&gt;animal&lt;/code&gt;, that mean, that all property which are searched in the &lt;code&gt;rabbit&lt;/code&gt;, will be also searched in the &lt;code&gt;animal&lt;/code&gt; object.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var animal = { eats: true },
-    rabbit = { jumps: true };
-
-rabbit.__proto__ = animal;
-
-console.log(rabbit.eats) //true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We can write any object in &lt;code&gt;prototype&lt;/code&gt; object:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var rabbit = {foo: &#39;bar&#39;};
-
-rabbit.__proto__ = window;
-
-console.log(rabbit.location) // call location object through window object
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So, object pointed by &lt;code&gt;__proto__&lt;/code&gt; it is his &lt;code&gt;prototype&lt;/code&gt;. In another words &lt;code&gt;prototype&lt;/code&gt; it&amp;rsquo;s &amp;ldquo;Backup Storage of Properties and Methods&amp;rdquo;, which automatically used in the search.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../../images/posts/OOP-in-prototype-style/img1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;method-hasownproperty&#34;&gt;Method &lt;code&gt;hasOwnProperty&lt;/code&gt;&lt;/h1&gt;
-
-&lt;p&gt;Simple loop &lt;code&gt;for...in&lt;/code&gt; or loop through iterable objects (Array, Mas, Set, arguments object) can&amp;rsquo;t distinguish between the own properties and properties of his &lt;code&gt;prototype&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var animal = {
-  eats: true
-};
-
-var rabbit = {
-  jumps: true,
-  __proto__: animal
-};
-
-for (var key in rabbit) {
-  alert( key + &amp;quot; = &amp;quot; + rabbit[key] ); // &amp;quot;eats&amp;quot;; &amp;quot;jumps&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;For iterate only through own properties with &lt;code&gt;obj.hasOwnProperty(prop)&lt;/code&gt;:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/f69804da0f8a16a29f79.js&#34;&gt;&lt;/script&gt;
-
-&lt;h1 id=&#34;prototype-chain&#34;&gt;Prototype Chain&lt;/h1&gt;
-
-&lt;p&gt;In object &lt;code&gt;__proto__&lt;/code&gt; can be another &lt;code&gt;__proto__&lt;/code&gt; object and so on. For example, the inheritance chain of three object donkey -&amp;gt; winnie -&amp;gt; owl:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/d57b779a057e164bf1d2.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;img src=&#34;../../images/posts/OOP-in-prototype-style/img2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;methods-to-work-with-proto&#34;&gt;Methods to work with &lt;code&gt;__proto__&lt;/code&gt;&lt;/h1&gt;
-
-&lt;p&gt;By historical reason we have methods to get/set &lt;code&gt;__proto__&lt;/code&gt; property:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/54c9dbea765318e4a2c2.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;code&gt;Object.create(proto, descriptors)&lt;/code&gt; creates new bempty object with &lt;code&gt;__proto__&lt;/code&gt; object:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/970d7c61bf7452fd8b5e.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;This method only allows create new empty object. He can&amp;rsquo;t change &lt;code&gt;prototype&lt;/code&gt; of an existing object.&lt;/p&gt;
-
-&lt;p&gt;Create an empty collection, without prototype chain with &lt;code&gt;Object.create(null)&lt;/code&gt;:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/99be3a7345429941c2eb.js&#34;&gt;&lt;/script&gt;
-
-&lt;h1 id=&#34;exercise-with-proto&#34;&gt;Exercise with &lt;code&gt;__proto__&lt;/code&gt;&lt;/h1&gt;
-
-&lt;p&gt;1.1
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/d20e3a520e4dc06a5f63.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;1.2
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/32ce09bfa0ca65d5346d.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../../img3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;f-prototype&#34;&gt;F.prototype&lt;/h1&gt;
-
-&lt;p&gt;Property &lt;code&gt;prototype&lt;/code&gt; can point on any object but it has sense, when it&amp;rsquo;s assigned to function-constructor.&lt;/p&gt;
-
-&lt;p&gt;When project is creating via &lt;code&gt;new&lt;/code&gt;, in his &lt;code&gt;__proto__&lt;/code&gt; object writes link from &lt;code&gt;prototype&lt;/code&gt; of function-constructor.&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/c4ac921c558015b4a481.js&#34;&gt;&lt;/script&gt;
-
-&lt;h1 id=&#34;exercises-with-prototype-and-new&#34;&gt;Exercises with prototype and new&lt;/h1&gt;
-
-&lt;p&gt;1.1&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/079e4c21baa262ca5f44.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;1.2&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/340acc108182399dbd38.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;1.3&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/275f8d2485c73f3a365a.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;1.4&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/9b042fd1294bb8529477.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;1.5&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/36a799bfd94038ea3a88.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;2.1&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/aadce099bb5b8ddf7a02.js&#34;&gt;&lt;/script&gt;
-
-&lt;!--  --&gt;
-
-&lt;h1 id=&#34;classes-where-methods-come-from-empty&#34;&gt;&amp;ldquo;Classes&amp;rdquo;. Where methods come from empty {}&lt;/h1&gt;
-
-&lt;p&gt;Lets begin with creating empty object end call method &lt;code&gt;toString&lt;/code&gt;:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/d0902bca8a134b7c101f.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;It&amp;rsquo;s obviously, that &lt;code&gt;{ }&lt;/code&gt; is empty. But then who generates method &lt;code&gt;toString()&lt;/code&gt;? Off-course this makes method &lt;code&gt;toString()&lt;/code&gt; which is built-in &lt;code&gt;Object.prototype&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;In details it works like this:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Creating object literal &lt;code&gt;obj = { }&lt;/code&gt; means shorthand form for &lt;code&gt;obj = new Object()&lt;/code&gt;, were &lt;code&gt;Object&lt;/code&gt; is built-in function-constructor for objects&lt;/li&gt;
-&lt;li&gt;While &lt;code&gt;new Object&lt;/code&gt; invokes, new object has receives &lt;code&gt;obj.__proto__ = Object.prototype&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;obj.toString === Object.prototype.toString&lt;/code&gt; method will be taken from prototype object.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&#34;../../images/posts/OOP-in-prototype-style/img4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;build-in-classes&#34;&gt;Build-in &amp;ldquo;Classes&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;The same methods use in arrays &lt;code&gt;Array&lt;/code&gt;, functions &lt;code&gt;Function&lt;/code&gt; and other objects. Build-in methods are in &lt;code&gt;Array.prototype&lt;/code&gt;, &lt;code&gt;Function.prototype&lt;/code&gt;, etc.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../../images/posts/OOP-in-prototype-style/img5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Thats why everywhere JS developers like to say that &amp;ldquo;All objects inherit from &lt;code&gt;Object&lt;/code&gt;&amp;rdquo;. But it&amp;rsquo;s a quite incorrect. All objects inherit from &lt;code&gt;Object.prototype&lt;/code&gt; via &lt;code&gt;__proto__&lt;/code&gt; link.&lt;/p&gt;
-
-&lt;p&gt;In some cases, method can overrides. For example, &amp;ldquo;class&amp;rdquo; &lt;code&gt;Array&lt;/code&gt; has it&amp;rsquo;s own &lt;code&gt;toString&lt;/code&gt;, which is in &lt;code&gt;Array.prototype.toString&lt;/code&gt;:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/823a2dfdf760938c91fd.js&#34;&gt;&lt;/script&gt;
-
-&lt;h1 id=&#34;exercises-with-overriding-prototype&#34;&gt;Exercises with overriding prototype&lt;/h1&gt;
-
-&lt;p&gt;1.1&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/df77c34e3efec24039e6.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;1.2&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/188c0afa47da9b036b73.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;1.3&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/e733ebd38e35616ed565.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;1.4&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/a292315fd0ddd6477827.js&#34;&gt;&lt;/script&gt;
-
-&lt;h1 id=&#34;declares-own-classes&#34;&gt;Declares own &amp;ldquo;Classes&amp;rdquo;&lt;/h1&gt;
-
-&lt;p&gt;For create &amp;ldquo;Class&amp;rdquo; you need:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Declare function-constructor&lt;/li&gt;
-&lt;li&gt;Write all required methods and properties in &lt;code&gt;prototype&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/fde34608e4532f82d166.js&#34;&gt;&lt;/script&gt;
-
-&lt;h1 id=&#34;property-constructor&#34;&gt;Property &lt;code&gt;constructor&lt;/code&gt;&lt;/h1&gt;
-
-&lt;p&gt;Property &lt;code&gt;constructor&lt;/code&gt; is in every function, even if it isn&amp;rsquo;t declare. So concept is next, the property &lt;code&gt;constructor&lt;/code&gt; should have link to function, which creates the object:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/02ee2ee811e78b50274c.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;But when you overriding the &lt;code&gt;prototype&lt;/code&gt;, property &lt;code&gt;constructor&lt;/code&gt; disappears:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/c43b5a7d1ec3afd701af.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;So how it works: animal -&amp;gt; Animal.prototype (new Object) -&amp;gt; Object.prototype&lt;/p&gt;
-
-&lt;h1 id=&#34;prototype-oop&#34;&gt;Prototype OOP&lt;/h1&gt;
-
-&lt;p&gt;Classes it isn&amp;rsquo;t only function-constructor with &lt;code&gt;prototype&lt;/code&gt;, it&amp;rsquo;s also additional opportunities for OOP development.&lt;/p&gt;
-
-&lt;p&gt;For example two &amp;ldquo;Classes&amp;rdquo; and realization of &amp;ldquo;Class inheritance&amp;rdquo;:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/qetr1ck-op/4aed9017910b8e0d2c39.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;SaveMyDay:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;on &lt;a href=&#34;https://learn.javascript.ru/prototypes&#34;&lt;/a&gt; learn.javascript.ru&lt;/li&gt;
-&lt;/ul&gt;</description>
     </item>
     
   </channel>

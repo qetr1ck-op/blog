@@ -9,6 +9,31 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/architecture/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>react app with express in production</title>
+      <link>https://qetr1ck-op.github.io/blog/post/react-app-with-express-in-production/</link>
+      <pubDate>Sat, 24 Jun 2017 20:46:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/react-app-with-express-in-production/</guid>
+      <description>&lt;p&gt;Password randomizer app which was done with: REST API on &lt;code&gt;Express.js&lt;/code&gt;, Client app on &lt;code&gt;React.js&lt;/code&gt;, Build with &lt;code&gt;npm&lt;/code&gt;, Deploy on &lt;code&gt;Heroku&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;demo&#34;&gt;Demo&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://morning-ocean-99678.herokuapp.com/&#34;&gt;client app&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://morning-ocean-99678.herokuapp.com/api/password&#34;&gt;api/password&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/rando&#34;&gt;repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;documentation&#34;&gt;Documentation&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://daveceddia.com/create-react-app-express-production/&#34;&gt;Create React App with Express in Production by Dave Ceddia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>Interview question: NodeJS, part 2</title>
       <link>https://qetr1ck-op.github.io/blog/post/interview-question-nodejs-part-2/</link>
       <pubDate>Sun, 28 May 2017 17:43:40 +0300</pubDate>
@@ -1695,61 +1720,6 @@ fetch = (url) =&amp;gt; {
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PL8B19C3040F6381A2&#34;&gt;Original series of John Lindquist&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://sourcemaking.com/design_patterns&#34;&gt;Just a great resource of Design Patterns&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>RESTful Web Services with Node.js and Express</title>
-      <link>https://qetr1ck-op.github.io/blog/post/RESTful-Web-Services-with-Node-js-and-Express/</link>
-      <pubDate>Sun, 18 Dec 2016 12:01:04 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/RESTful-Web-Services-with-Node-js-and-Express/</guid>
-      <description>&lt;p&gt;Node.js is a simple and powerful tool for backend development. When combined with express, you can create lightweight, fast, scalable APIs quickly and simply.
-&lt;/p&gt;
-
-&lt;h1 id=&#34;what-is-rest-anyway&#34;&gt;What is REST anyway?&lt;/h1&gt;
-
-&lt;p&gt;The term &lt;strong&gt;RE&lt;/strong&gt;presentational &lt;strong&gt;S&lt;/strong&gt;tate &lt;strong&gt;T&lt;/strong&gt;ransfer came from a dissertation written by Roy Fielding back in 2000.
-He described a series of constraints that should be in place whenever two systems talk to each other.&lt;/p&gt;
-
-&lt;p&gt;So ultimately REST is just a series of rules in place for your server, so everyone who uses your service understand
-what it does and how it works.&lt;/p&gt;
-
-&lt;h1 id=&#34;the-uniform-interface&#34;&gt;The Uniform interface&lt;/h1&gt;
-
-&lt;p&gt;Whenever you&amp;rsquo;re dealing with RESTful service you&amp;rsquo;ll be dealing with a resource or resources and all that really means
-is you&amp;rsquo;re dealing with with &lt;strong&gt;nouns&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Uniform resource are built around things, not actions.&lt;/p&gt;
-
-&lt;p&gt;For example dealing with books as a resource, the url be &lt;code&gt;http://domain/books&lt;/code&gt;. With authors it would be &lt;code&gt;/authors&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;The another part of uniform interface are HTTP &lt;strong&gt;verbs&lt;/strong&gt; that we use in our request will dictate the type of activity
-we&amp;rsquo;re trying to do on the resource:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;GET&lt;/code&gt; will simply request data (&lt;code&gt;/books&lt;/code&gt; get all or &lt;code&gt;/books/:id&lt;/code&gt; a unique book)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;POST&lt;/code&gt; uses to add data (&lt;code&gt;/books&lt;/code&gt; add new book)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;DELETE&lt;/code&gt; will remove an entity (&lt;code&gt;books/:id&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;PUT&lt;/code&gt; is used for update or replace a resource&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;PATCH&lt;/code&gt; updates piece of that resource&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The last part of interface is HATEOS (Hypermedia as the Engine of Application State). Basically all that means is
-that in each request will be a set of hyperlinks that you can use to navigate the API. In example, what type of
-actions you can do on a particular resource.&lt;/p&gt;
-
-&lt;h1 id=&#34;the-project&#34;&gt;The project&lt;/h1&gt;
-
-&lt;p&gt;The project walk through how to stand up a lightweight Express server serving truly RESTful services using &lt;code&gt;Node.js&lt;/code&gt;, &lt;code&gt;Mongoose&lt;/code&gt;, and &lt;code&gt;MongoDB&lt;/code&gt;.
-There are implemented all of the RESTful verbs to get, add, and update data with working through unit and e2e-integration tests for our services.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/RESTful-Web-Services-with-Node.js-and-Express&#34;&gt;Link on GitHub&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Save my day:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://app.pluralsight.com/library/courses/node-js-express-rest-web-services/description&#34;&gt;RESTful Web Services with Node.js and Express&lt;/a&gt; by Jonathan Mills on pluralsight&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     

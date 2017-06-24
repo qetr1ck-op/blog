@@ -9,6 +9,31 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/es2015&#43;/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>react app with express in production</title>
+      <link>https://qetr1ck-op.github.io/blog/post/react-app-with-express-in-production/</link>
+      <pubDate>Sat, 24 Jun 2017 20:46:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/react-app-with-express-in-production/</guid>
+      <description>&lt;p&gt;Password randomizer app which was done with: REST API on &lt;code&gt;Express.js&lt;/code&gt;, Client app on &lt;code&gt;React.js&lt;/code&gt;, Build with &lt;code&gt;npm&lt;/code&gt;, Deploy on &lt;code&gt;Heroku&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;demo&#34;&gt;Demo&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://morning-ocean-99678.herokuapp.com/&#34;&gt;client app&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://morning-ocean-99678.herokuapp.com/api/password&#34;&gt;api/password&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/rando&#34;&gt;repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;documentation&#34;&gt;Documentation&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://daveceddia.com/create-react-app-express-production/&#34;&gt;Create React App with Express in Production by Dave Ceddia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>Interview question: NodeJS, part 2</title>
       <link>https://qetr1ck-op.github.io/blog/post/interview-question-nodejs-part-2/</link>
       <pubDate>Sun, 28 May 2017 17:43:40 +0300</pubDate>
@@ -4049,19 +4074,6 @@ console.log(&#39;loading...&#39;);
 &lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/14-webpack-stream&#34;&gt;Code examples 1&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/iliakan/gulp-screencast/tree/master/14-webpack-final-direct&#34;&gt;Code examples 2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>NG6 starter for new Angular projects</title>
-      <link>https://qetr1ck-op.github.io/blog/post/NG6-starter-for-new-Angular-projects/</link>
-      <pubDate>Sun, 18 Sep 2016 19:03:17 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/NG6-starter-for-new-Angular-projects/</guid>
-      <description>&lt;p&gt;The de-facto starter repo for building scalable apps with AngularJS ^1.5, ES6, Gulp and Webpack&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/gebidesign/NG6-starter-sass#ng6&#34;&gt;Github repo&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

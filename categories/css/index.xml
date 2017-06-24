@@ -9,6 +9,31 @@
     <atom:link href="https://qetr1ck-op.github.io/blog/categories/css/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>react app with express in production</title>
+      <link>https://qetr1ck-op.github.io/blog/post/react-app-with-express-in-production/</link>
+      <pubDate>Sat, 24 Jun 2017 20:46:01 +0300</pubDate>
+      
+      <guid>https://qetr1ck-op.github.io/blog/post/react-app-with-express-in-production/</guid>
+      <description>&lt;p&gt;Password randomizer app which was done with: REST API on &lt;code&gt;Express.js&lt;/code&gt;, Client app on &lt;code&gt;React.js&lt;/code&gt;, Build with &lt;code&gt;npm&lt;/code&gt;, Deploy on &lt;code&gt;Heroku&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;demo&#34;&gt;Demo&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://morning-ocean-99678.herokuapp.com/&#34;&gt;client app&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://morning-ocean-99678.herokuapp.com/api/password&#34;&gt;api/password&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/qetr1ck-op/rando&#34;&gt;repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;documentation&#34;&gt;Documentation&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://daveceddia.com/create-react-app-express-production/&#34;&gt;Create React App with Express in Production by Dave Ceddia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>Front End Handbook 2017</title>
       <link>https://qetr1ck-op.github.io/blog/post/front-end-handbook-2017/</link>
       <pubDate>Sun, 23 Apr 2017 19:11:25 +0300</pubDate>
@@ -4110,59 +4135,6 @@ console.log(document.body.className);
 &lt;/ul&gt;
 
 &lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/KyBjs/&#34;&gt;AngularJS, ng-style example&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Fluid three column layout with positioning, floats, tables and flexbox</title>
-      <link>https://qetr1ck-op.github.io/blog/post/Fluid-three-column-layout-with-positioning-floats-tables-and-flexbox/</link>
-      <pubDate>Fri, 18 Apr 2014 11:09:46 +0000</pubDate>
-      
-      <guid>https://qetr1ck-op.github.io/blog/post/Fluid-three-column-layout-with-positioning-floats-tables-and-flexbox/</guid>
-      <description>&lt;p&gt;In Web world, fluid layout with 3 column is the most flexible and customizable layout. Mixing percentages and pixels for specify width of column allows create different layouts, for different task.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;In article sumbols mean:
-*   Here sumbol &lt;code&gt;%&lt;/code&gt; define, that column width is given in persantage of layout width;
-*   &lt;code&gt;px&lt;/code&gt;- column width in static pixels;
-*   &lt;code&gt;∞&lt;/code&gt; - column occupies all remain width space.&lt;/p&gt;
-
-&lt;h1 id=&#34;using-positioning&#34;&gt;Using positioning&lt;/h1&gt;
-
-&lt;p&gt;To control position layout relative to the parent element layers, necessary establish for parent property - &lt;code&gt;position: relative&lt;/code&gt;. And for child element set &lt;code&gt;position: absolute&lt;/code&gt;, conrols fluid element with &lt;code&gt;right/left&lt;/code&gt;, width in some cases used &lt;code&gt;margin-right/left&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/jtyhi/&#34;&gt;Three column fluid layout with positionig&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.
-&lt;script async src=&#34;//codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;floats&#34;&gt;Floats&lt;/h1&gt;
-
-&lt;p&gt;For this approach I used &lt;code&gt;float&lt;/code&gt; in combinatition with properties &lt;code&gt;margin&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt;. In some case used nested or additional &lt;code&gt;div.wrap&lt;/code&gt;, because we can&amp;rsquo;t use in the same time for onу HTML element margin in px and %.&lt;/p&gt;
-
-&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/asfKq/&#34;&gt;Fluid three column layout using floats&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;table-columns&#34;&gt;Table columns&lt;/h1&gt;
-
-&lt;p&gt;Actually, it&amp;rsquo;s convinient to use table when you want to create column with same height. Width of column calculated automatcaly based on their content so I just need to specify the require width. Remain columns would streach to avaible width of table.&lt;/p&gt;
-
-&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/olGHE/&#34;&gt;Fluid three column layout using table&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;flex-box&#34;&gt;Flex box&lt;/h1&gt;
-
-&lt;p&gt;Most layout or if you want grid system use one of next methods: &lt;code&gt;positioning&lt;/code&gt;, &lt;code&gt;tables&lt;/code&gt;, and most popular - &lt;code&gt;inline-blocks&lt;/code&gt; or &lt;code&gt;float&lt;/code&gt;. All this methods have pretty significaте problems and limetations.&lt;/p&gt;
-
-&lt;p&gt;For for achive bunch of three column layout Flex boxes are super ease. In generaly I used for parents : &lt;code&gt;display: flex&lt;/code&gt; and for children &lt;code&gt;flex: 1&lt;/code&gt; it&amp;rsquo;s shorthand for &lt;code&gt;flex-grow, flex-shrink and flex-basis&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;In furture post I should discover this literally one of the most promosing feature of web disign.&lt;/p&gt;
-
-&lt;p&gt;See the Pen &lt;a href=&#34;http://codepen.io/qetr1ck-op/pen/uAfrh/&#34;&gt;Fluid three column layout with flexbox&lt;/a&gt; by qetr1ck-op (&lt;a href=&#34;http://codepen.io/qetr1ck-op&#34;&gt;@qetr1ck-op&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This resources Save My Day:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://htmlbook.ru/samlayout/tipovye-makety/rezinovyi-trekhkolonochnyi-maket&#34;&gt;htmlbook.ru&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://css-tricks.com/snippets/css/a-guide-to-flexbox/&#34;&gt;css-tricks.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://philipwalton.github.io/solved-by-flexbox/demos/grids/&#34;&gt;Solved by Flexbox&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
     </item>
     
   </channel>
